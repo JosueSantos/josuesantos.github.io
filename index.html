@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt_BR">
+	<head>
+		<meta name="viewport" content="width = 1050, user-scalable = no" />
+		<meta charset="utf-8" />
+		
+		<title>Josu Da Kaka</title>
+		<link rel="shortcut icon" href="coracao.gif" type="image/x-icon" />
+		
+		<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+		<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+		
+		<script type="text/javascript">
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		//// as imagens devem ser 800 x 800 ou 1600 x 800
+
+		function loadApp() {
+
+			var flipbook = $('.flipbook');
+
+			// Check if the CSS was already loaded
+			
+			if (flipbook.width()==0 || flipbook.height()==0) {
+				setTimeout(loadApp, 10);
+				return;
+			}
+
+			$('.flipbook .double').scissor();
+
+			// Create the flipbook
+
+			$('.flipbook').turn({
+					// Elevation
+
+					elevation: 50,
+					
+					// Enable gradients
+
+					gradients: true,
+					
+					// Auto center this flipbook
+
+					autoCenter: true
+
+			});
+		}
+
+		// Load the HTML4 version if there's not CSS transform
+
+		yepnope({
+			test : Modernizr.csstransforms,
+			yep: ['js/lib/turn.min.js'],
+			nope: ['js/lib/turn.html4.min.js'],
+			both: ['js/lib/scissor.min.js', 'css/double-page.css'],
+			complete: loadApp
+		});
+		</script>
+	</head>
+	
+	<body>
+		<div class="quadroLateral">
+			<div id="fb-root"></div>
+			
+			<div class="fb-like" data-href="http://josudakaka.netai.net/" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			
+			<div id="fb-root"></div>
+
+			<div class="fb-comments" data-href="http://josudakaka.netai.net/" data-width="480" data-numposts="3"></div>
+		</div>
+
+
+		<div class="flipbook-viewport">
+			<div class="container">
+				<div class="flipbook">
+					<div class="page" style="background-image:url(pages/capa.png)"></div>
+					<div class="double" style="background-image:url(pages/1.png)"></div>
+					<div class="double" style="background-image:url(pages/2.png)"></div>
+					<div class="double" style="background-image:url(pages/3.png)"></div>
+					<div class="double" style="background-image:url(pages/4.png)"></div>
+					<div class="double" style="background-image:url(pages/5.png)"></div>
+					<div class="double" style="background-image:url(pages/6.png)"></div>
+					<div class="double" style="background-image:url(pages/7.png)"></div>
+					<div class="double" style="background-image:url(pages/8.png)"></div>
+					<div class="double" style="background-image:url(pages/9.png)"></div>
+					<div class="page" style="background-image:url(pages/fim.png)"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
