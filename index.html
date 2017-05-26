@@ -1,97 +1,163 @@
-<!doctype html>
-<html lang="pt_BR">
-	<head>
-		<meta name="viewport" content="width = 1050, user-scalable = no" />
-		<meta charset="utf-8" />
-		
-		<title>Josu Da Kaka</title>
-		<link rel="shortcut icon" href="coracao.gif" type="image/x-icon" />
-		
-		<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
-		<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
-		
-		<script type="text/javascript">
-		(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		
-		//// as imagens devem ser 800 x 800 ou 1600 x 800
+<!DOCTYPE html>
+<html lang="en">
 
-		function loadApp() {
+<head>
 
-			var flipbook = $('.flipbook');
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-			// Check if the CSS was already loaded
-			
-			if (flipbook.width()==0 || flipbook.height()==0) {
-				setTimeout(loadApp, 10);
-				return;
-			}
+    <title>JS.2017</title>
 
-			$('.flipbook .double').scissor();
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-			// Create the flipbook
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-			$('.flipbook').turn({
-					// Elevation
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+	<link href="css/efeito.css" rel="stylesheet">
 
-					elevation: 50,
-					
-					// Enable gradients
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-					gradients: true,
-					
-					// Auto center this flipbook
+</head>
 
-					autoCenter: true
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-			});
-		}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-circle-o-notch"></i> JS.2017
+                </a>
+            </div>
 
-		// Load the HTML4 version if there's not CSS transform
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Sobre</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Download</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-		yepnope({
-			test : Modernizr.csstransforms,
-			yep: ['js/lib/turn.min.js'],
-			nope: ['js/lib/turn.html4.min.js'],
-			both: ['js/lib/scissor.min.js', 'css/double-page.css'],
-			complete: loadApp
-		});
-		</script>
-	</head>
+    <!-- Intro Header
+
+<div class="intro-body">
+            <div class="container">
+                    
+                </div>
+            </div>
+        </div>
+-->
 	
-	<body>
-		<div class="quadroLateral">
-			<div id="fb-root"></div>
-			
-			<div class="fb-like" data-href="http://josudakaka.netai.net/" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-			
-			<div id="fb-root"></div>
-
-			<div class="fb-comments" data-href="http://josudakaka.netai.net/" data-width="480" data-numposts="3"></div>
+	
+	
+    <header class="intro" id="introducao">
+		<div class="intro-body">
+			<h1 class="brand-heading">Josué.Santos</h1>
+			<p class="intro-text">Analista e Desenvolvedor Back-End.</p>
+			<a href="#about" class="btn btn-circle page-scroll">
+				<i class="fa fa-angle-double-down animated"></i>
+			</a>
 		</div>
+    </header>
+	
+	
 
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center intro">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Sobre J.s</h2>
+                <p>Meu nome é Josué dos Santos Marques. Tenho 21 anos e estou cursando a faculdade de Analise e Desenvolvimento de Sistemas na Estácio FIC. Conforme poderá verificar em meu currículo, minha experiência é ainda pequena, considerado a formação profissional recente, mas tenho facilidade de aprendizagem, trabalho em equipe e de relacionamento. Meu objetivo é continuar me aperfeiçoando na área da T.I.</p>
+                <p>Fiz estágio profissional de desenvolvedor na empresa ARCE (Agência Reguladora de Serviços Públicos Delegados do Estado do Ceará), onde aprendi muito complementando os meus estudos. Adquiri conhecimentos sobre Java, Java EE, JSF, JPA e PrimeFaces. Fui jovem aprendiz na empresa Guararapes Confecções e na PROJEART Estruturas Metálicas, onde aprendi sobre rotinas administrativas e noções de departamento pessoal.</p>
+                <p>Tenho disponibilidade para aprender outras linguagens, tenho uma boa lógica de programação (3º lugar na maratona de programação –Estácio FIC). Sempre estou em busca de mais conhecimento fazendo cursos online ou presenciais, como por exemplo o de C++, Java Básico e de HTML5.</p>
+            </div>
+        </div>
+    </section>
 
-		<div class="flipbook-viewport">
-			<div class="container">
-				<div class="flipbook">
-					<div class="page" style="background-image:url(pages/capa.png)"></div>
-					<div class="double" style="background-image:url(pages/1.png)"></div>
-					<div class="double" style="background-image:url(pages/2.png)"></div>
-					<div class="double" style="background-image:url(pages/3.png)"></div>
-					<div class="double" style="background-image:url(pages/4.png)"></div>
-					<div class="double" style="background-image:url(pages/5.png)"></div>
-					<div class="double" style="background-image:url(pages/6.png)"></div>
-					<div class="double" style="background-image:url(pages/7.png)"></div>
-					<div class="double" style="background-image:url(pages/8.png)"></div>
-					<div class="double" style="background-image:url(pages/9.png)"></div>
-					<div class="page" style="background-image:url(pages/fim.png)"></div>
-				</div>
-			</div>
-		</div>
-	</body>
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center ">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download do Currículo completo</h2>
+                    <p>Aqui você pode conhecer mais detalhes.</p>
+					<ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-download fa-fw"></i> <span class="network-name">Download</span></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center intro">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contate-me</h2>
+                <p>Sinta-se livre para me enviar um e-mail, uma oferta de projeto, criação de sites, oportunidade de emprego, ou apenas dizer olá!</p>
+                <p><a href="mailto:josuemarques3@gmail.com">josuemarques3@gmail.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript  -->
+    <script src="js/grayscale.min.js"></script>
+	<script src="js/efeito.js"></script>
+
+</body>
+
 </html>
