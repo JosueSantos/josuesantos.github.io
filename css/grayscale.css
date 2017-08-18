@@ -234,6 +234,10 @@ a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
+.contat-section {
+  width: 100%;
+  padding: 20% 0;
+}
 
 @media (min-width: 767px) {
   .content-section {
