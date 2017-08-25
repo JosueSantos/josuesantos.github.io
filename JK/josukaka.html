@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+	<head>
+		<meta name="viewport" content="width = 1050, user-scalable = no" />
+		<meta charset="utf-8" />
+		
+		<title>Josu Da Kaka</title>
+		<link rel="shortcut icon" href="coracao.gif" type="image/x-icon" />
+		<style>
+			#logico{
+				width: 35%; float: left; margin: 2%; 
+			}
+			#conteudo{
+				width: 50%; float: left; margin-top: 2%;
+			}
+			
+			@media (max-width: 1200px) {
+				#logico{
+					width: 40%; float: left; margin: 2%; 
+				}
+				#conteudo{
+					width: 50%; float: left; margin-top: 2%;
+				}
+			}
+			
+			@media (max-width: 900px) {
+				#logico{
+					width: 85%; position: absolute; margin: 5%; opacity: 0.2;
+				}
+				#conteudo{
+					width: 85%; position: absolute; margin: 5%; padding: 2%;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<img id='logico' src="pages/capa.png"/>
+		<div id='conteudo'>
+			<h2><img src="coracao.gif" />JosuDaKaka<img src="coracao.gif" /></h2>
+			<h2><img src="coracao.gif" />KakaDoJosu<img src="coracao.gif" /></h2>
+			<h3 id='dataWedding'></h3>
+			<h3 id='msg1'></h3>
+			<h3 id='msg2'></h3>
+		</div>
+		
+		
+		<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+		<script type="text/javascript">
+			function time()
+			{
+				var dataWedding = new Date(2017, 9, 21, 17, 30, 00, 00);
+				var dataAtual = new Date();
+				
+				var dataMenor;
+				var dataMaior;
+				var text;
+				var textSeg;
+				
+				var txtdataWedding = dataWedding.getDate() + ' / ';
+				if((dataWedding.getMonth() + 1) > 9){
+					txtdataWedding += (dataWedding.getMonth() + 1);
+				}else{
+					txtdataWedding += "0" + (dataWedding.getMonth() + 1);
+				}
+				txtdataWedding += ' / ' + dataWedding.getFullYear();
+				document.getElementById('dataWedding').innerHTML = "Date of Wedding: " + txtdataWedding;
+				
+				if(dataWedding < dataAtual){
+					dataMenor = dataWedding;
+					dataMaior = dataAtual;
+					text = "Passaram-se : ";
+					textSeg = " segundos já se passaram.";
+				}else{
+					dataMenor = dataAtual;
+					dataMaior = dataWedding;
+					text = "Faltam : ";
+					textSeg = " segundos para o grande dia!!";
+				}
+				
+				var segundo = dataMaior.getSeconds()	- dataMenor.getSeconds();
+				var minuto 	= dataMaior.getMinutes()	- dataMenor.getMinutes();
+				var hora 	= dataMaior.getHours() 		- dataMenor.getHours();
+				var dia 	= dataMaior.getDate() 		- dataMenor.getDate();
+				var mes 	=(dataMaior.getMonth() + 1) - (dataMenor.getMonth() + 1);
+				var ano 	= dataMaior.getFullYear() 	- dataMenor.getFullYear();
+				
+				if (segundo < 0){
+					segundo = 59 - Math.abs(segundo);
+					minuto -= 1;
+				}
+				
+				if (minuto < 0){
+					minuto = 59 - Math.abs(minuto);
+					hora -= 1;
+				}
+				
+				if (hora < 0){
+					hora = 23 - Math.abs(hora);
+					dia -= 1;
+				}
+				
+				if (dia < 0){
+					dia = 31 - Math.abs(dia);
+					mes -= 1;
+				}
+
+				if (mes < 0){
+					mes = 12 - Math.abs(mes);
+					ano -= 1;
+				}
+				
+				if(ano == 1)text += ano + " ano ";
+				else if(ano != 0)text += ano + " anos ";
+				if(mes == 1)text += mes + " mês ";
+				else if(mes != 0)text += mes + " meses ";
+				if(dia == 1)text += dia + " dia ";
+				else if(dia != 0)text += dia + " dias ";
+				if(hora == 1)text += hora + " hora ";
+				else if(hora != 0)text += hora + " horas ";
+				if(minuto == 1)text += minuto + " minuto ";
+				else if(minuto != 0)text += minuto + " minutos ";
+				if(segundo == 1)text += segundo + " segundo ";
+				else if(segundo != 0)text += segundo + " segundos ";
+				
+				document.getElementById('msg1').innerHTML = text;
+
+				seg = segundo;
+				segmin = 60*minuto;
+				seghor = 3600*hora;
+				segdia = 3600*24*dia;
+				segmes = 3600*24*30*mes;
+				segano = 3600*24*365*ano;
+
+				segVida = seg + segmin + seghor + segdia + segmes + segano;
+				document.getElementById('msg2').innerHTML = segVida + textSeg;
+				setTimeout('time()',500);
+			}
+			
+			time();
+		</script>
+	</body>
+</html>
