@@ -1,5 +1,6 @@
 
 document.getElementById('idade').innerHTML = new Date().getFullYear() - 1994;
+document.getElementById('ano').innerHTML = new Date().getFullYear();
 
 // three.js - http://github.com/mrdoob/three.js
 'use strict';var THREE=THREE||{REVISION:"56"};self.console=self.console||{info:function(){},log:function(){},debug:function(){},warn:function(){},error:function(){}};self.Int32Array=self.Int32Array||Array;self.Float32Array=self.Float32Array||Array;String.prototype.trim=String.prototype.trim||function(){return this.replace(/^\s+|\s+$/g,"")};
