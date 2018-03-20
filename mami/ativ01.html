@@ -15,24 +15,22 @@
 	See the License for the specific language governing permissions and
 	limitations under the License
 	-->
-<html lang="en">
+<html lang="br">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+		<meta name="description" content="Blog da Materia MAMI da UFC 2018.1.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Material Design Lite</title>
+		<title>JS.MAMI</title>
 
 		<!-- Add to homescreen for Chrome on Android -->
 		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" sizes="192x192" href="img/android-desktop.png">
 
 		<!-- Add to homescreen for Safari on iOS -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
-		<link rel="apple-touch-icon-precomposed" href="img/ios-desktop.png">
+		<meta name="apple-mobile-web-app-title" content="JS.MAMI">
 
 		<!-- Tile icon for Win8 (144x144 + tile color) -->
 
@@ -65,7 +63,7 @@
 		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
 			<main class="mdl-layout__content">
 				<div class="demo-back">
-					<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="Retorne" role="button">
+					<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="MAMI" role="button">
 						<i class="material-icons" role="presentation">arrow_back</i>
 					</a>
 				</div>
@@ -78,22 +76,57 @@
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="texto01">
-							Como primeira tarefa da disciplina, escolhi um dos exemplos disponíveis em https://processing.org/examples/ ,  modifiquei e discuti um pouco sobre ele.
-O exemplo escolhido foi Distance2D, disponível em https://processing.org/examples/distance2d.html .
-							Segundo o documentário “Hello World! Processing“, algumas das propostas do processing são a possibilidade de experimentação e de visualização de dados.
-							<br/>
-							Voltando mais uma vez ao que diz o documentário: “O propósito da computação é o insight, não os números.”
-
+								Segundo o documentário “Hello World! Processing“, algumas das propostas do processing são a possibilidade de experimentação e de visualização de dados.
+								<br/><br/>
+								Como se diz lá:
+								<center>
+									<span class="aspa">&ldquo;</span>
+									<em>O propósito da computação é o insight, não os números.</em>
+									<span class="aspa">&rdquo;</span>
+								</center>
+								<br/><br/>
+								<center>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/OgupE9snZlQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								</center>
+								<br/><br/>
+								Como primeira tarefa da disciplina, escolhi um dos exemplos disponíveis em processing.org/examples.
+								<br/>
+								O exemplo escolhido foi <em>Distance2D</em>, disponível em <a href="https://processing.org/examples/distance2d.html" target="_blank">https://processing.org/examples/distance2d.html</a>.
+								<br/><br/>
 								
-
+								<center>
+									<img src="img/distance2D.png" />
+								</center>
+								
+								<br/><br/>
+								Neste exemplo, desenhamos <em>ellipses</em> em toda a janela. Quanto mais próximo do mouse, menor elas ficam.
+								<br/>
+								Senti um encomodo, como se falta-se algo!
+								<br/>
+								Dando-lhe cor poderia ser um efeito mais atraente!
+								<br>
+								Resolvi adicionar uma imagem ao background. Assim não teriamos uma tela preta com círculos brancos, mudariamos o conceito do efeito! Ao mover o mouse descobre-se uma imagem ao fundo. Dando ao mesmo tempo um efeito de degradê e de movimento.
+								<br/><br/>
+								
 								<center>
 
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/OgupE9snZlQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-								<br><a target="_blank" href="https://www.youtube.com/watch?v=OgupE9snZlQ&t=82s">Link do video</a>
+									<video controls autoplay loop muted width="800" height="350">
+										<source src="video/jsProcessing.webm" type='video/webm; codecs="vp8, vorbis"' />
+										<source src="video/jsProcessing.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+									</video>
 
 								</center>
-
+								
+								<br/><br/>
+								Quanto ao código:
+								<ul>
+									<li>Foi adicionado uma inicialização de variável;<br><h3>PImage img;</h3></li>
+									<li>No Setup a variavel é carregada com a imagem;<br><h3>img = LoadImage("js.jpg");</h3></li>
+									<li>No Draw o background é carregado com o conteúdo da variavel;<br><h3>background(img);</h3></li>
+									<li><em>É importante frizar que a janela e a imagem possuam as mesmas dimensões!</em></li>
+								</ul>
+								<br/><br/>
+								
 							</div>
 						</div>
 
@@ -104,38 +137,16 @@ O exemplo escolhido foi Distance2D, disponível em https://processing.org/exampl
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							Google Design
+							MAMI
 						</a>
 					</nav>
 				</div>
-				
-				<footer class="mdl-mini-footer">
-					<div class="mdl-mini-footer--left-section">
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-							<span class="visuallyhidden">Twitter</span>
-						</button>
-						
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-							<span class="visuallyhidden">Facebook</span>
-						</button>
-						
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-							<span class="visuallyhidden">Google Plus</span>
-						</button>
-					</div>
-					<div class="mdl-mini-footer--right-section">
-						<button class="mdl-mini-footer--social-btn social-btn__share">
-							<i class="material-icons" role="presentation">share</i>
-							<span class="visuallyhidden">share</span>
-						</button>
-					</div>
-				</footer>
 			</main>
 			
 			<div class="mdl-layout__obfuscator"></div>
 		</div>
 		
-		<a href="index.html" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">Internet Rica</a>
+		<a href="index.html" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">MAMI 2018.1</a>
 		
 		<script src="js/material.min.js"></script>
 	</body>
