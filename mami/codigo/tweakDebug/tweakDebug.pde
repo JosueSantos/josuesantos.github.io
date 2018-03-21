@@ -1,3 +1,6 @@
+/// MAMI ///
+/// Josué dos Santos ///
+
 int n;
 float xMeio;
 float yMeio;
@@ -11,7 +14,7 @@ void setup() {
 
 void draw() { //<>//
   n = 5;
-  background(0,5,2);
+  background(0);
    //<>//
   int t = tamanhoOcupado(n);
   for(int i = 0; i < n; i++){
