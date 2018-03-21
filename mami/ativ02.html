@@ -68,7 +68,7 @@
 					</a>
 				</div>
 				
-				<div class="demo-blog__posts demo-blog__posts01 mdl-grid">
+				<div class="demo-blog__posts demo-blog__posts02 mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 						<div class="mdl-card__media mdl-color-text--grey-50">
 							<h3></h3>
@@ -76,64 +76,67 @@
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<p>
-								Segundo o documentário <b>“Hello World! Processing“</b>, algumas das propostas do processing são a possibilidade de experimentação e de visualização de dados.
-								</p>
-								<p>
-								Como se diz lá:
-								</p>
 								<h4 style="text-align:center">
 									<span class="aspa">&ldquo;</span>
-									<em>O propósito da computação é o insight, não os números.</em>
+									<em>Diferenciar o uso das ferramentas Tweak e Debug, exemplificando como as mesmas podem facilitar o desenvolvimento de uma aplicação que centraliza horizontalmente, numa tela com dimensões à sua escolha, n quadrados de 50 pixels de lado, sendo n uma variável global definida no início do código.</em>
 									<span class="aspa">&rdquo;</span>
 								</h4>
 								
-								<iframe style="margin-left:-5px;" height="315" src="https://www.youtube.com/embed/OgupE9snZlQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<h3>Tweak</h3>
+								<p>
+								O Tweak é uma ferramenta que permite alterar os valores númericos do código em tempo de execução.
+								</p>
+								<p>
+								Para utilizar, clique em <b>Sketch -> Tweak</b>. OBS: o código precisa já estar salvo para rodar o Tweak.
+								</p>
+								<p>
+								O Tweak permite uma interação dinâmica com o código, podendo ser usado para testar valores ou cores. É usado mais em situações que precisamos experimentar algum efeito, posição ou algo do gênero de forma mais geral vendo um resultado muitas vezes visual.
+								</p>
+								<center>
+									<img style="width:90%" src="img/tweak.png">
+								</center>
+								<br />
+								<h3>Debug</h3>
+								<p>
+								Já o funcionamento do Debug consiste em mostrar as variáveis que estão sendo utilizadas enquanto o programa roda. Permitindo analisar o que ocorre com cada variável do seu algoritmo durante cada linha de código. Podendo avançar linha por linha e acompanhando as alterações.
+								</p>
+								<p>
+								Para utilizar, clique em <b>Debug -> Enable Debugger</b>. Os botões Continue e Step são ativados, cria uma janela com as variáveis e seus valores atuais.
+								</p>
+								<center>
+									<img style="width:90%" src="img/debug.png">
+								</center>
 								<br />
 								<p>
-								Como primeira tarefa da disciplina, escolhi um dos exemplos disponíveis em processing.org/examples.
+								Com ele é possível marcar um breakpoint clicando em uma linha onde a execução normal do código vai parar e mostrar a ferramenta com os devidos valores das variáveis e então é possível executar o programa passo a passo, pausadamente com a ajuda dos novos botões que são habilitados.
 								</p>
 								<p>
-								O exemplo escolhido foi <b>Distance2D</b>, disponível em <a href="https://processing.org/examples/distance2d.html" target="_blank">https://processing.org/examples/distance2d.html</a>.
-								</p>
-								
-								<center>
-									<img src="img/distance2D.png" />
-								</center>
-								
-								<p>
-								Neste exemplo, desenhamos <em>ellipses</em> em toda a janela. Quanto mais próximo do mouse, menor elas ficam.
-								</p>
-								<p>
-								Senti um encomodo, como se falta-se algo!
-								</p>
-								<p>
-								Dando-lhe cor poderia ser um efeito mais atraente!
-								</p>
-								<p>
-								Resolvi adicionar uma imagem ao background. Assim não teriamos uma tela preta com círculos brancos, mudariamos o conceito do efeito! Ao mover o mouse descobre-se uma imagem ao fundo. Dando ao mesmo tempo um efeito de degradê e de movimento.
+								Sua maior utilidade é a buscar de bugs (encontrar problemas) pontuais envolvendo o código do programa. Um ponto de salvação para muitos programadores aflitos.
 								</p>
 								
-								<center>
-
-									<video controls autoplay loop muted height="350">
-										<source src="video/jsProcessing.webm" type='video/webm; codecs="vp8, vorbis"' />
-										<source src="video/jsProcessing.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-									</video>
-
-								</center>
+								<h3>Vamos ao código!</h3>
 								
-								<p>
-								Quanto ao código:
 								<ul>
-									<li>Foi adicionado uma inicialização de variável;<br><h3>PImage img;</h3></li>
-									<li>No Setup a variavel é carregada com a imagem;<br><h3>img = loadImage("js.jpg");</h3></li>
-									<li>No Draw o background é carregado com o conteúdo da variavel;<br><h3>background(img);</h3></li>
-									<li><em>É importante frizar que a janela e a imagem possuam as mesmas dimensões!</em></li>
+									<li>Primeiramente defini a variável <b>"n"</b>, como pedido no enunciado, para armazenar a quantidade de quadrados que desejamos inserir no centro da tela;
+									<li>Localizei o centro da tela com as variáveis <b>xMeio e yMeio</b>;
+									<h4>xMeio = width / 2;<br />yMeio = height / 2;</h4>
+									<li>E fixei o tamanho do quadrado como 50x50;
+									<li>Criei a função <b>"quadrado"</b> para criar um quadrado que recebe como parâmetro o seu ponto central;
+									<li><em>Já temos nosso primeiro quadrado no centro da tela!</em>
+									<li>Era necessário encontrar um tamanho para a <b>"linha de quadrados"</b> e para isso precisava pensar matematicamente para descobrir uma fórmula que atende-se qualquer quantidade de quadrados;
+									<li>Sabendo que metade fica depois do ponto central e a outra metade antes dele. Precisavamos apenas da metade da distancia!
+									<center>
+										<img src="img/tamanhoOcupado.png">
+									</center>
+									<li>Seria então a metade de um quadrado, multiplicado pela quantidade "n" somado com a metade do espaço entre os quadrados vezes a quantidade "n" menos 1;
+									<h4>Tamanho = Quantidade x 25 + (Quantidade - 1) * 5</h4>
+									<li>Agora é apenas por em um loop para desenhar cada um dos quadrados, diminuindo do "centro X" o "Tamanho";
+									<h4>quadrado(xMeio - Tamanho, yMeio);</h4>
+									<li>Sem esquecer de diminuir do "Tamanho" de duas metades de um quadrado mais um espaço ( 25 + 25 + 10 );
+									<h4>Tamanho -= 60;</h4>
 								</ul>
-								</p>
 								
-								<a href="codigo/mamiAtiv01Josu_/mamiAtiv01Josu_.pde" target="_blank">
+								<a href="codigo/tweakDebug/tweakDebug.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
 									</button>
@@ -145,19 +148,20 @@
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="index.html" class="demo-nav__button">
+						<a href="ativ01.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							MAMI
+							Atividade 01 - Hello Word!
 						</a>
-						
+						<!--
 						<a href="ativ02.html" class="demo-nav__button" title="Próxima Página">
-							Atividade 02 - Tweak Vs Debug
+							Atividade 02
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>
 						</a>
+						-->
 					</nav>
 				</div>
 			</main>

@@ -14,10 +14,10 @@ void setup() {
 void draw() {
   background(img);
 
-  for(int i = 0; i <= width; i += 10) {
-    for(int j = 0; j <= height; j += 10) {
+  for(int i = 0; i <= width; i += 20) {
+    for(int j = 0; j <= height; j += 20) {
       float size = dist(mouseX, mouseY, i, j);
-      size = size/max_distance * 66;
+      size = size/max_distance * 60;
       
       ellipse(i, j, size, size);
     }
