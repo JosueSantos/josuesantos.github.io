@@ -5,7 +5,7 @@ PImage img;
 float max_distance;
 
 void setup() {
-  size(640, 600);
+  size(640, 522);
   noStroke();
   max_distance = dist(0, 0, width, height);
   img = loadImage("js.jpg");
