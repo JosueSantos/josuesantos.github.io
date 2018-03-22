@@ -228,7 +228,7 @@ body .demo-blog {
   background-size: 100% 100%;
 }
 .demo-blog .kandinsky .mdl-card__media {
-  background-image: url('../img/kandinsky.png');
+  background-image: url('../img/kandinsky.PNG');
 }
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
