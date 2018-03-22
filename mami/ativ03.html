@@ -68,69 +68,101 @@
 					</a>
 				</div>
 				
-				<div class="demo-blog__posts demo-blog__posts02 mdl-grid">
+				<div class="demo-blog__posts demo-blog__posts03 mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 						<div class="mdl-card__media mdl-color-text--grey-50">
-							<h3></h3>
+							<h4>Kandinsky</h4>
 						</div>
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h3>Tweak</h3>
+								<h2>O Falsificador de Arte</h2>
+								
 								<p>
-								O Tweak é uma ferramenta que permite alterar os valores númericos do código em tempo de execução.
+								A arte como sabemos é algo bem abstrato, sentimental e subjetiva. Algo difícil para uma máquina reproduzir, porém, nada é impossível.
+								<br />
+								Um computador só faz a reprodução de comandos. Então se o artista der os comandos certos... será arte?
 								</p>
+								<br/>
 								<p>
-								Para utilizar, clique em <b>Sketch -> Tweak</b>. OBS: o código precisa já estar salvo para rodar o Tweak.
+								Na atividade de hoje, iremos reproduzir o quadro de Kandinsky, não perfeitamente é claro, mas como o quadro em questão, Farbstudie Quadrate, é feito de formas geométricas e seguem um certo padrão, podemos desenvolver um algoritmo que faça nossa falsificação! Não sairá idêntico, mas parecido.
 								</p>
-								<p>
-								O Tweak permite uma interação dinâmica com o código, podendo ser usado para testar valores ou cores. É usado mais em situações que precisamos experimentar algum efeito, posição ou algo do gênero de forma mais geral vendo um resultado muitas vezes visual.
-								</p>
+								
 								<center>
-									<img style="width:90%" src="img/tweak.png">
+									<img style="width:90%" src="img/kandinsky.png">
+									<h5>Farbstudie Quadrate, 1913, Wassily Kandinsky</h5>
 								</center>
 								<br />
-								<h3>Debug</h3>
-								<p>
-								Já o funcionamento do Debug consiste em mostrar as variáveis que estão sendo utilizadas enquanto o programa roda. Permitindo analisar o que ocorre com cada variável do seu algoritmo durante cada linha de código. Podendo avançar linha por linha e acompanhando as alterações.
-								</p>
-								<p>
-								Para utilizar, clique em <b>Debug -> Enable Debugger</b>. Os botões Continue e Step são ativados, cria uma janela com as variáveis e seus valores atuais.
-								</p>
-								<center>
-									<img style="width:90%" src="img/debug.png">
-								</center>
-								<br />
-								<p>
-								Com ele é possível marcar um breakpoint clicando em uma linha onde a execução normal do código vai parar e mostrar a ferramenta com os devidos valores das variáveis e então é possível executar o programa passo a passo, pausadamente com a ajuda dos novos botões que são habilitados.
-								</p>
-								<p>
-								Sua maior utilidade é a buscar de bugs (encontrar problemas) pontuais envolvendo o código do programa. Um ponto de salvação para muitos programadores aflitos.
-								</p>
 								
 								<h3>Vamos ao código!</h3>
 								
 								<ul>
-									<li>Primeiramente defini a variável <b>"n"</b>, como pedido no enunciado, para armazenar a quantidade de quadrados que desejamos inserir no centro da tela;
-									<li>Localizei o centro da tela com as variáveis <b>xMeio e yMeio</b>;
-									<h4>xMeio = width / 2;<br />yMeio = height / 2;</h4>
-									<li>E fixei o tamanho do quadrado como 50x50;
-									<li>Criei a função <b>"quadrado"</b> para criar um quadrado que recebe como parâmetro o seu ponto central;
-									<li><em>Já temos nosso primeiro quadrado no centro da tela!</em>
-									<li>Era necessário encontrar um tamanho para a <b>"linha de quadrados"</b> e para isso precisava pensar matematicamente para descobrir uma fórmula que atende-se qualquer quantidade de quadrados;
-									<li>Sabendo que metade fica depois do ponto central e a outra metade antes dele. Precisavamos apenas da metade da distancia!
+									<li>Primeiramente adicionei a biblioteca <b>ControlP5</b> e a implementei com os controladores Horizontal e Vertical, como pedido no enunciado;
+									<li>"Caminhando aos poucos" criei a função <b>circulo</b> que multiplica o valor do raio para ter o diametro;
+									<h5>
+										<code>
+											void circulo(int x, int y, int r){<br />
+											___ ellipse(x, y, r*2, r*2);<br />
+											}
+										</code>
+									</h5>
+									<li>criei também a função <b>bloco</b>;
+									<ol>
+										<li>Testei criar um quadrado e 3 círculos, cada círculo com tamanho menor do que o anterior;
+										<li>Depois com um loop de círculos;
+										<li>E por fim adicionei os números aleatórios;
+									</ol>
+									<h5>
+										<code>
+											void bloco(int x, int y, int l){<br />
+											___ rect(x, y, l, l);<br />
+											___ int quantCirculo = (int) random(2, 4);<br />
+											___ int tamanhoCirculo = l/2;<br />
+											___ for(int i = 0; i < quantCirculo; i++){<br />
+											___ ___ circulo(x,y,tamanhoCirculo);<br />
+											___ ___ tamanhoCirculo = (int) random(15, (tamanhoCirculo - 10));<br />
+											___ }<br />
+											}
+										</code>
+									</h5>
+									<li>Adicionei uma função extra de "corAleatoria";
+									<li>O próximo passo seria utilizar essas funções em conjunto!
+									<li>Pensei em utilizar um loop para os blocos verticais e outro loop para os blocos horizontais na <b>"draw"</b>, não deu o resultado esperado, pois a draw executa o código várias vezes;
+									<li>Tentei também com as propriedades do <b>ControlP5</b>
+									<h5>
+										<code>
+											.addCallback(new CallbackListener() {<br />
+											___ public void controlEvent(CallbackEvent event) {<br />
+											___ ___ if (event.getAction() == ControlP5.ACTION_RELEASED) {<br />
+											___ ___ ___ kandinskyMethod( horizontal , vertical );<br />
+											___ ___ }<br />
+											___ }<br />
+											});
+										</code>
+									</h5>
+									<li>Não consegui encontrar um <b>ACTION</b> que se adequasse a necessidade da atividade
+									<li>Então utilizei o tradicional e salvador <b>"IF"</b>
+									<h5>
+										<code>
+											int vH = 0;<br />
+											int vV = 0;<br />
+											void draw(){<br />
+											___ if(vH != horizontal || vV != vertical){<br />
+											___ ___ kandinskyMethod(horizontal, vertical);<br />
+											___ ___ vH = horizontal;<br />
+											___ ___ vV = vertical;<br />
+											___ }<br />
+											}
+										</code>
+									</h5>
+									
+									
 									<center>
-										<img style="width:90%" src="img/tamanhoOcupado.png">
+										<img style="width:90%" src="img/kandinskyPro.png">
 									</center>
-									<li>Seria então a metade de um quadrado, multiplicado pela quantidade "n" somado com a metade do espaço entre os quadrados vezes a quantidade "n" menos 1;
-									<h4>Tamanho = Quantidade x 25 + (Quantidade - 1) * 5</h4>
-									<li>Agora é apenas por em um loop para desenhar cada um dos quadrados, diminuindo do "centro X" o "Tamanho";
-									<h4>quadrado(xMeio - Tamanho, yMeio);</h4>
-									<li>Sem esquecer de diminuir do "Tamanho" de duas metades de um quadrado mais um espaço ( 25 + 25 + 10 );
-									<h4>Tamanho -= 60;</h4>
 								</ul>
 								
-								<a href="codigo/tweakDebug/tweakDebug.pde" target="_blank">
+								<a href="codigo/kandinsky/kandinsky.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
 									</button>
@@ -142,18 +174,20 @@
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="ativ01.html" class="demo-nav__button">
+						<a href="ativ02.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							Atividade 01 - Hello Word!
+							Atividade 02 - Tweak Vs Debug
 						</a>
+						<!--
 						<a href="ativ03.html" class="demo-nav__button" title="Próxima Página">
 							Atividade 03 - Wassily Kandinsky
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>
 						</a>
+						-->
 					</nav>
 				</div>
 			</main>

@@ -227,6 +227,9 @@ body .demo-blog {
   background-image: url('../img/tweakDebug.jpg');
   background-size: 100% 100%;
 }
+.demo-blog .kandinsky .mdl-card__media {
+  background-image: url('../img/kandinsky.png');
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
@@ -236,6 +239,10 @@ body .demo-blog {
   background-image: url('../img/tweakDebug.jpg');
   background-size: 100% 100%;
   height: 280px;
+}
+.demo-blog--blogpost .demo-blog__posts03 > .mdl-card .mdl-card__media {
+  background-image: url('../img/falsificador.jpg');
+  height: 400px;
 }
 
 .demo-blog .demo-blog__posts > .demo-nav {
