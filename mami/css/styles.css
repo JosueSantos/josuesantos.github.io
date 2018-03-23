@@ -248,6 +248,10 @@ em celular fica no topo
 .demo-blog .kandinsky .mdl-card__media {
   background-image: url('../img/kandinsky.PNG');
 }
+.demo-blog .mru .mdl-card__media {
+  background-image: url('../img/mru.png');
+  background-size: 100% 100%;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
@@ -260,6 +264,10 @@ em celular fica no topo
 }
 .demo-blog--blogpost .demo-blog__posts03 > .mdl-card .mdl-card__media {
   background-image: url('../img/falsificador.jpg');
+  height: 400px;
+}
+.demo-blog--blogpost .demo-blog__posts04 > .mdl-card .mdl-card__media {
+  background-image: url('../img/mru.png');
   height: 400px;
 }
 

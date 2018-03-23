@@ -1,5 +1,5 @@
 /// MAMI ///
-/// Josué dos Santos ///
+/// Josue dos Santos ///
 
 int n;
 float xMeio;

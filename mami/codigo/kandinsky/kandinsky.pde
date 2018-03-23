@@ -1,3 +1,6 @@
+/// MAMI ///
+/// Josue dos Santos ///
+
 import controlP5.*;
 
 ControlP5 gui;
