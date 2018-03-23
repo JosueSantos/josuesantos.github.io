@@ -52,7 +52,7 @@ body .demo-blog {
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
-  padding-top: 230px;
+  padding-top: 100px;
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
@@ -180,11 +180,14 @@ body .demo-blog {
       -ms-flex-order: 0;
           order: 0;
 }
+/*
+em celular fica no topo
 .demo-blog.is-small-screen .demo-blog__posts > .mdl-card.something-else {
   -webkit-order: -1;
       -ms-flex-order: -1;
           order: -1;
 }
+*/
 .demo-blog .mami .mdl-card__media{
   background-image: url('../img/mamiLogo.jpg');
 }
