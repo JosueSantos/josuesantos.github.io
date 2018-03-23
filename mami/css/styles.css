@@ -68,6 +68,11 @@ body .demo-blog {
           align-items: stretch;
   min-height: 360px;
 }
+
+.demo-blog .mdl-card_min_height_60 {
+  min-height: 60px;
+}
+
 .demo-blog .mdl-card__title {
   padding: 16px;
   -webkit-flex-grow: 1;
@@ -180,9 +185,19 @@ body .demo-blog {
       -ms-flex-order: -1;
           order: -1;
 }
-.demo-blog .coffee-pic .mdl-card__media{
+.demo-blog .mami .mdl-card__media{
   background-image: url('../img/mamiLogo.jpg');
 }
+.demo-blog .tutores .mdl-card__media{
+  background-image: url('../img/tutores.jpg');
+}
+.demo-blog .objetivo .mdl-card__media{
+  background-image: url('../img/objetivo.jpg');
+}
+.demo-blog .ementa .mdl-card__media{
+  background-image: url('../img/ementa.jpg');
+}
+
 .demo-blog .something-else .mdl-card__media {
   display: -webkit-flex;
   display: -ms-flexbox;

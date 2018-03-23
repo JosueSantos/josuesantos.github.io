@@ -11,3 +11,4 @@ Currículo online
 ## Trabalhos da UFC 2018.1
 
 MAMI - Matemática Aplicada a Multimídias I
+* /mami
