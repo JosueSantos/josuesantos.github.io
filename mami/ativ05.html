@@ -68,47 +68,55 @@
 					</a>
 				</div>
 				
-				<div class="demo-blog__posts demo-blog__posts04 mdl-grid">
+				<div class="demo-blog__posts demo-blog__posts05 mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-						<div class="mdl-card__media mdl-color-text--grey-800">
-							<h4>MRU Suave</h4>
-						</div>
+						<div class="mdl-card__media mdl-color-text--grey-800"></div>
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h2>Suavisando Movimentos</h2>
+								<h2>O Upgrade do MRU</h2>
 								
 								<p>
-								A atividade de hoje é bem simples. Ela consiste em fazer um programa que rodava a 1FPS rodar a 60FPS mantendo as mesmas características: um circulo de 5px/raio se mover 10px suavemente a cada segundo.
+								Nesta atividade, se utilizando das fórmulas de física, modificarei o algoritmo de lançamento balistico, feito em sala de aula, para simular o quicar de uma bola, cuja velocidade vertical diminui sempre que tocar o chão.
+								</p>
+								<p>
+								A lógica bruta seria: Assim que o objeto lançado tocar o chão (um valor Y predeterminado), o movimento deveria ser "reiniciado", porém com a velocidade um pouco menor.
+								</p>
+								<p>
+								Observando a fórmula percebemos que tudo depende do tempo e para "reiniciar" o movimento precisamos apenas zerar o tempo, sem perder a distancia percorrida (X).
 								</p>
 								
 								<h3>Vamos ao código!</h3>
 								
 								<ul>
-									<li>Primeiro a variável <b>tAtual</b> deve ser do tipo float, pois precisaremos de números fracionados;
-									<li>O <b>frameRate</b> será posto para 60FPS, para termos um movimento mais real. Observariamos os milisegundos no lugar dos segundos.
-									<li>O incremento de <b>tAtual++;</b> deve acompanhar o tempo. Então para leva-lo aos milisegundos basta dividi-lo por 60.
+									<li>Primeiro criei as variáveis necessárias para a execução desta lógica: uma para guardar as velocidades Horizontal e vertical. <b>vInicialH e vInicialV</b> outras para guardar a posição inicial do objeto, ou seja, o chão. <b>xInicial e yInicial</b>;
+									<li>Um detalhe importante: A velocidade vertical é diretamente oposta a aceleração da gravidade;
 									<h5>
 										<code>
-											tAtual += 1/60.0
+											dAtual = MRUV(-vInicialV, aAtual, tAtual);
 										</code>
 									</h5>
-									<li>E um upgrade de tipos de variáveis na função MRU!
+									<li>E por fim, adicionei o <b>IF</b> mágico!
+									<li>Armazena a posição inicial do movimento, <b>X</b>;
+									<li>Diminui as velocidades;
+									<li>E zera o cronometro;
 									<h5>
 										<code>
-											int MRU (int v, float t){<br />
-											___ float d = v * t;<br />
-											___ return( (int) d);<br />
+											if(y >= yInicial){<br />
+											___ xInicial = x;<br />
+											___ vInicialV /= 1.5;<br />
+											___ vInicialH /= 1.2;<br />
+											___ tAtual = 0;<br />
 											}
 										</code>
 									</h5>
 									
 									<center>
-										<img style="width:90%" src="img/mru.gif">
+										<img style="width:90%" src="img/bolinha.gif">
 									</center>
 								</ul>
 								
-								<a href="codigo/UmSegundo/UmSegundo.pde" target="_blank">
+								<a href="codigo/bolinha/bolinha.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
 									</button>
@@ -120,15 +128,15 @@
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="ativ03.html" class="demo-nav__button">
+						<a href="ativ04.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							Atividade 03 - Wassily Kandinsky
+							Atividade 04 - MRU Suave
 						</a>
 						
-						<a href="ativ05.html" class="demo-nav__button" title="Próxima Página">
-							Atividade 05 - A Bolinha
+						<a href="ativ06.html" class="demo-nav__button" title="Próxima Página">
+							Atividade 06 - BRASIL!!
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>

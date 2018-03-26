@@ -252,6 +252,14 @@ em celular fica no topo
   background-image: url('../img/mru.png');
   background-size: 100% 100%;
 }
+.demo-blog .bolinha .mdl-card__media {
+  background-image: url('../img/bolinha.jpg');
+  background-size: 100% 100%;
+}
+.demo-blog .brasil .mdl-card__media {
+  background-image: url('../img/brasil.png');
+  background-size: 100% 100%;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
@@ -269,6 +277,15 @@ em celular fica no topo
 .demo-blog--blogpost .demo-blog__posts04 > .mdl-card .mdl-card__media {
   background-image: url('../img/mru.png');
   height: 400px;
+}
+.demo-blog--blogpost .demo-blog__posts05 > .mdl-card .mdl-card__media {
+  background-image: url('../img/bolinha.jpg');
+  height: 400px;
+}
+.demo-blog--blogpost .demo-blog__posts06 > .mdl-card .mdl-card__media {
+  background-image: url('../img/brasil.png');
+  background-size: 100% 100%;
+  height: 280px;
 }
 
 .demo-blog .demo-blog__posts > .demo-nav {
