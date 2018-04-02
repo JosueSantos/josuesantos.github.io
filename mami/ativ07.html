@@ -68,72 +68,38 @@
 					</a>
 				</div>
 				
-				<div class="demo-blog__posts demo-blog__posts06 mdl-grid">
+				<div class="demo-blog__posts demo-blog__posts07 mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 						<div class="mdl-card__media mdl-color-text--grey-800"></div>
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h2>BRASIL!!</h2>
+								<h3>TouchPad</h3>
 								
 								<p>
-								A missão de hoje é desenhar a bandeira do Brasil de acordo com a Lei Federal Nº 5.700, utilizando e explicando o <b>rectMode e ellipseMode</b>.
+								Para explicar como funciona um touchpad temos que ver a base lógica dessa ferramenta:
 								</p>
 								<p>
-								Para podermos utilizar essas funções precisamos primeiro saber o que são...
-								</p>
-								<h3>rectMode</h3>
-								<p>
-								O RectMode é uma função que modifica a interpretação dos parâmetros da função <b>rect</b>.
+								Primeiramente, não é um touchpad exatamente que vou representar... Esta mais próximo de ser uma mesa digitalizadora, aquelas usadas pelos desenhistas.
 								</p>
 								<p>
-								Podemos passar como parâmetros, as coordenadas do ponto superior esquerdo, juntamente com a largura e a altura respectivamente (<b>CORNER</b>).
+								Usando elas como exemplo, podemos ver que a localização na tela sensível ao toque é a mesma proporcional no cursor no monitor.
 								</p>
 								<p>
-								No lugar de passarmos largura e altura também podemos passar a localização do ponto oposto (<b>CORNERS</b>).
+								Sendo assim, devemos converter a localização inicial para o padrão 0-1, e reconstruir a nova localização com as proporções da tela onde é desejada a projeção.
 								</p>
 								<p>
-								Também podemos passar a localização do centro, juntamente com a largura e a altura (<b>CENTER</b>).
+								No meu código, desenho os dois retângulos na tela, 16:9 e 4:3.
 								</p>
 								<p>
-								E por fim, também informando o centro, podemos dizer a metade da largura e da altura das formas (<b>RADIUS</b>).
-								</p>
-								<h3>ellipseMode</h3>
-								<p>
-								Para o EllipseMode temos exatamente as mesmas possibilidades e com as mesmas funções que o 
-								<b>rectMode</b>. ( <b>CENTER, RADIUS, CORNER e CORNERS</b> )
+								Identificando as extremidades do retângulo 4:3 e comparando com a localização do mouse posso descobrir quando o mouse entra em contato com a janela desejada.
 								</p>
 								<p>
-								Uma atenção apenas para as letras, esses argumentos são constantes e devem serem escritos em CAIXA ALTA!
-								</p>
-								
-								<h3>L.F. 5.700, O que diz?</h3>
-								<p>
-								Para cálculo das dimensões, tomar-se-á por base a altura desejada, dividindo-se esta em 14 partes iguais.<br/>
-								Cada uma das partes será considerada uma medida ou módulo.<br/>
-								A largura será de vinte módulos (20 módulos).<br/>
-								A distância dos vértices do losango amarelo ao quadro externo será de um módulo e sete décimos (1,7 módulo).<br/>
-								O círculo azul no meio do losango amarelo terá o raio de três módulos e meio (3,5 módulos).
+								Realizando as devidas transformações proporcionais podemos encontrar sua localização na janela 16:9.
 								</p>
 								
 								<center>
-									<img style="width:50%" src="img/meme.gif">
-								</center>
-								<br />
-								<p>
-								Isso nada mais é do que regras matemáticas!
-								</p>
-								<p>
-								Apenas escrever em formato computacional e temos o problema resolvido!
-								</p>
-								<p>
-								Para facilitar ainda mais podemos usar as funções <b>rectMode e ellipseMode</b> para facilitar nossas vida, desenhando o retangulo pelo ponto central e o circulo pela metade do diametro, ou seja o raio.
-								</p>
-								
-								<h3>Tudo pronto então!</h3>
-									
-								<center>
-									<img style="width:50%" src="img/brasilPRO.png">
+									<img style="width:50%" src="img/notebook.gif">
 								</center>
 								
 								<a href="codigo/brasil/brasil.pde" target="_blank">
@@ -148,19 +114,20 @@
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="ativ05.html" class="demo-nav__button">
+						<a href="ativ06.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							Atividade 05 - A Bolinha
+							Atividade 06 - BRASIL!!
 						</a>
-						
-						<a href="ativ07.html" class="demo-nav__button" title="Próxima Página">
-							Atividade 07 - TouchPad
+						<!--
+						<a href="ativ03.html" class="demo-nav__button" title="Próxima Página">
+							Atividade 03 - Wassily Kandinsky
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>
 						</a>
+						-->
 					</nav>
 				</div>
 			</main>
