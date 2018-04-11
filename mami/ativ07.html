@@ -58,6 +58,8 @@
 			z-index: 900;
 			}
 		</style>
+		
+		<script src="js/processing-1.3.6.min.js"></script>
 	</head>
 	<body>
 		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
@@ -99,10 +101,11 @@
 								</p>
 								
 								<center>
-									<img style="width:50%" src="img/notebook.gif">
+									<canvas style="width:50%" data-processing-sources="codigo/interpolacao/interpolacao.pde"></canvas>
 								</center>
+								<br />
 								
-								<a href="codigo/brasil/brasil.pde" target="_blank">
+								<a href="codigo/interpolacao/interpolacao.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
 									</button>

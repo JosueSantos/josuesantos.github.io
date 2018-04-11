@@ -2,7 +2,7 @@
 /// Josue dos Santos ///
 
 int bastaoX = 0;
-int bastaoY = 580;
+int bastaoY = 380;
 
 int bolaX;
 int bolaY;
@@ -18,7 +18,7 @@ int vidas = 3;
 float temp = 0;
 
 void setup(){
- size(800, 650);
+ size(800, 450);
  fill(255);
  textSize(30);
  bastaoX = width/2-50;
