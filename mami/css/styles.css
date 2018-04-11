@@ -272,6 +272,10 @@ em celular fica no topo
 .demo-blog .adaptiveLogo .mdl-card__media {
   background-image: url('../img/adaptiveLogoNova.png');
 }
+.demo-blog .breakout .mdl-card__media {
+  background-image: url('../img/breakout.jpg');
+  background-size: 100% 100%;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
@@ -310,6 +314,11 @@ em celular fica no topo
 }
 .demo-blog--blogpost .demo-blog__posts09 > .mdl-card .mdl-card__media {
   background-image: url('../img/adaptiveLogo.jpg');
+  background-size: 100% 100%;
+  height: 400px;
+}
+.demo-blog--blogpost .demo-blog__posts10 > .mdl-card .mdl-card__media {
+  background-image: url('../img/breakout.jpg');
   background-size: 100% 100%;
   height: 400px;
 }

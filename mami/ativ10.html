@@ -58,6 +58,8 @@
 			z-index: 900;
 			}
 		</style>
+		
+		<script src="js/processing-1.3.6.min.js"></script>
 	</head>
 	<body>
 		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
@@ -68,70 +70,131 @@
 					</a>
 				</div>
 				
-				<div class="demo-blog__posts demo-blog__posts09 mdl-grid">
+				<div class="demo-blog__posts demo-blog__posts10 mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 						<div class="mdl-card__media mdl-color-text--grey-800"></div>
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h3><span class="aspa">&ldquo;</span>He logo is dead<span class="aspa">&rdquo;</span></h3>
+								<h3><span class="aspa">&ldquo;</span>Breakout<span class="aspa">&rdquo;</span></h3>
 								<br />
-								<p>
-								Essa é uma afirmação vergonhosamente sensacionalista destinada a atrair sua atenção. Mas com toda a seriedade, o significado tradicional desta palavra - uma marca de marca estável é estável - foi ultrapassada.
-								</p>
+
+<script type="application/processing" data-processing-target="pjs">
+/// MAMI ///
+/// Josue dos Santos ///
+
+int bastaoX = 0;
+int bastaoY = 380;
+
+int bolaX;
+int bolaY;
+int dX = 5;
+int dY = 5;
+
+int count =0;
+boolean iniciarJogo = false;
+
+PImage img;
+int vidas = 3;
+
+float temp = 0;
+
+void setup(){
+ size(800, 450);
+ fill(255);
+ textSize(30);
+ bastaoX = width/2-50;
+ img = loadImage("coracao.gif");
+}
+
+void draw(){
+  background(0);
+  
+  if (keyPressed == true){
+    switch(keyCode){
+      case RIGHT:
+        if(bastaoX < width-100)
+          bastaoX += 7;
+        else
+          bastaoX = width-100;
+        break;
+      case LEFT:
+        if(bastaoX > 0)
+          bastaoX -= 7;
+        else
+          bastaoX = 0;
+        break;
+      case 0:
+        if(iniciarJogo == false)
+          iniciarJogo = true;
+        break;
+    }
+  }
+  
+  if(temp >= 0 && vidas <= 0){
+    vidas = 3;
+    count = 0;
+    iniciarJogo = false;
+  }else{
+    temp ++;
+  }
+  
+  // Interface
+  rect(bastaoX , bastaoY, 100, 20);
+  ellipse(bolaX , bolaY, 20, 20);
+  
+  if(vidas >= 1)
+    image(img, 0, 0, 50, 50);
+  if(vidas >= 2)
+    image(img, 50, 0, 50, 50);
+  if(vidas >= 3)
+    image(img, 100, 0, 50, 50);
+  
+  text(count, 170, 40);
+  
+  //Movimento Bola Altomatico
+  if(temp < 0){
+    String txt = "Game Over";
+    text(txt, width/2 - textWidth(txt)/2, height/2);
+  }else if(iniciarJogo && temp > 0){
+    bolaX += dX;
+    bolaY += dY;
+    
+    if((bolaX >= width-10) || (bolaX <= 10)) // Borda Direita e Esquerda
+      dX = -dX;
+    
+    if(bolaY <= 10) // Borda Superior
+      dY = -dY;
+    
+    if(bolaY >= height-10){ // Borda Inferior
+      vidas --;
+      if(vidas > 0){
+        iniciarJogo = false;
+      }else{
+        temp = -180;
+      }
+    }
+    
+    // Colisão
+    if(((bastaoX < bolaX-10 && bastaoX + 100 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 100 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY)){
+      dY = -dY;
+      count ++;
+    }
+    if(((bastaoX < bolaX-10 && bastaoX + 40 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 40 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY))
+      dX = -dX;
+  }else{
+    bolaX = bastaoX+50;
+    bolaY = bastaoY-10;
+    
+    String txt = "SPACE para iniciar";
+    text(txt, width/2 - textWidth(txt)/2, height/2);
+  }
+}
+</script>
+<canvas id="pjs"> </canvas>
+								<canvas data-processing-sources="codigo/adaptiveLogo/adaptiveLogo.pde"></canvas>
 								
-								<h4>O Museu Whitney</h4>
-								
-								<p>
-								A nova marca do novo logotipo do Whitney Museum, por Experimental Jetset. Em maio deste ano, o The Whitney Museum, uma instituição de Nova York dedicada à arte moderna e contemporânea americana, anunciou que eles haviam substituído o antigo design do logotipo pelo fino zig-zag que você vê acima. Muito chato, parece. O logotipo anterior do museu, um bloco chartreuse de aparência pixelizada da Pentagram.
-								</p>
-								
-								<center>
-									<img style="width:100%" src="img/adaptiveLogoAntiga.jpg">
-								</center>
-								<br />
-								
-								<p>
-								Rapidamente fica claro, no entanto, que o atributo essencial do novo logotipo da Whitney, projetado pela empresa de projetos Experimental Jetset, é que na verdade não é apenas uma marca. Pelo contrário, é “adaptável” - capaz de se estender e se estender em qualquer número de formações para acomodar diferentes textos e adequar-se a diferentes materiais de marca.
-								</p>
-								
-								<center>
-									<img style="width:50%" src="img/adaptiveLogoNova.png">
-								</center>
-								<br />
-								
-								<p>
-								O novo design de logotipo zigue-zague da Whitney pode ter qualquer número de formas, dependendo do contexto. Na verdade, o Whitney é apenas um dos muitos museus de arte que adotaram marcas de marcas mutáveis. 
-								</p>
-								
-								<h4>Adaptive Logo</h4>
-								
-								<p>
-								Isso é adaptive logo! Uma logo que possua vida, que trasmita uma informação visual adaptável sem perder a sua unicidade e autenticidade.
-								</p>
-								
-								<p>
-								Para termos toda essa armonia em adaptações de uma mesma marca, sem que ela perca sua identidade, são nescessarios muita matemática! Quanto mais complexa a logo, mais complexos os cálculos.
-								</p>
-								
-								<p>
-								E quando os cálculos ultrapassação a cognição humana, em tempo hábil, temos que recorrer a programação.
-								</p>
-								
-								
-								<center>
-									<img style="width:50%" src="img/adaptiveLogo.gif">
-								</center>
-								<br />
-								
-								<ul>
-									<li>Para gerar nossa logo, precisei primeiramente do texto;
-									<li>Localizando suas extremidades, coloquei os pontos iniciais das retas;
-									<li>Para os pontos finais deixei variáveis, que são alteradas pelo cursor do mouse;
-									<li>Adicionei uma função para maior interatividade, onde precionando a tecla <b><em>"1"</em></b> o primeiro triângulo altera-se, teclando <b><em>"2"</em></b> o outro triângulo se modifica;
-								</ul>
-								
-								<a href="codigo/adaptiveLogo/adaptiveLogo.pde" target="_blank">
+								<a href="codigo/breakout/breakout.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
 									</button>
@@ -143,19 +206,20 @@
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="ativ08.html" class="demo-nav__button">
+						<a href="ativ09.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
-							Atividade 08 - Pegue o "Mouse"
+							Atividade 09 - Adaptive Logo
 						</a>
-						
-						<a href="ativ10.html" class="demo-nav__button" title="Próxima Página">
-							Atividade 10 - BreakOut
+						<!--
+						<a href="ativ03.html" class="demo-nav__button" title="Próxima Página">
+							Atividade 03 - Wassily Kandinsky
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>
 						</a>
+						-->
 					</nav>
 				</div>
 			</main>
@@ -166,5 +230,6 @@
 		<a href="sumario.html" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">MAMI 2018.1</a>
 		
 		<script src="js/material.min.js"></script>
+		<script data-processing-target="pjs" type="application/processing" src="codigo/adaptiveLogo/adaptiveLogo.js"></script>
 	</body>
 </html>
