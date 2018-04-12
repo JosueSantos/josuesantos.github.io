@@ -22,7 +22,7 @@ void setup(){
  fill(255);
  textSize(30);
  bastaoX = width/2-50;
- img = loadImage("coracao.gif");
+ img = loadImage("codigo/breakout/coracao.gif");
 }
 
 void draw(){
