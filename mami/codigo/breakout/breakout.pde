@@ -1,12 +1,6 @@
 /// MAMI ///
 /// Josue dos Santos ///
 
-import controlP5.*;
-
-ControlP5 gui;
-int horizontal = 0;
-int vertical = 0;
-
 int bastaoX = 0;
 int bastaoY = 380;
 
@@ -24,22 +18,6 @@ int vidas = 3;
 float temp = 0;
 
 void setup(){
-  
-  gui = new ControlP5(this);
-  
-  gui.addSlider("horizontal")
-    .setRange(1, 8)
-    .setValue(horizontal)
-    .setPosition(600, 90)
-    .setSize(130, 20);
-  
-  gui.addSlider("vertical")
-    .setRange(1, 6)
-    .setValue(vertical)
-    .setPosition(600, 130)
-    .setSize(130, 20);
-    
-    
  size(800, 450);
  fill(255);
  textSize(30);
