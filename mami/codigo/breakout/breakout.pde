@@ -2,26 +2,31 @@
 /// Josue dos Santos ///
 
 int bastaoX = 0;
-int bastaoY = 380;
+int bastaoY;
 
 int bolaX;
 int bolaY;
 int dX = 5;
 int dY = 5;
 
-int count =0;
+int count = 0;
 boolean iniciarJogo = false;
 
 PImage img;
-int vidas = 3;
+int vidas;
 
-float temp = 0;
+float temp;
+
+int linhasBlock = 5;
+int colunasBlock = 8;
+int [][] map = new int [(linhasBlock * colunasBlock)][3];
 
 void setup(){
  size(800, 450);
  fill(255);
  textSize(30);
  bastaoX = width/2-50;
+ bastaoY = height - 50;
  img = loadImage("codigo/breakout/coracao.gif");
 }
 
@@ -53,6 +58,10 @@ void draw(){
     vidas = 3;
     count = 0;
     iniciarJogo = false;
+    
+    dX = 5;
+    dY = 5;
+    criarMapa();
   }else{
     temp ++;
   }
@@ -60,6 +69,12 @@ void draw(){
   // Interface
   rect(bastaoX , bastaoY, 100, 20);
   ellipse(bolaX , bolaY, 20, 20);
+  
+  for(int i = 0; i < map.length; i++){
+    if(map[i][2] == 1){
+      rect(map[i][0] , map[i][1], 100, 20);
+    }
+  }
   
   if(vidas >= 1)
     image(img, 0, 0, 50, 50);
@@ -94,17 +109,62 @@ void draw(){
     }
     
     // Colisão
-    if(((bastaoX < bolaX-10 && bastaoX + 100 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 100 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY)){
-      dY = -dY;
-      count ++;
+    colision(bastaoX, bastaoY);
+    
+    int victory = 0;
+    for(int i = 0; i < map.length; i++){
+      if(map[i][2] == 1){
+        victory = 1;
+        if(colision(map[i][0], map[i][1])){
+          count ++;
+          map[i][2] = 0;
+        }
+      }
     }
-    if(((bastaoX < bolaX-10 && bastaoX + 40 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 40 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY))
-      dX = -dX;
+    
+    if(victory == 0){
+      criarMapa();
+      vidas += 1;
+      dX += 3;
+      dY += 2;
+    }
   }else{
     bolaX = bastaoX+50;
     bolaY = bastaoY-10;
     
     String txt = "SPACE para iniciar";
     text(txt, width/2 - textWidth(txt)/2, height/2);
+  }
+}
+
+boolean colision(int x, int y){
+  if (((bastaoX < bolaX-10 && bastaoX + 40 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 40 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY))
+    dX = -dX;
+    
+  if (((x < bolaX-10 && x + 100 > bolaX - 10) || (x < bolaX+10 && x + 100 > bolaX + 10)) && (bolaY-10 < y && bolaY+10 > y)){
+    dY = -dY;
+    return true;
+  }
+  
+  return false;
+}
+
+void criarMapa(){
+  // x, y, bollean(0,1)
+  int xBlock;
+  int yBlock = 50;
+  int countBlock = 0;
+  
+  for(int i = 0; i < linhasBlock; i++){
+    xBlock = 0;
+    for(int j = 0; j < colunasBlock; j++){
+      
+      int [] arr = {xBlock, yBlock, 1};
+      map[countBlock] = arr;
+      
+      xBlock += 100;
+      countBlock ++;
+    }
+    yBlock += 20;
   }
 }
