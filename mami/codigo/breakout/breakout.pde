@@ -85,7 +85,8 @@ void draw(){
   
   for(int i = 0; i < map.length; i++){
     if(map[i][2] == 1){
-      fill(cor[i/8][0], cor[i/8][1], cor[i/8][2]);
+      int xx = i/8;
+      fill(cor[xx][0], cor[xx][1], cor[xx][2]);
       rect(map[i][0] , map[i][1], 100, 20);
     }
   }
