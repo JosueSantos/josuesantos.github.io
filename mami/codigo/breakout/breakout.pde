@@ -83,7 +83,7 @@ void draw(){
   fill(128);
   ellipse(bolaX , bolaY, 10, 10);
   
-  fill(0, 0, 255);
+  fill(0, 255, 0);
   for(int i = 0; i < map.length; i++){
     if(map[i][2] == 1){
       //int xx = i/8;
