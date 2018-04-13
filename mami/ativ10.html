@@ -84,7 +84,7 @@
 								
 								<h3>keyPressed()</h3>
 								<p>
-								A função <b>keyPressed ()</b> é chamada uma vez a cada vez que uma tecla é pressionada. A tecla que foi pressionada é armazenada na variável de chave.
+								A função <b>keyPressed ()</b> é chamada uma vez a cada tecla que é pressionada. A tecla que foi pressionada é armazenada na variável de chave.
 								</p>
 								
 								<h3><span class="aspa">&ldquo;</span>Breakout<span class="aspa">&rdquo;</span></h3>
@@ -92,6 +92,95 @@
 								<br />
 								
 								<canvas style="width:50%" data-processing-sources="codigo/breakout/breakout.pde"></canvas>
+								
+								<br/>
+								
+								<p>
+								Na aula, desenvolvemos toda a mecânica do PONG. Com isso já tinhamos a movimentação da bola e do retângulo.
+								</p>
+								<p>
+								Precisamos agora do cenário!
+								</p>
+								<p>
+								Minha ideia inicial era criar um <em>array</em>, mas observando melhor logo vi que um <b><em>array de array's</em></b> que era a solução desse problema. Um <b><em>Array Multidimensional</em></b> ou <b><em>Matriz</em></b>.
+								</p>
+								<p>
+								No array interno coloquei os valores X, Y e um "boolean"(0 ou 1), para criar os elementos do mapa, com um controlador de existente ou destruído.
+								</p>
+								<p>
+								O array superior é a quantidade de quadrados que existirá na tela (linha X colunas).
+								</p>
+								
+								<h5>
+									<code>
+										int [][] map = new int [(linhasBlock * colunasBlock)][3];
+									</code>
+								</h5>
+								
+								<p>
+								Precisamos agora preencher a matriz, desenhar esses retângulos e depois implementar suas colisões com a bola.
+								</p>
+								
+								<p>
+								Para preencher a variável map, usei um <b><em>FOR</em></b> para as colunas dentro de um <b><em>FOR</em></b> para as linhas, com uma matemática simples para calcular o X e o Y de cada retângulo.
+								</p>
+								
+								<h5>
+									<code>
+										void criarMapa(){<br />
+										// x, y, bollean(0,1)<br />
+										___ int xBlock;<br />
+										___ int yBlock = 50;<br />
+										___ int countBlock = 0;<br />
+										<br />
+										___ for(int i = 0; i < linhasBlock; i++){<br />
+										___ ___ xBlock = 0;<br />
+										___ ___ for(int j = 0; j < colunasBlock; j++){<br />
+										<br />
+										___ ___ ___ int [] arr = {xBlock, yBlock, 1};<br />
+										___ ___ ___ map[countBlock] = arr;<br />
+										<br />
+										___ ___ ___ xBlock += 100;<br />
+										___ ___ ___ countBlock ++;<br />
+										___ ___ }<br />
+										___ ___ yBlock += 20;<br />
+										___ }<br />
+										}<br />
+									</code>
+								</h5>
+								
+								<p>
+								Para desenhar o mapa um loop com <b><em>FOR</em></b> simples, verificando se ele existe ou se já foi destruído.
+								</p>
+								
+								<h5>
+									<code>
+										for(int i = 0; i < map.length; i++){<br />
+										___ if(map[i][2] == 1){<br />
+										___ ___ rect(map[i][0] , map[i][1], 100, 20);<br />
+										___}<br />
+										}<br />
+									</code>
+								</h5>
+								
+								<p>
+								Para implementar as colisões, temos o mesmo loop e verificação se existe, como o usado para desenhar o mapa. Acrescentando apenas outro IF contento a função colision(X, Y). Se houver colisão o jogador ganhará um ponto e o objeto atingido desapareserá.
+								</p>
+								
+								<p>
+								A função de colisão é a mesma usada na aula de PONG.
+								</p>
+								<h5>
+									<code>
+										boolean colision(int x, int y){<br />
+										___ if (bolaX <= x + 100 && bolaX >= x && bolaY <= y + 20 && bolaY >= y){<br />
+										___ ___ dY = -dY;<br />
+										___ ___ return true;<br />
+										___ }<br />
+										___ return false;<br />
+										}<br />
+									</code>
+								</h5>
 								
 								<a href="codigo/breakout/breakout.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
@@ -113,7 +202,7 @@
 						</a>
 						
 						<a href="ativ11.html" class="demo-nav__button" title="Próxima Página">
-							Atividade 11 - Bola Assassina
+							Atividade 11 - Pula Bola
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
 								<i class="material-icons" role="presentation">arrow_forward</i>
 							</button>

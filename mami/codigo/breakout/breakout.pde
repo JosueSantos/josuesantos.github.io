@@ -17,7 +17,18 @@ int vidas;
 
 float temp;
 
-int linhasBlock = 5;
+int [][] cor = {
+  {255, 0, 0},
+  {255, 0, 0},
+  {255, 255, 0},
+  {255, 255, 0},
+  {0, 255, 0},
+  {0, 255, 0},
+  {0, 0, 255},
+  {0, 0, 255},
+};
+
+int linhasBlock = 8;
 int colunasBlock = 8;
 int [][] map = new int [(linhasBlock * colunasBlock)][3];
 
@@ -67,11 +78,14 @@ void draw(){
   }
   
   // Interface
+  fill(255);
   rect(bastaoX , bastaoY, 100, 20);
-  ellipse(bolaX , bolaY, 20, 20);
+  fill(128);
+  ellipse(bolaX , bolaY, 10, 10);
   
   for(int i = 0; i < map.length; i++){
     if(map[i][2] == 1){
+      fill(cor[i/8][0], cor[i/8][1], cor[i/8][2]);
       rect(map[i][0] , map[i][1], 100, 20);
     }
   }
@@ -83,10 +97,12 @@ void draw(){
   if(vidas >= 3)
     image(img, 100, 0, 50, 50);
   
+  fill(255);
   text(count, 170, 40);
   
   //Movimento Bola Altomatico
   if(temp < 0){
+    fill(255);
     String txt = "Game Over";
     text(txt, width/2 - textWidth(txt)/2, height/2);
   }else if(iniciarJogo && temp > 0){
@@ -125,12 +141,12 @@ void draw(){
     if(victory == 0){
       criarMapa();
       vidas += 1;
-      dX += 3;
+      dX += 2;
       dY += 2;
     }
   }else{
     bolaX = bastaoX+50;
-    bolaY = bastaoY-10;
+    bolaY = bastaoY-5;
     
     String txt = "SPACE para iniciar";
     text(txt, width/2 - textWidth(txt)/2, height/2);
@@ -138,10 +154,7 @@ void draw(){
 }
 
 boolean colision(int x, int y){
-  if (((bastaoX < bolaX-10 && bastaoX + 40 > bolaX - 10) || (bastaoX < bolaX+10 && bastaoX + 40 > bolaX + 10)) && (bolaY-10 < bastaoY && bolaY+10 > bastaoY))
-    dX = -dX;
-    
-  if (((x < bolaX-10 && x + 100 > bolaX - 10) || (x < bolaX+10 && x + 100 > bolaX + 10)) && (bolaY-10 < y && bolaY+10 > y)){
+  if (bolaX <= x + 100 && bolaX >= x && bolaY <= y + 20 && bolaY >= y){
     dY = -dY;
     return true;
   }

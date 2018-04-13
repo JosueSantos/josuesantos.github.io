@@ -76,7 +76,7 @@
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h4>Desafio</h4>
+								<h4>Pula Bola</h4>
 								
 								<center>
 									<img style="width:90%" src="img/simulacao.PNG">
@@ -85,6 +85,23 @@
 								<br />
 								
 								<canvas style="width:50%" data-processing-sources="codigo/personagemBola/personagemBola.pde"></canvas>
+								
+								<h4>
+								Simulação de prova
+								</h4>
+								<p>
+								Assim como na prova, me atentei a cronometrar a criação da atividade. Consegui fazer o produto com a funcionalidade em 100% dentro de 1h40min aproximadamente.
+								</p>
+								<ul>
+									<li>Primeiramente, criei as funções básicas. <b>desenhaPersonagem() e desenhaBola()</b>;
+									<li>Utilizando a função <b>line</b> criei o corpo do nosso personagem (por agora só isso que precisamos para representa-lo);
+									<li>Com a variável <b>px</b>, implementei o movimento de esquerda e direita;
+									<li>Após, foi criado uma <b>ellipse</b> com uma movimentação contínua;
+									<li>Para o salto, adicionei um <b>boolean</b> para bloquear as alterações no <b>px</b>, e implementei a somatória do <b>py</b> até um ponto para inverte o sentido do movimento;
+									<li>Logo, uma verificação de colisão simples, para ver se o ponto central do personagem "entra" na bola. Se atingido o personagem retorna as posições iniciais;
+									<li>Por fim, um condicional de vitória e outro de derrota.
+									<li>Agora foi só melhorar o visual do nosso boneco de palitos!
+								</ul>
 								
 								<a href="codigo/personagemBola/personagemBola.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
