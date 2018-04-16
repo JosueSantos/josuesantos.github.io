@@ -281,6 +281,31 @@ em celular fica no topo
   background-size: 100% 100%;
   height: 300px;
 }
+.demo-blog .namethisgame .mdl-card__media {
+  background-image: url('../img/name_this_game.jpg');
+  background-size: 100% 100%;
+  height: 300px;
+}
+.demo-blog .mecanicas .mdl-card__media {
+  background-image: url('../img/namethisgame.jpg');
+  background-size: 100% 100%;
+  height: 350px;
+}
+.demo-blog .atividades .mdl-card__media {
+  background-image: url('../img/atividades.jpg');
+  background-size: 100% 100%;
+  height: 300px;
+}
+.demo-blog .sumario .mdl-card__media {
+  background-image: url('../img/sumario.png');
+  background-size: 100% 100%;
+  height: 300px;
+}
+.demo-blog .modelos .mdl-card__media {
+  background-image: url('../img/modelos.jpg');
+  background-size: 100% 100%;
+  height: 300px;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');

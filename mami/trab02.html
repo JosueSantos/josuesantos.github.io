@@ -1,0 +1,162 @@
+<!doctype html>
+	<!--
+	Material Design Lite
+	Copyright 2015 Google Inc. All rights reserved.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	https://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License
+	-->
+<html lang="br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Blog da Materia MAMI da UFC 2018.1.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>JS.MAMI</title>
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="JS.MAMI">
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+
+		<meta name="msapplication-TileColor" content="#3372DF">
+
+		<link rel="shortcut icon" href="img/favicon.png">
+
+		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+		<!--
+		<link rel="canonical" href="http://www.example.com/">
+		-->
+
+		<link rel="stylesheet" href="css/fonts.googleapis.css">
+		<link rel="stylesheet" href="css/MaterialIcons.css">
+		<link rel="stylesheet" href="css/material.grey-orange.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<style>
+			#view-source {
+			position: fixed;
+			display: block;
+			right: 0;
+			bottom: 0;
+			margin-right: 40px;
+			margin-bottom: 40px;
+			z-index: 900;
+			}
+		</style>
+		
+		<script src="js/processing-1.3.6.min.js"></script>
+	</head>
+	<body>
+		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+			<main class="mdl-layout__content">
+				<div class="demo-back">
+					<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="MAMI" role="button">
+						<i class="material-icons" role="presentation">arrow_back</i>
+					</a>
+				</div>
+				
+				<div class="demo-blog__posts mdl-grid">
+					<div class="mdl-card mecanicas mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+						<div class="mdl-card__media mdl-color-text--grey-50"></div>
+
+						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+							<div class="mdl-cell--12-col">
+								<h4>Name This Game</h4>
+								<h3>Análise das Mecânicas</h3>
+								<ul>
+									<li><b>Mergulhador</b>
+									<ol>
+										<li>Move-se apenas para a direita e para a esquerda, a comando do jogador;
+										<li>Atira seu arpão, que se movimenta na vertical para cima, a comando do jogador;
+										<li>Enquanto o mergulhador tocar na mangueira de oxigênio, sua reserva de ar é reposta;
+									</ol>
+									
+									<li><b>Companheiro da lancha</b>
+									<ol>
+										<li>Move-se continuamente e horizontalmente, acima do mar, quando toca no limite da tela, ele inverte o sentido do movimento (direita / esquerda);
+										<li>Em um certo intervalo de tempo, joga uma mangueira de oxigênio, representada por uma linha vertical reta até a profundidade do mergulhador. A mangueira segue o movimento da lancha;
+									</ol>
+									
+									<li><b>Tubarão</b>
+									<ol>
+										<li>Move-se continuamente em formato de “zig-zag”. Parte inicialmente do canto superior direito e se movimenta para a esquerda. Ao chegar no limite da tela, ele desce equivalente a altura dele, muda a direção do movimento horizontal e volta a entrar em movimento com um aumento na velocidade;
+										<li>A cada encontro com a extremidade da janela, desci, muda-se a direção, aumenta a velocidade. O ciclo continua aumentando progressivamente a velocidade do tubarão;
+										<li>Se for atingido pelo arpão do mergulhador, o tubarão é afugentado (desaparece). Após alguns segundos ele retorna ao canto superior direito, com o reinício do movimento;
+										<li>Quando o tubarão se encontrar com o mergulhador, ele o devora. A partida então reinicia, só que agora com menos ouro no tesouro do fundo do mar.
+									</ol>
+									
+									<li><b>Polvo Gigante</b>
+									<ol>
+										<li>O polvo gigante é um objeto estático na janela. Ocupa um quinto da altura da janela e possui quatro tentáculos fixos;
+										<li>A cada período de tempo determinado, surge um novo tentáculo, só que móvel, a partir da base dos quatro tentáculos fixos ou da base do próprio polvo, até o polvo possuir oito tentáculos;
+										<li>A cada período de tempo determinado, os tentáculos móveis crescem;
+										<li>Os tentáculos se movem em formato de onda, três movimentos para a esquerda depois três movimentos para a direita, com um atraso de um movimento para cada parte do tentáculo;
+										<li>Se a ponta do tentáculo for atingida pelo arpão, o tentáculo retorna para próximo do polvo (desaparece);
+										<li>Se algum tentáculo tocar a área mais inferior do mar, onde o mergulhador está, é lançado uma tinta preta que cobre toda a parte inferior da tela. A partida então reinicia, só que agora com menos ouro no tesouro do fundo do mar.
+									</ol>
+									
+									<li><b>Extras</b>
+									<ol>
+										<li>O ouro do tesouro representa as vidas do jogador, quando não houver mais ouro o jogo acaba; São três vidas no total;
+										<li>Existe uma barra verde, um pouco abaixo do tesouro,ela representa o tempo de jogo, e ele diminui progressivamente pelas duas extremidades;
+										<li>Quando a barra verde chegar ao fim, a velocidade do jogo aumenta, aumentando a velocidade do tubarão e do polvo, e a barra verde aparece novamente preenchendo toda a janela para continuar sua progressão de nível;
+										<li>Existe uma barra laranja grossa abaixo da barra verde, esta representa o oxigênio do mergulhador, e ela diminui progressivamente pelas duas extremidades;
+										<li>Se a barra laranja diminuir o suficiente para desaparecer a partida então reinicia, só que agora com menos ouro no tesouro do fundo do mar;
+										<li>Existe um número dentro da barra laranja, ele representa a pontuação do jogador;
+										<li>Ganha-se 50 pontos por atingir a ponto de um tentáculo;
+										<li>Ganha-se 100 pontos por acertar um tubarão;
+										<li>Ganha-se 10 pontos por receber oxigênio;
+										<li>A abertura do jogo é bem simples, temos a tela do jogo com todos os elementos do game(lancha, polvo, tubarão, mergulhador e tesouro), e ao fundo, no lugar da pontuação aparece o letreiro “COPYRIGHT 1982”, após esse letreiro aparece “U.S. GAMES” e por fim “GAME |”;
+										<li>O jogo se inicia após o jogador atirar um arpão ou mover o mergulhador.
+									</ol>
+								</ul>
+								
+								<center>
+									<iframe style="margin-left:-5px;" height="315" src="https://www.youtube.com/embed/9_yJfuJ2L88" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								</center>
+							</div>
+						</div>
+
+					</div>
+
+					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+						<a href="trab01.html" class="demo-nav__button">
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+								<i class="material-icons">arrow_back</i>
+							</button>
+							Name This Game?
+						</a>
+						
+						<a href="trab03.html" class="demo-nav__button" title="Próxima Página">
+							Modelos
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+								<i class="material-icons" role="presentation">arrow_forward</i>
+							</button>
+						</a>
+					</nav>
+				</div>
+			</main>
+			
+			<div class="mdl-layout__obfuscator"></div>
+		</div>
+		
+		<a href="sumario.html" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">MAMI 2018.1</a>
+		
+		<script src="js/material.min.js"></script>
+	</body>
+</html>

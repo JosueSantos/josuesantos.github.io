@@ -20,13 +20,17 @@ void setup(){
     .setRange(1, 8)
     .setValue(horizontal)
     .setPosition(600, 90)
-    .setSize(130, 20);
+    .setSize(130, 20)
+    .setNumberOfTickMarks(8)
+    .setSliderMode(Slider.FLEXIBLE);
   
   gui.addSlider("vertical")
     .setRange(1, 6)
     .setValue(vertical)
     .setPosition(600, 130)
-    .setSize(130, 20);
+    .setSize(130, 20)
+    .setNumberOfTickMarks(8)
+    .setSliderMode(Slider.FLEXIBLE);
   
   background(100);
 }
