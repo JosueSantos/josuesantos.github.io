@@ -44,28 +44,28 @@ PImage mergulhador01E,
        
 void carregarImagens(){
   imageMode(CENTER);
-  mergulhador01E = loadImage("mergulhador01E.png");
-  mergulhador01D = loadImage("mergulhador01D.png");
+  mergulhador01E = loadImage("codigo/namethisgame/mergulhador01E.png");
+  mergulhador01D = loadImage("codigo/namethisgame/mergulhador01D.png");
   
-  mergulhador02E = loadImage("mergulhador02E.png");
-  mergulhador02D = loadImage("mergulhador02D.png");
+  mergulhador02E = loadImage("codigo/namethisgame/mergulhador02E.png");
+  mergulhador02D = loadImage("codigo/namethisgame/mergulhador02D.png");
   
-  mergulhador03E = loadImage("mergulhador03E.png");
-  mergulhador03D = loadImage("mergulhador03D.png");
+  mergulhador03E = loadImage("codigo/namethisgame/mergulhador03E.png");
+  mergulhador03D = loadImage("codigo/namethisgame/mergulhador03D.png");
   
-  lancha01E = loadImage("lancha01E.png");
-  lancha01D = loadImage("lancha01D.png");
+  lancha01E = loadImage("codigo/namethisgame/lancha01E.png");
+  lancha01D = loadImage("codigo/namethisgame/lancha01D.png");
   
-  lancha02E = loadImage("lancha02E.png");
-  lancha02D = loadImage("lancha02D.png");
+  lancha02E = loadImage("codigo/namethisgame/lancha02E.png");
+  lancha02D = loadImage("codigo/namethisgame/lancha02D.png");
   
-  polvo = loadImage("polvo.png");
+  polvo = loadImage("codigo/namethisgame/polvo.png");
   
-  tuba01E = loadImage("tubarao01E.png");
-  tuba01D = loadImage("tubarao01D.png");
+  tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
+  tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
   
-  tuba02E = loadImage("tubarao02E.png");
-  tuba02D = loadImage("tubarao02D.png");
+  tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
+  tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
 }
 
 void cenario(){
