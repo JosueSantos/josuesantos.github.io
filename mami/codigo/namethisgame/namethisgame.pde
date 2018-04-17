@@ -1,19 +1,25 @@
-int temp = 0, xMergu, xLancha, xTuba, yTuba, vTuba;
-boolean merguDireita = false, lanchaDireita = false, tubaDireita = false;
+int temp = 0, ponto = 0, xMergu, vMergu, xLancha, vLancha, xTuba, yTuba, vTuba, xArpao, yArpao, vArpao;
+boolean merguDireita = false, lanchaDireita = false, tubaDireita = false, tiroArpao = false;
 
 void setup() {
   size(720, 580);
   frameRate(10);
   noStroke();
+  textSize(40);
   
   carregarImagens();
   
   xMergu = width/2;
+  vMergu = 10;
+  
   xLancha = width - 100;
+  vLancha = 10;
   
   xTuba = width - 100;
   vTuba = 8;
   yTuba = height/10 + 27;
+  
+  vArpao = 25;
 }
 
 void draw() {
@@ -22,8 +28,10 @@ void draw() {
   
   cenario();
   lancha();
-  mergulhador();
   tubarao();
+  polvo();
+  mergulhador();
+  atirarArpao();
 }
 
 PImage mergulhador01E,
@@ -40,7 +48,10 @@ PImage mergulhador01E,
        tuba01E,
        tuba01D,
        tuba02E,
-       tuba02D;
+       tuba02D,
+       tesouro1,
+       tesouro2,
+       tesouro3;
        
 void carregarImagens(){
   imageMode(CENTER);
@@ -66,6 +77,10 @@ void carregarImagens(){
   
   tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
   tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
+  
+  tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
+  tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
+  tesouro3 = loadImage("codigo/namethisgame/tesouro03.png");
 }
 
 void cenario(){
@@ -75,7 +90,11 @@ void cenario(){
   fill(35, 228, 235);
   rect(0, height*4/5, width, height/5);
   
-  image(polvo, width/2, 125, 550, 125);
+  image(tesouro3, width/2, height-125, 80, 20);
+  
+  fill(255);
+  float tex = textWidth(ponto+"")/2;
+  text(ponto, width/2 - tex, height-45);
 }
 
 void lancha(){
@@ -102,54 +121,9 @@ void lancha(){
   }
   
   if(lanchaDireita){
-    xLancha += 10;
+    xLancha += vLancha;
   }else{
-    xLancha -= 10;
-  }
-}
-
-void mergulhador(){
-  // arpão
-  if(merguDireita)
-    ellipse(xMergu + 44, 420 - 20, 5, 5);
-  else
-    ellipse(xMergu - 44, 420 - 20, 5, 5);
-  
-  
-  // Mergulhador
-  switch ( temp % 3){
-    case 0:
-      if(merguDireita)
-        image(mergulhador01D, xMergu, 420, 100, 50);
-      else
-        image(mergulhador01E, xMergu, 420, 100, 50);
-      break;
-    case 1:
-      if(merguDireita)
-        image(mergulhador02D, xMergu, 420, 100, 50);
-      else
-        image(mergulhador02E, xMergu, 420, 100, 50);
-      break;
-    case 2:
-      if(merguDireita)
-        image(mergulhador03D, xMergu, 420, 100, 50);
-      else
-        image(mergulhador03E, xMergu, 420, 100, 50);
-      break;
-  }
-  
-  // Movimento Mergulhador
-  if(keyPressed){
-    switch(keyCode){
-      case RIGHT:
-        merguDireita = true;
-        xMergu += 5;
-        break;
-      case LEFT:
-        merguDireita = false;
-        xMergu -= 5;
-        break;
-    }
+    xLancha -= vLancha;
   }
 }
 
@@ -186,9 +160,90 @@ void tubarao(){
     xTuba -= vTuba;
   }
   
-  if(yTuba >= 420){
+  if(xArpao > xTuba - 50 && xArpao < xTuba + 50 && yArpao > yTuba - 25 && yArpao < yTuba + 25){
     xTuba = width - 100;
     vTuba = 8;
     yTuba = height/10 + 27;
+    tubaDireita = false;
+    
+    ponto += 100;
+    
+    xArpao = -50;
+    tiroArpao = false;
   }
+  
+  if(yTuba >= 420){
+    //JogadorMorre
+    xTuba = width - 100;
+    vTuba = 8;
+    yTuba = height/10 + 27;
+    tubaDireita = false;
+  }
+}
+
+void polvo(){
+  image(polvo, width/2, 125, 550, 125);
+}
+
+void mergulhador(){
+  // Mergulhador
+  switch ( temp % 3){
+    case 0:
+      if(merguDireita)
+        image(mergulhador01D, xMergu, 420, 100, 50);
+      else
+        image(mergulhador01E, xMergu, 420, 100, 50);
+      break;
+    case 1:
+      if(merguDireita)
+        image(mergulhador02D, xMergu, 420, 100, 50);
+      else
+        image(mergulhador02E, xMergu, 420, 100, 50);
+      break;
+    case 2:
+      if(merguDireita)
+        image(mergulhador03D, xMergu, 420, 100, 50);
+      else
+        image(mergulhador03E, xMergu, 420, 100, 50);
+      break;
+  }
+  
+  // Movimento Mergulhador
+  if(keyPressed){
+    switch(keyCode){
+      case RIGHT:
+        merguDireita = true;
+        if(xMergu < width - 50)
+          xMergu += vMergu;
+        break;
+      case LEFT:
+        merguDireita = false;
+        if(xMergu > 50)
+          xMergu -= vMergu;
+        break;
+      case 0:
+        // arpão
+        if(!tiroArpao){
+          if(merguDireita)
+            xArpao = xMergu + 44;
+          else
+            xArpao = xMergu - 44;
+          
+          yArpao = 420 - 20;
+          tiroArpao = true;
+        }
+        break;
+    }
+  }
+}
+
+void atirarArpao(){
+  strokeWeight(10);
+  if(tiroArpao){
+    ellipse(xArpao, yArpao, 5, 5);
+    yArpao -= vArpao;
+  }
+  
+  if(yArpao < height/10)
+    tiroArpao = false;
 }

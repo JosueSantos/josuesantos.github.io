@@ -77,39 +77,220 @@
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
 								<h4>Name This Game</h4>
-								<h3>Modelo Matemático e Computacional</h3>
-								<ul>
-									<li><b>Mergulhador</b>
-									<ol>
-										<li>
-									</ol>
-									
-									<li><b>Companheiro da lancha</b>
-									<ol>
-										<li>
-									</ol>
-									
-									<li><b>Tubarão</b>
-									<ol>
-										<li>
-									</ol>
-									
-									<li><b>Polvo Gigante</b>
-									<ol>
-										<li>
-									</ol>
-									
-									<li><b>Extras</b>
-									<ol>
-										<li>
-									</ol>
-								</ul>
-								
-								<br />
+								<h3>Modelos</h3>
 								<center>
 									<canvas style="width:50%" data-processing-sources="codigo/namethisgame/namethisgame.pde"></canvas>
 								</center>
 								<br />
+								<em>*Clique na tela e use SPACE e os direcionais LEFT e RIGHT*</em>
+								<br />
+								<p>
+								Temos acima os protótipos:
+								</p>
+								<ol>
+									<li>Movimento do Mergulhador
+									<li>Tiro de Arpão
+									<li>Movimento da Lancha
+									<li>Movimento do Tubarão
+									<li>Morte do Tubarão
+								</ol>
+								<br />
+								<ul>
+									<li><b>Animação de quadros</b>
+									<ol>
+										<li>Todos os personagens possuem uma animação de alguns quadros. O módulo da variável de tempo representa qual quadro de movimento será exibido.
+										<br />
+										Resto de tempo dividido por número de quadros, resultará no quadro em questão.
+										<h5>
+											<code>
+											quantQuadros = 2;<br />
+											switch (temp%quantQuadros)<br />
+											___ case 0:<br />
+											___ ___ Imagem(01);<br />
+											___ case 1:<br />
+											___ ___ Imagem(02);<br />
+											</code>
+										</h5>
+
+										<li>Um boleando na movimentação dirá se vai para a direita ou para a esquerda;
+									</ol>
+									<li><b>Movimentação</b>
+									<ol>
+										<li>Para mover horizontalmente a cada intervalo de tempo a localização no eixo X irá incrementar o valor da velocidade. Para direita irá somar, para esquerda subtrair;
+										<h5>
+											<code>
+												posiçãoX = posiçãoX + velocidade;<br />
+												if(direção == direita)<br />
+												___ velocidade = +5;<br />
+												else<br />
+												___ velocidade = -5;<br />
+											</code>
+										</h5>
+
+										<li>O mergulhador só se moverá com o clique das respectivas teclas;
+										<li>A lancha, ao sua extremidade tocar a borda da janela o sentido do movimento será trocado;
+										<h5>
+											<code>
+												if(xLancha >= LarguraDaJanela)<br />
+												___ direção = esquerda<br />
+												if(xLancha <= 0)<br />
+												___ direção = direita<br />
+											</code>
+										</h5>
+
+										<li>O Tubarão tem a mesma movimentação da lancha com um acréscimo, quando ele inverte o movimento ele aumenta sua velocidade e desci (soma) um pouco mais no eixo Y;
+										<h5>
+											<code>
+												if(xTubarão  >= LarguraDaJanela)<br />
+												___ direção = esquerda;<br />
+												else if(xTubarão  <= 0)<br />
+												___ direção = direita;<br />
+												<br />
+												velocidadeTubarão  += 5;<br />
+												yTubarão  += 25;<br />
+											</code>
+										</h5>
+
+									</ol>
+									<img src="img/mergulhador01E.png" style="width:30%; padding:15px;">
+									<li><b>Mergulhador</b>
+									<ol>
+										<li>Para atirar o arpão, ao clicar no SPACE será gravado o X do jogador, e o projetio será lançado, a partir da altura do mergulhador até a superfície;
+										<h5>
+											<code>
+												if(SPACE)<br />
+												___ xArpão = xMergulhador;<br />
+												___ atirar = true;<br />
+												___ yArpão = yMergulhador;<br />
+												<br />
+												if(atirar)<br />
+												___ yArpão -= velocidadeArpão;<br />
+												<br />
+												if(yArpão > ySuperficie)<br />
+												___ atirar = false;<br />
+											</code>
+										</h5>
+
+										<li>Caso o jogador toque na mangueira de oxigênio, sua barra de vida aumenta. e Também recebe 10 pontos;
+										<h5>
+											<code>
+												if(xMergulhador + 50 > xMang && xMergulhador - 50 < xMang)<br />
+												___ oxi += 3;<br />
+												___ ponto += 10;<br />
+											</code>
+										</h5>
+
+									</ol>
+									<img src="img/lancha01E.png" style="width:30%; padding:15px;">
+									<li><b>Companheiro da lancha</b>
+									<ol>
+										<li>A cada time “definido como 10 segundos”, cria uma linha com o ponto inicial XLancha e YLancha e como ponto final XLancha e YMergulhador;
+										<h5>
+											<code>
+												if(temp%( 10 segundos * frameRate) == 0)<br />
+												___ line(xLancha, yLancha , xLancha, yMergulhador);<br />
+											</code>
+										</h5>
+
+									</ol>
+									<img src="img/tubarao02E.png" style="width:30%; padding:15px;">
+									<li><b>Tubarão</b>
+									<ol>
+										<li>Se o XArpao e YArpao estiver em contato com o XTubarão e YTubarão, o XTubarão será alterado para XTubarãoInicial e YTubarãoInicial com VelocidadeTubarãoInicial. Acrescentando ainda 100 a variavel Ponto;
+										<h5>
+											<code>
+												if(<br />
+												___ xTubarão  + 50 > xArpao && xTubarão - 50 < xArpao && <br />
+												___ yTubarão + 20 > yArpao && yTubarão - 20 < yArpao <br />
+												)<br />
+												___ xTubarão = xTubarãoInicial<br />
+												___ yTubarão = yTubarãoInicial<br />
+												___ vTubarão = VelocidadeTubarãoInicial<br />
+												___ Ponto	+=100<br />
+												___ atirar = false<br />
+												___ xArpão = 0<br />
+											</code>
+										</h5>
+
+										<li>Quando o yTubarão for igual ao YMergulhador, a imagem do tubarão será alterada para o mergulhador sendo devorado e o mergulhador irá desaparecer. Após o tubarão se retirar da tela, a quantidade do tesouro irá diminuir e o mergulhador irá reaparecer;
+										<h5>
+											<code>
+												if(YTubarão = YMergulhador)<br />
+												___ imagemTubarão = TubarãoEMergulhador<br />
+												___ mergulhadorVivo = false<br />
+												<br />
+												if(XTubarão  >= LarguraDaJanela || XTubarão <= 0)<br />
+												___ tesouro -= 1<br />
+												___ mergulhadorVivo = true<br />
+											</code>
+										</h5>
+
+									</ol>
+									<img src="img/polvo.png" style="width:80%; padding:15px;">
+									<li><b>Polvo Gigante</b>
+									<ol>
+										<li>A cada tempo definido pela variável velocidadePovo surge um novo tentáculo, em um local aleatorio. O máximo de tentáculos é 8;
+										<h5>
+											<code>
+												if(temp%( velocidadePovo  segundos * frameRate) == 0 && quantTentaculos < 8)<br />
+												___ int localX = random(min, max);<br />
+												___ quantTentaculos += 1;<br />
+												___ mapTentaculos[quantTentaculos*10] = {<br />
+												___ ___ localX , yTentaculo, líder , rastro<br />
+												___ };<br />
+											</code>
+										</h5>
+										A variável booleana líder é uma flag que mostra a ponta do tentáculo (0 ou 1);<br />
+										yTentaculo representa a base no polvo gigante;<br />
+										10 é o tamanho do tentáculo até o fundo do mar;<br />
+										A variável rastro mostra o último movimento do tentáculo, a ser repetido posteriormente por seus “filhos”;<br /><br />
+
+										<li>A cada ciclo nasce mais um bloco ao tentáculo;
+										<h5>
+											<code>
+												if(temp%( velocidadePovo  segundos * frameRate) == 0 && quantTentaculos > 0)<br />
+												___ for(int i = 0; i < mapTentaculos.length; i += 10)<br />
+												___ ___ for(int j = 0; j < 10; j ++)<br />
+												___ ___ ___ if( mapTentaculos[i+j] [0] < 0)<br />
+												___ ___ ___ ___ ___ mapTentaculos[quantTentaculos*10] = { <br />
+												___ ___ ___ ___ ___ ___ mapTentaculos[i+j -1] [0] , <br />
+												___ ___ ___ ___ ___ ___ yTentaculo, <br />
+												___ ___ ___ ___ ___ ___ 0, <br />
+												___ ___ ___ ___ ___ ___ mapTentaculos[i+j -1] [3] <br />
+												___ ___ ___ ___ ___ };<br />
+											</code>
+										</h5>
+
+										<li>A movimentação dos tentáculos é em formato de onda. Onde o tentaculo filho acompanha o movimento do seu pai;
+										<h5>
+											<code>
+												if(mapTentaculos[ i ][ 2 ] == 1)<br />
+												___ mapTentaculos[ i ][ 3 ] = rastro( mapTentaculos[ i ][ 3 ] + 1);<br />
+												else<br />
+												___ mapTentaculos[ i ][ 3 ] = rastro(mapTentaculos[ i  - 1 ][ 3 ] - 1);<br />
+											</code>
+										</h5>
+										O movimento anterior é passado para o anterior antes que o “primogênito” seja atualizado.<br /><br />
+
+										<li>se a ponta do tentáculo for atingida pelo arpão.
+										<h5>
+											<code>
+												for(int i = 0; i < mapTentaculos.length; i += 10)<br />
+												___ if(<br />
+												___ ___ mapTentaculos[ i ][ 2 ] == 1 && <br />
+												___ ___ mapTentaculos[ i ][ 0 ] + 5 > XArpao && <br />
+												___ ___ mapTentaculos[ i ][ 0 ]- 5 < XArpao && <br />
+												___ ___ YTmapTentaculos[ i ][ 1 ] + 5 > YArpao && <br />
+												___ ___ YTmapTentaculos[ i ][ 1 ] - 5 < YArpao<br />
+												___ )<br />
+											</code>
+										</h5>
+
+									</ol>
+								</ul>
+								
+								<br />
+								
 								<a href="codigo/namethisgame/namethisgame.pde" target="_blank">
 									<button class="mdl-button mdl-js-button">
 										Código da Atividade
