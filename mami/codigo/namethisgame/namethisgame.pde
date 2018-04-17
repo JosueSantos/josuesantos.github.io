@@ -28,8 +28,8 @@ void draw() {
   
   cenario();
   lancha();
-  //tubarao();
-  //polvo();
+  tubarao();
+  polvo();
   //mergulhador();
   //atirarArpao();
 }
@@ -43,13 +43,12 @@ void draw() {
 PImage       lancha01E,
        lancha01D,
        lancha02E,
-       lancha02D;
-       //,
-       //polvo,
-       //tuba01E,
-       //tuba01D,
-       //tuba02E,
-       //tuba02D,
+       lancha02D,
+       polvo,
+       tuba01E,
+       tuba01D,
+       tuba02E,
+       tuba02D;//,
        //tesouro1,
        //tesouro2,
        //tesouro3;
@@ -71,13 +70,13 @@ void carregarImagens(){
   lancha02E = loadImage("codigo/namethisgame/lancha02E.png");
   lancha02D = loadImage("codigo/namethisgame/lancha02D.png");
   
-  //polvo = loadImage("codigo/namethisgame/polvo.png");
+  polvo = loadImage("codigo/namethisgame/polvo.png");
   
-  //tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
-  //tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
+  tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
+  tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
   
-  //tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
-  //tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
+  tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
+  tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
   
   //tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
   //tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
@@ -127,7 +126,7 @@ void lancha(){
     xLancha -= vLancha;
   }
 }
-/*
+
 void tubarao(){
   // tubarao
   switch ( temp % 2){
@@ -160,7 +159,7 @@ void tubarao(){
   }else{
     xTuba -= vTuba;
   }
-  
+  /*
   if(xArpao > xTuba - 50 && xArpao < xTuba + 50 && yArpao > yTuba - 25 && yArpao < yTuba + 25){
     xTuba = width - 100;
     vTuba = 8;
@@ -172,7 +171,7 @@ void tubarao(){
     xArpao = -50;
     tiroArpao = false;
   }
-  
+  */
   if(yTuba >= 420){
     //JogadorMorre
     xTuba = width - 100;
@@ -185,7 +184,7 @@ void tubarao(){
 void polvo(){
   image(polvo, width/2, 125, 550, 125);
 }
-
+/*
 void mergulhador(){
   // Mergulhador
   switch ( temp % 3){
