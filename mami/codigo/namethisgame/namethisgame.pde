@@ -28,9 +28,9 @@ void draw() {
   
   cenario();
   lancha();
-  tubarao();
-  polvo();
-  mergulhador();
+  //tubarao();
+  //polvo();
+  //mergulhador();
   //atirarArpao();
 }
 
