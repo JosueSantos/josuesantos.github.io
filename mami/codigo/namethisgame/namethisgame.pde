@@ -236,7 +236,7 @@ void mergulhador(){
     }
   }
 }
-
+/*
 void atirarArpao(){
   if(tiroArpao){
     ellipse(xArpao, yArpao, 5, 5);
@@ -246,3 +246,4 @@ void atirarArpao(){
   if(yArpao < height/10)
     tiroArpao = false;
 }
+*/
