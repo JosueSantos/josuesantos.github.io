@@ -31,7 +31,7 @@ void draw() {
   tubarao();
   polvo();
   mergulhador();
-  atirarArpao();
+  //atirarArpao();
 }
 
 PImage mergulhador01E,
@@ -221,6 +221,7 @@ void mergulhador(){
         if(xMergu > 50)
           xMergu -= vMergu;
         break;
+        /*
       case 0:
         // arpão
         if(!tiroArpao){
@@ -233,6 +234,7 @@ void mergulhador(){
           tiroArpao = true;
         }
         break;
+        */
     }
   }
 }
