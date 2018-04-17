@@ -126,7 +126,7 @@ void lancha(){
     xLancha -= vLancha;
   }
 }
-
+/*
 void tubarao(){
   // tubarao
   switch ( temp % 2){
