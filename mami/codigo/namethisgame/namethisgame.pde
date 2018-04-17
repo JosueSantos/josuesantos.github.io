@@ -34,35 +34,36 @@ void draw() {
   //atirarArpao();
 }
 
-PImage mergulhador01E,
-       mergulhador01D,
-       mergulhador02E,
-       mergulhador02D,
-       mergulhador03E,
-       mergulhador03D,
-       lancha01E,
+//PImage mergulhador01E,
+//       mergulhador01D,
+//       mergulhador02E,
+//       mergulhador02D,
+//       mergulhador03E,
+//       mergulhador03D,
+PImage       lancha01E,
        lancha01D,
        lancha02E,
-       lancha02D,
-       polvo,
-       tuba01E,
-       tuba01D,
-       tuba02E,
-       tuba02D,
-       tesouro1,
-       tesouro2,
-       tesouro3;
+       lancha02D;
+       //,
+       //polvo,
+       //tuba01E,
+       //tuba01D,
+       //tuba02E,
+       //tuba02D,
+       //tesouro1,
+       //tesouro2,
+       //tesouro3;
        
 void carregarImagens(){
   imageMode(CENTER);
-  mergulhador01E = loadImage("codigo/namethisgame/mergulhador01E.png");
-  mergulhador01D = loadImage("codigo/namethisgame/mergulhador01D.png");
+  //mergulhador01E = loadImage("codigo/namethisgame/mergulhador01E.png");
+  //mergulhador01D = loadImage("codigo/namethisgame/mergulhador01D.png");
   
-  mergulhador02E = loadImage("codigo/namethisgame/mergulhador02E.png");
-  mergulhador02D = loadImage("codigo/namethisgame/mergulhador02D.png");
+  //mergulhador02E = loadImage("codigo/namethisgame/mergulhador02E.png");
+  //mergulhador02D = loadImage("codigo/namethisgame/mergulhador02D.png");
   
-  mergulhador03E = loadImage("codigo/namethisgame/mergulhador03E.png");
-  mergulhador03D = loadImage("codigo/namethisgame/mergulhador03D.png");
+  //mergulhador03E = loadImage("codigo/namethisgame/mergulhador03E.png");
+  //mergulhador03D = loadImage("codigo/namethisgame/mergulhador03D.png");
   
   lancha01E = loadImage("codigo/namethisgame/lancha01E.png");
   lancha01D = loadImage("codigo/namethisgame/lancha01D.png");
@@ -70,13 +71,13 @@ void carregarImagens(){
   lancha02E = loadImage("codigo/namethisgame/lancha02E.png");
   lancha02D = loadImage("codigo/namethisgame/lancha02D.png");
   
-  polvo = loadImage("codigo/namethisgame/polvo.png");
+  //polvo = loadImage("codigo/namethisgame/polvo.png");
   
-  tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
-  tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
+  //tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
+  //tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
   
-  tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
-  tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
+  //tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
+  //tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
   
   //tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
   //tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
@@ -221,7 +222,6 @@ void mergulhador(){
         if(xMergu > 50)
           xMergu -= vMergu;
         break;
-        /*
       case 0:
         // arpão
         if(!tiroArpao){
@@ -234,7 +234,6 @@ void mergulhador(){
           tiroArpao = true;
         }
         break;
-        */
     }
   }
 }
