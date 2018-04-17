@@ -238,7 +238,6 @@ void mergulhador(){
 }
 
 void atirarArpao(){
-  strokeWeight(10);
   if(tiroArpao){
     ellipse(xArpao, yArpao, 5, 5);
     yArpao -= vArpao;
