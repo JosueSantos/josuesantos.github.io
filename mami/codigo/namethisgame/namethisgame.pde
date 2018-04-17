@@ -78,9 +78,9 @@ void carregarImagens(){
   tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
   tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
   
-  tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
-  tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
-  tesouro3 = loadImage("codigo/namethisgame/tesouro03.png");
+  //tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
+  //tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
+  //tesouro3 = loadImage("codigo/namethisgame/tesouro03.png");
 }
 
 void cenario(){
@@ -90,7 +90,7 @@ void cenario(){
   fill(35, 228, 235);
   rect(0, height*4/5, width, height/5);
   
-  image(tesouro3, width/2, height-125, 80, 20);
+  //image(tesouro3, width/2, height-125, 80, 20);
   
   fill(255);
   float tex = textWidth(ponto+"")/2;
