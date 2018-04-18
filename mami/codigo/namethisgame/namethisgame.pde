@@ -1,5 +1,5 @@
-// MAMI
-// Josue
+//MAMI
+//Josué
 int temp = 0, ponto = 0, xMergu, vMergu, xLancha, vLancha, xTuba, yTuba, vTuba, xArpao, yArpao, vArpao;
 boolean merguDireita = false, lanchaDireita = false, tubaDireita = false, tiroArpao = false;
 

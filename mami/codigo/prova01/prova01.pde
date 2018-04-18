@@ -41,5 +41,4 @@ void keyPressed(){
       cuboKoffka(x, y);
       break;
   }
-  println(TOP);
 }
