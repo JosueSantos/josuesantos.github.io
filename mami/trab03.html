@@ -241,6 +241,16 @@
 									<li><b>Tubarão</b>
 									<ol>
 										<li>Se o XArpao e YArpao estiver em contato com o XTubarão e YTubarão, o XTubarão será alterado para XTubarãoInicial e YTubarãoInicial com VelocidadeTubarãoInicial. Acrescentando ainda 100 a variavel Ponto;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										( eixoXTubarão + larguraTubarão/2 ) > eixoXArpão<br />
+										and<br />
+										( eixoXTubarão - larguraTubarão/2 ) < eixoXArpão<br />
+										and<br />
+										( eixoYTubarão + alturaTubarão/2 ) > eixoYArpão<br />
+										and<br />
+										( eixoYTubarão - alturaTubarão/2 ) < eixoYArpão<br />
+										</p>
 										<h5>
 											<code>
 												if(<br />
@@ -257,9 +267,15 @@
 										</h5>
 
 										<li>Quando o yTubarão for igual ao YMergulhador, a imagem do tubarão será alterada para o mergulhador sendo devorado e o mergulhador irá desaparecer. Após o tubarão se retirar da tela, a quantidade do tesouro irá diminuir e o mergulhador irá reaparecer;
+										<img src="img/tubamerguE.png" style="width:20%; padding:5px;float:right">
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										eixoYTubarão == eixoYMergulhador
+										</p>
+										
 										<h5>
 											<code>
-												if(YTubarão = YMergulhador)<br />
+												if(YTubarão == YMergulhador)<br />
 												___ imagemTubarão = TubarãoEMergulhador<br />
 												___ mergulhadorVivo = false<br />
 												<br />
@@ -274,6 +290,12 @@
 									<li><b>Polvo Gigante</b>
 									<ol>
 										<li>A cada tempo definido pela variável velocidadePovo surge um novo tentáculo, em um local aleatorio. O máximo de tentáculos é 8;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										Resto( tempo / VelocidadeEmSegundos * frameRate ) == 0<br />
+										and<br />
+										quantTentaculos < 8<br />
+										</p>
 										<h5>
 											<code>
 												if(temp%( velocidadePovo  segundos * frameRate) == 0 && quantTentaculos < 8)<br />
@@ -290,6 +312,13 @@
 										A variável rastro mostra o último movimento do tentáculo, a ser repetido posteriormente por seus “filhos”;<br /><br />
 
 										<li>A cada ciclo nasce mais um bloco ao tentáculo;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										Se(Resto( tempo / VelocidadeEmSegundos * frameRate ) == 0<br />
+										and<br />
+										quantTentaculos > 0)<br /><br />
+										Function addTentaculo()<br />
+										</p>
 										<h5>
 											<code>
 												if(temp%( velocidadePovo  segundos * frameRate) == 0 && quantTentaculos > 0)<br />
@@ -306,6 +335,11 @@
 										</h5>
 
 										<li>A movimentação dos tentáculos é em formato de onda. Onde o tentaculo filho acompanha o movimento do seu pai;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										MovimentoPai = +1;<br />
+										MovimentoFilho = MovimentoPai -1;
+										</p>
 										<h5>
 											<code>
 												if(mapTentaculos[ i ][ 2 ] == 1)<br />
@@ -317,6 +351,18 @@
 										O movimento anterior é passado para o anterior antes que o “primogênito” seja atualizado.<br /><br />
 
 										<li>se a ponta do tentáculo for atingida pelo arpão.
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										( eixoXTentaculo + larguraTentaculo/2 ) > eixoXArpão<br />
+										and<br />
+										( eixoXTentaculo - larguraTentaculo/2 ) < eixoXArpão<br />
+										and<br />
+										( eixoYTentaculo + alturaTentaculo/2 ) > eixoYArpão<br />
+										and<br />
+										( eixoYTentaculo - alturaTentaculo/2 ) < eixoYArpão<br />
+										and<br />
+										tentaculoLider == true<br />
+										</p>
 										<h5>
 											<code>
 												for(int i = 0; i < mapTentaculos.length; i += 10)<br />
