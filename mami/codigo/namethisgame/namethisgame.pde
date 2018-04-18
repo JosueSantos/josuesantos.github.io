@@ -29,7 +29,7 @@ void draw() {
   cenario();
   lancha();
   tubarao();
-  polvo();
+  polvoGigante();
   mergulhador();
   atirarArpao();
 }
@@ -55,6 +55,7 @@ PImage mergulhador01E,
        
 void carregarImagens(){
   imageMode(CENTER);
+  
   mergulhador01E = loadImage("codigo/namethisgame/mergulhador01E.png");
   mergulhador01D = loadImage("codigo/namethisgame/mergulhador01D.png");
   
@@ -181,7 +182,7 @@ void tubarao(){
   }
 }
 
-void polvo(){
+void polvoGigante(){
   image(polvo, width/2, 125, 550, 125);
 }
 
