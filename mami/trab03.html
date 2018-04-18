@@ -80,10 +80,11 @@
 								<h3>Modelos</h3>
 								<center>
 									<canvas style="width:80%" data-processing-sources="codigo/namethisgame/namethisgame.pde"></canvas>
+									<br/>
+									<b>Protótipo Geral Interativo</b>
+									<br />
+									<em>*Clique na janela do jogo e use SPACE para atirar e RIGHT e LEFT para se mover*</em>
 								</center>
-								<p>
-								<em>*Clique na janela do jogo e use SPACE para atirar e RIGHT e LEFT para se mover*</em>
-								</p>
 								<br />
 								<p>
 								Temos acima os protótipos:
@@ -96,12 +97,21 @@
 									<li>Morte do Tubarão
 								</ol>
 								<br />
+								<center>
+									<img style="width:30%" src="img/lancha.gif" />
+									<img style="width:30%" src="img/tubarao.gif" />
+									<img style="width:30%" src="img/mergulhador.gif" />
+								</center>
 								<ul>
 									<li><b>Animação de quadros</b>
 									<ol>
 										<li>Todos os personagens possuem uma animação de alguns quadros. O módulo da variável de tempo representa qual quadro de movimento será exibido.
 										<br />
 										Resto de tempo dividido por número de quadros, resultará no quadro em questão.
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										Resto(tempo/quantQuadros) = quadroAtual
+										</p>
 										<h5>
 											<code>
 											quantQuadros = 2;<br />
@@ -114,10 +124,18 @@
 										</h5>
 
 										<li>Um boleando na movimentação dirá se vai para a direita ou para a esquerda;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										DiraçãoDireita = true/false;
+										</p>
 									</ol>
 									<li><b>Movimentação</b>
 									<ol>
 										<li>Para mover horizontalmente a cada intervalo de tempo a localização no eixo X irá incrementar o valor da velocidade. Para direita irá somar, para esquerda subtrair;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										eixoX = eixoX + velocidade
+										</p>
 										<h5>
 											<code>
 												posiçãoX = posiçãoX + velocidade;<br />
@@ -130,6 +148,11 @@
 
 										<li>O mergulhador só se moverá com o clique das respectivas teclas;
 										<li>A lancha, ao sua extremidade tocar a borda da janela o sentido do movimento será trocado;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										eixoX >= larguraMaximaDaJanela;<br />
+										eixoX <= larguraMinimaDaJanela;
+										</p>
 										<h5>
 											<code>
 												if(xLancha >= LarguraDaJanela)<br />
@@ -140,6 +163,11 @@
 										</h5>
 
 										<li>O Tubarão tem a mesma movimentação da lancha com um acréscimo, quando ele inverte o movimento ele aumenta sua velocidade e desci (soma) um pouco mais no eixo Y;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										velocidade = velocidade + nivelDificuldade;<br />
+										eixoY = eixoY + alturaTubarao/2;
+										</p>
 										<h5>
 											<code>
 												if(xTubarão  >= LarguraDaJanela)<br />
@@ -157,6 +185,11 @@
 									<li><b>Mergulhador</b>
 									<ol>
 										<li>Para atirar o arpão, ao clicar no SPACE será gravado o X do jogador, e o projetio será lançado, a partir da altura do mergulhador até a superfície;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										eixoYArpao = eixoXMergulhador;<br />
+										eixoY = eixoY - velocidadeArpão;
+										</p>
 										<h5>
 											<code>
 												if(SPACE)<br />
@@ -173,6 +206,12 @@
 										</h5>
 
 										<li>Caso o jogador toque na mangueira de oxigênio, sua barra de vida aumenta. e Também recebe 10 pontos;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										( eixoXMergulhador + larguraMergulhador/2 ) > eixoXMangueira<br />
+										and<br />
+										( eixoXMergulhador - larguraMergulhador/2 ) < eixoXMangueira<br />
+										</p>
 										<h5>
 											<code>
 												if(xMergulhador + 50 > xMang && xMergulhador - 50 < xMang)<br />
@@ -186,6 +225,10 @@
 									<li><b>Companheiro da lancha</b>
 									<ol>
 										<li>A cada time “definido como 10 segundos”, cria uma linha com o ponto inicial XLancha e YLancha e como ponto final XLancha e YMergulhador;
+										<br />
+										<p style="background: lightblue; width:50%; padding: 1%">
+										Resto( tempo / Segundos * frameRate ) == 0
+										</p>
 										<h5>
 											<code>
 												if(temp%( 10 segundos * frameRate) == 0)<br />
