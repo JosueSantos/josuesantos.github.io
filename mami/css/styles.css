@@ -310,6 +310,10 @@ em celular fica no topo
   background-image: url('../img/cuboKoffka.png');
   height: 300px;
 }
+.demo-blog .joystick .mdl-card__media {
+  background-image: url('../img/joystick.jpg');
+  height: 300px;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');

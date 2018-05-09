@@ -60,6 +60,587 @@
 		</style>
 		
 		<script src="js/processing-1.3.6.min.js"></script>
+		<script type="text/processing" data-processing-target="processing-canvas">
+// MAMI
+// Josué
+
+void setup() {
+  size(720, 580);
+  frameRate(10);
+  noStroke();
+  textSize(40);
+  carregarImagens();
+  
+  xMergu = width/2;
+  yMergu = height * 8/11;
+  vMergu = 20;
+  
+  xLancha = width - 100;
+  yLancha = height/10 - 13;
+  vLancha = 15;
+  
+  xTuba = width - 100;
+  yTuba = height/10 + 27;
+  addVTuba = 8;
+  vTuba = addVTuba;
+  
+  vidas = 3;
+  vArpao = 30;
+  tempWichMag = 80;
+  
+  widthBarra = width * 0.95;
+  oxigenio = 100;
+  dificuldade = 100;
+  inicioJogo = true;
+}
+
+void draw() {
+  background(0, 0, 255);
+  
+  controlador();
+  
+  cenario();
+  lancha();
+  tubarao();
+  polvoGigante();
+  mergulhador();
+  atirarArpao();
+  tintaPolvoFundo();
+}
+
+void atirarArpao(){
+  if(tiroArpao){
+    
+    fill(255);
+    ellipse(xArpao, yArpao, 5, 5);
+    yArpao -= vArpao;
+    
+    if(yArpao < height/10)
+      tiroArpao = false;
+  }
+}
+
+//Variáveis de Controle
+PImage tesouro1, tesouro2, tesouro3;
+int temp = 0, tempAnim = 0, ponto = 0, vidas, recorde = 0;
+float widthBarra, oxigenio, dificuldade;
+boolean inicioJogo = false;
+String txt;
+
+//Variáveis Mergulhador
+PImage mergulhador01E, mergulhador01D, mergulhador02E, mergulhador02D, mergulhador03E, mergulhador03D;
+int xMergu, yMergu, vMergu;
+boolean merguDireita = false;
+
+//Variáveis Arpão
+int xArpao, yArpao, vArpao;
+boolean tiroArpao = false;
+
+//Variáveis Lancha
+PImage lancha01E, lancha01D, lancha02E, lancha02D;
+int xLancha, yLancha, vLancha;
+boolean lanchaDireita = false;
+
+//Variáveis Mangueira
+int xMag, yMag, tempMag = 0, tempWichMag;
+boolean magLanch = false;
+
+//Variáveis Tubarão
+PImage tuba01E, tuba01D, tuba02E, tuba02D, tubaMerguD, tubaMerguE;
+int xTuba, yTuba, vTuba, addVTuba;
+boolean tubaDireita = false, tubaWins = false;
+
+//Variáveis Polvo
+PImage polvo;
+       
+void carregarImagens(){
+  imageMode(CENTER);
+  
+  mergulhador01E = loadImage("codigo/namethisgame/mergulhador01E.png");
+  mergulhador01D = loadImage("codigo/namethisgame/mergulhador01D.png");
+  
+  mergulhador02E = loadImage("codigo/namethisgame/mergulhador02E.png");
+  mergulhador02D = loadImage("codigo/namethisgame/mergulhador02D.png");
+  
+  mergulhador03E = loadImage("codigo/namethisgame/mergulhador03E.png");
+  mergulhador03D = loadImage("codigo/namethisgame/mergulhador03D.png");
+  
+  lancha01E = loadImage("codigo/namethisgame/lancha01E.png");
+  lancha01D = loadImage("codigo/namethisgame/lancha01D.png");
+  
+  lancha02E = loadImage("codigo/namethisgame/lancha02E.png");
+  lancha02D = loadImage("codigo/namethisgame/lancha02D.png");
+  
+  polvo = loadImage("codigo/namethisgame/polvo.png");
+  
+  tuba01E = loadImage("codigo/namethisgame/tubarao01E.png");
+  tuba01D = loadImage("codigo/namethisgame/tubarao01D.png");
+  
+  tuba02E = loadImage("codigo/namethisgame/tubarao02E.png");
+  tuba02D = loadImage("codigo/namethisgame/tubarao02D.png");
+  
+  tubaMerguE = loadImage("codigo/namethisgame/tubamerguE.png");
+  tubaMerguD = loadImage("codigo/namethisgame/tubamerguD.png");
+  
+  tesouro1 = loadImage("codigo/namethisgame/tesouro01.png");
+  tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
+  tesouro3 = loadImage("codigo/namethisgame/tesouro03.png");
+  
+}
+
+void cenario(){
+  //Céu
+  fill(255, 236, 79);
+  rect(0, 0, width, height/10);
+  
+  //Polvo Gigante
+  image(polvo, width/2, height*2/9, 550, 125);
+  
+  //Fundo do Mar
+  fill(35, 228, 235);
+  rect(0, height * 4/5, width, height/5);
+  
+  switch (vidas){
+    case 3:
+      image(tesouro3, width/2, height-125, 80, 20);
+      break;
+    case 2:
+      image(tesouro2, width/2, height-125, 80, 20);
+      break;
+    case 1:
+      image(tesouro1, width/2, height-125, 80, 20);
+      break;
+  }
+  
+  float barraDif = widthBarra * dificuldade/100;
+  fill(0, 225, 42);
+  rect(width/2 - barraDif / 2, 471, barraDif, 15);
+  
+  if(oxigenio > 0){
+    float barraOxi = widthBarra * oxigenio/100;
+    fill(239, 195, 42);
+    rect(width/2 - barraOxi / 2, height * 11/13 , barraOxi, 50);
+  }else{
+    if((oxigenio < -1 && oxigenio > -1.5) || (oxigenio < -2.5 && oxigenio > -3)){
+      fill(239, 195, 42);
+      rect(width/2 - widthBarra / 2, height * 11/13 , widthBarra, 50);
+    }else if(oxigenio < -4){
+      morteMergulhador();
+      oxigenio = 100;
+    }
+  }
+  
+  //Letreiro
+  fill(255);
+  textSize(40);
+  text(txt, width/2 - textWidth(txt) / 2, height * 11/12);
+  
+  textSize(20);
+  text("Recorde : " + recorde, width/15, height - 5);
+}
+
+void tintaPolvoFundo(){
+  fill(0);
+  rect(0, height * 8/12, width, (height/7) * tintaPolvo);
+}
+
+void controlador(){
+  if(vidas > 0 && !inicioJogo && !tubaWins && !toqueFundo){
+    oxigenio -= 0.2;
+    dificuldade -= 0.05;
+    
+    if(oxigenio > 100){
+      oxigenio = 100;
+    }
+    
+    if(dificuldade <= 0){
+      addVTuba += 5;
+      tempWichMag += 5;
+      
+      oxigenio = 100;
+      dificuldade = 100;
+    }
+  }
+  
+  //Letreiros Iniciais e START GAME
+  if(inicioJogo && vidas > 0){
+    tempAnim ++;
+    
+    
+    if(tempAnim < 20)
+      txt = "COPYRIGHT 1982";
+    else if(tempAnim < 40)
+      txt = "U.S. GAMES";
+    else{
+      txt = "GAME |";
+      if(keyPressed){
+        tempAnim = 0;
+        inicioJogo = false;
+      }
+    }
+  }else{
+    temp ++;
+  }
+  
+  if(!inicioJogo){
+    txt = ponto+"";
+    //Letreiro Game Over
+    if(vidas <= 0){
+      txt = "GAME OVER";
+      temp = -40;
+      inicioJogo = true;
+      oxigenio = 100;
+      dificuldade = 100;
+    }
+  }
+  
+  //Reiniciar Jogo
+  if(inicioJogo && temp > 0){
+    xMergu = width/2;
+    yMergu = height * 8/11;
+    vidas = 3;
+    ponto = 0;
+    
+    addVTuba = 8;
+    tempWichMag = 80;
+  }
+  
+  if(recorde < ponto) recorde = ponto;
+}
+
+void lancha(){
+  // Lancha
+  switch ( (temp + tempAnim) % 2){
+    case 0:
+      if(lanchaDireita)
+        image(lancha01D, xLancha, yLancha, 100, 50);
+      else
+        image(lancha01E, xLancha, yLancha, 100, 50);
+      break;
+    case 1:
+    case -1:
+      if(lanchaDireita)
+        image(lancha02D, xLancha, yLancha, 100, 50);
+      else
+        image(lancha02E, xLancha, yLancha, 100, 50);
+      break;
+  }
+  
+  if(xLancha >= width - 50){
+    lanchaDireita = false;
+  }else if(xLancha <= 50){
+    lanchaDireita = true;
+  }
+  
+  if(lanchaDireita){
+    xLancha += vLancha;
+  }else{
+    xLancha -= vLancha;
+  }
+  
+  if(tempMag > 100){
+    tempMag = 0;
+    magLanch = false;
+  }else if(tempMag > tempWichMag){
+    magLanch = true;
+    rect(xLancha, yLancha + 15, 3, yMergu - yLancha);
+  }
+  
+  if(!inicioJogo && vidas > 0){
+    tempMag ++;
+  }else{
+    tempMag = 0;
+  }
+}
+
+void mergulhador(){
+  if(vidas > 0 && !inicioJogo && !tubaWins && !toqueFundo){
+    // Mergulhador
+    switch ( temp % 3){
+      case 0:
+        if(merguDireita)
+          image(mergulhador01D, xMergu, yMergu, 100, 50);
+        else
+          image(mergulhador01E, xMergu, yMergu, 100, 50);
+        break;
+      case 1:
+        if(merguDireita)
+          image(mergulhador02D, xMergu, yMergu, 100, 50);
+        else
+          image(mergulhador02E, xMergu, yMergu, 100, 50);
+        break;
+      case 2:
+        if(merguDireita)
+          image(mergulhador03D, xMergu, yMergu, 100, 50);
+        else
+          image(mergulhador03E, xMergu, yMergu, 100, 50);
+        break;
+    }
+    
+    // Movimento Mergulhador
+    if(keyPressed){
+      switch(keyCode){
+        case RIGHT:
+          merguDireita = true;
+          if(xMergu < width - 50)
+            xMergu += vMergu;
+          break;
+        case LEFT:
+          merguDireita = false;
+          if(xMergu > 50)
+            xMergu -= vMergu;
+          break;
+        case 0:
+          // arpão
+          if(!tiroArpao){
+            if(merguDireita)
+              xArpao = xMergu + 44;
+            else
+              xArpao = xMergu - 44;
+            
+            yArpao = yMergu - 20;
+            tiroArpao = true;
+          }
+          break;
+      }
+    }
+    
+    if(xLancha > xMergu - 50 && xLancha < xMergu + 50 && magLanch){
+      oxigenio += 2;
+      ponto += 10;
+    }
+  }else if(inicioJogo){
+    switch ( (temp + tempAnim) % 3){
+      case 0:
+        image(mergulhador01E, xMergu, yMergu, 100, 50);
+        break;
+      case 1:
+      case -1:
+        image(mergulhador02E, xMergu, yMergu, 100, 50);
+        break;
+      case 2:
+      case -2:
+        image(mergulhador03E, xMergu, yMergu, 100, 50);
+        break;
+    }
+  }
+}
+
+void morteMergulhador(){
+  oxigenio = 100;
+  vidas -= 1;
+  
+  xMergu = width/2;
+  yMergu = height * 8/11;
+  
+  tubaWins = false;
+  tubaReinicio();
+  reiniciarPolvo();
+}
+
+int quantTentaculos = 8, tamanhoTentaculos = 12, primeiroT;
+float tintaPolvo = 0;
+boolean toqueFundo = false;
+int[] initPosiPolvo = { 100, 154, 244, 316, 406, 460, 550, 604};
+int[][] tentaculos = new int[tamanhoTentaculos * quantTentaculos][5];
+// -- tentaculos[][ x, y, movimento, vivo, lider ]
+
+void polvoGigante(){
+  if(!inicioJogo && vidas > 0){
+    if(temp % 8 == 0){
+      criarNovo();
+    }
+    
+    if(temp % 6 == 0){
+      for(int i = 0; i < quantTentaculos; i++){
+        primeiroT = i * tamanhoTentaculos;
+        
+        if(tentaculos[ primeiroT ][3] == 1){
+          int movimento = (int) random(1,4);
+          
+          if(tentaculos[ primeiroT ][0] < initPosiPolvo[0]) movimento = 1;
+          if(tentaculos[ primeiroT ][0] > initPosiPolvo[7]) movimento = 3;
+          
+          if(tentaculos[ primeiroT + 1 ][3] == 1){
+            tentaculos[ primeiroT + 1 ][2] = tentaculos[ primeiroT ][2];
+          }
+          tentaculos[ primeiroT ][2] = movimento;
+          
+          for(int j = 0; j < tamanhoTentaculos; j++){
+            int x = j + primeiroT;
+            
+            if(tentaculos[x][3] == 1){
+              int mov;
+              switch(tentaculos[primeiroT][2]){
+                case 1:
+                  mov = 18;
+                  break;
+                case 2:
+                  mov = 0;
+                  break;
+                default:
+                  mov = -18;
+                  break;
+              }
+              
+              tentaculos[x][0] += mov;
+              tentaculos[x][1] = height * 2/9 + 49 + 18*j;
+            }
+          }
+        }
+      }
+      println();
+    }
+    
+    fill(0);
+    for(int i = 0; i < tamanhoTentaculos * quantTentaculos; i++){
+      if(tentaculos[i][3] == 1){
+        rect(tentaculos[i][0], tentaculos[i][1], 17,17);
+      }
+    }
+    
+    if (toqueFundo){
+      tintaPolvo += 0.05;
+      
+      if (tintaPolvo >= 1){
+        morteMergulhador();
+        toqueFundo = false;
+      }
+    }
+    
+    for(int i = 0; i < quantTentaculos; i++){
+        primeiroT = i * tamanhoTentaculos;
+        for(int j = 0; j < tamanhoTentaculos; j++){
+          int x = j + primeiroT;
+          
+          if((tentaculos[x][4] == 1) && (xArpao >= tentaculos[x][0] && xArpao < tentaculos[x][0] + 17 && yArpao > tentaculos[x][1] -17 && yArpao < tentaculos[x][1] + 17)){
+            morteTentaculo(i);
+          }
+        }
+    }
+  }
+}
+
+void criarNovo(){
+  int novoTentaculo = (int) random(0, quantTentaculos);
+  int primeiroT = novoTentaculo * tamanhoTentaculos;
+  
+  for(int j = 0; j < tamanhoTentaculos; j++){
+    int x = j + primeiroT;
+    
+    if(tentaculos[x][3] != 1){
+      tentaculos[x][3] = 1;
+      
+      if(x == primeiroT){
+        tentaculos[x][0] = initPosiPolvo[ novoTentaculo ];
+        tentaculos[x][1] = height * 2/9 + 49 + 18*j;
+        tentaculos[x][4] = 1;
+      }else{
+        tentaculos[x][0] = tentaculos[x-1][0];
+        tentaculos[x][1] = height * 2/9 + 49 + 18*j;
+        tentaculos[x-1][4] = 0;
+        tentaculos[x][4] = 1;
+        
+        if(j == tamanhoTentaculos - 1)
+          toqueFundo = true;
+      }
+      break;
+    }
+  }
+}
+
+void reiniciarPolvo(){
+  for(int i = 0; i < tamanhoTentaculos * quantTentaculos; i++){
+    tentaculos[i][3] = 0;
+    tentaculos[i][4] = 0;
+  }
+  tintaPolvo = 0;
+}
+
+void morteTentaculo(int i){
+  int primeiro = i * tamanhoTentaculos;
+  for(int j = 0; j < tamanhoTentaculos; j++){
+    int x = j + primeiro;
+    
+    tentaculos[x][3] = 0;
+    tentaculos[x][4] = 0;
+  }
+  ponto += 50;
+  xArpao = -50;
+  tiroArpao = false;
+}
+
+void tubarao(){
+  // tubarao
+  if(tubaWins){
+    if(tubaDireita)
+      image(tubaMerguD, xTuba, yTuba, 110, 90);
+    else
+      image(tubaMerguE, xTuba, yTuba, 110, 90);
+  }else{
+    switch ( (temp + tempAnim) % 2){
+      case 0:
+        if(tubaDireita)
+          image(tuba01D, xTuba, yTuba, 100, 50);
+        else
+          image(tuba01E, xTuba, yTuba, 100, 50);
+        break;
+      case 1:
+      case -1:
+        if(tubaDireita)
+          image(tuba02D, xTuba, yTuba, 100, 50);
+        else
+          image(tuba02E, xTuba, yTuba, 100, 50);
+        break;
+    }
+  }
+  
+  if(xTuba >= width - 50){
+    tubaDireita = false;
+    if(!inicioJogo){
+      yTuba += 25;
+      vTuba += addVTuba;
+    }
+    if(tubaWins)
+      morteMergulhador();
+      
+  }else if(xTuba <= 50){
+    tubaDireita = true;
+    if(!inicioJogo){
+      yTuba += 25;
+      vTuba += addVTuba;
+    }
+    if(tubaWins)
+      morteMergulhador();
+  }
+  
+  if(tubaDireita){
+    xTuba += vTuba;
+  }else{
+    xTuba -= vTuba;
+  }
+  
+  if(xArpao > xTuba - 50 && xArpao < xTuba + 50 && yArpao > yTuba - 25 && yArpao < yTuba + 25){
+    tubaReinicio();
+    
+    ponto += 100;
+    
+    xArpao = -50;
+    tiroArpao = false;
+  }
+  
+  if(yTuba >= yMergu - 25){
+    tubaWins = true;
+  }
+}
+
+void tubaReinicio(){
+  xTuba = width - 100;
+  vTuba = 8;
+  yTuba = height/10 + 27;
+  tubaDireita = false;
+}
+		</script>
 	</head>
 	<body>
 		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
@@ -71,58 +652,36 @@
 				</div>
 				
 				<div class="demo-blog__posts mdl-grid">
-					<div class="mdl-card modelos mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+					<div class="mdl-card mecanicas mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 						<div class="mdl-card__media mdl-color-text--grey-50"></div>
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h4>Name This Game</h4>
+								<h4>Name This Game - v.0.0</h4>
 								
 								<center>
-									<canvas style="width:80%" data-processing-sources="codigo/namethisgame2/namethisgame2.pde codigo/namethisgame2/tubarao.pde codigo/namethisgame2/lancha.pde codigo/namethisgame2/cenario.pde codigo/namethisgame2/carregarImagens.pde codigo/namethisgame2/atirarArpao.pde codigo/namethisgame2/mergulhador.pde codigo/namethisgame2/polvoGigante.pde"></canvas>
+									<canvas style="width:80%" id="processing-canvas"></canvas>
 									<br/>
-									<b>Protótipo Geral Interativo</b>
+									<b>Protótipo Geral Interativo *Sem Som*</b>
 									<br />
 									<em>*Clique na janela do jogo e use SPACE para atirar e RIGHT e LEFT para se mover*</em>
 								</center>
+								</br></br>
+								<p>O som da faz uma grande diferença na jogatina então...</p>
+								<p>Donwload do executável da primeira versão do jogo <b>Game This Game</b> com som.</p>
+								<a href="codigo/namethisgame2/NameThisGame.v.0-32.rar" target="_blank">
+									<button class="mdl-button mdl-js-button">
+										Donwload .Exe em 32bt
+									</button>
+								</a>
 								
-								<audio id="introducao"> <source src="codigo/namethisgame2/data/introducao.mp3" type="audio/mp3"> </audio>
-								<audio id="tubarao"> <source src="codigo/namethisgame2/data/tubaraomorto.mp3" type="audio/mp3"> </audio>
-								<audio id="nivel"> <source src="codigo/namethisgame2/data/nivel.mp3" type="audio/mp3"> </audio>
-								<audio id="tentaculo"> <source src="codigo/namethisgame2/data/tentaculo.mp3" type="audio/mp3"> </audio>
-								<audio id="oxi"> <source src="codigo/namethisgame2/data/oxigenio.mp3" type="audio/mp3"> </audio>
-								<audio id="faltaOxi"> <source src="codigo/namethisgame2/data/faltaoxigenio.mp3" type="audio/mp3"> </audio>
-								<audio id="tiro"> <source src="codigo/namethisgame2/data/tiro.mp3" type="audio/mp3"> </audio>
-								<audio id="gameOver"> <source src="codigo/namethisgame2/data/gameover.mp3" type="audio/mp3"> </audio>
-								
-								<script type="text/javascript">
-									var introducao = document.getElementById("introducao"); 
-									function playSoundIntro() introducao.play();
-									
-									var tubarao = document.getElementById("tubarao"); 
-									function playSoundTubarao() tubarao.play();
-									
-									var nivel = document.getElementById("nivel"); 
-									function playSoundNivel() nivel.play();
-									
-									var tentaculo = document.getElementById("tentaculo"); 
-									function playSoundTentaculo() tentaculo.play();
-									
-									var oxi = document.getElementById("oxi"); 
-									function playSoundOxi() oxi.play();
-									
-									var faltaOxi = document.getElementById("faltaOxi"); 
-									function playSoundFaltaOxi() faltaOxi.play();
-									
-									var tiro = document.getElementById("tiro"); 
-									function playSoundTiro() tiro.play();
-									
-									var gameOver = document.getElementById("gameOver"); 
-									function playSoundGameover() gameOver.play();
-								</script>
+								<a href="codigo/namethisgame2/NameThisGame.v.0-64.rar" target="_blank">
+									<button class="mdl-button mdl-js-button">
+										Donwload .Exe em 64bt
+									</button>
+								</a>
 							</div>
 						</div>
-
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
