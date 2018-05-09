@@ -1,6 +1,21 @@
 import processing.sound.*;
 SoundFile intro, gameover, nivel, oxi, tent, tiro, tubarao, faltaoxi;
 
+interface JavaScript {
+  void playSoundIntro();
+  void playSoundTubarao();
+  void playSoundNivel();
+  void playSoundTentaculo();
+  void playSoundOxi();
+  void playSoundFaltaOxi();
+  void playSoundTiro();
+  void playSoundGameover();
+}
+void bindJavascript(JavaScript js) {
+  javascript = js;
+}
+JavaScript javascript;
+
 //Variáveis de Controle
 PImage tesouro1, tesouro2, tesouro3;
 int temp = 0, tempAnim = 0, ponto = 0, vidas, recorde = 0;
@@ -67,12 +82,14 @@ void carregarImagens(){
   tesouro2 = loadImage("codigo/namethisgame/tesouro02.png");
   tesouro3 = loadImage("codigo/namethisgame/tesouro03.png");
   
-  intro = new SoundFile(this, "introducao.mp3");
-  tiro = new SoundFile(this, "tiro.mp3");
-  oxi = new SoundFile(this, "oxigenio.mp3");
-  tubarao = new SoundFile(this, "tubaraomorto.mp3");
-  tent = new SoundFile(this, "tentaculo.mp3");
-  gameover = new SoundFile(this, "gameover.mp3");
-  nivel = new SoundFile(this, "nivel.mp3");
-  faltaoxi = new SoundFile(this, "faltaoxigenio.mp3");
+  if(javascript == null) {
+    intro = new SoundFile(this, "introducao.mp3");
+    tiro = new SoundFile(this, "tiro.mp3");
+    oxi = new SoundFile(this, "oxigenio.mp3");
+    tubarao = new SoundFile(this, "tubaraomorto.mp3");
+    tent = new SoundFile(this, "tentaculo.mp3");
+    gameover = new SoundFile(this, "gameover.mp3");
+    nivel = new SoundFile(this, "nivel.mp3");
+    faltaoxi = new SoundFile(this, "faltaoxigenio.mp3");
+  }
 }

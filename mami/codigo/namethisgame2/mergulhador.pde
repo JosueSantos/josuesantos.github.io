@@ -51,8 +51,12 @@ void mergulhador(){
     }
     
     if(xLancha > xMergu - 50 && xLancha < xMergu + 50 && magLanch){
-      oxi.play();
-      oxi.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundOxi();
+      }else{
+        oxi.play();
+        oxi.amp(0.25);
+      }
       oxigenio += 2;
       ponto += 10;
     }

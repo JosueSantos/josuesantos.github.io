@@ -49,8 +49,12 @@ void tubarao(){
   }
   
   if(xArpao > xTuba - 50 && xArpao < xTuba + 50 && yArpao > yTuba - 25 && yArpao < yTuba + 25){
-    tubarao.play();
-    tubarao.amp(0.25);
+    if(javascript != null) {
+      javascript.playSoundTubarao();
+    }else{
+      tubarao.play();
+      tubarao.amp(0.25);
+    }
     
     tubaReinicio();
     
@@ -62,8 +66,12 @@ void tubarao(){
   
   if(yTuba >= yMergu - 25){
     tubaWins = true;
-    faltaoxi.play();
-    faltaoxi.amp(0.25);
+    if(javascript != null) {
+      javascript.playSoundFaltaOxi();
+    }else{
+      faltaoxi.play();
+      faltaoxi.amp(0.25);
+    }
   }
 }
 

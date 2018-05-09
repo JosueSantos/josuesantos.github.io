@@ -8,8 +8,12 @@ void controlador(){
     }
     
     if(dificuldade <= 0){
-      nivel.play();
-      nivel.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundNivel();
+      }else{
+        nivel.play();
+        nivel.amp(0.25);
+      }
       
       addVTuba += 5;
       tempWichMag += 5;
@@ -24,8 +28,12 @@ void controlador(){
     tempAnim ++;
     
     if(tempAnim == 1){
-      intro.play();
-      intro.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundIntro();
+      }else{
+        intro.play();
+        intro.amp(0.25);
+      }
     }
     
     if(tempAnim < 20)
@@ -47,8 +55,12 @@ void controlador(){
     txt = ponto+"";
     //Letreiro Game Over
     if(vidas <= 0){
-      gameover.play();
-      gameover.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundGameover();
+      }else{
+        gameover.play();
+        gameover.amp(0.25);
+      }
       txt = "GAME OVER";
       temp = -40;
       inicioJogo = true;
@@ -67,10 +79,6 @@ void controlador(){
     addVTuba = 8;
     tempWichMag = 80;
   }
-  
-  
-  //println("v: ",tamanhoTentaculos * quantTentaculos);
-  //println("- - -");
   
   if(recorde < ponto) recorde = ponto;
 }

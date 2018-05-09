@@ -85,6 +85,41 @@
 									<br />
 									<em>*Clique na janela do jogo e use SPACE para atirar e RIGHT e LEFT para se mover*</em>
 								</center>
+								
+								<audio id="introducao"> <source src="codigo/namethisgame2/data/introducao.mp3" type="audio/mp3"> </audio>
+								<audio id="tubarao"> <source src="codigo/namethisgame2/data/tubaraomorto.mp3" type="audio/mp3"> </audio>
+								<audio id="nivel"> <source src="codigo/namethisgame2/data/nivel.mp3" type="audio/mp3"> </audio>
+								<audio id="tentaculo"> <source src="codigo/namethisgame2/data/tentaculo.mp3" type="audio/mp3"> </audio>
+								<audio id="oxi"> <source src="codigo/namethisgame2/data/oxigenio.mp3" type="audio/mp3"> </audio>
+								<audio id="faltaOxi"> <source src="codigo/namethisgame2/data/faltaoxigenio.mp3" type="audio/mp3"> </audio>
+								<audio id="tiro"> <source src="codigo/namethisgame2/data/tiro.mp3" type="audio/mp3"> </audio>
+								<audio id="gameOver"> <source src="codigo/namethisgame2/data/gameover.mp3" type="audio/mp3"> </audio>
+								
+								<script type="text/javascript">
+									var introducao = document.getElementById("introducao"); 
+									function playSoundIntro() introducao.play();
+									
+									var tubarao = document.getElementById("tubarao"); 
+									function playSoundTubarao() tubarao.play();
+									
+									var nivel = document.getElementById("nivel"); 
+									function playSoundNivel() nivel.play();
+									
+									var tentaculo = document.getElementById("tentaculo"); 
+									function playSoundTentaculo() tentaculo.play();
+									
+									var oxi = document.getElementById("oxi"); 
+									function playSoundOxi() oxi.play();
+									
+									var faltaOxi = document.getElementById("faltaOxi"); 
+									function playSoundFaltaOxi() faltaOxi.play();
+									
+									var tiro = document.getElementById("tiro"); 
+									function playSoundTiro() tiro.play();
+									
+									var gameOver = document.getElementById("gameOver"); 
+									function playSoundGameover() gameOver.play();
+								</script>
 							</div>
 						</div>
 

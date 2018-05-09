@@ -60,8 +60,12 @@ void polvoGigante(){
     }
     
     if (toqueFundo){
-      faltaoxi.play();
-      faltaoxi.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundFaltaOxi();
+      }else{
+        faltaoxi.play();
+        faltaoxi.amp(0.25);
+      }
       tintaPolvo += 0.05;
       
       if (tintaPolvo >= 1){
@@ -76,8 +80,12 @@ void polvoGigante(){
           int x = j + primeiroT;
           
           if((tentaculos[x][4] == 1) && (xArpao >= tentaculos[x][0] && xArpao < tentaculos[x][0] + 17 && yArpao > tentaculos[x][1] -17 && yArpao < tentaculos[x][1] + 17)){
-            tent.play();
-            tent.amp(0.25);
+            if(javascript != null) {
+              javascript.playSoundTentaculo();
+            }else{
+              tent.play();
+              tent.amp(0.25);
+            }
             morteTentaculo(i);
           }
         }

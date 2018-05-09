@@ -32,8 +32,12 @@ void cenario(){
     rect(width/2 - barraOxi / 2, height * 11/13 , barraOxi, 50);
   }else{
     if((oxigenio < -1 && oxigenio > -1.5) || (oxigenio < -2.5 && oxigenio > -3)){
-      faltaoxi.play();
-      faltaoxi.amp(0.25);
+      if(javascript != null) {
+        javascript.playSoundFaltaOxi();
+      }else{
+        faltaoxi.play();
+        faltaoxi.amp(0.25);
+      }
       fill(239, 195, 42);
       rect(width/2 - widthBarra / 2, height * 11/13 , widthBarra, 50);
     }else if(oxigenio < -4){
