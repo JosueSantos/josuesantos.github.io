@@ -2,8 +2,8 @@ int quantTentaculos = 8, tamanhoTentaculos = 12, primeiroT;
 float tintaPolvo = 0;
 boolean toqueFundo = false;
 int[] initPosiPolvo = { 100, 154, 244, 316, 406, 460, 550, 604};
-int[][] tentaculos = new int[tamanhoTentaculos * quantTentaculos][5];
-// -- tentaculos[][ x, y, movimento, vivo, lider ]
+int[][] tentaculos = new int[tamanhoTentaculos * quantTentaculos][6];
+// -- tentaculos[][ x, y, movimento, vivo, lider, movimentoAnterior ]
 
 void polvoGigante(){
   if(!inicioJogo && vidas > 0){
@@ -16,34 +16,33 @@ void polvoGigante(){
         primeiroT = i * tamanhoTentaculos;
         
         if(tentaculos[ primeiroT ][3] == 1){
-          int movimento = (int) random(1,4);
+          int movimento = (int) random(1,5);
           
           if(tentaculos[ primeiroT ][0] < initPosiPolvo[0]) movimento = 1;
           if(tentaculos[ primeiroT ][0] > initPosiPolvo[7]) movimento = 3;
           
-          if(tentaculos[ primeiroT + 1 ][3] == 1){
-            tentaculos[ primeiroT + 1 ][2] = tentaculos[ primeiroT ][2];
+          tentaculos[ primeiroT ][2] = tentaculos[ primeiroT ][0];
+          switch(movimento){
+                case 1:
+                case 2:
+                  tentaculos[ primeiroT ][0] += 18;
+                  break;
+                default:
+                  tentaculos[ primeiroT ][0] += -18;
+                  break;
           }
-          tentaculos[ primeiroT ][2] = movimento;
           
           for(int j = 0; j < tamanhoTentaculos; j++){
             int x = j + primeiroT;
             
             if(tentaculos[x][3] == 1){
-              int mov;
-              switch(tentaculos[primeiroT][2]){
-                case 1:
-                  mov = 18;
-                  break;
-                case 2:
-                  mov = 0;
-                  break;
-                default:
-                  mov = -18;
-                  break;
+              if(j < tamanhoTentaculos - 1){
+                if(tentaculos[ x + 1 ][3] == 1){
+                  tentaculos[ x + 1 ][2] = tentaculos[ x + 1 ][0];
+                  tentaculos[ x + 1 ][0] = tentaculos[ x ][2];
+                }
               }
               
-              tentaculos[x][0] += mov;
               tentaculos[x][1] = height * 2/9 + 49 + 18*j;
             }
           }
