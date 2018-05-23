@@ -315,6 +315,16 @@ em celular fica no topo
   background-size: 100% 100%;
   height: 300px;
 }
+.demo-blog .einstein .mdl-card__media {
+  background-image: url('../img/einstein.jpg');
+  background-size: 100% 100%;
+  height: 300px;
+}
+.demo-blog .diagramarosa .mdl-card__media {
+  background-image: url('../img/diagramarosa.jpg');
+  background-size: 100% 100%;
+  height: 300px;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
