@@ -76,16 +76,90 @@
 
 						<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
 							<div class="mdl-cell--12-col">
-								<h4>Desvio Padrão</h4>
+								<h4>O que estamos procurando?</h4>
 								<br />
 								
+								<h5>Média</h5>
+								<p>
+								É definida como o valor que mostra para onde se concentram os dados de uma distribuição como um ponto de equilíbrio, obtemos esse valor somando um conjunto de dados e dividindo pela quantidade de dados desse conjunto.
+								</p>
+
+								<h5>Desvio Padrão</h5>
+								<p>
+								É um parâmetro muito usado em estatística que indica o grau de variação de um conjunto de elementos, calculado pela raiz quadrada da variância.
+								</p>
 								
+								
+								<h4>Originais</h4>
+								<center>
+									<img src="img/einstein.jpg" style="width:40%; padding:15px;">
+									<img src="img/cinza.jpg" style="width:40%; padding:15px;">
+								</center>
+								<h5>Einstein</h5>
+								<p>Média dos Tons : 28.610287</p>
+								<p>Desvio Padrão : 63.014275</p>
+								<h5>Cinza</h5>
+								<p>Média dos Tons : 29.0</p>
+								<p>Desvio Padrão : 0.0</p>
+								<br />
+								
+								<p>
+								Observamos que a Média de tons é muito semelhante nas images originais. Pois na imagem de einstein, os tons escuros e claros se anulam, devido a diferença entre eles e, na cinza, por ser uma cor sólida, sua média também será.
+								</p>
+								<p>
+								O Desvio padrão no einstein original é muito mais alto que no cinza, pois a imagem cinza é uma cor sólida e não possui variação nos tons.
+								</p>
+								
+								<h4>Variação de Brilho</h4>
+								<center>
+									<img src="img/einsteinBrilho.jpg" style="width:40%; padding:15px;">
+									<img src="img/cinzaBrilho.jpg" style="width:40%; padding:15px;">
+								</center>
+
+								<h5>Einstein</h5>
+								<p>Média dos Tons : 44.215454</p>
+								<p>Desvio Padrão : 88.59057</p>
+								<h5>Cinza</h5>
+								<p>Média dos Tons : 75.27182</p>
+								<p>Desvio Padrão : 0.27217177</p>
+								<br />
+								
+								<p>
+								Quando se altera o brilho da imagem, ela tem seus tons clareados, por isso, a Média de tons aumenta nas duas imagens. Em Einstein.jpg, como os tons escuros não sofreram muita variação (diferente dos claros, pois o brilho foi aumentado), o Desvio padrão também aumentou.  Já em cinza.jpg, mesmo com o aumento do brilho, continua sendo uma cor sólida, então a variação em seu Desvio padrão é desprezível.
+								</p>
+								
+								<h4>Variação de Contraste</h4>
+								<center>
+									<img src="img/einsteinContraste.jpg" style="width:40%; padding:15px;">
+									<img src="img/cinzaContraste.jpg" style="width:40%; padding:15px;">
+								</center>
+								<h5>Einstein</h5>
+								<p>Média dos Tons : 28.906214</p>
+								<p>Desvio Padrão : 68.808975</p>
+								<h5>Cinza</h5>
+								<p>Média dos Tons : 12.0</p>
+								<p>Desvio Padrão : 0.0</p>
+								<br />
+								
+								<p>
+								Por ultimo, alterando o contraste, percebe-se que em Einstein, a Média de tons quase não se alterou, assim como o Desvio padrão . Isso se dá pois a imagem já sofria com um grande contraste. Como o contraste apenas deixa os tons escuros mais escuros e os claros mais claros, quase nada mudou nessa imagem.
+								</p>
+								<p>
+								Porém, na cinza, ela escureceu bastante e sua Média de tons diminuiu. Como é uma cor sólida, seu Desvio padrão permaneceu inalterado.
+								</p>
+								
+								<br/>
+								<a href="codigo/einstein/einstein.pde" target="_blank">
+									<button class="mdl-button mdl-js-button">
+										Código da Atividade
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>
 
 					<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-						<a href="ativ11.html" class="demo-nav__button">
+						<a href="ativ12.html" class="demo-nav__button">
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
 								<i class="material-icons">arrow_back</i>
 							</button>
