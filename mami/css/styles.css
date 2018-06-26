@@ -345,6 +345,18 @@ em celular fica no topo
   background-image: url('../img/video.jfif');
   height: 280px;
 }
+.demo-blog .velocimetro .mdl-card__media {
+  background-image: url('../img/speed.gif');
+  height: 280px;
+}
+.demo-blog .olhos .mdl-card__media {
+  background-image: url('../img/images.JPG');
+  height: 280px;
+}
+.demo-blog .homografo .mdl-card__media {
+  background-image: url('../img/homografo.jpg');
+  height: 280px;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');

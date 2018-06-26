@@ -79,15 +79,40 @@
 								<h4>Velocímetro</h4>
 								<br />
 								
-								Primeiramente peguei a imagem do do link e tirei o ponteiro no Photoshop. Após isso modifiquei as cores para que ficassem mais fáceis de manipular apenas mantendo a variável de brilho com a original e as outras de saturação e matiz foi deixada em 0.
-
-Depois foi o desenho da linha, que basicamente reutilizei o código de coordenadas polares das ultimas atividades. E a angulação iria de 0.73PI a 2.28PI para se manter dentro doo velocímetro.
-
-Para mudar a cor usei a função de map() onde a entrada era a angulação e ela me retornava um valor entre 0 e 100 que iria ser utilizado a na saturação das cores do velocímetro. Quanto maior a ângulo maior a saturação. No caso do ponteiro é fácil, basta mudar a cor do desenho, já no velocímetro cada pixel do desenho era checado individualmente e sua saturação é acrescida do valor que a função map() retornava.
-
-Para fazer os gráficos mais uma vez o valor que map() retorna  para fazer círculos se moverem de forma a parecer uma linha.
-
-E esse foi o resultado:
+								<center>
+									<img style="width:90%" src="img/simulacao2.PNG">
+									<img style="width:30%" src="img/speed.gif">
+									<em>Imagem citada na atividade</em>
+								</center>
+								<br/>
+								
+								<p>
+								Primeiramente peguei a imagem do link e tirei o ponteiro no Gimp. Após isso modifiquei as cores para se aproximarem da cor branca, como pedido na atividade.
+								</p>
+								
+								<p>
+								Depois foi o desenho da linha, que basicamente reutilizei o código de coordenadas polares das últimas atividades.
+								<br/>
+								Para a angulação usei a função radians(), e um controle de varíavel simples para se manter dentro do velocímetro.
+								</p>
+								
+								<p>
+								Para mudar a cor usei a função de map() onde a entrada era a velocidade e ela me retornava um valor entre 0 e 100 que iria ser utilizado a na saturação das cores do velocímetro. Quanto maior a velocidade maior a saturação. Utilizei a função tint() para mudar as cores da imagem sem perder tempo (tempo valioso para uma prova)!
+								</p>
+								
+								<p>
+								Para fazer os gráficos mais uma vez o valor que map() retorna para fazer círculos se moverem de forma a parecer uma linha (reaproveitando os códigos dados em sala).
+								</p>
+								<br/>
+								<center>
+									<img style="width:90%" src="img/velocimetro.png">
+								</center>
+								<br/>
+								<a href="codigo/velocimetro/velocimetro.pde" target="_blank">
+									<button class="mdl-button mdl-js-button">
+										Código da Atividade
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>

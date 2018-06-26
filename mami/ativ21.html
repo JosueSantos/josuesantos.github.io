@@ -60,6 +60,48 @@
 		</style>
 		
 		<script src="js/processing-1.3.6.min.js"></script>
+		<script type="text/processing" data-processing-target="processing-canvas">
+		PImage i;
+void setup(){
+  size(600,600);
+  imageMode(CENTER);
+  i = loadImage("codigo/olhos/images.JPG");
+}
+
+float t, x, y, t2,ang;
+void draw(){
+  background(128);
+  image(i, 315, 320, 200, 200);
+  fill(255);
+  ellipse(width/2, height/2,30,30);
+  ellipse(width/2+30, height/2,30,30);
+  
+  x = mouseX - width/2;
+  y = mouseY - height/2;
+  
+  t2 = (atan2(y,x));
+  
+  float[] a = polar(5,t2);
+  fill(0);
+  ellipse(a[0] + 300, a[1] + 300,5,5);
+  x = mouseX - width/2 + 30;
+  y = mouseY - height/2;
+  
+  t2 = (atan2(y,x));
+  a = polar(5,t2);
+  ellipse(a[0] + 330, a[1] + 300,5,5);
+  
+}
+
+float[] polar(int raio, float angulo){
+  float polar[] = {
+    raio * cos(angulo), // position x
+    raio * sin(angulo)  // position y
+  };
+  
+  return polar;
+}
+		</script>
 	</head>
 	<body>
 		<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
@@ -78,8 +120,23 @@
 							<div class="mdl-cell--12-col">
 								<h4>Olhos que tudo veem</h4>
 								<br />
+								<p>
+								Nesta atividade utilizei os códigos das coordenadas polares, ajustei as coordenadas x e y. A tarefa de hoje foi bem simples!
+								</p>
 								
-								
+								<center>
+									<canvas style="width:80%" id="processing-canvas"></canvas>
+									<br/>
+									<b>Protótipo Interativo</b>
+									<br />
+									<em>*Passe o Mouse*</em>
+								</center>
+								</br>
+								<a href="codigo/olhos/olhos.pde" target="_blank">
+									<button class="mdl-button mdl-js-button">
+										Código da Atividade
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>
