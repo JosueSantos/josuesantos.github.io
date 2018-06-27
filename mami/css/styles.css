@@ -357,6 +357,10 @@ em celular fica no topo
   background-image: url('../img/homografo.JPG');
   height: 280px;
 }
+.demo-blog .filtros .mdl-card__media {
+  background-image: url('../img/efeitos.JPG');
+  height: 280px;
+}
 
 .demo-blog--blogpost .demo-blog__posts01 > .mdl-card .mdl-card__media {
   background-image: url('../img/hello_word.jpg');
