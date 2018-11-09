@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		
+		<title>Josué.Santos 2018</title>
+		
+		<meta name="description" content="Josué Santos 2018 Portifólio"/>
+		<meta name="keywords" content="Josue, JosueSantos, Portifolio, Desenvolvedor, BackEnd"/>
+		<meta name="author" content="Josué.Santos 2018"/>
+		<meta name="viewport" content="width=devicewidth, initial-scale=1.0"/>
+		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	
+	<body class="paletaAzul">
+		<nav>
+			<ul>
+				<a href="#sobremim"><li>Sobre Mim</li></a>
+				<a href="#trabalhos"><li>Trabalhos</li></a>
+				<a href="#contato"><li>Contato</li></a>
+				<a id="jsref" href="#js">@JS.2018</a>
+			</ul>
+		</nav>
+		<div class="content">
+		
+			<header id="js" class="espacamento">
+				<h1>Josué.Santos</h1>
+				<h3>Analista e Desenvolvedor</h3>
+			</header>
+			
+			<section id="sobremim" class="espacamento">
+				<header>Quem sou eu?</header>
+				<article>
+					<p>
+						Com meus 3 anos trabalhando na área de desenvolvimento de sistemas, firmo meus interesses no desenvolvimento BackEnd, apesar de atuar em todas as etapas do desenvolvimento.
+					<p>
+					<p>
+						Me formei em Análise e Desenvolvimento de Sistemas na Estácio FIC e atualmente curso Sistemas e Mídias Digitais na UFC.
+					<p>
+					<p>
+						Sou uma pessoa bem focada e carismática, em busca de desafios. Sempre estou em busca de novos conhecimentos e experiências.
+					<p>
+				</article>
+				<section>
+					<aside class="habilidade">
+						<div class="p80"></div>
+						<h2>
+							<span>80</span>%
+							<br/>
+							PHP
+						</h2>
+					</aside>
+					
+					<aside class="habilidade">
+						<div class="p70"></div>
+						<h2>
+							<span>70</span>%
+							<br/>
+							JavaScript
+							<br/>
+							Css HTML
+						</h2>
+					</aside>
+					
+					<aside class="habilidade">
+						<div class="p40"></div>
+						<h2>
+							<span>40</span>%
+							<br/>
+							JAVA
+						</h2>
+					</aside>
+					
+					<aside class="habilidade">
+						<div class="p40"></div>
+						<h2>
+							<span>40</span>%
+							<br/>
+							ANDROID
+						</h2>
+					</aside>
+				</section>
+				<footer>
+					<a href="https://josuesantos.github.io/linha/" target="_blanck"><button>Linha do Tempo</button></a>
+				</footer>
+			</section>
+			
+			<section id="trabalhos" class="espacamento">
+				<header>Trabalhos Recentes</header>
+
+				<div id="modal">
+					<span onclick="closeModal()" title="Fechar">&times;</span>
+					<img id="imgModal" src="t4.jpg" />
+					<p id="pModal"></p>
+					<a id="aModal" href="" target="_blanck"><button>Abrir Projeto</button></a>
+				</div>
+				
+				<article>
+					<aside>
+						<img src="t1.jpg" />
+						
+						<article>
+							"Name This Game"<br />
+							Jogo REMAKE<br />
+							Trabalho de MAMI
+						</article>
+						
+						<footer>
+							<button onclick="modal('1')">Mais detalhes</button>
+						</footer>
+					</aside>
+					
+					<aside>
+						<img src="t2.jpg" />
+						
+						<article>
+							"Breakout"<br />
+							Jogo<br />
+							Atividade de MAMI
+						</article>
+						
+						<footer>
+							<button onclick="modal('2')">Mais detalhes</button>
+						</footer>
+					</aside>
+					
+					<aside>
+						<img src="t3.jpg" />
+						
+						<article>
+							"Saviors Of Fate" Jogo<br />
+							Projeto Integrado - 1º Semestre
+						</article>
+						
+						<footer>
+							<button onclick="modal('3')">Mais detalhes</button>
+						</footer>
+					</aside>
+					
+					<aside>
+						<img src="t4.jpg" />
+						
+						<article>
+							História para Folhear<br />
+							Projeto Independente
+						</article>
+						
+						<footer>
+							<button onclick="modal('4')">Mais detalhes</button>
+						</footer>
+					</aside>
+				</article>
+			</section>
+			
+			<section id="contato" class="espacamento">
+				<header>Contato</header>
+				
+				<aside>
+					<img src="gmail.png" /> josuemarques3@gmail.com
+					<br />
+					<a href="https://pt-br.facebook.com/josue.santos.9231" target="_blanck"><img src="face.png" /></a><a href="https://www.instagram.com/josuemarques3/" target="_blanck"><img src="insta.png" /></a>
+				</aside>
+				
+				<aside>
+					<form>
+						<input placeholder="Nome" />
+						<input placeholder="E-mail" />
+						<textarea placeholder="Mensagem"></textarea>
+						<button>Enviar</button>
+					</form>
+				</aside>
+			</section>
+		</div>
+		<footer id="footer">
+			<h3>@josue.santos2018</h3>
+		</footer>
+
+		<script type="text/javascript">
+			function modal(t){
+				var text = "";
+				var href = "";
+				var img  = "";
+
+				switch(t){
+					case '1':
+						text = "\"Name This Game\"<br />Jogo REMAKE - Processing<br />Trabalho de Matemática Aplicada a Multimídias 1<br /><br />Sistemas e Mídias Digitais - UFC.2018";
+						href = "https://josuesantos.github.io/mami/trab08.html";
+						img  = "t1.jpg";
+						break;
+					case '2':
+						text = "\"Breakout\"<br />Jogo - Processing<br />Atividade de Matemática Aplicada a Multimídias 1<br /><br />Sistemas e Mídias Digitais - UFC.2018";
+						href = "https://josuesantos.github.io/mami/ativ10.html";
+						img  = "t2.jpg";
+						break;
+					case '3':
+						text = "\"Saviors Of Fate\"<br />Jogo - Game Maker<br />Projeto Integrado - 1º Semestre<br /><br />Sistemas e Mídias Digitais - UFC.2017";
+						href = "https://josuesantos.github.io/SOF/";
+						img  = "t3.jpg";
+						break;
+					case '4':
+						text = "História para Folhear<br />Projeto Independente<br /><br />Js.2017";
+						href = "https://josuesantos.github.io/JK/";
+						img  = "t4.jpg";
+						break;
+				}
+
+				document.getElementById('modal').style.display = 'block';
+				
+
+				document.getElementById('imgModal').src = img;
+				document.getElementById('pModal').innerHTML = text;
+				document.getElementById('aModal').href = href;
+			}
+
+			function closeModal(){
+				document.getElementById('modal').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>
