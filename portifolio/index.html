@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8"/>
 		
@@ -16,22 +16,22 @@
 	<body class="paletaAzul">
 		<nav>
 			<ul>
-				<a href="#sobremim"><li>Sobre Mim</li></a>
-				<a href="#trabalhos"><li>Trabalhos</li></a>
-				<a href="#contato"><li>Contato</li></a>
-				<a id="jsref" href="#js">@JS.2018</a>
+				<li><a href="#sobremim">Sobre Mim</a></li>
+				<li><a href="#trabalhos">Trabalhos</a></li>
+				<li><a href="#contato">Contato</a></li>
 			</ul>
+			<a id="jsref" href="#js">@JS.2018</a>
 		</nav>
 		<div class="content">
 		
 			<header id="js" class="espacamento">
 				<h1>Josué.Santos</h1>
-				<h3>Analista e Desenvolvedor</h3>
+				<h3><span id="analista">Analista</span> e <span id="desenvolvedor">Desenvolvedor</span></h3>
 			</header>
 			
 			<section id="sobremim" class="espacamento">
-				<header>Quem sou eu?</header>
-				<article>
+				<h4>Quem sou eu?</h4>
+				<div class="texto">
 					<p>
 						Com meus 3 anos trabalhando na área de desenvolvimento de sistemas, firmo meus interesses no desenvolvimento BackEnd, apesar de atuar em todas as etapas do desenvolvimento.
 					<p>
@@ -41,8 +41,8 @@
 					<p>
 						Sou uma pessoa bem focada e carismática, em busca de desafios. Sempre estou em busca de novos conhecimentos e experiências.
 					<p>
-				</article>
-				<section>
+				</div>
+				<div class="sobremimHabilidade">
 					<aside class="habilidade">
 						<div class="p80"></div>
 						<h2>
@@ -80,31 +80,31 @@
 							ANDROID
 						</h2>
 					</aside>
-				</section>
+				</div>
 				<footer>
-					<a href="https://josuesantos.github.io/linha/index.html" target="_blanck"><button>Linha do Tempo</button></a>
+					<button onclick="window.open('https://josuesantos.github.io/linha/index.html', '_blank')">Linha do Tempo</button>
 				</footer>
 			</section>
 			
 			<section id="trabalhos" class="espacamento">
-				<header>Trabalhos Recentes</header>
+				<h4>Trabalhos Recentes</h4>
 
 				<div id="modal">
 					<span onclick="closeModal()" title="Fechar">&times;</span>
-					<img id="imgModal" src="t4.JPG" />
+					<img id="imgModal" src="t4.JPG" alt="imagem" />
 					<p id="pModal"></p>
-					<a id="aModal" href="" target="_blanck"><button>Abrir Projeto</button></a>
+					<button id="aModal">Abrir Projeto</button>
 				</div>
 				
-				<article>
+				<div class="texto">
 					<aside>
-						<img src="t1.JPG" />
+						<img src="t1.JPG" alt="Name This Game" />
 						
-						<article>
+						<div class="texto">
 							"Name This Game"<br />
 							Jogo REMAKE<br />
 							Trabalho de MAMI
-						</article>
+						</div>
 						
 						<footer>
 							<button onclick="modal('1')">Mais detalhes</button>
@@ -112,13 +112,13 @@
 					</aside>
 					
 					<aside>
-						<img src="t2.JPG" />
+						<img src="t2.JPG" alt="Breakout" />
 						
-						<article>
+						<div class="texto">
 							"Breakout"<br />
 							Jogo<br />
 							Atividade de MAMI
-						</article>
+						</div>
 						
 						<footer>
 							<button onclick="modal('2')">Mais detalhes</button>
@@ -126,12 +126,12 @@
 					</aside>
 					
 					<aside>
-						<img src="t3.JPG" />
+						<img src="t3.JPG" alt="Saviors Of Fate" />
 						
-						<article>
+						<div class="texto">
 							"Saviors Of Fate" Jogo<br />
 							Projeto Integrado - 1º Semestre
-						</article>
+						</div>
 						
 						<footer>
 							<button onclick="modal('3')">Mais detalhes</button>
@@ -139,27 +139,27 @@
 					</aside>
 					
 					<aside>
-						<img src="t4.JPG" />
+						<img src="t4.JPG" alt="História para Folhear" />
 						
-						<article>
+						<div class="texto">
 							História para Folhear<br />
 							Projeto Independente
-						</article>
+						</div>
 						
 						<footer>
 							<button onclick="modal('4')">Mais detalhes</button>
 						</footer>
 					</aside>
-				</article>
+				</div>
 			</section>
 			
 			<section id="contato" class="espacamento">
-				<header>Contato</header>
+				<h4>Contato</h4>
 				
 				<aside>
-					<img src="gmail.png" /> josuemarques3@gmail.com
+					<img src="gmail.png" alt="gmail" /> josuemarques3@gmail.com
 					<br />
-					<a href="https://pt-br.facebook.com/josue.santos.9231" target="_blanck"><img src="face.png" /></a><a href="https://www.instagram.com/josuemarques3/" target="_blanck"><img src="insta.png" /></a>
+					<a href="https://pt-br.facebook.com/josue.santos.9231" target="_blank"><img src="face.png" alt="face" /></a><a href="https://www.instagram.com/josuemarques3/" target="_blank"><img src="insta.png" alt="insta" /></a>
 				</aside>
 				
 				<aside>
@@ -176,7 +176,7 @@
 			<h3>@josue.santos2018</h3>
 		</footer>
 
-		<script type="text/javascript">
+		<script>
 			function modal(t){
 				var text = "";
 				var href = "";
@@ -210,12 +210,16 @@
 
 				document.getElementById('imgModal').src = img;
 				document.getElementById('pModal').innerHTML = text;
-				document.getElementById('aModal').href = href;
+				document.getElementById('aModal').onclick = function(){
+					window.open(href, '_blank')
+				};
 			}
 
 			function closeModal(){
 				document.getElementById('modal').style.display = 'none';
 			}
+			
+			
 		</script>
 	</body>
 </html>
