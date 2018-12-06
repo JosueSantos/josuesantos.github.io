@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8"/>
+		
+		<title>Jogo Da Velha</title>
+		
+		<meta name="description" content="Jogo da Velha 2018"/>
+		<meta name="keywords" content="Josue, JosueSantos, Jogo Antigo, Jogo no Papel, Jogo da Velha"/>
+		<meta name="author" content="Josué.Santos 2018"/>
+		<meta name="viewport" content="width=devicewidth, initial-scale=1.0"/>
+		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	
+	<body>
+		
+		<div class="content">
+			<div id="telaInicial" class="telaInicial tela">
+				<h1 class="titulo">JOGU DA VÉA</h1>
+				<button class="nivel nivel1" onclick="inicia(1)" ontouchstart="inicia(1)">FÁCIM</button>
+				<button class="nivel nivel2" onclick="inicia(2)" ontouchstart="inicia(2)">MARROMENO</button>
+				<button class="nivel nivel3" onclick="inicia(3)" ontouchstart="inicia(3)">PESTE</button>
+				<span>@JOSUE.SANTOS</span>
+			</div>
+			
+			<div id="telaJogo" class="telaJogo tela">
+				<div id="dvCabecalho">
+					<span class="destaque">JOGU DA VÉA</span>
+					<br />
+					QUEM COMEÇA: <span id="dvQuemComeca"></span>
+					<br />
+					NÍVEL: <span id="dvNivel"></span>
+				</div>
+				<div id="dvVitoria">
+					<h1 id="mensagemFinal">TU GANHOU PESTE!</h1>
+					<button class="nivel reset" onclick="fimDeJogo()"  ontouchstart="fimDeJogo()">JOGAR DINOVU!</button>
+				</div>
+				<div id="dvjogo">
+					<div id="p1" class="posJogo br bb" onclick="jogar(1)" ontouchstart="jogar(1)"></div>
+					<div id="p2" class="posJogo bl br bb" onclick="jogar(2)" ontouchstart="jogar(2)"></div>
+					<div id="p3" class="posJogo bl bb" onclick="jogar(3)" ontouchstart="jogar(3)"></div>
+					<div id="p4" class="posJogo br bt bb" onclick="jogar(4)" ontouchstart="jogar(4)"></div>
+					<div id="p5" class="posJogo ba" onclick="jogar(5)" ontouchstart="jogar(5)"></div>
+					<div id="p6" class="posJogo bl bt bb" onclick="jogar(6)" ontouchstart="jogar(6)"></div>
+					<div id="p7" class="posJogo bt br" onclick="jogar(7)" ontouchstart="jogar(7)"></div>
+					<div id="p8" class="posJogo bl br bt" onclick="jogar(8)" ontouchstart="jogar(8)"></div>
+					<div id="p9" class="posJogo bl bt" onclick="jogar(9)" ontouchstart="jogar(9)"></div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="scriptJogo.js"></script>
+	</body>
+</html>
