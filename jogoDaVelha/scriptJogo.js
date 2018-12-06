@@ -57,6 +57,10 @@ function marcaTabuleiro( p ){
 				document.getElementById("dvCabecalho").style.display = "none";
 				document.getElementById("dvVitoria").style.display = "block";
 				
+				document.getElementById("dvjogo").style.width = "40%";
+				document.getElementById("dvjogo").style.height = "40%";
+				document.getElementById("dvjogo").style.fontSize = "10px";
+				
 				if(quemJoga){
 					n = Math.round( Math.random() * ( msn.length - 1 ) );
 					n = (n <= 0)? 1 : n;
@@ -75,6 +79,10 @@ function marcaTabuleiro( p ){
 					document.getElementById("dvVitoria").style.display = "block";
 					
 					document.getElementById("mensagemFinal").innerHTML = "DEU VÉA NESSE CARAMBA!";
+				
+					document.getElementById("dvjogo").style.width = "40%";
+					document.getElementById("dvjogo").style.height = "40%";
+					document.getElementById("dvjogo").style.fontSize = "10px";
 					
 					jogando = false;
 				}
@@ -348,6 +356,10 @@ function inicia(n){
 	
 	document.getElementById("dvCabecalho").style.display = "block";
 	document.getElementById("dvVitoria").style.display = "none";
+				
+	document.getElementById("dvjogo").style.width = "80%";
+	document.getElementById("dvjogo").style.height = "80%";
+	document.getElementById("dvjogo").style.fontSize = document.getElementById("content").style.fontSize;
 }
 
 function fimDeJogo(){
