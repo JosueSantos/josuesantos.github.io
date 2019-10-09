@@ -1,5 +1,5 @@
 
-document.getElementById('idade').innerHTML = new Date().getFullYear() - 1994;
+//document.getElementById('idade').innerHTML = new Date().getFullYear() - 1994;
 document.getElementById('ano').innerHTML = new Date().getFullYear();
 
 // three.js - http://github.com/mrdoob/three.js
