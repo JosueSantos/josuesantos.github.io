@@ -21,3 +21,6 @@ MAMI - Matemática Aplicada a Multimídias I
 
 AM 2 - Autoração Multimídia 2
 * [/portifolio](https://josuesantos.github.io/portifolio/)
+
+Jogu da Véa
+* [/portifolio](https://josuesantos.github.io/jogoDaVelha/)
