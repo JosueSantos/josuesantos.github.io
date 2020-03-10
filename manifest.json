@@ -1,0 +1,23 @@
+{
+  "dir" : "ltr",
+  "lang" : "Portuguese",
+  "name" : "Josué Santos / Analista - Desenvolvedor",
+  "scope" : "/",
+  "display" : "standalone",
+  "start_url" : "https://josuesantos.github.io/",
+  "short_name" : "J.S.",
+  "theme_color" : "transparent",
+  "description" : "J.S. - Josué dos Santos/ Analista - Desenvolvedor",
+  "orientation" : "portrait",
+  "background_color" : "transparent",
+  "related_applications" : [],
+  "prefer_related_applications" : false,
+  "icons" : [
+    {
+      "src": "https://josuesantos.github.io/favicon-16x16.png",
+      "sizes": "116x107"
+    }],
+  "url" : "https://josuesantos.github.io/",
+  "screenshots" : [],
+  "generated" : "true"
+}
