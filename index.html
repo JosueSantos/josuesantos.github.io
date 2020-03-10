@@ -70,6 +70,8 @@
     </script>
     <!-- end of service worker -->
 
+    <div class="container">
+
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -276,6 +278,7 @@
             </div>
         </div>
     </section>
+    </div>
 	
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
@@ -288,7 +291,9 @@
 
     <!-- Theme JavaScript  -->
     <script src="js/grayscale.min.js"></script>
-	<script src="js/efeito.js"></script>
+	<script>
+     document.getElementById('ano').innerHTML = new Date().getFullYear();   
+    </script>
 	
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
