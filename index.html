@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="Josué Santos / Analista - Desenvolvedor">
@@ -23,11 +23,23 @@
     <meta itemprop="name" content="Josué Santos / Analista - Desenvolvedor">
     <meta itemprop="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta itemprop="image" content="img/js.PNG">
+    <meta name="keywords" content="Josué, Analista, Desenvolvedor">
     
     <title>Josué.Santos</title>
 
     <meta name="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta name="author" content="J.S. - Josué Santos">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="img/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="img/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/icons/icon-192x192.png">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.png">
+    <link rel='manifest' href='/manifest.json'>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#003073" />
+    <!-- end-theme-color -->
     
     <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
 
@@ -43,32 +55,11 @@
     <link href="css/grayscale.css" rel="stylesheet">
 	<link href="css/efeito.css" rel="stylesheet">
 
-    <link rel='manifest' href='/manifest.json'>
-    <!-- theme-color -->
-    <meta name="theme-color" content="#2196f3" />
-    <!-- end-theme-color -->
+    <!--  Service Worker  -->
+    <script src="app.js"></script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="background">
-
-    <!-- register service worker -->
-    <script>
-        if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("/service-worker.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
-    </script>
-    <!-- end of service worker -->
 
     <div class="container">
 
