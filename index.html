@@ -57,6 +57,15 @@
 
     <!--  Service Worker  -->
     <script src="app.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "e1979295-fd34-4af5-9a1a-57f2098fe47b",
+            });
+        });
+    </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="background">
