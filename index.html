@@ -86,11 +86,43 @@
             });
         });
 
+        OneSignal.push(["getNotificationPermission", function(permission) {
+            console.log("Site Notification Permission:", permission);
+            console.log("getNotificationPermission");
+            // (Output) Site Notification Permission: default
+        }]);
+
         OneSignal.push(function() {
-            OneSignal.once('subscriptionChange', function(isSubscribed) {
-                console.log("Site Notification Permission:", isSubscribed);
-                console.log("subscriptionChange");
-                // (Output) Site Notification Permission: default
+            if (navigator.appVersion.indexOf("Mobile") > -1) {
+                OneSignal.sendTag("device_type","mobile");
+                console.log("mobile device");
+            } else {
+                OneSignal.sendTag("device_type","desktop");
+                console.log("desktop device");
+                
+            }
+        });
+
+        OneSignal.push(function() {
+            /* These examples are all valid */
+            OneSignal.getUserId(function(userId) {
+                console.log("OneSignal 1 User ID:", userId);
+
+                if( userId ){
+                    document.querySelector(".onesignal-buttonlink").innerHTML = "<button>COISA 1</button>";
+                }
+                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
+            });
+                       
+            OneSignal.getUserId().then(function(userId) {
+                console.log("OneSignal 2 User ID:", userId);
+
+                if( userId ){
+                    document.querySelector(".onesignal-buttonlink2").innerHTML = "<button>COISA 2</button>";
+                }else{
+                    document.querySelector(".onesignal-buttonlink2").innerHTML = "<button>COISA 2222</button>";
+                }
+                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
             });
         });
     </script>
@@ -157,6 +189,8 @@
                 <h2>Sobre J.s</h2>
 
                 <div class='onesignal-customlink-container'></div>
+                <div class='onesignal-buttonlink'></div>
+                <div class='onesignal-buttonlink2'></div>
                 
                 <p>Olá! Estou cursando Sistemas e Mídias Digitais na UFC. Também sou formado em Análise e Desenvolvimento de Sistemas na Estácio FIC.</p>
 
