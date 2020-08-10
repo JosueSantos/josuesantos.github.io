@@ -65,6 +65,26 @@
                 appId: "e1979295-fd34-4af5-9a1a-57f2098fe47b",
             });
         });
+
+        let page_topic = 'sports';
+
+        OneSignal.push(function() {
+            OneSignal.on('subscriptionChange', function(isSubscribed) {
+                if (isSubscribed === true) {
+                    console.log('The user subscription state is now:', isSubscribed);
+                    var pathArray = window.location.pathname.split('/');
+                    OneSignal.sendTags({
+                        "subscription_page": pathArray[1],
+                        "subscription_page_topic": page_topic,
+                    }).then(function(tagsSent) {
+                        // Callback called when tags have finished sending
+                        console.log(tagsSent);
+                    });
+                }else {
+                    console.log('isSubscribed is false :(');
+                }
+            });
+        });
     </script>
 </head>
 
