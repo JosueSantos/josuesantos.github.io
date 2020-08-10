@@ -85,6 +85,12 @@
                 }
             });
         });
+
+        OneSignal.push(["getNotificationPermission", function(permission) {
+            console.log("Site Notification Permission:", permission);
+            console.log("getNotificationPermission");
+            // (Output) Site Notification Permission: default
+        }]);
     </script>
 </head>
 
