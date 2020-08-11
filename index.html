@@ -70,16 +70,18 @@
 
 
         let page_topic = 'home';
+        var pathArray = window.location.pathname.split('/');
+        tagsOne = {
+            "subscription_page": pathArray[1],
+            "subscription_page_topic": page_topic,
+        };
+        console.log(tagsOne);
 
         OneSignal.push(function() {
             OneSignal.on('subscriptionChange', function(isSubscribed) {
                 if (isSubscribed === true) {
                     console.log('The user subscription state is now:', isSubscribed);
-                    var pathArray = window.location.pathname.split('/');
-                    OneSignal.sendTags({
-                        "subscription_page": pathArray[1],
-                        "subscription_page_topic": page_topic,
-                    }).then(function(tagsSent) {
+                    OneSignal.sendTags(tagsOne).then(function(tagsSent) {
                         // Callback called when tags have finished sending
                         console.log(tagsSent);
                     });
@@ -109,7 +111,7 @@
 
         function funClick(){
             console.log('button Id Click');
-
+            
             OneSignal.sendTags({
                 "tag_button": "coisa"
             }).then(function(tagsSent) {
@@ -119,11 +121,15 @@
         }
 
         function clickSubscrib(){
+            tagsOne.tag_button = "coisa";
+
+            console.log(tagsOne);
+
             OneSignal.push(function() {
                 OneSignal.showSlidedownPrompt();
             });
         }
-        
+
         OneSignal.push(function() {
             /* These examples are all valid */
             OneSignal.getUserId(function(userId) {
