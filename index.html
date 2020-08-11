@@ -117,6 +117,13 @@
                 console.log(tagsSent);
             });
         }
+
+        function clickSubscrib(){
+            OneSignal.push(function() {
+                OneSignal.showSlidedownPrompt();
+            });
+        }
+        
         OneSignal.push(function() {
             /* These examples are all valid */
             OneSignal.getUserId(function(userId) {
@@ -127,7 +134,7 @@
                     "<button onclick='funClick()'>Já Fez a inscrição Alguma vez, Está ativa ou inativa</button>";
                 }else{
                     document.querySelector(".onesignal-buttonlink").innerHTML = 
-                    "<button onclick='funClick()'>Nunca Fez a inscrição</button>";
+                    "<button onclick='clickSubscrib()'>Nunca Fez a inscrição</button>";
                 }    
             });
         });
