@@ -66,18 +66,10 @@
             });
         });
 
-        let page_topic = 'curriculo';
 
-        function funClick(){
-            console.log('button Id Click');
 
-            OneSignal.sendTags({
-                "tag_button": "coisa"
-            }).then(function(tagsSent) {
-                // Callback called when tags have finished sending
-                console.log(tagsSent);
-            });
-        }
+
+        let page_topic = 'home';
 
         OneSignal.push(function() {
             OneSignal.on('subscriptionChange', function(isSubscribed) {
@@ -114,28 +106,42 @@
             }
         });
 
+
+        function funClick(){
+            console.log('button Id Click');
+
+            OneSignal.sendTags({
+                "tag_button": "coisa"
+            }).then(function(tagsSent) {
+                // Callback called when tags have finished sending
+                console.log(tagsSent);
+            });
+        }
         OneSignal.push(function() {
             /* These examples are all valid */
             OneSignal.getUserId(function(userId) {
-                console.log("OneSignal 1 User ID:", userId);
+                console.log("OneSignal User ID:", userId);
 
                 if( userId ){
-                    document.querySelector(".onesignal-buttonlink").innerHTML = "<button>COISA 1</button>";
-                }
-                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
+                    document.querySelector(".onesignal-buttonlink").innerHTML = 
+                    "<button onclick='funClick()'>Já Fez a inscrição Alguma vez, Está ativa ou inativa</button>";
+                }else{
+                    document.querySelector(".onesignal-buttonlink").innerHTML = 
+                    "<button onclick='funClick()'>Nunca Fez a inscrição</button>";
+                }    
+            });
+        });
+
+        OneSignal.push(function() {
+            /* These examples are all valid */
+            OneSignal.getTags(function(tags) {
+                // All the tags stored on the current webpage visitor
+                console.log("OneSignal User tags:", tags);
             });
 
-
-                       
-            OneSignal.getUserId().then(function(userId) {
-                console.log("OneSignal 2 User ID:", userId);
-
-                if( userId ){
-                    document.querySelector(".onesignal-buttonlink2").innerHTML = "<button onclick='funClick()'>COISA 2</button>";
-                }else{
-                    document.querySelector(".onesignal-buttonlink2").innerHTML = "<button onclick='funClick()'>COISA 2222</button>";
-                }
-                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
+            OneSignal.getTags().then(function(tags) {
+                // All the tags stored on the current webpage visitor
+                console.log("OneSignal User tags:", tags);
             });
         });
     </script>
