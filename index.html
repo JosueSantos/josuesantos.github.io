@@ -54,110 +54,6 @@
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 	<link href="css/efeito.css" rel="stylesheet">
-
-    <!--  Service Worker  -->
-    <script src="app.js"></script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "e1979295-fd34-4af5-9a1a-57f2098fe47b",
-            });
-        });
-
-
-
-
-        let page_topic = 'home';
-        var pathArray = window.location.pathname.split('/');
-        tagsOne = {
-            "subscription_page": pathArray[1],
-            "subscription_page_topic": page_topic,
-        };
-        console.log(tagsOne);
-
-        OneSignal.push(function() {
-            OneSignal.on('subscriptionChange', function(isSubscribed) {
-                if (isSubscribed === true) {
-                    console.log('The user subscription state is now:', isSubscribed);
-                    OneSignal.sendTags(tagsOne).then(function(tagsSent) {
-                        // Callback called when tags have finished sending
-                        console.log(tagsSent);
-                    });
-                }else {
-                    console.log('isSubscribed is false :(');
-                }
-            });
-        });
-
-        OneSignal.push(["getNotificationPermission", function(permission) {
-            console.log("Site Notification Permission:", permission);
-            console.log("getNotificationPermission");
-            // (Output) Site Notification Permission: default
-        }]);
-
-        OneSignal.push(function() {
-            if (navigator.appVersion.indexOf("Mobile") > -1) {
-                OneSignal.sendTag("device_type","mobile");
-                console.log("mobile device");
-            } else {
-                OneSignal.sendTag("device_type","desktop");
-                console.log("desktop device");
-                
-            }
-        });
-
-
-        function funClick(){
-            console.log('button Id Click');
-            
-            OneSignal.sendTags({
-                "tag_button": "coisa"
-            }).then(function(tagsSent) {
-                // Callback called when tags have finished sending
-                console.log(tagsSent);
-            });
-        }
-
-        function clickSubscrib(){
-            tagsOne.tag_button = "coisa";
-
-            console.log(tagsOne);
-
-            OneSignal.push(function() {
-                OneSignal.showSlidedownPrompt();
-            });
-        }
-
-        OneSignal.push(function() {
-            /* These examples are all valid */
-            OneSignal.getUserId(function(userId) {
-                console.log("OneSignal User ID:", userId);
-
-                if( userId ){
-                    document.querySelector(".onesignal-buttonlink").innerHTML = 
-                    "<button onclick='funClick()'>Já Fez a inscrição Alguma vez, Está ativa ou inativa</button>";
-                }else{
-                    document.querySelector(".onesignal-buttonlink").innerHTML = 
-                    "<button onclick='clickSubscrib()'>Nunca Fez a inscrição</button>";
-                }    
-            });
-        });
-
-        OneSignal.push(function() {
-            /* These examples are all valid */
-            OneSignal.getTags(function(tags) {
-                // All the tags stored on the current webpage visitor
-                console.log("OneSignal User tags:", tags);
-            });
-
-            OneSignal.getTags().then(function(tags) {
-                // All the tags stored on the current webpage visitor
-                console.log("OneSignal User tags:", tags);
-            });
-        });
-    </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="background">
@@ -219,12 +115,6 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Sobre J.s</h2>
-
-                <div class='onesignal-customlink-container'></div>
-                <div class='onesignal-buttonlink'></div>
-                <div class='onesignal-buttonlink2'></div>
-                
-                <button onclick='funClick()'>Add Tag</button>
 
                 <p>Olá! Estou cursando Sistemas e Mídias Digitais na UFC. Também sou formado em Análise e Desenvolvimento de Sistemas na Estácio FIC.</p>
 
