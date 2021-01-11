@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Escala Creater</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="BancoDeDados.js"></script>
+		
+		<style>
+			.N{color:black;}
+			.S{color:blue; font-weight:bold}
+			.slogan{margin-left:10%}
+			h4{text-align: center;font-size: 30px;}
+		</style>
+	</head>
+	<body>
+
+		<div class="jumbotron">
+			<div class="slogan">
+				<h3>Programa</h3><h1>Minha escala, Minha vida.</h1>
+			</div>
+		</div>
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="input-group">
+						<span class="input-group-addon">Filtro</span>
+						<input id="filter" type="text" class="form-control" placeholder="Escreva aqui...">
+					</div>
+					<table class="table table-striped linhaDadosResumida">
+						<thead>
+							<th>Nome</th>
+							<th>Presença</th>
+						</thead>
+						<tbody class="searchable">
+						</tbody>
+					</table>
+				</div>
+				<div class="col-sm-9">
+					<div class="row">
+						<p class="escala"></p>
+					</div>
+					<div class="row">
+						<hr />
+						
+						<div class="col-sm-12">
+							<h4>Adicionar Dia para Escala</h4>
+						</div>
+
+						<div class="col-sm-3">
+							<label for="dia">Dia</label>
+							<input type="date" class="form-control" id="data">
+						</div>
+						
+						<div class="col-sm-4">
+							<label for="comunidade">Comunidade</label>
+							<select id="comunidade" class="form-control">
+								<option value="">Selecione a Comunidade</option>
+								<option value="NA">N. S. Aparecida</option>
+								<option value="RP">N. S. Rainha da Paz</option>
+								<option value="PS">N. S. Perpetuo Socorro</option>
+								<option value="SV">São Vicente</option>
+								<option value="SJ">São Judas</option>
+							</select>
+						</div>
+						
+						<div class="col-sm-4">
+							<label for="quant">Quantidade de coroinha para a missa</label>
+							<input type="number" class="form-control" id="quant">
+						</div>
+						
+						<div class="col-sm-12" style="margin-bottom:10px">
+							<label for="descricao">Descrição</label>
+							<textarea class="form-control" rows="2" id="descricao"></textarea>
+						</div>
+					
+						<div class="col-sm-6">
+							<div class="checkbox">
+								<label><input type="checkbox" id="Semana">Na Semana </label><br />
+								<label><input type="checkbox" id="SabDom">No Fim de Semana </label><br />
+								<label><input type="checkbox" id="Noite">No Horário da Noite </label><br />
+								<label><input type="checkbox" id="Dia">Durante o Dia </label><br />
+							</div>
+						</div>
+						
+						<div class="col-sm-6">
+							<button class="btn btn-primary btn-lg pull-right adicionar">Adicionar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="input-group">
+						<span class="input-group-addon">Filtro</span>
+						<input id="filter2" type="text" class="form-control" placeholder="Escreva aqui...">
+					</div>
+					<table class="table table-striped linhaDados">
+						<thead>
+							<th>Nome</th>
+							<th title="N. S. Aparecida">NA</th>
+							<th title="N. S. Rainha da Paz">RP</th>
+							<th title="N. S. Perpetuo Socorro">PS</th>
+							<th title="São Vicente">SV</th>
+							<th title="São Judas">SJ</th>
+							<th title="Disponível na semana">Semana</th>
+							<th title="Disponível fim de semana">SabDom</th>
+							<th title="Disponível durante a noite">Noite</th>
+							<th title="Disponível durante o dia">Dia</th>
+						</thead>
+						<tbody class="searchable2">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	<script>
+	lista = retornarBancoDados();
+	listaPresentes = lista.slice();
+	listaEscala = new Array();
+	
+	tabela = "";
+	tabelaResumida = "";
+	for (i = 0; i < lista.length; i++) {
+		tabelaResumida += "<tr>";
+		tabelaResumida += "<td>" + lista[i].nome + "</td>";
+		tabelaResumida += "<td><input type='checkbox' checked></td>";
+		tabelaResumida += "</tr>";
+		
+		tabela += "<tr>";
+		tabela += "<td>" + lista[i].nome + "</td>";
+		tabela += "<td class='" + lista[i].na + "'>" + lista[i].na + "</td>";
+		tabela += "<td class='" + lista[i].rp + "'>" + lista[i].rp + "</td>";
+		tabela += "<td class='" + lista[i].ps + "'>" + lista[i].ps + "</td>";
+		tabela += "<td class='" + lista[i].sv + "'>" + lista[i].sv + "</td>";
+		tabela += "<td class='" + lista[i].sj + "'>" + lista[i].sj + "</td>";
+		tabela += "<td>" + lista[i].semana + "</td>";
+		tabela += "<td>" + lista[i].sabdom + "</td>";
+		tabela += "<td>" + lista[i].noite + "</td>";
+		tabela += "<td>" + lista[i].dia + "</td>";
+		tabela += "</tr>";
+	}
+	
+	$('table.linhaDados tbody').html(tabela);
+	$('table.linhaDadosResumida tbody').html(tabelaResumida);
+	
+	$("table.linhaDadosResumida [type=checkbox]").on("change" ,function(){
+		faltou = $(this).parent("td").parent("tr").find('td').html();
+		for (i = 0; i < listaPresentes.length; i++){
+			if(listaPresentes[i].nome == faltou){
+				listaPresentes.splice(i, 1);
+				$(this).prop("disabled", true);
+				break;
+			}
+		}
+		listaEscala = listaPresentes.slice();
+	});
+	
+	
+	$(".adicionar").click(function(){
+	
+		if($("#comunidade").val() == "" || $("#quant").val() == "" || parseInt($("#quant").val()) <= 0) return;
+	
+		//txt = "lista \n";
+		//for(i = 0; i < listaEscala.length; i++){txt += listaEscala[i].nome}
+		//txt += "\nlistaPresente \n";
+		//for(i = 0; i < listaPresentes.length; i++){txt += listaPresentes[i].nome}
+		//alert(txt);
+	
+		escalados = "";
+		
+		for(i = 0; i < parseInt($("#quant").val()); i++){
+			if(listaEscala.length > 0 && listaEscala != null){
+				listaVerificar = listaEscala.slice();
+				
+				while(true){
+					naoPode = false;
+					
+					if(listaVerificar.length == 0 || listaVerificar == null){
+						if(confirm("Deseja repetir coroinhas?")){
+							listaVerificar = listaPresentes.slice();
+							listaEscala = listaPresentes.slice();
+						}else{
+							escalados += "<br />-Não disponivel";//listaVerificar = listaPresentes.slice();
+							break;
+						}
+					}
+					
+					num = (listaVerificar.length == 1)? 0: Math.floor(Math.random() * listaVerificar.length);
+					
+					if($("#Semana").is(':checked') 	&& listaVerificar[num].semana == "N") naoPode = true;
+					if($("#SabDom").is(':checked') 	&& listaVerificar[num].sabdom == "N") naoPode = true;
+					if($("#Noite").is(':checked') 	&& listaVerificar[num].noite == "N") naoPode = true;
+					if($("#Dia").is(':checked') 	&& listaVerificar[num].dia == "N") naoPode = true;
+					
+					
+					////Comunidade
+					if($("#comunidade").val() == "NA" && listaVerificar[num].na == "N") naoPode = true;
+					if($("#comunidade").val() == "RP" && listaVerificar[num].rp == "N") naoPode = true;
+					if($("#comunidade").val() == "PS" && listaVerificar[num].ps == "N") naoPode = true;
+					if($("#comunidade").val() == "SV" && listaVerificar[num].sv == "N") naoPode = true;
+					if($("#comunidade").val() == "SJ" && listaVerificar[num].sj == "N") naoPode = true;
+						
+					if(naoPode){
+						listaVerificar.splice(num, 1);
+					}else{
+						escalados += "<br />-" + listaVerificar[num].nome;
+							
+						for (k = 0; k < listaEscala.length; k++){
+							if(listaEscala[k].nome == listaVerificar[num].nome){
+								listaEscala.splice(k, 1);
+								break;
+							}
+						}
+						break;
+					}
+				}
+			}else{
+				listaEscala = listaPresentes.slice();
+				if(listaPresentes.length == 0) break;
+				i--;
+			}
+		}
+		
+		$(".escala").html($(".escala").html() +
+			"<div class='col-sm-3 panel panel-default' style='margin:10px'>" +
+			"<label>Dia: </label>" + $("#data").val() + "<br >" +
+			"<label>Comunidade: </label>" + $("#comunidade").val()+ "<br >" +
+			"<label>Descrição: </label>" + $("#descricao").val() + "<br >" +
+			"<label>Escala </label>" + escalados +
+			"</div>"
+		);
+	});
+	
+	/*
+	function retornarBancoDados(){
+		return bd = [
+			{nome:"Karine" 	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Pedro"	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Amanda"	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Lucas"	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Luiz"	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Joao"	, sf:"S", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"},
+			{nome:"Jonas"	, sf:"N", sp:"N", sb:"N", ng:"N", nf:"N", sj:"N", semana:"N", sabdom:"N", noite:"N", dia:"N"}
+		];
+	}
+	*/
+	
+	$(document).ready(function () {
+		(function ($) {
+			$('#filter').keyup(function () {
+				var rex = new RegExp($(this).val(), 'i');
+				$('.searchable tr').hide();
+				$('.searchable tr').filter(function () {
+					return rex.test($(this).text());
+				}).show();
+			})
+		}(jQuery));
+	});
+
+	$(document).ready(function () {
+		(function ($) {
+			$('#filter2').keyup(function () {
+				var rex = new RegExp($(this).val(), 'i');
+				$('.searchable2 tr').hide();
+				$('.searchable2 tr').filter(function () {
+					return rex.test($(this).text());
+				}).show();
+			})
+		}(jQuery));
+	});	
+	</script>
+</body>
+</html>
