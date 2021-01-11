@@ -17,7 +17,7 @@
 </head>
 
 <body>
-      <div class="container text-center my-4">
+    <div class="container text-center my-4">
 
     <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
 
@@ -29,8 +29,11 @@
       <thead>
         <tr>
           <th>Nome</th>
-          <th>Idade</th>
-          <th>E-mail</th>
+          <th>N. S. Aparecida</th>
+          <th>N. S. Rainha da Paz</th>
+          <th>N. S. Perpetuo Socorro</th>
+          <th>São Vicente</th>
+          <th>São Judas</th>
         </tr>
       </thead>
       <!-- Table head -->
@@ -60,10 +63,13 @@
       for (i = 0; i < sheetData.length; i++) {
 
         var name = data.feed.entry[i]['gsx$nome']['$t'];
-        var age = data.feed.entry[i]['gsx$idade']['$t'];
-        var email = data.feed.entry[i]['gsx$email']['$t'];
+        var na = data.feed.entry[i]['gsx$na']['$t'];
+        var rp = data.feed.entry[i]['gsx$rp']['$t'];
+        var ps = data.feed.entry[i]['gsx$ps']['$t'];
+        var sv = data.feed.entry[i]['gsx$sv']['$t'];
+        var sj = data.feed.entry[i]['gsx$sj']['$t'];
 
-        document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+name+'</td>'+'<td>'+age+'</td>'+'<td>'+email+'</td>'+'</tr>');
+        document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+name+'</td>'+'<td>'+na+'</td>'+'<td>'+rp+'</td>'+'<td>'+ps+'</td>'+'<td>'+sv+'</td>'+'<td>'+sj+'</td>'+'</tr>');
 
       }
     });
