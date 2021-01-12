@@ -100,18 +100,13 @@
         </div>
       </section>
       <section class="col-lg-6 col-sm-12">
-        <button class="btn btn-primary btn-lg btn-block" onclick="download_img();">CRAFT</button>
-        <a id="download" download="myImage.jpg" onclick="download_img();">Download</a>
+        <button class="btn btn-primary btn-lg btn-block" onclick="consoletoDataURL();">CRAFT</button>
+      </section>
+      <section class="col-lg-6 col-sm-12">
+        <a id="download" download="myCraft.jpg" onclick="download_img(this);">Download</a>
       </section>
     </div>
   </div>
-
-  <canvas width=200 height=200 id="thecanvas"></canvas>
-  <div><button onclick="to_image()">Draw to Image</button></div>
-  <image id="theimage"></image>
-
-<script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
-<script type="text/javascript" src="js/html2canvas.js"></script>
 <script type="text/javascript">
 const canva_craft = document.getElementById("canva_craft");
 const context = canva_craft.getContext('2d');
@@ -146,9 +141,13 @@ boca.addEventListener("load", function(){
   );
 });
 
-download_img = function() {
-  Canvas2Image.saveAsPNG(canva_craft);
+consoletoDataURL = function() {
   console.log(canva_craft.toDataURL());
+};
+
+download_img = function(el) {
+  var image = canva_craft.toDataURL("image/jpg");
+  el.href = image;
 };
 </script>
 </body>
