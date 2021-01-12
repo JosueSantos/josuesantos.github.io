@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="ufc, papercraft, face maker">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta name="description" content="Craft Maker - Criador de Papercraft personalizado">
+  <title>Craft Maker</title>
+
+  <meta itemprop="name" content="Craft Maker">
+  <meta itemprop="description" content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta itemprop="image" content="img/favicon.png">
+
+
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon.png">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon.png">
+
+  <!-- theme-color -->
+  <meta name="theme-color" content="#bbba48" />
+  <!-- end-theme-color -->
+  
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <style type="text/css">
+    .display-block{
+      display: block;
+    }
+    .display-none{
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function hideAll( item ){
+      anterior = document.querySelector(".display-block");
+      anterior.classList.add("display-none");
+      anterior.classList.remove("display-block");
+      
+      classItem = ".boca";
+
+      if ( item == 1 ){
+        classItem = ".olho";
+      }else if ( item == 2 ) {
+        classItem = ".nariz";
+      }
+
+      atual = document.querySelector(classItem);
+      atual.classList.add("display-block");
+      atual.classList.remove("display-none");
+    }
+  </script>
+</head>
+  
+<body>
+  <div class="container">
+    <div class="row">
+      <section class="col-lg-6 col-sm-12">
+        <output width="100%">
+          <canvas id="canva_craft"></canvas>
+        </output>
+      </section>
+      <section class="col-lg-6 col-sm-12">
+        <div class="container">
+          <section class="row">
+            <div class="col-3" onclick="hideAll(1)">OLHO</div>
+            <div class="col-3" onclick="hideAll(2)">NARIZ</div>
+            <div class="col-3" onclick="hideAll(3)">BOCA</div>
+          </section>
+          <div class="olho display-block">
+            <section class="row">
+              <div class="col-3" onclick="olho.src = 'img/olho01.png';"><img src="img/olho01.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho02.png';"><img src="img/olho02.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho03.png';"><img src="img/olho03.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho04.png';"><img src="img/olho04.png" width="100%" /></div>
+            </section>
+          </div>
+          <div class="nariz display-none">
+            <section class="row">
+              <div class="col-3" onclick="nariz.src = 'img/nariz01.png';"><img src="img/nariz01.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz02.png';"><img src="img/nariz02.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz03.png';"><img src="img/nariz03.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz04.png';"><img src="img/nariz04.png" width="100%" /></div>
+            </section>
+          </div>
+          <div class="boca display-none">
+            <section class="row">
+              <div class="col-3" onclick="boca.src = 'img/boca01.png';"><img src="img/boca01.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca02.png';"><img src="img/boca02.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca03.png';"><img src="img/boca03.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca04.png';"><img src="img/boca04.png" width="100%" /></div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="col-lg-6 col-sm-12">
+        <button class="btn btn-primary btn-lg btn-block" onclick="download_img();">CRAFT</button>
+        <a id="download" download="myImage.jpg" onclick="download_img();">Download</a>
+      </section>
+    </div>
+  </div>
+
+  <canvas width=200 height=200 id="thecanvas"></canvas>
+  <div><button onclick="to_image()">Draw to Image</button></div>
+  <image id="theimage"></image>
+
+<script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript">
+const canva_craft = document.getElementById("canva_craft");
+const context = canva_craft.getContext('2d');
+
+const olho = document.createElement("img");
+
+const nariz = document.createElement("img");
+
+const boca = document.createElement("img");
+
+olho.addEventListener("load", function(){
+  context.clearRect(0, 0, olho.width, olho.height);
+
+  context.drawImage(
+    olho, 0, 0, olho.width, olho.height, 0, 0, olho.width, olho.height
+  );
+});
+
+nariz.addEventListener("load", function(){
+  context.clearRect(0, olho.height, nariz.width, nariz.height);
+
+  context.drawImage(
+    nariz, 0, 0, nariz.width, nariz.height, 0, olho.height, nariz.width, nariz.height
+  );
+});
+
+boca.addEventListener("load", function(){
+  context.clearRect(0, ( nariz.height + olho.height ), boca.width, boca.height);
+
+  context.drawImage(
+    boca, 0, 0, boca.width, boca.height, 0, ( nariz.height + olho.height ), boca.width, boca.height
+  );
+});
+
+download_img = function() {
+  Canvas2Image.saveAsPNG(canva_craft);
+  console.log(canva_craft.toDataURL());
+};
+</script>
+</body>
+</html>
