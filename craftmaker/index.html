@@ -100,10 +100,7 @@
         </div>
       </section>
       <section class="col-lg-6 col-sm-12">
-        <button class="btn btn-primary btn-lg btn-block" onclick="consoletoDataURL();">CRAFT</button>
-      </section>
-      <section class="col-lg-6 col-sm-12">
-        <a id="download" download="myCraft.jpg" onclick="download_img(this);">Download</a>
+        <a class="btn btn-primary btn-lg btn-block" id="download" download="myCraft.jpg" onclick="download_img(this);">Download</a>
       </section>
     </div>
   </div>
@@ -140,10 +137,6 @@ boca.addEventListener("load", function(){
     boca, 0, 0, boca.width, boca.height, 0, ( nariz.height + olho.height ), boca.width, boca.height
   );
 });
-
-consoletoDataURL = function() {
-  console.log(canva_craft.toDataURL());
-};
 
 download_img = function(el) {
   var image = canva_craft.toDataURL("image/jpg");
