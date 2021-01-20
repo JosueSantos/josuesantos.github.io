@@ -57,7 +57,7 @@
     color: #000;
   }
 </style>
-<div class="mdl-layout__content" id="main-drop">
+<div class="mdl-layout__content">
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
@@ -65,20 +65,15 @@
           <i class="material-icons">vertical_align_bottom</i>
         </a>
       </div>
-      <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)" id="main-drop">
         <img id="cabecaAtual" src="img/cabeca.png" height="0%" width="0%" />
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"><img id="sobrancelhaAtual" src="img/sobrancelha01.png" height="100%" width="100%" /></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"><img id="olhosAtual" src="img/olho01.png" height="100%" width="100%" /></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"><img id="narizAtual" src="img/nariz02.png" height="100%" width="100%" /></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"></div>
-        <div class="mdl-cell--4-col"><img id="bocaAtual" src="img/boca04.png" height="100%" width="100%" /></div>
-        <div class="mdl-cell--4-col"></div>
+        <img id="sobrancelhaAtual" src="img/sobrancelha01.png" height="0%" width="0%" />
+        <img id="olhosAtual" src="img/olho01.png" height="0%" width="0%" />
+        <img id="narizAtual" src="img/nariz02.png" height="0%" width="0%" />
+        <img id="bocaAtual" src="img/boca04.png" height="0%" width="0%" />
+        <img id="result-img" width="100%" />
+
+        <canvas id="canva_craft"></canvas>
       </div>
     </div>
 
@@ -92,31 +87,31 @@
         </div>
         <div class="mdl-tabs__panel" id="sobrancelha-panel">
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha01.png';"><img id="sobrancelha1" draggable="true" ondragstart="drag(event)" src="img/sobrancelha01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha02.png';"><img id="sobrancelha2" draggable="true" ondragstart="drag(event)" src="img/sobrancelha02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha03.png';"><img id="sobrancelha3" draggable="true" ondragstart="drag(event)" src="img/sobrancelha03.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha01.png';drawCanva();"><img id="sobrancelha1" draggable="true" ondragstart="drag(event)" src="img/sobrancelha01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha02.png';drawCanva();"><img id="sobrancelha2" draggable="true" ondragstart="drag(event)" src="img/sobrancelha02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha03.png';drawCanva();"><img id="sobrancelha3" draggable="true" ondragstart="drag(event)" src="img/sobrancelha03.png" width="100%" /></div>
           </div>
         </div>
         <div class="mdl-tabs__panel is-active" id="olho-panel">
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho01.png';"><img id="olhos1" draggable="true" ondragstart="drag(event)" src="img/olho01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho02.png';"><img id="olhos2"draggable="true" ondragstart="drag(event)" src="img/olho02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho03.png';"><img id="olhos3"draggable="true" ondragstart="drag(event)" src="img/olho03.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho01.png';drawCanva();"><img id="olhos1" draggable="true" ondragstart="drag(event)" src="img/olho01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho02.png';drawCanva();"><img id="olhos2"draggable="true" ondragstart="drag(event)" src="img/olho02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho03.png';drawCanva();"><img id="olhos3"draggable="true" ondragstart="drag(event)" src="img/olho03.png" width="100%" /></div>
           </div>
         </div>
         <div class="mdl-tabs__panel" id="nariz-panel">
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz01.png';"><img id="nariz1" draggable="true" ondragstart="drag(event)" src="img/nariz01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz02.png';"><img id="nariz2" draggable="true" ondragstart="drag(event)" src="img/nariz02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz03.png';"><img id="nariz3" draggable="true" ondragstart="drag(event)" src="img/nariz03.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz01.png';drawCanva();"><img id="nariz1" draggable="true" ondragstart="drag(event)" src="img/nariz01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz02.png';drawCanva();"><img id="nariz2" draggable="true" ondragstart="drag(event)" src="img/nariz02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz03.png';drawCanva();"><img id="nariz3" draggable="true" ondragstart="drag(event)" src="img/nariz03.png" width="100%" /></div>
           </div>
         </div>
         <div class="mdl-tabs__panel" id="boca-panel">
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca01.png';"><img id="boca1" draggable="true" ondragstart="drag(event)" src="img/boca01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca02.png';"><img id="boca2" draggable="true" ondragstart="drag(event)" src="img/boca02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca03.png';"><img id="boca3" draggable="true" ondragstart="drag(event)" src="img/boca03.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca04.png';"><img id="boca4" draggable="true" ondragstart="drag(event)" src="img/boca04.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca01.png';drawCanva();"><img id="boca1" draggable="true" ondragstart="drag(event)" src="img/boca01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca02.png';drawCanva();"><img id="boca2" draggable="true" ondragstart="drag(event)" src="img/boca02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca03.png';drawCanva();"><img id="boca3" draggable="true" ondragstart="drag(event)" src="img/boca03.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca04.png';drawCanva();"><img id="boca4" draggable="true" ondragstart="drag(event)" src="img/boca04.png" width="100%" /></div>
           </div>
         </div>
       </div>
@@ -126,17 +121,61 @@
       <h4 id="result"></h4>
     </div>
     <div class="mdl-cell mdl-cell--12-col">
-      <canvas id="canva_craft"></canvas>
     </div>
   </div>
 </div>
 
 
 <script type="text/javascript">
+const canva_craft2 = document.getElementById("canva_craft");
+const canva_craft = document.createElement("canvas");
+canva_craft.width = 800;
+canva_craft.height = 1100;
+const context = canva_craft.getContext('2d');
+
+const cabeca = document.getElementById("cabecaAtual");
+cabeca.src = "img/cabeca.png";
 const sobrancelha = document.getElementById("sobrancelhaAtual");
+sobrancelha.src = "img/sobrancelha01.png";
 const olho = document.getElementById("olhosAtual");
+olho.src = "img/olho01.png";
 const nariz = document.getElementById("narizAtual");
+nariz.src = "img/nariz02.png";
 const boca = document.getElementById("bocaAtual");
+boca.src = "img/boca04.png";
+
+drawCanva = function(el) {
+  context.clearRect(0, 0, canva_craft.width, canva_craft.height);
+
+  var imgRosto = new Image();
+  imgRosto.src =  cabeca.src;
+  imgRosto.width = 800;
+  imgRosto.height = 1100;
+
+  var imgSobrancelha = new Image();
+  imgSobrancelha.src = sobrancelha.src;
+
+  var imgOlho = new Image();
+  imgOlho.src = olho.src;
+
+  var imgNariz = new Image();
+  imgNariz.src = nariz.src;
+  imgNariz.width = 420;
+  imgNariz.height = 215;
+
+  var imgBoca = new Image();
+  imgBoca.src = boca.src;
+  imgBoca.width = 300;
+  imgBoca.height = 150;
+
+  context.drawImage(imgRosto, 0, 0, imgRosto.width, imgRosto.height);
+  context.drawImage(imgSobrancelha, 115, 310, imgSobrancelha.width, imgSobrancelha.height);
+  context.drawImage(imgOlho, 95, 380, imgOlho.width, imgOlho.height);
+  context.drawImage(imgNariz, 200, 430, imgNariz.width, imgNariz.height);
+  context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
+
+  document.getElementById("result-img").src = canva_craft.toDataURL("image/jpg");
+}
 
 function allowDrop(ev) {
   ev.preventDefault();
@@ -165,49 +204,14 @@ function drop(ev) {
       boca.src = src;
       break;
     default:
-
   }
+  drawCanva();
 }
 
+drawCanva();
+
 download_img = function(el) {
-  const canva_craft = document.getElementById("canva_craft");
-  canva_craft.width = 800;
-  canva_craft.height = 1100;
-  const context = canva_craft.getContext('2d');
-  context.clearRect(0, 0, canva_craft.width, canva_craft.height);
-
-  const cabeca = document.getElementById("cabecaAtual");
-
-  var imgRosto = new Image();
-  imgRosto.src =  cabeca.src;
-  imgRosto.width = 800;
-  imgRosto.height = 1100;
-
-  var imgSobrancelha = new Image();
-  imgSobrancelha.src = sobrancelha.src;
-
-  var imgOlho = new Image();
-  imgOlho.src = olho.src;
-
-  var imgNariz = new Image();
-  imgNariz.src = nariz.src;
-  imgNariz.width = 420;
-  imgNariz.height = 215;
-
-  var imgBoca = new Image();
-  imgBoca.src = boca.src;
-  imgBoca.width = 300;
-  imgBoca.height = 150;
-
-  drawCanv = function() {
-    context.drawImage(imgRosto, 0, 0, imgRosto.width, imgRosto.height);
-    context.drawImage(imgSobrancelha, 115, 310, imgSobrancelha.width, imgSobrancelha.height);
-    context.drawImage(imgOlho, 95, 380, imgOlho.width, imgOlho.height);
-    context.drawImage(imgNariz, 200, 430, imgNariz.width, imgNariz.height);
-    context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
-  }
-  drawCanv();
-
+  drawCanva();
   document.getElementById("result").innerHTML = "Modelo Criado";
 
   var image = canva_craft.toDataURL("image/jpg");
