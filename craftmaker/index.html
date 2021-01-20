@@ -43,7 +43,7 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 </head>
   
-<body>
+<body onload="init()">
 <!-- Wide card with share menu button -->
 <style>
   html, body {
@@ -66,13 +66,7 @@
         </a>
       </div>
       <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)" id="main-drop">
-        <img id="cabecaAtual" src="img/cabeca.png" height="0%" width="0%" />
-        <img id="sobrancelhaAtual" src="img/sobrancelha01.png" height="0%" width="0%" />
-        <img id="olhosAtual" src="img/olho01.png" height="0%" width="0%" />
-        <img id="narizAtual" src="img/nariz02.png" height="0%" width="0%" />
-        <img id="bocaAtual" src="img/boca04.png" height="0%" width="0%" />
         <img id="result-img" width="100%" />
-
         <canvas id="canva_craft"></canvas>
       </div>
     </div>
@@ -80,10 +74,16 @@
     <div class="mdl-cell mdl-cell--6-col menu">
       <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
+          <a href="#cabeca-panel" class="mdl-tabs__tab">Rosto</a>
           <a href="#sobrancelha-panel" class="mdl-tabs__tab"><img alt="Sobrancelha" src="img/ico-sobrancelha.png" /></a>
           <a href="#olho-panel" class="mdl-tabs__tab is-active"><img alt="Olho" src="img/ico-olho.png" /></a>
           <a href="#nariz-panel" class="mdl-tabs__tab"><img alt="Nariz" src="img/ico-nariz.png" /></a>
           <a href="#boca-panel" class="mdl-tabs__tab"><img alt="Boca" src="img/ico-boca.png" /></a>
+        </div>
+        <div class="mdl-tabs__panel" id="cabeca-panel">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col"><img src="img/cabeca.png" width="100%" /></div>
+          </div>
         </div>
         <div class="mdl-tabs__panel" id="sobrancelha-panel">
           <div class="mdl-grid">
@@ -116,12 +116,6 @@
         </div>
       </div>
     </div>
-
-    <div class="mdl-cell mdl-cell--12-col">
-      <h4 id="result"></h4>
-    </div>
-    <div class="mdl-cell mdl-cell--12-col">
-    </div>
   </div>
 </div>
 
@@ -133,16 +127,21 @@ canva_craft.width = 800;
 canva_craft.height = 1100;
 const context = canva_craft.getContext('2d');
 
-const cabeca = document.getElementById("cabecaAtual");
-cabeca.src = "img/cabeca.png";
-const sobrancelha = document.getElementById("sobrancelhaAtual");
-sobrancelha.src = "img/sobrancelha01.png";
-const olho = document.getElementById("olhosAtual");
-olho.src = "img/olho01.png";
-const nariz = document.getElementById("narizAtual");
-nariz.src = "img/nariz02.png";
-const boca = document.getElementById("bocaAtual");
-boca.src = "img/boca04.png";
+const cabeca = document.createElement("img");
+const sobrancelha = document.createElement("img");
+const olho = document.createElement("img");
+const nariz = document.createElement("img");
+const boca = document.createElement("img");
+
+init = function(el) {
+  sobrancelha.src = "img/sobrancelha01.png";
+  olho.src = "img/olho01.png";
+  nariz.src = "img/nariz02.png";
+  boca.src = "img/boca04.png";
+  cabeca.src = "img/cabeca.png";
+
+  drawCanva();
+}
 
 drawCanva = function(el) {
   context.clearRect(0, 0, canva_craft.width, canva_craft.height);
@@ -174,7 +173,9 @@ drawCanva = function(el) {
   context.drawImage(imgNariz, 200, 430, imgNariz.width, imgNariz.height);
   context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
 
-  document.getElementById("result-img").src = canva_craft.toDataURL("image/jpg");
+  imgCanva = document.getElementById("result-img");
+  imgCanva.src = canva_craft.toDataURL("image/jpg");
+  imgCanva.height = screen.height * 0.9;
 }
 
 function allowDrop(ev) {
@@ -208,11 +209,8 @@ function drop(ev) {
   drawCanva();
 }
 
-drawCanva();
-
 download_img = function(el) {
   drawCanva();
-  document.getElementById("result").innerHTML = "Modelo Criado";
 
   var image = canva_craft.toDataURL("image/jpg");
   el.href = image;
