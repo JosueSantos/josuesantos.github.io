@@ -67,7 +67,7 @@
       </div>
       <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)" id="main-drop">
         <img id="result-img" width="100%" />
-        <canvas id="canva_craft"></canvas>
+        <canvas id="canva_craft" width="0%" height="0%"></canvas>
       </div>
     </div>
 
@@ -175,7 +175,7 @@ drawCanva = function(el) {
 
   imgCanva = document.getElementById("result-img");
   imgCanva.src = canva_craft.toDataURL("image/jpg");
-  imgCanva.height = screen.height * 0.9;
+  imgCanva.height = screen.height * 0.5;
 }
 
 function allowDrop(ev) {
