@@ -67,14 +67,14 @@
       </div>
       <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)" id="main-drop">
         <img id="result-img"/>
-        <canvas id="canva_craft" width="0%" height="0%"></canvas>
+        <!-- <canvas id="canva_craft" width="0%" height="0%"></canvas> -->
       </div>
     </div>
 
     <div class="mdl-cell mdl-cell--6-col menu">
       <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
-          <a href="#cabeca-panel" class="mdl-tabs__tab">Rosto</a>
+          <!-- <a href="#cabeca-panel" class="mdl-tabs__tab">Rosto</a> -->
           <a href="#sobrancelha-panel" class="mdl-tabs__tab"><img alt="Sobrancelha" src="img/ico-sobrancelha.png" /></a>
           <a href="#olho-panel" class="mdl-tabs__tab is-active"><img alt="Olho" src="img/ico-olho.png" /></a>
           <a href="#nariz-panel" class="mdl-tabs__tab"><img alt="Nariz" src="img/ico-nariz.png" /></a>
@@ -82,7 +82,7 @@
         </div>
         <div class="mdl-tabs__panel" id="cabeca-panel">
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col"><img src="img/cabeca.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col"><img src="img/cabeca.png" /></div>
           </div>
         </div>
         <div class="mdl-tabs__panel" id="sobrancelha-panel">
@@ -121,7 +121,7 @@
 
 
 <script type="text/javascript">
-const canva_craft2 = document.getElementById("canva_craft");
+// const canva_craft2 = document.getElementById("canva_craft");
 const canva_craft = document.createElement("canvas");
 canva_craft.width = 800;
 canva_craft.height = 1100;
@@ -175,7 +175,7 @@ drawCanva = function(el) {
 
   imgCanva = document.getElementById("result-img");
   imgCanva.src = canva_craft.toDataURL("image/jpg");
-  imgCanva.height = screen.height * 0.5;
+  imgCanva.height = screen.height * 0.3;
 }
 
 function allowDrop(ev) {
