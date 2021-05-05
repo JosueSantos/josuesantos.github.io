@@ -12,7 +12,10 @@
 
 ## Trabalhos da UFC 2018.1
 
-Saviors Of Fate - GameMaker
+CraftMaker - JS - Projeto Integrado 2
+* [CraftMaker](https://craftmaker.vercel.app/)
+
+Saviors Of Fate - GameMaker - Projeto Integrado 1
 * [/SOF](https://josuesantos.github.io/SOF/)
 
 MAMI - Matemática Aplicada a Multimídias I
