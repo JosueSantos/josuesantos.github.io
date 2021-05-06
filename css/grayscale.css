@@ -8,7 +8,7 @@ body {
   
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
-  background-image: linear-gradient(135deg, #003073, #129ec4);
+  background-image: linear-gradient(135deg, #3594cb, #129ec4);
 }
 html {
   
@@ -39,7 +39,7 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color: #a9cce0;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -47,7 +47,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #000;
 }
 .light {
   font-weight: 400;
@@ -224,7 +224,7 @@ a:focus {
   padding-top: 100px;
 }
 .divisao_maior{
-  background-color: #00000005;
+  background-color: #3386b6;
   margin-bottom: 20px;
   padding: 20px;
 }
@@ -234,7 +234,7 @@ a:focus {
   align-items: stretch;
 }
 .divisao_menor{
-  background-color: #00000010;
+  background-color: #4591bd;
   padding: 10px;
   margin: 3px;
   flex: 1;
@@ -278,16 +278,16 @@ a:focus {
   border-radius: 0;
 }
 .btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
+  border: 1px solid #a9cce0;
+  color: #a9cce0;
   background-color: transparent;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid #42DCA3;
+  border: 1px solid #6cbfee;
   outline: none;
   color: black;
-  background-color: #42DCA3;
+  background-color: #6cbfee;
 }
 
 .download-section .btn-default {
