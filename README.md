@@ -6,24 +6,28 @@
 
 ## Trabalhos Pessoais
 
-/JK
-* [/JK/index.html](https://josuesantos.github.io/JK/)
+* [/JK](https://josuesantos.github.io/JK/)
+História da coruja e da girafa, slide de imagens estilo papel
 * [/JK/josukaka.html](https://josuesantos.github.io/JK/josukaka.html)
+Cronômetro de quanto tempo já estou casado
+* [/dodge](https://josuesantos.github.io/dodge/)
+Feito com o Godot, jogo tutorial
+* [/EscalaCreater](https://josuesantos.github.io/EscalaCreater/)
+Gerador automático de Escala para Coroinhas
+* [/googlesheet](https://josuesantos.github.io/googlesheet/)
+Utilizar uma tabela google docs como banco de dados
+* [/jogoDaVelha](https://josuesantos.github.io/jogoDaVelha/)
+Jogo da Velha, singleplay
+* [/linha](https://josuesantos.github.io/linha/)
+Minha linha do tempo
 
-## Trabalhos da UFC 2018.1
+## Trabalhos da UFC
 
-CraftMaker - JS - Projeto Integrado 2
 * [CraftMaker](https://craftmaker.vercel.app/)
-
-Saviors Of Fate - GameMaker - Projeto Integrado 1
+CraftMaker - JS - Projeto Integrado 2
 * [/SOF](https://josuesantos.github.io/SOF/)
-
-MAMI - Matemática Aplicada a Multimídias I
+Saviors Of Fate - GameMaker - Projeto Integrado 1
 * [/mami](https://josuesantos.github.io/mami/)
+MAMI - Matemática Aplicada a Multimídias I
 ** [Breakout - Jogo](https://josuesantos.github.io/mami/ativ10.html)
-
-AM 2 - Autoração Multimídia 2
-* [/portifolio](https://josuesantos.github.io/portifolio/)
-
-Jogu da Véa
-* [/portifolio](https://josuesantos.github.io/jogoDaVelha/)
+** [Game This Game - Jogo](https://josuesantos.github.io/mami/trab04.html)
