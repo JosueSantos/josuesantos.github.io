@@ -5,11 +5,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N06PRYX2EL"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-N06PRYX2EL');
+        gtag('config', 'G-N06PRYX2EL');
     </script>
 
     <meta charset="utf-8">
@@ -19,8 +19,8 @@
     <meta property="og:description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta property="og:url" content="https://josuesantos.github.io/">
     <meta property="og:image" content="img/js.PNG">
-    
-    <meta property="og:type" content="website"/>
+
+    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="J.S.">
     <meta property="og:locale" content="pt_BR">
 
@@ -34,7 +34,7 @@
     <meta itemprop="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta itemprop="image" content="img/js.PNG">
     <meta name="keywords" content="Josué, Analista, Desenvolvedor">
-    
+
     <title>Josué.Santos</title>
 
     <meta name="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
@@ -44,13 +44,13 @@
     <link rel="apple-touch-icon" sizes="128x128" href="img/icons/icon-128x128.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
     <link rel="apple-touch-icon" sizes="192x192" href="img/icons/icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="img/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icons/icon-192x192.png">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.png">
     <link rel='manifest' href='/manifest.json'>
     <!-- theme-color -->
     <meta name="theme-color" content="#003073" />
     <!-- end-theme-color -->
-    
+
     <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
@@ -58,242 +58,317 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
-	<link href="css/efeito.css" rel="stylesheet">
+    <link href="css/efeito.css" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="background">
 
     <div class="container">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-circle-o-notch"></i> JS.<span id='ano'></span>
+        <!-- Navigation -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-main-collapse">
+                        Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <i class="fa fa-circle-o-notch"></i> JS.<span id='ano'></span>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">Sobre</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#performed">Realizados</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contato</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#perfio" style="font-size:18pt"><i
+                                    class="fa fa-circle-o-notch"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <!-- Intro Header -->
+        <header class="intro" id="introducao">
+            <div class="intro-body">
+                <h1 class="brand-heading">Josué.Santos</h1>
+                <p class="intro-text">Analista e Desenvolvedor</p>
+
+                <a href="#about" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
                 </a>
             </div>
+        </header>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#performed">Realizados</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#perfio" style="font-size:18pt"><i class="fa fa-circle-o-notch"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+        <!-- About Section -->
+        <section id="about" class="container content-section intro">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2" style="text-align: justify;margin-bottom: 10em;">
+                    <h4>Semana Zero</h4><p style="font-size:48px; float: right;">&#128516;</p>
+                    <p>Oficina "Mineração de Texto: WordCloud"</p> 
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            &#128073; <a href="https://colab.research.google.com/drive/1QxrkMUgwC5G1zle5aD5jX9Ej0RALhgqn?usp=sharing" target="_blank"
+                                class="btn btn-default"><span class="network-name">Google Colab</span></a>
+                        </li>
+                    </ul>
+                    <!-- HTML generated using hilite.me -->
+                    <div
+                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">re</span>
 
-    <!-- Intro Header -->
-    <header class="intro" id="introducao">
-		<div class="intro-body">
-			<h1 class="brand-heading">Josué.Santos</h1>
-			<p class="intro-text">Analista e Desenvolvedor</p>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">nltk</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">nltk.corpus</span> <span style="color: #008800; font-weight: bold">import</span> stopwords
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">wordcloud</span> <span style="color: #008800; font-weight: bold">import</span> WordCloud
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">plt</span>
 
-			<a href="#about" class="btn btn-circle page-scroll">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-    </header>
+nltk<span style="color: #333333">.</span>download(<span style="background-color: #fff0f0">&#39;stopwords&#39;</span>)
 
-    <!-- About Section -->
-    <section id="about" class="container content-section intro">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Sobre J.s</h2>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">myWordCloud</span>(text, titleText):
+    text <span style="color: #333333">=</span> re<span style="color: #333333">.</span>sub(<span style="background-color: #fff0f0">r&#39;[^\w\s]|http\S+&#39;</span>,<span style="background-color: #fff0f0">&#39;&#39;</span>, text)<span style="color: #333333">.</span>lower()
 
-                <p>Olá! Estou cursando Sistemas e Mídias Digitais na UFC. Também sou formado em Análise e Desenvolvimento de Sistemas na Estácio FIC.</p>
+    wordcloud <span style="color: #333333">=</span> WordCloud(
+        stopwords<span style="color: #333333">=</span>stopwords<span style="color: #333333">.</span>words(<span style="background-color: #fff0f0">&#39;portuguese&#39;</span>),
+        max_words<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">30</span>,
+        background_color<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;white&quot;</span>
+    )<span style="color: #333333">.</span>generate( text )
 
-                <p>Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019, como Programador I. Pertenço a equipe de desenvolvimento onde utilizo diversas ferramentas e linguagens, entre elas: TypeScript, Node.js, Laravel, Python, Java, Mysql, MongoBD, Potgresql, SqlServer e o CMS Polopoly.</p>
-
-                <p>Já trabalhei no <strong>Consórcio Metro Service</strong> durante 3 anos, onde participei da criação do Sistema Integrado de Manutenção e Gestão, aplicação criada para a <strong>MetroFor</strong>, projeto desenvolvido em PHP e PostgreSQL.</p>
-
-                <p>Também estagiei como desenvolvedor, em 2013, na empresa <strong>ARCE (Agência Reguladora de Serviços Públicos Delegados do Estado do Ceará)</strong>, onde utilizava Java, Java EE, JSF, JPA e PrimeFaces.</p>
-
-                <p>Fui jovem aprendiz na empresa <strong>Guararapes Confecções</strong>, em 2014. Pelo meu desempenho e proatividade, mudei de setor três vezes. Atuei no RH, no Setor de Responsabilidade Social e no Departamento Pessoal, onde desenvolvi duas aplicações em Excel/VB (por iniciativa própria) para controle de biblioteca e comunicação entre setores.</p>
-
-                <p>Em 2015, estagiei na <strong>FortBrasil</strong> na função de Estágio de Inteligência da Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais.</p>
-
-                <p>Aprendo rápido e gosto de desafios. Pode conferir abaixo alguns trabalhos que já realizei. Veja minha linha do tempo para ter mais detalhes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="performed" class="content-section text-center">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                <h3>Realizados no Cotidiano</h3>
-                <div class="divisao">
-                    <div class="divisao_menor">
-                        <h4>Minha Linha do Tempo</h4>
-                        <p>Complemento visual do meu desenvolvimento pessoal.</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://josuesantos.github.io/linha/index.html" target="_blank" class="btn btn-default"><span class="network-name">Linha do Tempo</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="divisao_menor">
-                        <h4>Spider Web</h4>
-                        <p>Raspador Web criado em Python</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://github.com/JosueSantos/spiderwebsam" target="_blank" class="btn btn-default"><span class="network-name">Spider Web</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="divisao_menor">
-                        <h4>Declaração de Amor</h4>
-                        <p>Como expressar sentimentos, se não for fazendo o que mais gosta?</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://josuesantos.github.io/JK/" target="_blank" class="btn btn-default"><span class="network-name">JoKa</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="divisao_menor">
-                        <h4>Jogu da Véa</h4>
-                        <p>Atividade para descontrair</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://josuesantos.github.io/jogoDaVelha/" target="_blank" class="btn btn-default"><span class="network-name">Jogo da Velha</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                <h3>Realizados no Período Acadêmico</h3>
-                <div class="divisao">
-                    <div class="atividade-section divisao_menor">
-                        <h4>Craft Maker</h4>
-                        <p>Trabalho em Equipe<br>Projeto Integrado II<br>Personalizador de bonecos de papel.</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://craftmaker.vercel.app/" target="_blank" class="btn btn-default"><span class="network-name">CRAFT MAKER</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="atividade-section divisao_menor">
-                        <h4>Name This Game</br>(Octopus) (Atari 2600)</h4>
-                        <p>Trabalho individual / MAMI - Matemática Aplicada a Multimídias I</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://josuesantos.github.io/mami/trab04.html" target="_blank" class="btn btn-default"><span class="network-name">Octopus</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="atividade-section divisao_menor">
-                        <h4>Fantasmito - Scratch</h4>
-                        <p>Primeiro Jogo criado inteiramente por mim. Pela ferramenta do Scratch</p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://josuesantos.github.io/fantasmito.html" target="_blank" class="btn btn-default"><span class="network-name">Fantasmito</span></a>
-                            </li>
-                        </ul>
+    plt<span style="color: #333333">.</span>figure(figsize<span style="color: #333333">=</span>(<span style="color: #0000DD; font-weight: bold">8</span>,<span style="color: #0000DD; font-weight: bold">6</span>))
+    plt<span style="color: #333333">.</span>imshow(wordcloud)
+    plt<span style="color: #333333">.</span>title(titleText)
+</pre>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                <h3>Link do Currículo completo</h3>
-                <p>Aqui você pode conhecer mais detalhes.</p>
-				<ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing" target="_blank" class="btn btn-default btn-lg"><span class="network-name">Currículo</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Sobre J.s</h2>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-		<div class="contat-section">
-			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1">
-					<h2>Contate-me</h2>
-					<div class="row">
-						<div class="col-lg-12">
-							<p>Sinta-se livre para me enviar um e-mail, uma oferta de projeto, criação de sites, oportunidade de emprego, ou apenas dizer olá!</p>
-							<p><a href="mailto:josuemarques3@gmail.com">josuemarques3@gmail.com</a>
-							</p>
-							<ul class="list-inline banner-social-buttons">
-								<li>
-									<a href="https://www.facebook.com/josue.santos.9231" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-								</li>
-								<li>
-									<a href="https://github.com/JosueSantos" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-								</li>
-								<li>
-									<a href="https://www.linkedin.com/in/js-josu%C3%A9-santos/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-    </section>
+                    <p>Olá! Estou cursando Sistemas e Mídias Digitais na UFC. Também sou formado em Análise e
+                        Desenvolvimento de Sistemas na Estácio FIC.</p>
 
-	<!-- Contact Section -->
-    <section id="perfio" class="container content-section text-center intro">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Deseja ver minha foto?</h2>
-                <p>Se acha necessário ver minha cara ou conhecer mais sobre minha vida pessoal, pode conferir no link abaixo!</p>
-                
-                <ul class="list-inline banner-social-buttons" style="margin-bottom: 20%;">
-                    <li>
-                        <a href="https://www.google.com.br/search?q=%23josudakaka&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiL1ue14uDVAhUDHpAKHRfRDvUQ_AUICygC&biw=1366&bih=638" target="_blank" class="btn btn-default btn-lg"><span class="network-name">#JosuDaKaka</span></a>
-                    </li>
-                </ul>
+                    <p>Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019, como Programador I. Pertenço a
+                        equipe de desenvolvimento onde utilizo diversas ferramentas e linguagens, entre elas:
+                        TypeScript, Node.js, Laravel, Python, Java, Mysql, MongoBD, Potgresql, SqlServer e o CMS
+                        Polopoly.</p>
+
+                    <p>Já trabalhei no <strong>Consórcio Metro Service</strong> durante 3 anos, onde participei da
+                        criação do Sistema Integrado de Manutenção e Gestão, aplicação criada para a
+                        <strong>MetroFor</strong>, projeto desenvolvido em PHP e PostgreSQL.
+                    </p>
+
+                    <p>Também estagiei como desenvolvedor, em 2013, na empresa <strong>ARCE (Agência Reguladora de
+                            Serviços Públicos Delegados do Estado do Ceará)</strong>, onde utilizava Java, Java EE, JSF,
+                        JPA e PrimeFaces.</p>
+
+                    <p>Fui jovem aprendiz na empresa <strong>Guararapes Confecções</strong>, em 2014. Pelo meu
+                        desempenho e proatividade, mudei de setor três vezes. Atuei no RH, no Setor de Responsabilidade
+                        Social e no Departamento Pessoal, onde desenvolvi duas aplicações em Excel/VB (por iniciativa
+                        própria) para controle de biblioteca e comunicação entre setores.</p>
+
+                    <p>Em 2015, estagiei na <strong>FortBrasil</strong> na função de Estágio de Inteligência da
+                        Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais.</p>
+
+                    <p>Aprendo rápido e gosto de desafios. Pode conferir abaixo alguns trabalhos que já realizei. Veja
+                        minha linha do tempo para ter mais detalhes.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Download Section -->
+        <section id="performed" class="content-section text-center">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
+                    <h3>Realizados no Cotidiano</h3>
+                    <div class="divisao">
+                        <div class="divisao_menor">
+                            <h4>Minha Linha do Tempo</h4>
+                            <p>Complemento visual do meu desenvolvimento pessoal.</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://josuesantos.github.io/linha/index.html" target="_blank"
+                                        class="btn btn-default"><span class="network-name">Linha do Tempo</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divisao_menor">
+                            <h4>Spider Web</h4>
+                            <p>Raspador Web criado em Python</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://github.com/JosueSantos/spiderwebsam" target="_blank"
+                                        class="btn btn-default"><span class="network-name">Spider Web</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divisao_menor">
+                            <h4>Declaração de Amor</h4>
+                            <p>Como expressar sentimentos, se não for fazendo o que mais gosta?</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://josuesantos.github.io/JK/" target="_blank"
+                                        class="btn btn-default"><span class="network-name">JoKa</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divisao_menor">
+                            <h4>Jogu da Véa</h4>
+                            <p>Atividade para descontrair</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://josuesantos.github.io/jogoDaVelha/" target="_blank"
+                                        class="btn btn-default"><span class="network-name">Jogo da Velha</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
+                    <h3>Realizados no Período Acadêmico</h3>
+                    <div class="divisao">
+                        <div class="atividade-section divisao_menor">
+                            <h4>Craft Maker</h4>
+                            <p>Trabalho em Equipe<br>Projeto Integrado II<br>Personalizador de bonecos de papel.</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://craftmaker.vercel.app/" target="_blank"
+                                        class="btn btn-default"><span class="network-name">CRAFT MAKER</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="atividade-section divisao_menor">
+                            <h4>Name This Game</br>(Octopus) (Atari 2600)</h4>
+                            <p>Trabalho individual / MAMI - Matemática Aplicada a Multimídias I</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://josuesantos.github.io/mami/trab04.html" target="_blank"
+                                        class="btn btn-default"><span class="network-name">Octopus</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="atividade-section divisao_menor">
+                            <h4>Fantasmito - Scratch</h4>
+                            <p>Primeiro Jogo criado inteiramente por mim. Pela ferramenta do Scratch</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://josuesantos.github.io/fantasmito.html" target="_blank"
+                                        class="btn btn-default"><span class="network-name">Fantasmito</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
+                    <h3>Link do Currículo completo</h3>
+                    <p>Aqui você pode conhecer mais detalhes.</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing"
+                                target="_blank" class="btn btn-default btn-lg"><span
+                                    class="network-name">Currículo</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="contat-section">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h2>Contate-me</h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>Sinta-se livre para me enviar um e-mail, uma oferta de projeto, criação de sites,
+                                    oportunidade de emprego, ou apenas dizer olá!</p>
+                                <p><a href="mailto:josuemarques3@gmail.com">josuemarques3@gmail.com</a>
+                                </p>
+                                <ul class="list-inline banner-social-buttons">
+                                    <li>
+                                        <a href="https://www.facebook.com/josue.santos.9231" target="_blank"
+                                            class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span
+                                                class="network-name">Facebook</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/JosueSantos" target="_blank"
+                                            class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span
+                                                class="network-name">Github</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/js-josu%C3%A9-santos/" target="_blank"
+                                            class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span
+                                                class="network-name">Linkedin</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="perfio" class="container content-section text-center intro">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Deseja ver minha foto?</h2>
+                    <p>Se acha necessário ver minha cara ou conhecer mais sobre minha vida pessoal, pode conferir no
+                        link abaixo!</p>
+
+                    <ul class="list-inline banner-social-buttons" style="margin-bottom: 20%;">
+                        <li>
+                            <a href="https://www.google.com.br/search?q=%23josudakaka&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiL1ue14uDVAhUDHpAKHRfRDvUQ_AUICygC&biw=1366&bih=638"
+                                target="_blank" class="btn btn-default btn-lg"><span
+                                    class="network-name">#JosuDaKaka</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
-	
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Plugin JavaScript -->
+
+    <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Theme JavaScript  -->
     <script src="js/grayscale.js"></script>
-	<script>
-     document.getElementById('ano').innerHTML = new Date().getFullYear();   
+    <script>
+        document.getElementById('ano').innerHTML = new Date().getFullYear();   
     </script>
 </body>
 
