@@ -126,54 +126,15 @@
         <!-- About Section -->
         <section id="about" class="container content-section intro">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2" style="text-align: justify;margin-bottom: 10em;">
-                    <h4>Semana Zero</h4><p style="font-size:48px; float: right;">&#128516;</p>
-                    <p>Oficina "Mineração de Texto: WordCloud"</p> 
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            &#128073; <a href="https://colab.research.google.com/drive/1QxrkMUgwC5G1zle5aD5jX9Ej0RALhgqn?usp=sharing" target="_blank"
-                                class="btn btn-default"><span class="network-name">Google Colab</span></a>
-                        </li>
-                    </ul>
-                    <!-- HTML generated using hilite.me -->
-                    <div
-                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">re</span>
-
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">nltk</span>
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">nltk.corpus</span> <span style="color: #008800; font-weight: bold">import</span> stopwords
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">wordcloud</span> <span style="color: #008800; font-weight: bold">import</span> WordCloud
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">plt</span>
-
-nltk<span style="color: #333333">.</span>download(<span style="background-color: #fff0f0">&#39;stopwords&#39;</span>)
-
-<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">myWordCloud</span>(text, titleText):
-    text <span style="color: #333333">=</span> re<span style="color: #333333">.</span>sub(<span style="background-color: #fff0f0">r&#39;[^\w\s]|http\S+&#39;</span>,<span style="background-color: #fff0f0">&#39;&#39;</span>, text)<span style="color: #333333">.</span>lower()
-
-    wordcloud <span style="color: #333333">=</span> WordCloud(
-        stopwords<span style="color: #333333">=</span>stopwords<span style="color: #333333">.</span>words(<span style="background-color: #fff0f0">&#39;portuguese&#39;</span>),
-        max_words<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">30</span>,
-        background_color<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;white&quot;</span>
-    )<span style="color: #333333">.</span>generate( text )
-
-    plt<span style="color: #333333">.</span>figure(figsize<span style="color: #333333">=</span>(<span style="color: #0000DD; font-weight: bold">8</span>,<span style="color: #0000DD; font-weight: bold">6</span>))
-    plt<span style="color: #333333">.</span>imshow(wordcloud)
-    plt<span style="color: #333333">.</span>title(titleText)
-</pre>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Sobre J.s</h2>
 
                     <p>Olá! Estou cursando Sistemas e Mídias Digitais na UFC. Também sou formado em Análise e
                         Desenvolvimento de Sistemas na Estácio FIC.</p>
 
-                    <p>Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019 e promovido em 2021 para Programador II. Pertenço a
+                    <p>Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019 e fui promovido em 2021 para Programador II. Pertenço a
                         equipe de desenvolvimento onde utilizo diversas ferramentas e linguagens, entre elas:
-                        TypeScript, Node.js, Laravel, Python, Java, Mysql, MongoBD, Potgresql, SqlServer e o CMS
+                        TypeScript, Node.js, Laravel, Python, Java, Mysql, MongoBD, PotgreSQL, SqlServer e o CMS
                         Polopoly.</p>
 
                     <p>Já trabalhei no <strong>Consórcio Metro Service</strong> durante 3 anos, onde participei da
@@ -191,7 +152,7 @@ nltk<span style="color: #333333">.</span>download(<span style="background-color:
                         própria) para controle de biblioteca e comunicação entre setores.</p>
 
                     <p>Em 2015, estagiei na <strong>FortBrasil</strong> na função de Estágio de Inteligência da
-                        Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais.</p>
+                        Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais. E também automatizava rotinas utilizando macros em Excel/VB.</p>
 
                     <p>Aprendo rápido e gosto de desafios. Pode conferir abaixo alguns trabalhos que já realizei. Veja
                         minha linha do tempo para ter mais detalhes.</p>
