@@ -39,35 +39,6 @@
 	    <!-- theme-color -->
 	    <meta name="theme-color" content="#2196f3" />
 	    <!-- end-theme-color -->
-	        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "e1979295-fd34-4af5-9a1a-57f2098fe47b",
-            });
-        });
-
-        let page_topic = 'Linha do tempo';
-
-        OneSignal.push(function() {
-            OneSignal.on('subscriptionChange', function(isSubscribed) {
-                if (isSubscribed === true) {
-                    console.log('The user subscription state is now:', isSubscribed);
-                    var pathArray = window.location.pathname.split('/');
-                    OneSignal.sendTags({
-                        "subscription_page": pathArray[1],
-                        "subscription_page_topic": page_topic,
-                    }).then(function(tagsSent) {
-                        // Callback called when tags have finished sending
-                        console.log(tagsSent);
-                    });
-                }else {
-                    console.log('isSubscribed is false :(');
-                }
-            });
-        });
-    </script>
 	</head>
 	<body>
 		<div class="container">
@@ -77,6 +48,33 @@
 			</header>	
 			<div class="main">
 				<ul class="cbp_tmtimeline">
+					<li>
+						<time class="cbp_tmtime"><span>Experiência</span> <span>2022</span></time>
+						<div class="cbp_tmlabel">
+							<h2>Programa Acelerando a Transformação Digital: Meta Journalism Project</h2>
+							<p>
+								Participação ativa no evento, levantamento e análise de dados para o levantamento de indicadores de satisfação e qualidade de leitores.
+							</p>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime"><span>Estudos</span> <span>2022</span></time>
+						<div class="cbp_tmlabel">
+							<h2>Atlântico Academy Bootcamp</h2>
+							<p>
+								Curso em andamento na trilha de Ciência de Dados, Programa de Capacitação Tecnológica criado pelo Instituto Atlântico para formar profissionais em tecnologias estratégicas para o mercado de Tecnologia da Informação e Comunicação.
+							</p>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime"><span>Estudos</span> <span>2022</span></time>
+						<div class="cbp_tmlabel">
+							<h2>Robot Journalism: Why Risk It?</h2>
+							<p>
+								Como o conteúdo gerado por robôs está impactando o setor de publicação de notícias é o foco de um webinar da INMA com empresas de mídia e jornalistas que estão usando robôs, bem como construtores de robôs da United Robots.
+							</p>
+						</div>
+					</li>
 					<li>
 						<time class="cbp_tmtime"><span>Experiência</span> <span>2022</span></time>
 						<div class="cbp_tmlabel">
@@ -101,6 +99,15 @@
 							<h2>Promoção para Programador II</h2>
 							<p>
 								No Sistema Verdes Mares, recebi a promoção de programador I para II.
+							</p>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime"><span>Conquistas</span> <span>2021</span></time>
+						<div class="cbp_tmlabel">
+							<h2>Apresentação do Trabalho de Conclusão de Curso</h2>
+							<p>
+								Com o tema: ANÁLISE DE SENTIMENTOS UTILIZANDO UMA BASE DE TREINAMENTO LIMITADA, uma aplicação de NLP que analisava se um texto jornalístico possui ou não aspectos sentimentais.
 							</p>
 						</div>
 					</li>
