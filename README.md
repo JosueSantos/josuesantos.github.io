@@ -10,6 +10,8 @@
 História da coruja e da girafa, slide de imagens estilo papel
 * [/JK/josukaka.html](https://josuesantos.github.io/JK/josukaka.html)
 Cronômetro de quanto tempo já estou casado
+* [/JK/wedding](https://josuesantos.github.io/JK/wedding/)
+Book fotográfico das fotos do casamento
 * [/dodge](https://josuesantos.github.io/dodge/)
 Feito com o Godot, jogo tutorial
 * [/EscalaCreater](https://josuesantos.github.io/EscalaCreater/)
@@ -20,6 +22,21 @@ Utilizar uma tabela google docs como banco de dados
 Jogo da Velha, singleplay
 * [/linha](https://josuesantos.github.io/linha/)
 Minha linha do tempo
+* [/emulador.html](https://josuesantos.github.io/emulador.html)
+Emulador JavaScript de um Jogo antigo "Congo's Caper"
+* [/fantasmito.html](https://josuesantos.github.io/fantasmito.html)
+Jogo em Scratch
+* [/map.html](https://josuesantos.github.io/map.html)
+Mapa das Eleições presidenciais de 2022 no 1º turno
+* [API Liturgia Diária](https://api-liturgia-diaria.vercel.app/)
+Raspagem e disponibilização via API das leituras bíblicas
+* [Nuvem de Palavras](https://nuvem-de-palavras.herokuapp.com/)
+Gerador de Nuvem de palavras
+* [Avaliador de Filmes](https://josue-santos-dsmovie.netlify.app/)
+Catálogo e avaliação de filmes
+* [Projeto de Ciência de Dados](https://github.com/atlantico-academy/analysus)
+Analise dos Dados do SUS
+
 
 ## Trabalhos da UFC
 
@@ -31,3 +48,9 @@ Saviors Of Fate - GameMaker - Projeto Integrado 1
 MAMI - Matemática Aplicada a Multimídias I
 ** [Breakout - Jogo](https://josuesantos.github.io/mami/ativ10.html)
 ** [Game This Game - Jogo](https://josuesantos.github.io/mami/trab04.html)
+
+
+## Outros Trabalhos
+
+* [Spider Web](https://github.com/JosueSantos/spiderwebsam)
+Raspador Web em python que captura Jogos de Futebol, Programação da Rede Globo ou Matérias do Diário do Nordeste

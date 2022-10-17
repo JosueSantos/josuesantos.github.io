@@ -1,0 +1,135 @@
+<div id="regions_div" style="width: 100%"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  var siglaEstados = {
+    'AC': 'Acre',
+    'AL': 'Alagoas',
+    'AP': 'Amapa',
+    'AM': 'Amazonas',
+    'BA': 'Bahia',
+    'CE': 'Ceara',
+    'DF': 'Distrito Federal',
+    'ES': 'Espirito Santo',
+    'GO': 'Goias',
+    'MA': 'Maranhao',
+    'MT': 'Mato Grosso',
+    'MS': 'Mato Grosso do Sul',
+    'MG': 'Minas Gerais',
+    'PA': 'Para',
+    'PB': 'Paraiba',
+    'PR': 'Parana',
+    'PE': 'Pernambuco',
+    'PI': 'Piaui',
+    'RJ': 'Rio de Janeiro',
+    'RN': 'Rio Grande do Norte',
+    'RS': 'Rio Grande do Sul',
+    'RO': 'Rondonia',
+    'RR': 'Roraima',
+    'SC': 'Santa Catarina',
+    'SP': 'Sao Paulo',
+    'SE': 'Sergipe',
+    'TO': 'Tocantins'
+  }
+  
+  var dataTable = [
+    [
+      {label: 'Estado', type: 'string'},
+      {label: 'Diferença', type: 'number'},
+      {label: 'tooltip', type: 'string', role: 'tooltip'}
+    ],
+    ['Brasil',  0, '']
+  ];
+
+  var dataTableTSE = [
+    ['Country', 'Diferença', 'Lula', 'Bolsonaro']
+  ];
+
+  var options = {
+    region: 'BR',
+    resolution: 'provinces',
+    datalessRegionColor: 'white',
+    colorAxis: {colors: ['blue', 'red']},
+    defaultColor: '#cacaca',
+    enableRegionInteractivity: true,
+    tooltip: {isHtml: true},
+    legend: 'none'
+  };
+
+  google.charts.load('current', {'packages':['geochart']});
+  google.charts.setOnLoadCallback(drawRegionsMap);
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable(dataTable);
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    
+    function myClickHandler(){
+      var selection = chart.getSelection();
+      var data = dataTableTSE[selection[0].row];
+
+      alert(data[0] + "\n\nLula: " + data[2] + "\nBolsonaro: " + data[3]);
+    }
+    google.visualization.events.addListener(chart, 'select', myClickHandler);
+    
+    chart.draw(data, options);
+  }
+
+  Object.keys(siglaEstados).forEach(function(key) {
+    keyState = key.toLowerCase();
+    url = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/"+keyState+"/"+keyState+"-c0001-e000544-r.json";
+
+    fetch(url)
+    .then((response) => response.json())
+    .then(function(data) {
+      var pLula = 0;
+      var pBols = 0;
+
+      data.cand.forEach((element, index) => {
+        if(element.n == 13) {
+          pLula = element.pvap;
+        }
+        if(element.n == 22) {
+          pBols = element.pvap;
+        }
+      });
+
+      var diff = parseFloat(pLula) - parseFloat(pBols);
+
+      if(dataTable.includes(siglaEstados[key])){
+        dataTable.forEach((element, index) => {
+          if(element[0] == siglaEstados[data.cdabr]) {
+            element = [
+              siglaEstados[data.cdabr],
+              diff,
+              "Lula: " + pLula + "\nBolsonaro: " + pBols
+            ];
+          }
+        });
+
+        dataTableTSE.forEach((element, index) => {
+          if(element[0] == siglaEstados[data.cdabr]) {
+            element = [
+              siglaEstados[data.cdabr],
+              diff,
+              pLula,
+              pBols
+            ];
+          }
+        });
+      } else {
+        dataTable.push([
+          siglaEstados[data.cdabr],
+          diff,
+          "Lula: " + pLula + "%\nBolsonaro: " + pBols + "%"
+        ]);
+
+        dataTableTSE.push([
+          siglaEstados[data.cdabr],
+          diff,
+          pLula,
+          pBols
+        ]);
+      }
+    });
+  });
+</script>
