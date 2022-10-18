@@ -1,0 +1,55 @@
+<style>
+    dialog {
+        border: none;
+        border-radius: .5rem;
+        box-shadow: 0 0 1em rgb( 0 0 0 / .3);
+        width: 50%;
+        margin-top: 2em;
+    }
+    span {
+        color:rgb( 0 0 0 / .5)
+    }
+</style>
+
+<dialog open>
+    <h3>Serviço de Download de Imagens</h3>
+    <p>Selecione o arquivo CSV:</p>
+    <input id="csv" type="file" accept=".csv">
+    <br/>
+    <br/>
+    <span>* Separado por vírgulas com a primeira linha contendo o nome e a segunda o link da imagem.</span>
+</dialog>
+
+<script>
+var fileInput = document.getElementById("csv"),
+
+readFile = function () {
+    var reader = new FileReader();
+    reader.onload = function () {
+        dataImage = reader.result.split('\r\n').map((e) => e.split(','));
+
+        dataImage.map((e) => {
+            saveFile(e[1], e[0] + ".jpeg");
+        });
+    };
+    reader.readAsText(fileInput.files[0]);
+};
+
+fileInput.addEventListener('change', readFile);
+
+function saveFile(url, filename) {
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = function() {
+        var a = document.createElement('a');
+        a.href = window.URL.createObjectURL(xhr.response);
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        delete a;
+    };
+    xhr.open('GET', url);
+    xhr.send();
+}
+</script>
