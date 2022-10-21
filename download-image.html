@@ -29,7 +29,7 @@ readFile = function () {
         dataImage = reader.result.split('\r\n').map((e) => e.split(','));
 
         dataImage.map((e) => {
-            saveFile(e[1], e[0] + ".jpeg");
+            saveFile(e[1], e[0] + ".jpg");
         });
     };
     reader.readAsText(fileInput.files[0]);
@@ -38,18 +38,28 @@ readFile = function () {
 fileInput.addEventListener('change', readFile);
 
 function saveFile(url, filename) {
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function() {
+    let headers = new Headers();
+
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+
+    headers.append('GET', 'POST', 'OPTIONS');
+
+    fetch(url, {
+        mode: 'no-cors',
+        headers: headers
+    })
+    .then((response) => response.blob())
+    .then(myBlob => {
+        const objectURL = URL.createObjectURL(myBlob);
+
         var a = document.createElement('a');
-        a.href = window.URL.createObjectURL(xhr.response);
+        a.href = objectURL
         a.download = filename;
-        a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
         delete a;
-    };
-    xhr.open('GET', url);
-    xhr.send();
+    })
+    .catch(error => console.log(error.message));
 }
 </script>
