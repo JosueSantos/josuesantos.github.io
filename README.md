@@ -26,8 +26,10 @@ Minha linha do tempo
 Emulador JavaScript de um Jogo antigo "Congo's Caper"
 * [/fantasmito.html](https://josuesantos.github.io/fantasmito.html)
 Jogo em Scratch
-* [/map.html](https://josuesantos.github.io/map.html)
-Mapa das Eleições presidenciais de 2022 no 1º turno
+* [Mapa por Região das Eleições 2022](https://josuesantos.github.io/map1turno.html)
+Mapa das Eleições presidenciais de 2022 no 1º turno em tempo real
+* [Mapa por Região das Eleições 2022 - 2º turno](https://josuesantos.github.io/map2turno.html)
+Mapa das Eleições presidenciais de 2022 no 2º turno em tempo real
 * [API Liturgia Diária](https://api-liturgia-diaria.vercel.app/)
 Raspagem e disponibilização via API das leituras bíblicas
 * [Nuvem de Palavras](https://nuvem-de-palavras.herokuapp.com/)
@@ -54,3 +56,5 @@ MAMI - Matemática Aplicada a Multimídias I
 
 * [Spider Web](https://github.com/JosueSantos/spiderwebsam)
 Raspador Web em python que captura Jogos de Futebol, Programação da Rede Globo ou Matérias do Diário do Nordeste
+* [Serviços Python](https://js-py-service.streamlitapp.com/)
+Download de Imagens via arquivo CSV
