@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Gerador de Dados Estruturados</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-md-center mt-3">
+                <div class="col-md-auto">
+                    <h2>Gerador de Dados Estruturados</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="myGroup">
+                    <div class="m-3">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Principal" >
+                            Cadastro LiveBlog
+                        </button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#BlogUpdate">
+                            Lista BlogUpdate
+                        </button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Estruturados" onclick="generateDataStructure()">
+                            Dados Estruturados
+                        </button>
+                    </div>
+
+                    <div class="accordion-group">
+                        <div class="collapse" id="Principal" data-parent="#myGroup">
+                            <div class="card card-body">
+                                <div class="form-group">
+                                    <label>URL</label>
+                                    <input class="form-control" id="url" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Url Image</label>
+                                    <input class="form-control" id="image" />
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12">StartTime</label>
+                                    <div class="col-6"><input type="date" class="form-control" id="starttime-date" /></div>
+                                    <div class="col-6"><input type="time" class="form-control" id="starttime-time" /></div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12">EndTime</label>
+                                    <div class="col-6"><input type="date" class="form-control" id="endtime-date" /></div>
+                                    <div class="col-6"><input type="time" class="form-control" id="endtime-time" /></div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12">dateModified</label>
+                                    <div class="col-6"><input type="date" class="form-control" id="modifiedtime-date" /></div>
+                                    <div class="col-6"><input type="time" class="form-control" id="modifiedtime-time" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Headline</label>
+                                    <input class="form-control" id="headline" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" id="description" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Author</label>
+                                    <input class="form-control" id="author" value="Redação - Jogada" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Location</label>
+                                    <input class="form-control" id="location" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="collapse" id="BlogUpdate" data-parent="#myGroup">
+                            <div class="card card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-outline-success btn-block" onclick="addBlogUpdate()">
+                                            Novo Blog Event <span aria-hidden="true" class="h3">&plus;</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-outline-danger btn-block" onclick="removeLastBlogUpdate()">
+                                            Apagar Último Blog Event <span aria-hidden="true" class="h3">&minus;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="countBlog" value="0"/>
+                                <div id="container-blog-update"></div>
+                            </div>
+                        </div>
+
+                        <div class="collapse" id="Estruturados" data-parent="#myGroup">
+                            <div class="card card-body">
+                                <button class="btn btn-outline-primary m-3" onclick="clipboard()"><i class="fa fa-clipboard" aria-hidden="true"></i> Copie os Dados Estruturados</button>
+                                <div class="form-group">
+                                    <label for="datastructure">Dados Estruturados</label>
+                                    <textarea class="form-control h-100" id="datastructure" rows="20"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script>
+            function generateDataStructure() {
+                const datastructure = document.getElementById('datastructure');
+                let script_json = '<script type="application/ld+json">';
+                
+                script_json += '{'
+                script_json += '"@context": "http://schema.org",'
+                script_json += '"@type": "LiveBlogPosting",'
+
+                const url = document.getElementById('url');
+                script_json += '"@id": "' + url.value + '",'
+                script_json += '"url": "' + url.value + '",'
+
+                const starttime_date = document.getElementById('starttime-date');
+                const starttime_time = document.getElementById('starttime-time');
+                script_json += '"coverageStartTime": "' + starttime_date.value + 'T' + starttime_time.value + ':00-03:00",'
+
+                const endtime_date = document.getElementById('endtime-date');
+                const endtime_time = document.getElementById('endtime-time');
+                script_json += '"coverageEndTime": "' + endtime_date.value + 'T' + endtime_time.value + ':00-03:00",'
+                
+                const modifiedtime_date = document.getElementById('modifiedtime-date');
+                const modifiedtime_time = document.getElementById('modifiedtime-time');
+                script_json += '"dateModified": "' + modifiedtime_date.value + 'T' + modifiedtime_time.value + ':00-03:00",'
+
+                const headline = document.getElementById('headline');
+                const description = document.getElementById('description');
+                const author = document.getElementById('author');
+                const image = document.getElementById('image');
+                const location = document.getElementById('location');
+
+                script_json += '"headline": "' + headline.value + '",'
+                script_json += '"description": "' + description.value + '",'
+                script_json += '"author": "' + author.value + '",'
+
+                script_json += '"publisher":{'
+                script_json += '"@type":"NewsMediaOrganization",'
+                script_json += '"name":"Diário do Nordeste",'
+                script_json += '"logo": {'
+                script_json += '"@type": "ImageObject",'
+                script_json += '"url":"https://diariodonordeste.verdesmares.com.br/static/diario/diario-do-nordeste.png",'
+                script_json += '"width":"360",'
+                script_json += '"height":"70"'
+                script_json += '}'
+                script_json += '},'
+
+                script_json += '"about": {'
+                script_json += '"@type": "Event",'
+                script_json += '"name": "' + headline.value + '",'
+                script_json += '"startDate":"' + starttime_date.value + 'T' + starttime_time.value + ':00-03:00",'
+                script_json += '"description":"' + description.value + '",'
+                script_json += '"endDate": "' + endtime_date.value + 'T' + endtime_time.value + ':00-03:00",'
+                script_json += '"eventStatus":"Live",'
+                script_json += '"image":"' + image.value + '",'
+                script_json += '"location": {'
+                script_json += '"address":"' + location.value + '",'
+                script_json += '"name": "' + location.value + '"'
+                script_json += '}'
+                script_json += '},'
+                script_json += '"liveBlogUpdate": ['
+
+                countBlog = document.getElementById('countBlog').value;
+                if (countBlog > 0) {
+                    while (countBlog > 0) {
+                        const articleBody = document.getElementById('articleBody' + countBlog)
+                        const person = document.getElementById('author' + countBlog)
+                        const headlineBlog = document.getElementById('headline' + countBlog)
+
+                        const dateModified_date = document.getElementById('dateModified-date' + countBlog);
+                        const dateModified_time = document.getElementById('dateModified-time' + countBlog);
+                        
+                        const datePublished_date = document.getElementById('datePublished-date' + countBlog);
+                        const datePublished_time = document.getElementById('datePublished-time' + countBlog);
+
+                        json_blog_update = '{"@type":"BlogPosting",'
+                        json_blog_update += '"articleBody":"' + articleBody.value + '",'
+                        json_blog_update += '"author":{'
+                        json_blog_update += '"@type":"Person",'
+                        json_blog_update += '"name":"' + person.value + '"'
+                        json_blog_update += '},'
+                        
+                        json_blog_update += '"dateModified":"' + dateModified_date.value + 'T' + dateModified_time.value + ':00-03:00",'
+                        json_blog_update += '"datePublished":"' + datePublished_date.value + 'T' + datePublished_time.value + ':00-03:00",'
+                        
+                        json_blog_update += '"headline":"' + headlineBlog.value + '",'
+                        
+                        json_blog_update += '"url":"' + url.value + '",'
+                        json_blog_update += '"image":"' + image.value + '"'
+                        json_blog_update += '}'
+        
+                        script_json += json_blog_update
+
+                        countBlog--
+                    }
+                }
+
+                script_json += ']'
+                script_json += '}'
+                script_json += '</ script>'
+
+                datastructure.innerText = script_json;
+            }
+
+            function clipboard() {
+                var copyText = document.getElementById('datastructure');
+
+                // Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(copyText.value);
+
+                // Alert the copied text
+                alert("Dado Estruturado Copiado!");
+            }
+
+            function addBlogUpdate() {
+                const countBlog = document.getElementById('countBlog')
+                const container_blog_update = document.getElementById('container-blog-update')
+
+                countBlog.value = parseInt(countBlog.value) + 1
+
+                const new_blog_update = document.createElement("div");
+                new_blog_update.classList.add('card')
+                new_blog_update.classList.add('m-3')
+
+                blog_update = '<div class="card-body"><label>#' + countBlog.value +'</label>'
+                
+                blog_update += '<div class="form-group">'
+                blog_update += '<label>articleBody</label>'
+                blog_update += '<input class="form-control" id="articleBody' + countBlog.value +'" />'
+                blog_update += '</div>'
+
+                blog_update += '<div class="form-group">'
+                blog_update += '<label>author</label>'
+                blog_update += '<input class="form-control" id="author' + countBlog.value +'" />'
+                blog_update += '</div>'
+
+                blog_update += '<div class="form-group">'
+                blog_update += '<label>headline</label>'
+                blog_update += '<input class="form-control" id="headline' + countBlog.value +'" />'
+                blog_update += '</div>'
+
+                blog_update += '<div class="form-group row">'
+                blog_update += '<label class="col-12">dateModified</label>'
+                blog_update += '<div class="col-sm-6"><input type="date" class="form-control" id="dateModified-date' + countBlog.value +'" /></div>'
+                blog_update += '<div class="col-sm-6"><input type="time" class="form-control" id="dateModified-time' + countBlog.value +'" /></div>'
+                blog_update += '</div>'
+
+                blog_update += '<div class="form-group row">'
+                blog_update += '<label class="col-12">datePublished</label>'
+                blog_update += '<div class="col-sm-6"><input type="date" class="form-control" id="datePublished-date' + countBlog.value +'" /></div>'
+                blog_update += '<div class="col-sm-6"><input type="time" class="form-control" id="datePublished-time' + countBlog.value +'" /></div>'
+                blog_update += '</div>'
+
+                blog_update += '</div>'
+                
+
+                new_blog_update.innerHTML = blog_update
+
+                container_blog_update.insertBefore(new_blog_update, container_blog_update.firstChild);
+                
+            }
+            function removeLastBlogUpdate() {
+                const countBlog = document.getElementById('countBlog')
+                const container_blog_update = document.getElementById('container-blog-update')
+
+                countBlog.value = parseInt(countBlog.value) - 1
+                removeBlog = container_blog_update.firstChild
+                removeBlog.remove()
+
+                if (countBlog.value < 0) {
+                    countBlog.value = 0
+                }
+
+            }
+        </script>
+    </body>
+</html>
