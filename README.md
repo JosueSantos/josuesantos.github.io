@@ -71,3 +71,5 @@ Mapa das Eleições presidenciais de 2022 no 2º turno em tempo real
 Catálogo e avaliação de filmes
 * [Serviços Python](https://js-py-service.streamlitapp.com/)
 Download de Imagens via arquivo CSV
+* [Gerador de Dados Estruturados](https://josuesantos.github.io/gerador-dados-estruturados.html)
+Cria dados estruturados do tipo LiveBlogPosting
