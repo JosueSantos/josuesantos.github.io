@@ -25,11 +25,11 @@ Minha linha do tempo
 * [/emulador.html](https://josuesantos.github.io/emulador.html)
 Emulador JavaScript de um Jogo antigo "Congo's Caper"
 * [/fantasmito.html](https://josuesantos.github.io/fantasmito.html)
-Jogo em Scratch
+Jogo em Scratch, primeiro jogo desenvolvido
 
 * [API Liturgia Diária](https://api-liturgia-diaria.vercel.app/)
 Raspagem e disponibilização via API das leituras bíblicas
-* [Nuvem de Palavras](https://nuvem-de-palavras.herokuapp.com/)
+* [Nuvem de Palavras](https://word-cloud-js.streamlit.app/)
 Gerador de Nuvem de palavras
 * [Avaliador de Filmes](https://josue-santos-dsmovie.netlify.app/)
 Catálogo e avaliação de filmes
