@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N06PRYX2EL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-N06PRYX2EL');
-    </script>
-
-    <meta charset="utf-8">
+    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Josué Santos / Analista - Desenvolvedor">
+    <meta property="og:title" content="Josué Santos - Analista e Desenvolvedor">
     <meta property="og:description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta property="og:url" content="https://josuesantos.github.io/">
     <meta property="og:image" content="img/js.PNG">
@@ -25,330 +18,339 @@
     <meta property="og:locale" content="pt_BR">
 
     <meta property="twitter:site" content="https://josuesantos.github.io/">
-    <meta property="twitter:title" content="Josué Santos / Analista - Desenvolvedor">
+    <meta property="twitter:title" content="Josué Santos - Analista e Desenvolvedor">
     <meta property="twitter:creator" content="J.S. - Josué Santos">
     <meta property="twitter:description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta property="twitter:image:src" content="img/js.PNG">
 
-    <meta itemprop="name" content="Josué Santos / Analista - Desenvolvedor">
+    <meta itemprop="name" content="Josué Santos - Analista e Desenvolvedor">
     <meta itemprop="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
     <meta itemprop="image" content="img/js.PNG">
     <meta name="keywords" content="Josué, Analista, Desenvolvedor">
 
-    <title>Josué.Santos</title>
-
-    <meta name="description" content="J.S. - Josué dos Santos/ Analista - Desenvolvedor">
+    <title>Josué Santos - Analista e Desenvolvedor</title>
+    <meta name="description" content="J.S. - Josué dos Santos/ Analista e Desenvolvedor">
     <meta name="author" content="J.S. - Josué Santos">
 
-    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="128x128" href="img/icons/icon-128x128.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="img/icons/icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/icons/icon-192x192.png">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72x72.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="img/icons/icon-128x128.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="img/icons/icon-32x32.ico">
     <link rel='manifest' href='/manifest.json'>
+
     <!-- theme-color -->
     <meta name="theme-color" content="#003073" />
     <!-- end-theme-color -->
 
-    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/icons/icon-32x32.ico" type="image/x-icon" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #4F81C6;
+            transition: background 0.3s ease-in-out;
+        }
 
-    <!-- Theme CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-    <link href="css/efeito.css" rel="stylesheet">
+        body.scrolled {
+            background: #FFFFFF;
+        }
+        
+        .hero {
+            background-color: #4F81C6;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+        }
+        
+        .animated {
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        .circle-button {
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .circle-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .content {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        
+        .project-link {
+            transition: transform 0.3s ease-in-out;
+            display: block;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: inherit;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-link h3 {
+            font-size: 1.5rem;
+            color: #4F81C6;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .project-link p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+            flex-grow: 1;
+            text-align: left;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #4F81C6;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #2c3e50;
+        }
+
+        .link a {
+            color: #4F81C6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        .link a:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+
+        .link a:focus {
+            outline: 2px solid #4F81C6;
+        }
+    </style>
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="background">
+<body class="font-sans bg-gray-50">
+    
+    <nav class="fixed w-full bg-white shadow-md z-10" aria-label="Menu de navegação">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 text-xl font-semibold text-blue-600">
+                    <a href="#hero" class="focus:outline-none">JOSUÉ.SANTOS</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#sobre" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Sobre</a>
+                    <a href="#projetos" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Projetos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
+    <section id="hero" class="hero">
+        <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold" style="font-family: 'Montserrat', sans-serif;">
+            JOSUÉ.SANTOS
+        </h1>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target=".navbar-main-collapse">
-                        Menu <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <i class="fa fa-circle-o-notch"></i> JS.<span id='ano'></span>
+        <p class="text-xl sm:text-2xl mt-2">
+            Analista e Desenvolvedor
+        </p>
+
+        <a href="#sobre" aria-label="Ir para a seção Sobre">
+            <div class="mt-10 flex justify-center">
+                <button class="circle-button" aria-label="Descer para a próxima seção">
+                    <i class="fa fa-angle-double-down animated text-3xl"></i>
+                </button>
+            </div>
+        </a>
+    </section>
+
+    <section id="sobre" class="min-h-screen bg-white py-16 px-8">
+        <h2 class="text-3xl font-semibold text-blue-600 text-center mt-10">
+            Sobre J.s
+        </h2>
+
+        <div class="content link">
+            <p class="mt-4 text-lg">
+                Olá! Sou bacharel em Sistemas e Mídias Digitais da UFC formado em 2022, especialista em Arquitetura de Software em Java pela Faculdade VINCIT em 2023 e tecnólogo em Análise e Desenvolvimento de Sistemas da Estácio FIC em 2016.
+            </p>
+            <p class="mt-4 text-lg">
+                Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019 e fui promovido em 2022 para Analista de TI. Pertenço a equipe de desenvolvimento de produto onde utilizo diversas ferramentas e linguagens, entre elas: Java, Python, TypeScript, Node.js e o CMS Polopoly.
+            </p>
+            <p class="mt-4 text-lg">
+                Um projeto em destaque é a participação no SICO, Score de Impacto de Conteúdo, onde é realizado um cruzamento de dados do Google Analytics, com dados obtidos atravez de raspagens web. Este projeto teve grande impacto em toda a redação do Diário do Nordeste e repercusão, rendendo até entrevistas (<a href="https://youtu.be/cDvl4har_WY">IJnet - International Journalists' Network</a>) e reportagens (<a href="https://www.anj.org.br/diario-do-nordeste-desenvolve-ferramenta-que-avalia-impacto-e-qualidade-de-conteudo-para-leitores/">ANJ - Associação Nacional de Jornais</a>).
+            </p>
+            <p class="mt-4 text-lg">
+                Participei do Atlântico Academy Bootcamp na trilha de Ciência de Dados, onde desenvolvemos um projeto sobre os dados disponibilizados no SUS. Com a limpeza e preparação dos dados, análise e construção de um modelo que realizasse a predição de internações nos hospitais provindos da atenção primária.
+            </p>
+            <p class="mt-4 text-lg">
+                No meu trabalho de conclusão de curso criei um modelo de aprendizado supervisionado para a análise de sentimentos de textos jornalísticos (<a href="https://repositorio.ufc.br/handle/riufc/68395">Análise de sentimentos utilizando uma base de treinamento limitada - UFC/SMD 2022</a>).
+            </p>
+            <p class="mt-4 text-lg">
+                Já trabalhei no <strong>Consórcio Metro Service</strong> durante 3 anos, onde participei da criação do Sistema Integrado de Manutenção e Gestão, aplicação criada para a <strong>MetroFor</strong>, projeto desenvolvido em PHP e PostgreSQL.
+            </p>
+            <p class="mt-4 text-lg">
+                Também estagiei como desenvolvedor, em 2013, na empresa <strong>ARCE (Agência Reguladora de Serviços Públicos Delegados do Estado do Ceará)</strong>, onde utilizava Java, Java EE, JSF, JPA e PrimeFaces.
+            </p>
+            <p class="mt-4 text-lg">
+                Fui jovem aprendiz na empresa <strong>Guararapes Confecções</strong>, em 2014. Pelo meu desempenho e proatividade, mudei de setor três vezes. Atuei no RH, no Setor de Responsabilidade Social e no Departamento Pessoal, onde desenvolvi duas aplicações em Excel/VB (por iniciativa própria) para controle de biblioteca e comunicação entre setores.
+            </p>
+            <p class="mt-4 text-lg">
+                Em 2015, estagiei na <strong>FortBrasil</strong> na função de Estágio de Inteligência da Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais. E também automatizava rotinas utilizando macros em Excel/VB.
+            </p>
+            <p class="mt-4 text-lg">
+                Aprendo rápido e gosto de desafios. Pode conferir abaixo alguns trabalhos que já realizei. Veja minha linha do tempo para ter mais detalhes.
+            </p>
+        </div>
+    </section>
+    
+    <section id="projetos" class="min-h-screen bg-gray-100 py-16 px-8">
+        <h2 class="text-3xl font-semibold text-blue-600 text-center mt-10">
+            Projetos
+        </h2>
+        
+        <div class="content">
+            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <li>
+                    <a href="https://josuesantos.github.io/linha/index.html" class="project-link">
+                        <h3>Minha Linha do Tempo</h3>
+                        <p>Complemento visual do meu desenvolvimento pessoal.</p>
                     </a>
-                </div>
+                </li>
+                <li>
+                    <a href="https://github.com/JosueSantos/spiderwebsam" class="project-link">
+                        <h3>Spider Web</h3>
+                        <p>Raspador Web criado em Python</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://josuesantos.github.io/JK/" class="project-link">
+                        <h3>Declaração de Amor</h3>
+                        <p>Como expressar sentimentos, se não for fazendo o que mais gosta?</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://josuesantos.github.io/jogoDaVelha/" class="project-link">
+                        <h3>Jogu da Véa</h3>
+                        <p>Atividade para descontrair</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://craftmaker.vercel.app/" class="project-link">
+                        <h3>Craft Maker</h3>
+                        <p>Trabalho em Equipe | Projeto Integrado II<br>Personalizador de bonecos de papel.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://josuesantos.github.io/mami/trab04.html" class="project-link">
+                        <h3>Name This Game</br>(Octopus) (Atari 2600)</h3>
+                        <p>Trabalho individual | MAMI - Matemática Aplicada a Multimídias I</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://josuesantos.github.io/fantasmito.html" class="project-link">
+                        <h3>Fantasmito - Scratch</h3>
+                        <p>Primeiro Jogo criado inteiramente por mim. Pela ferramenta do Scratch</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="api-liturgia-diaria.vercel.app" class="project-link">
+                        <h3>API_LITURGIA_DIARIA</h3>
+                        <p>Disponibilizar via api as leituras para facilitar a criação de aplicações que almejam a evangelização.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://catolicocristao.github.io/" class="project-link">
+                        <h3>Mapeamento de Igrejas Católicas</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">Sobre</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#performed">Realizados</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Contato</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#perfio" style="font-size:18pt"><i
-                                    class="fa fa-circle-o-notch"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
+    <section id="contato" class="min-h-screen bg-white py-16 px-8 text-center">
+        <h2 class="text-3xl font-semibold text-blue-600 mt-10">
+            Contate-me
+        </h2>
 
-        <!-- Intro Header -->
-        <header class="intro" id="introducao">
-            <div class="intro-body">
-                <h1 class="brand-heading">Josué.Santos</h1>
-                <p class="intro-text">Analista e Desenvolvedor</p>
+        <p class="mt-4 text-lg">
+            Sinta-se livre para me enviar um e-mail, uma oferta de projeto, criação de sites, ou apenas dizer olá!
+        </p>
 
-                <a href="#about" class="btn btn-circle page-scroll">
-                    <i class="fa fa-angle-double-down animated"></i>
-                </a>
-            </div>
-        </header>
+        <p class="mt-4 text-lg">
+            <strong>Email:</strong> <a href="mailto:josuemarques3@gmail.com" class="text-blue-600">josuemarques3@gmail.com</a>
+        </p>
+        
+        <div class="mt-8 social-icons">
+            <a href="https://github.com/JosueSantos" target="_blank" class="text-3xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://josuesantos03.wordpress.com/" target="_blank" class="text-3xl" aria-label="WordPress"><i class="fab fa-wordpress"></i></a>
+            <a href="https://www.instagram.com/josuemarques3/" target="_blank" class="text-3xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/josue.santos.9231" target="_blank" class="text-3xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/js-josu%C3%A9-santos/" target="_blank" class="text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
 
-        <!-- About Section -->
-        <section id="about" class="container content-section intro">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Sobre J.s</h2>
+        <div class="mt-8 link">
+            <p class="text-lg">
+                Link do Currículo completo: <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing" class="text-blue-600" aria-label="Link para o currículo completo">Aqui você pode conhecer mais detalhes.</a>
+            </p>
+        </div>
+    </section>
 
-                    <p>Olá! Sou bacharel em Sistemas e Mídias Digitais da UFC formado em 2022, especialista em Arquitetura de Software em Java pela Faculdade VINCIT em 2023 e tecnólogo em Análise e
-                        Desenvolvimento de Sistemas da Estácio FIC em 2016.</p>
-
-                    <p>Trabalho no <strong>Sistema Verdes Mares</strong>, desde 2019 e fui promovido em 2022 para Analista de TI. Pertenço a
-                        equipe de desenvolvimento onde utilizo diversas ferramentas e linguagens, entre elas: Java, Python,
-                        TypeScript, Node.js, Laravel, Mysql, MongoBD, PotgreSQL, SqlServer e o CMS
-                        Polopoly.</p>
-                    
-                    <p>Tenho como sonho e objetivo o cargo de <strong>Cientista de Dados</strong>, e já realizei alguns passos neste caminho.</p>
-
-                    <p>Um projeto em destaque é a participação no SICO, Score de Impacto de Conteúdo, onde é realizado um cruzamento de dados
-                        do Google Analytics, com dados obtidos atravez de raspagens web. Este projeto teve grande impacto em toda a redação do Diário do Nordeste
-                        e repercusão, rendendo até entrevistas (<a href="https://youtu.be/cDvl4har_WY">IJnet - International Journalists' Network</a>) e reportagens (<a href="https://www.anj.org.br/diario-do-nordeste-desenvolve-ferramenta-que-avalia-impacto-e-qualidade-de-conteudo-para-leitores/">ANJ - Associação Nacional de Jornais</a>).
-                    </p>
-
-                    <p>Participei do Atlântico Academy Bootcamp na trilha de Ciência de Dados, onde desenvolvemos um projeto sobre os dados disponibilizados no SUS.
-                        Com a limpeza e preparação dos dados, análise e construção de um modelo que realizasse a predição de internações nos hospitais provindos da atenção primária.
-                    </p>
-
-                    <p>Meu trabalho de conclusão de curso também foi voltado a este objetivo. Criei um modelo de aprendizado supervisionado para a análise de sentimentos de textos jornalísticos (<a href="https://repositorio.ufc.br/handle/riufc/68395">Análise de sentimentos utilizando uma base de treinamento limitada - UFC/SMD 2022</a>).</p>
-
-                    <p>Já trabalhei no <strong>Consórcio Metro Service</strong> durante 3 anos, onde participei da
-                        criação do Sistema Integrado de Manutenção e Gestão, aplicação criada para a
-                        <strong>MetroFor</strong>, projeto desenvolvido em PHP e PostgreSQL.
-                    </p>
-
-                    <p>Também estagiei como desenvolvedor, em 2013, na empresa <strong>ARCE (Agência Reguladora de
-                            Serviços Públicos Delegados do Estado do Ceará)</strong>, onde utilizava Java, Java EE, JSF,
-                        JPA e PrimeFaces.</p>
-
-                    <p>Fui jovem aprendiz na empresa <strong>Guararapes Confecções</strong>, em 2014. Pelo meu
-                        desempenho e proatividade, mudei de setor três vezes. Atuei no RH, no Setor de Responsabilidade
-                        Social e no Departamento Pessoal, onde desenvolvi duas aplicações em Excel/VB (por iniciativa
-                        própria) para controle de biblioteca e comunicação entre setores.</p>
-
-                    <p>Em 2015, estagiei na <strong>FortBrasil</strong> na função de Estágio de Inteligência da
-                        Cobrança. Lá analisava dados, criava relatórios gerenciais e operacionais. E também automatizava rotinas utilizando macros em Excel/VB.</p>
-
-                    <p>Aprendo rápido e gosto de desafios. Pode conferir abaixo alguns trabalhos que já realizei. Veja
-                        minha linha do tempo para ter mais detalhes.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Download Section -->
-        <section id="performed" class="content-section text-center">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                    <h3>Realizados no Cotidiano</h3>
-                    <div class="divisao">
-                        <div class="divisao_menor">
-                            <h4>Minha Linha do Tempo</h4>
-                            <p>Complemento visual do meu desenvolvimento pessoal.</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://josuesantos.github.io/linha/index.html" target="_blank"
-                                        class="btn btn-default"><span class="network-name">Linha do Tempo</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="divisao_menor">
-                            <h4>Spider Web</h4>
-                            <p>Raspador Web criado em Python</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://github.com/JosueSantos/spiderwebsam" target="_blank"
-                                        class="btn btn-default"><span class="network-name">Spider Web</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="divisao_menor">
-                            <h4>Declaração de Amor</h4>
-                            <p>Como expressar sentimentos, se não for fazendo o que mais gosta?</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://josuesantos.github.io/JK/" target="_blank"
-                                        class="btn btn-default"><span class="network-name">JoKa</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="divisao_menor">
-                            <h4>Jogu da Véa</h4>
-                            <p>Atividade para descontrair</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://josuesantos.github.io/jogoDaVelha/" target="_blank"
-                                        class="btn btn-default"><span class="network-name">Jogo da Velha</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                    <h3>Realizados no Período Acadêmico</h3>
-                    <div class="divisao">
-                        <div class="atividade-section divisao_menor">
-                            <h4>Craft Maker</h4>
-                            <p>Trabalho em Equipe<br>Projeto Integrado II<br>Personalizador de bonecos de papel.</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://craftmaker.vercel.app/" target="_blank"
-                                        class="btn btn-default"><span class="network-name">CRAFT MAKER</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="atividade-section divisao_menor">
-                            <h4>Name This Game</br>(Octopus) (Atari 2600)</h4>
-                            <p>Trabalho individual / MAMI - Matemática Aplicada a Multimídias I</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://josuesantos.github.io/mami/trab04.html" target="_blank"
-                                        class="btn btn-default"><span class="network-name">Octopus</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="atividade-section divisao_menor">
-                            <h4>Fantasmito - Scratch</h4>
-                            <p>Primeiro Jogo criado inteiramente por mim. Pela ferramenta do Scratch</p>
-                            <ul class="list-inline banner-social-buttons">
-                                <li>
-                                    <a href="https://josuesantos.github.io/fantasmito.html" target="_blank"
-                                        class="btn btn-default"><span class="network-name">Fantasmito</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-10 col-lg-offset-1 divisao_maior">
-                    <h3>Link do Currículo completo</h3>
-                    <p>Aqui você pode conhecer mais detalhes.</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing"
-                                target="_blank" class="btn btn-default btn-lg"><span
-                                    class="network-name">Currículo</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="container content-section text-center">
-            <div class="contat-section">
-                <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        <h2>Contate-me</h2>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p>Sinta-se livre para me enviar um e-mail, uma oferta de projeto, criação de sites,
-                                    oportunidade de emprego, ou apenas dizer olá!</p>
-                                <p><a href="mailto:josuemarques3@gmail.com">josuemarques3@gmail.com</a>
-                                </p>
-                                <ul class="list-inline banner-social-buttons">
-                                    <li>
-                                        <a href="https://github.com/JosueSantos" target="_blank"
-                                            class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span
-                                                class="network-name">Github</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/in/js-josu%C3%A9-santos/" target="_blank"
-                                            class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span
-                                                class="network-name">Linkedin</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="perfio" class="container content-section text-center intro">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Deseja ver minha foto?</h2>
-                    <p>Se acha necessário ver minha cara ou conhecer mais sobre minha vida pessoal, pode conferir no
-                        link abaixo!</p>
-
-                    <ul class="list-inline banner-social-buttons" style="margin-bottom: 20%;">
-                        <li>
-                            <a href="https://josuesantos03.wordpress.com/"
-                                target="_blank" class="btn btn-default btn-lg"><span
-                                    class="network-name">WordPress</span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/josuemarques3/" target="_blank"
-                                class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span
-                                    class="network-name">Instagram</span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/josue.santos.9231" target="_blank"
-                                class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span
-                                    class="network-name">Facebook</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript  -->
-    <script src="js/grayscale.js"></script>
-    <script>
-        document.getElementById('ano').innerHTML = new Date().getFullYear();   
-    </script>
 </body>
 
 </html>
