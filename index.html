@@ -62,7 +62,7 @@
         body.scrolled {
             background: #FFFFFF;
         }
-        
+
         .hero {
             background-color: #4F81C6;
             color: white;
@@ -78,7 +78,7 @@
         h1, h2, h3 {
             text-transform: uppercase;
         }
-        
+
         .animated {
             animation: bounce 2s ease-in-out infinite;
         }
@@ -91,7 +91,7 @@
                 transform: translateY(-8px);
             }
         }
-        
+
         .circle-button {
             border: 2px solid white;
             background-color: transparent;
@@ -110,16 +110,15 @@
             background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.1);
         }
-        
+
         .content {
             width: 80%;
             max-width: 1000px;
             margin: 0 auto;
             text-align: justify;
         }
-        
+
         .project-link {
-            transition: transform 0.3s ease-in-out;
             display: block;
             background-color: white;
             border-radius: 8px;
@@ -132,6 +131,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
         }
 
         .project-link:hover {
@@ -143,8 +143,10 @@
             font-size: 1.5rem;
             color: #4F81C6;
             font-weight: 600;
-            text-align: left;
             margin-bottom: 10px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .project-link p {
@@ -153,8 +155,12 @@
             margin-top: 10px;
             flex-grow: 1;
             text-align: left;
+            line-height: 1.4;
+            height: 4rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        
+
         .social-icons a {
             display: inline-block;
             margin-right: 10px;
@@ -182,6 +188,83 @@
         .link a:focus {
             outline: 2px solid #4F81C6;
         }
+        
+        #menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        #menu-mobile {
+            display: none;
+        }
+        
+        @media (max-width: 1024px) {
+            #menu-mobile {
+                display: block;
+            }
+
+            .menu-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 20px;
+            }
+
+            .menu-links a {
+                padding: 10px 0;
+                color: #4F81C6;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .menu-links.active {
+                display: flex;
+            }
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        li {
+            max-width: 100%;
+            overflow: hidden;
+            word-wrap: break-word;
+            margin-bottom: 1rem;
+        }
+
+        .project-link h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link p {
+            font-size: 1rem;
+            color: #666;
+        }
+
     </style>
 </head>
 
@@ -191,19 +274,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0 text-xl font-semibold text-blue-600">
-                    <a href="#hero" class="focus:outline-none">JOSUÉ.SANTOS</a>
+                    <a href="#hero" class="focus:outline-none">J.S</a>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#sobre" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Sobre</a>
-                    <a href="#projetos" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Projetos</a>
-                    <a href="#contato" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Contato</a>
+
+                <div class="flex items-center gap-6">
+                    <div class="hidden lg:flex menu-links">
+                        <a href="#sobre" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Sobre</a>
+                        <a href="#projetos" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Projetos</a>
+                        <a href="#contato" class="text-gray-700 hover:text-blue-600 focus:text-blue-600">Contato</a>
+                    </div>
+                    
+                    <div id="menu-mobile">
+                        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <section id="hero" class="hero">
-        <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold" style="font-family: 'Montserrat', sans-serif;">
+        <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 8vw, 6rem);">
             JOSUÉ.SANTOS
         </h1>
 
@@ -222,7 +314,7 @@
 
     <section id="sobre" class="min-h-screen bg-white py-16 px-8">
         <h2 class="text-3xl font-semibold text-blue-600 text-center mt-10">
-            Sobre J.s
+            Sobre J.S
         </h2>
 
         <div class="content link">
@@ -298,8 +390,8 @@
                 </li>
                 <li>
                     <a href="https://josuesantos.github.io/mami/trab04.html" class="project-link">
-                        <h3>Name This Game</br>(Octopus) (Atari 2600)</h3>
-                        <p>Trabalho individual | MAMI - Matemática Aplicada a Multimídias I</p>
+                        <h3>Name This Game</h3>
+                        <p>(Octopus Atari 2600) Trabalho individual | MAMI - Matemática Aplicada a Multimídias I</p>
                     </a>
                 </li>
                 <li>
@@ -310,7 +402,7 @@
                 </li>
                 <li>
                     <a href="api-liturgia-diaria.vercel.app" class="project-link">
-                        <h3>API_LITURGIA_DIARIA</h3>
+                        <h3>API LITURGIA DIARIA</h3>
                         <p>Disponibilizar via api as leituras para facilitar a criação de aplicações que almejam a evangelização.</p>
                     </a>
                 </li>
@@ -346,11 +438,31 @@
 
         <div class="mt-8 link">
             <p class="text-lg">
-                Link do Currículo completo: <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing" class="text-blue-600" aria-label="Link para o currículo completo">Aqui você pode conhecer mais detalhes.</a>
+                Confira meu <a href="https://docs.google.com/document/d/1dmXV0sMJfiBj393MzyAZEO9o0Iz5sZHw5hMmxg_7tps/edit?usp=sharing" class="text-blue-600" aria-label="Link para o currículo completo">Currículo completo aqui.</a>
+            </p>
+        </div>
+
+        <div class="mt-8 link">
+            <p class="text-lg">
+                Também compartilho meus pensamentos em um <a href="https://josuesantos03.wordpress.com/" class="text-blue-600" aria-label="Link para o Blog">Blog.</a>
             </p>
         </div>
     </section>
 
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.querySelector('.menu-links');
+        
+        menuToggle.addEventListener('click', () => {
+            menuLinks.classList.toggle('active');
+        });
+
+        menuLinks.querySelectorAll('a').forEach(function (item) {
+            item.addEventListener("click", function () {
+                menuLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
