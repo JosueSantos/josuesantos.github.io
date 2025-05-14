@@ -54,26 +54,11 @@
     <!-- Jogo -->
     <div id="jogo" class="hidden w-full max-w-4xl">
       <h2 id="tituloJogo" class="text-3xl font-bold text-center mb-2"></h2>
+      <h3 class="font-bold text-center mb-2 mt-2">Dica de Ouro</h3>
       <div class="flex justify-center mb-2">
         <div id="dica" class="bg-yellow-300 text-yellow-900 p-4 rounded-xl shadow font-semibold text-center max-w-xs"></div>
       </div>
       <p class="text-center text-gray-700 italic mb-4">A palavra possui <span id="tamanhoPalavra"></span> letras.</p>
-
-      <!-- Legenda -->
-      <div class="flex justify-center gap-4 mb-8">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white font-bold rounded">A</div>
-          <span>Letra correta e na posição certa</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 flex items-center justify-center bg-yellow-400 text-white font-bold rounded">B</div>
-          <span>Letra correta na posição errada</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 flex items-center justify-center bg-gray-400 text-white font-bold rounded">C</div>
-          <span>Letra não está na palavra</span>
-        </div>
-      </div>
 
       <div id="tentativas" class="flex flex-col items-center gap-2"></div>
 
@@ -93,6 +78,22 @@
           <a href="https://josuesantos.github.io/meu_termo.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">Criar Seu Próprio Termo</a>
         </div>
       </div>
+
+      <!-- Legenda -->
+        <div class="flex flex-col items-start gap-4 mb-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white font-bold rounded">A</div>
+                <span>Letra correta e na posição certa</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-yellow-400 text-white font-bold rounded">B</div>
+                <span>Letra correta na posição errada</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-gray-400 text-white font-bold rounded">C</div>
+                <span>Letra não está na palavra</span>
+            </div>
+        </div>
     </div>
   </main>
 
