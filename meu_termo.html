@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Termo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .confete {
+      position: absolute;
+      bottom: -50px;
+      animation: subir 3s linear forwards;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+    @keyframes subir {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between relative overflow-hidden">
+  <!-- Cronômetro -->
+  <div id="cronometro" class="absolute top-2 right-4 text-gray-700 font-semibold"></div>
+
+  <main class="flex flex-col items-center justify-start p-4 w-full">
+    <!-- Formulário de Criação -->
+    <form id="formCriar" class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-6" method="GET" action="">
+      <h1 class="text-2xl font-bold mb-4 text-center">Criar Jogo - Meu Termo</h1>
+      <label class="block mb-2 font-semibold">Título da Atividade *</label>
+      <input name="titulo" class="w-full p-2 border rounded mb-4" required>
+
+      <label class="block mb-2 font-semibold">Dica de Ouro *</label>
+      <input name="dica" class="w-full p-2 border rounded mb-4" required>
+
+      <label class="block mb-2 font-semibold">Palavra Secreta *</label>
+      <input id="palavraInput" name="palavra" class="w-full p-2 border rounded mb-2 lowercase" required pattern="[a-zA-Z]+" title="Apenas letras, sem espaços ou acentos.">
+      <p class="text-sm text-gray-600 italic mb-4">* Apenas letras, sem espaços ou acentos. Será convertida para maiúsculas automaticamente.</p>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Gerar Jogo</button>
+    </form>
+
+    <!-- Link Gerado -->
+    <div id="linkGerado" class="hidden w-full max-w-md bg-green-100 border border-green-300 p-4 rounded-xl shadow mb-6">
+      <h3 class="font-semibold mb-2">Link do Jogo:</h3>
+      <div class="flex items-center gap-2 mb-2">
+        <input id="linkOutput" type="text" readonly class="flex-1 p-2 border rounded text-sm">
+        <button onclick="copiarLink()" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm">Copiar</button>
+      </div>
+      <a id="whatsappShare" target="_blank" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm" style="background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1)); color: rgb(255 255 255 / var(--tw-text-opacity, 1));">Compartilhar no WhatsApp</a>
+    </div>
+
+    <!-- Jogo -->
+    <div id="jogo" class="hidden w-full max-w-4xl">
+      <h2 id="tituloJogo" class="text-3xl font-bold text-center mb-2"></h2>
+      <h3 class="font-bold text-center mb-2 mt-2">Dica de Ouro</h3>
+      <div class="flex justify-center mb-2">
+        <div id="dica" class="bg-yellow-300 text-yellow-900 p-4 rounded-xl shadow font-semibold text-center max-w-xs"></div>
+      </div>
+      <p class="text-center text-gray-700 italic mb-4">A palavra possui <span id="tamanhoPalavra"></span> letras.</p>
+
+      <div id="tentativas" class="flex flex-col items-center gap-2"></div>
+
+      <form id="formTentativa" class="mt-6 flex flex-col items-center gap-2">
+        <div class="flex gap-2">
+          <input id="inputTentativa" type="text" maxlength="20" class="uppercase border p-2 rounded w-48 text-center text-xl" placeholder="Digite...">
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Tentar</button>
+        </div>
+        <div id="erroAviso" class="hidden bg-red-200 text-red-800 p-2 rounded w-full text-center max-w-xs text-sm"></div>
+      </form>
+
+      <p id="mensagem" class="mt-4 text-xl font-bold text-center"></p>
+      <div id="resultadoCompartilhar" class="hidden mt-4 text-center">
+        <p id="resultadoTexto" class="mb-2 font-semibold"></p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a id="resultadoWhatsapp" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm">Compartilhar Resultado no WhatsApp</a>
+          <a href="https://josuesantos.github.io/meu_termo.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">Criar Seu Próprio Termo</a>
+        </div>
+      </div>
+
+      <!-- Legenda -->
+        <div class="flex flex-col items-start gap-4 mb-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white font-bold rounded">A</div>
+                <span>Letra correta e na posição certa</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-yellow-400 text-white font-bold rounded">B</div>
+                <span>Letra correta na posição errada</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-gray-400 text-white font-bold rounded">C</div>
+                <span>Letra não está na palavra</span>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t w-full py-2 text-center text-gray-500 text-sm flex items-center justify-center gap-2 fixed bottom-0">
+    <span>&copy; 2025</span>
+    <a href="https://github.com/JosueSantos" target="_blank" class="flex items-center gap-1 text-blue-600 hover:underline">
+      <i class="ph ph-github-logo text-lg"></i>
+      JosueSantos
+    </a>
+  </footer>
+
+  <script>
+    function codificar(str) {
+      return btoa(unescape(encodeURIComponent(str)));
+    }
+    function decodificar(str) {
+      try {
+        return decodeURIComponent(escape(atob(str)));
+      } catch {
+        return "";
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const titulo = decodificar(params.get("titulo"));
+    const dica = decodificar(params.get("dica"));
+    const palavra = decodificar(params.get("palavra"))?.toUpperCase();
+
+    const formCriar = document.getElementById("formCriar");
+    const linkGerado = document.getElementById("linkGerado");
+    const linkOutput = document.getElementById("linkOutput");
+    const whatsappShare = document.getElementById("whatsappShare");
+
+    formCriar.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(formCriar);
+      const titulo = codificar(data.get("titulo"));
+      const dica = codificar(data.get("dica"));
+      const palavra = codificar(data.get("palavra").toUpperCase());
+      const url = `${window.location.origin}${window.location.pathname}?titulo=${titulo}&dica=${dica}&palavra=${palavra}`;
+
+      linkOutput.value = url;
+      whatsappShare.href = `https://wa.me/?text=${encodeURIComponent('Jogue Meu Termo comigo! ' + url)}`;
+
+      linkGerado.classList.remove("hidden");
+    });
+
+    function copiarLink() {
+      linkOutput.select();
+      linkOutput.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Link copiado para a área de transferência!");
+    }
+
+    if (titulo && dica && palavra) {
+      const cronometroEl = document.getElementById("cronometro");
+      let segundos = 0;
+      const timer = setInterval(() => {
+        segundos++;
+        const min = Math.floor(segundos / 60);
+        const seg = segundos % 60;
+        cronometroEl.textContent = `${min}m ${seg.toString().padStart(2, '0')}s`;
+      }, 1000);
+
+      formCriar.classList.add("hidden");
+      document.getElementById("jogo").classList.remove("hidden");
+      document.getElementById("tituloJogo").textContent = titulo;
+      document.getElementById("dica").textContent = dica;
+      document.getElementById("tamanhoPalavra").textContent = palavra.length;
+
+      const tentativasDiv = document.getElementById("tentativas");
+      const formTentativa = document.getElementById("formTentativa");
+      const inputTentativa = document.getElementById("inputTentativa");
+      const mensagem = document.getElementById("mensagem");
+      const erroAviso = document.getElementById("erroAviso");
+      const resultadoDiv = document.getElementById("resultadoCompartilhar");
+      const resultadoTexto = document.getElementById("resultadoTexto");
+      const resultadoWhatsapp = document.getElementById("resultadoWhatsapp");
+
+      let tentativas = [];
+
+      formTentativa.addEventListener("submit", e => {
+        e.preventDefault();
+        const tentativaBruta = inputTentativa.value.trim();
+        const tentativa = tentativaBruta.toUpperCase();
+
+        if (tentativa.length !== palavra.length) {
+          erroAviso.textContent = `A palavra deve ter exatamente ${palavra.length} letras.`;
+          erroAviso.classList.remove("hidden");
+          return;
+        }
+
+        if (!/^[A-Z]+$/.test(tentativa)) {
+          erroAviso.textContent = "Use apenas letras, sem acentos ou caracteres especiais.";
+          erroAviso.classList.remove("hidden");
+          return;
+        }
+
+        erroAviso.classList.add("hidden");
+        tentativas.push(tentativa);
+        renderTentativas();
+        inputTentativa.value = "";
+
+        if (tentativa === palavra) {
+          clearInterval(timer);
+          mensagem.textContent = "Parabéns! Você acertou!";
+          formTentativa.classList.add("hidden");
+
+          const minutos = Math.floor(segundos / 60);
+          const segundosRestantes = segundos % 60;
+          const textoResultado = `Eu descobri a palavra secreta em ${tentativas.length} tentativa(s) e ${minutos}m ${segundosRestantes.toString().padStart(2, '0')}s! Jogue também:`;
+          resultadoTexto.textContent = textoResultado;
+          resultadoWhatsapp.href = `https://wa.me/?text=${encodeURIComponent(textoResultado + ' ' + window.location.href)}`;
+          resultadoDiv.classList.remove("hidden");
+
+          for (let i = 0; i < 30; i++) {
+            const emoji = document.createElement("div");
+            emoji.className = "confete text-2xl";
+            emoji.style.left = Math.random() * 100 + "%";
+            emoji.textContent = ["🎉", "🎊", "🥳"][Math.floor(Math.random() * 3)];
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 3000);
+          }
+        }
+      });
+
+      function renderTentativas() {
+        tentativasDiv.innerHTML = "";
+
+        tentativas.forEach(t => {
+          const linha = document.createElement("div");
+          linha.className = "flex gap-1";
+
+          for (let i = 0; i < palavra.length; i++) {
+            const letra = document.createElement("div");
+            letra.className = "w-10 h-10 flex items-center justify-center font-bold text-xl rounded";
+            letra.textContent = t[i];
+
+            if (t[i] === palavra[i]) {
+              letra.classList.add("bg-blue-500", "text-white");
+            } else if (palavra.includes(t[i])) {
+              letra.classList.add("bg-yellow-400", "text-white");
+            } else {
+              letra.classList.add("bg-gray-400", "text-white");
+            }
+
+            linha.appendChild(letra);
+          }
+
+          tentativasDiv.appendChild(linha);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
