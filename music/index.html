@@ -1,217 +1,162 @@
-<!--
-Music Player (player.html)
-- Place your audio files in a folder named /music (relative to this HTML file when served by a static server).
-- The player will try to fetch /songs.json (an array of {"file":"music/track.mp3","title":"Track Title","artist":"Artist"}).
-- If /songs.json is missing, the file uses a small built-in fallback list (edit `fallbackSongs` in the script).
-
-Optional: Node script to auto-generate songs.json from the music folder (save as gen_songs.js and run `node gen_songs.js`):
-
-```js
-// gen_songs.js
-const fs = require('fs');
-const path = require('path');
-const musicDir = path.join(__dirname, 'music');
-const out = [];
-fs.readdirSync(musicDir).forEach(f => {
-  if (/\.(mp3|ogg|m4a|wav)$/i.test(f)) {
-    out.push({ file: `music/${f}`, title: f.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, ''), artist: '' });
-  }
-});
-fs.writeFileSync('songs.json', JSON.stringify(out, null, 2));
-console.log('songs.json generated with', out.length, 'tracks');
-```
-
-To serve locally for testing, use a static server like `npx serve` or `python -m http.server` from the project root so the browser can fetch music files.
--->
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trilhas Calmantes — Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trilhas</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Small extra styles for the mini player */
-    .mini-player { width: 360px; max-width: calc(100% - 2rem); }
-    .hide { display: none; }
+    body {
+      background: radial-gradient(circle at top, #1e293b, #0f172a 70%);
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+    }
+
+    .player-card {
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .playlist-card {
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .active-song {
+      background: rgba(255,255,255,0.12);
+    }
   </style>
 </head>
-<body class="bg-sand-50 font-sans text-gray-800" style="background:#f6efe2;">
-  <div class="min-h-screen flex flex-col items-center p-6">
-    <header class="w-full max-w-4xl mb-6">
-      <div class="flex items-center justify-between gap-4">
-        <h1 class="text-2xl font-semibold text-gray-900">Trilhas Calmantes</h1>
-        <button id="minimizeBtn" class="px-3 py-1 rounded-lg bg-blue-100 text-blue-800 text-sm">Minimizar</button>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- PLAYER PRINCIPAL -->
+    <div class="player-card md:col-span-2 p-6 rounded-3xl shadow-xl flex flex-col items-center">
+      
+      <div class="text-center mb-4">
+        <h2 id="trackTitle" class="text-xl font-semibold">—</h2>
+        <p id="trackArtist" class="text-sm text-gray-300">—</p>
       </div>
-      <p class="text-sm text-gray-600 mt-2">Música ambiente para concentração e trabalho — design clean e fácil de usar.</p>
-    </header>
 
-    <main class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
-      <section class="md:col-span-2 bg-white rounded-2xl shadow p-4">
-        <div class="flex flex-col gap-4">
-          <div id="nowPlaying" class="flex items-center gap-4">
-            <img id="cover" src="" alt="cover" class="w-20 h-20 rounded-lg bg-gray-100 object-cover hide">
-            <div>
-              <div id="trackTitle" class="text-lg font-medium">Selecione uma faixa</div>
-              <div id="trackArtist" class="text-sm text-gray-500">—</div>
-            </div>
-          </div>
+      <audio id="audio"></audio>
 
-          <div class="flex items-center gap-4">
-            <button id="prevBtn" class="p-3 rounded-full shadow bg-gray-50">⏮</button>
-            <button id="playBtn" class="p-4 rounded-full shadow bg-blue-100 text-blue-800">▶</button>
-            <button id="nextBtn" class="p-3 rounded-full shadow bg-gray-50">⏭</button>
-
-            <div class="flex-1 ml-4">
-              <div id="progressBar" class="h-2 bg-gray-200 rounded-full overflow-hidden">
-                <div id="progress" class="h-full" style="width:0% ; background: linear-gradient(90deg,#60a5fa,#93c5fd);"></div>
-              </div>
-              <div class="flex justify-between text-xs text-gray-500 mt-1">
-                <span id="curTime">0:00</span>
-                <span id="durTime">0:00</span>
-              </div>
-            </div>
-
-            <input id="vol" type="range" min="0" max="1" step="0.01" value="0.7" class="w-28 ml-4">
-          </div>
-
+      <!-- Progress -->
+      <div class="w-full mb-4">
+        <div class="h-2 bg-white/20 rounded-full overflow-hidden cursor-pointer" id="progressBar">
+          <div id="progress" class="h-full bg-blue-400" style="width:0%"></div>
         </div>
-      </section>
+        <div class="flex justify-between text-xs text-gray-300 mt-1">
+          <span id="curTime">0:00</span>
+          <span id="durTime">0:00</span>
+        </div>
+      </div>
 
-      <aside class="bg-white rounded-2xl shadow p-4 overflow-auto max-h-[60vh]">
-        <h2 class="text-sm font-semibold mb-3">Lista de faixas</h2>
-        <ul id="tracksList" class="space-y-2"></ul>
-      </aside>
-    </main>
-  </div>
+      <!-- Controls -->
+      <div class="flex items-center gap-4 mt-2">
+        <button id="prevBtn" class="text-2xl">⏮</button>
+        <button id="playBtn" class="text-4xl px-4">▶</button>
+        <button id="nextBtn" class="text-2xl">⏭</button>
+        <button id="loopBtn" class="text-xl ml-4 opacity-70 hover:opacity-100">⟲</button>
+      </div>
 
-  <!-- Mini player (hidden by default) -->
-  <div id="miniPlayer" class="fixed right-6 bottom-6 bg-white rounded-2xl shadow-lg p-3 flex items-center gap-3 mini-player hide">
-    <div class="flex-1 min-w-0">
-      <div id="miniTitle" class="text-sm font-medium truncate">—</div>
-      <div id="miniArtist" class="text-xs text-gray-500 truncate">—</div>
+      <!-- Volume -->
+      <div class="mt-6 w-full flex items-center gap-3">
+        <span class="text-xs text-gray-300">🔉</span>
+        <input id="vol" type="range" min="0" max="1" step="0.01" value="0.7" class="w-full" />
+      </div>
     </div>
-    <button id="miniPlay" class="px-3 py-1 rounded bg-blue-100 text-blue-800">▶</button>
-    <button id="restoreBtn" class="ml-2 text-xs text-gray-500">Restaurar</button>
-  </div>
 
-  <audio id="audio" preload="metadata"></audio>
+    <!-- PLAYLIST -->
+    <div class="playlist-card rounded-3xl p-4 overflow-auto max-h-[70vh]">
+      <h3 class="text-lg font-semibold mb-4">Playlist</h3>
+      <ul id="playlist" class="space-y-2 text-sm"></ul>
+    </div>
+
+  </div>
 
   <script>
-    // Fallback list (edit if not using songs.json)
-    const fallbackSongs = [
+    const tracks = [
       { file: 'Ave Maria _ Bach_Gounod _ Instrumental Piano.mp3', title: 'Ave Maria', artist: 'Instrumental' },
       { file: 'ALDO SENA - GUITARRADAS DO PARÁ _ CD COMPLETO.mp3', title: 'GUITARRADAS DO PARÁ', artist: 'Instrumental' }
     ];
 
-    // Utility
-    const $ = id => document.getElementById(id);
-    const audio = $('audio');
-    let songs = [];
-    let current = -1;
+    let current = 0;
+    const audio = document.getElementById('audio');
 
-    async function loadSongs(){
-      try{
-        const res = await fetch('songs.json');
-        if(!res.ok) throw new Error('no songs.json');
-        songs = await res.json();
-      }catch(e){
-        console.warn('Could not load songs.json, using fallback list');
-        songs = fallbackSongs;
-      }
-      renderList();
-    }
+    const titleEl = document.getElementById('trackTitle');
+    const artistEl = document.getElementById('trackArtist');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const curTime = document.getElementById('curTime');
+    const durTime = document.getElementById('durTime');
+    const playBtn = document.getElementById('playBtn');
+    const playlistEl = document.getElementById('playlist');
 
-    function renderList(){
-      const ul = $('tracksList');
-      ul.innerHTML = '';
-      songs.forEach((s, i) => {
-        const li = document.createElement('li');
-        li.className = 'flex items-center justify-between gap-3';
-        li.innerHTML = `
-          <div class=\"min-w-0\">\n            <div class=\"font-medium truncate\">${escapeHtml(s.title || s.file)}</div>\n            <div class=\"text-xs text-gray-500 truncate\">${escapeHtml(s.artist || '')}<\/div>\n          <\/div>\n          <div class=\"flex items-center gap-2\">\n            <button data-i=\"${i}\" class=\"play-s btn px-3 py-1 rounded bg-gray-50 text-sm\">Tocar<\/button>\n            <a href=\"${s.file}\" download class=\"text-xs text-gray-400\">baixar<\/a>\n          <\/div>`;
-        ul.appendChild(li);
-      });
-
-      document.querySelectorAll('.play-s').forEach(b => b.addEventListener('click', e => {
-        const i = Number(e.currentTarget.dataset.i);
-        playIndex(i);
-      }));
-    }
-
-    function playIndex(i){
-      if(i<0 || i>=songs.length) return;
-      current = i;
-      audio.src = songs[i].file;
-      audio.play();
-      updateNowPlaying();
-      showMini(false);
-    }
-
-    function updateNowPlaying(){
-      const s = songs[current] || {};
-      $('trackTitle').textContent = s.title || s.file || '—';
-      $('trackArtist').textContent = s.artist || '';
-      if(s.cover) { $('cover').src = s.cover; $('cover').classList.remove('hide'); } else { $('cover').classList.add('hide'); }
-      $('miniTitle').textContent = s.title || '—';
-      $('miniArtist').textContent = s.artist || '';
-      updatePlayButton();
-    }
-
-    function updatePlayButton(){
-      $('playBtn').textContent = audio.paused ? '▶' : '⏸';
-      $('miniPlay').textContent = audio.paused ? '▶' : '⏸';
-    }
-
-    // Controls
-    $('playBtn').addEventListener('click', () => {
-      if(!audio.src) { playIndex(0); return; }
-      audio.paused ? audio.play() : audio.pause();
-      updatePlayButton();
-    });
-    $('prevBtn').addEventListener('click', () => { if(current>0) playIndex(current-1); });
-    $('nextBtn').addEventListener('click', () => { if(current < songs.length-1) playIndex(current+1); });
-
-    audio.addEventListener('play', updatePlayButton);
-    audio.addEventListener('pause', updatePlayButton);
-    audio.addEventListener('timeupdate', () => {
-      const p = (audio.currentTime / (audio.duration || 1)) * 100;
-      $('progress').style.width = isFinite(p) ? p + '%' : '0%';
-      $('curTime').textContent = formatTime(audio.currentTime);
-      $('durTime').textContent = isFinite(audio.duration) ? formatTime(audio.duration) : '0:00';
-    });
-    audio.addEventListener('ended', () => { if(current < songs.length-1) playIndex(current+1); else audio.currentTime = 0; });
-
-    $('vol').addEventListener('input', e => { audio.volume = e.target.value; });
-
-    // Mini player
-    $('minimizeBtn').addEventListener('click', () => showMini(true));
-    $('restoreBtn').addEventListener('click', () => showMini(false));
-    $('miniPlay').addEventListener('click', () => { if(!audio.src) playIndex(0); else { audio.paused ? audio.play() : audio.pause(); updatePlayButton(); } });
-
-    function showMini(min){
-      const mini = $('miniPlayer');
-      const main = document.querySelector('main');
-      if(min){ mini.classList.remove('hide'); main.classList.add('opacity-50'); }
-      else { mini.classList.add('hide'); main.classList.remove('opacity-50'); }
-    }
-
-    // Helpers
     function formatTime(sec){
-      if(!isFinite(sec)) return '0:00';
       sec = Math.floor(sec);
       const m = Math.floor(sec/60);
-      const s = sec % 60;
-      return m + ':' + String(s).padStart(2,'0');
+      const s = String(sec % 60).padStart(2,'0');
+      return `${m}:${s}`;
     }
 
-    function escapeHtml(str){ return String(str || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[c]); }
+    function loadTrack(i){
+      current = i;
+      audio.src = tracks[i].file;
+      titleEl.textContent = tracks[i].title;
+      artistEl.textContent = tracks[i].artist;
+      highlightActive();
+      audio.play();
+      playBtn.textContent = '⏸';
+    }
 
-    // Try load on start
-    loadSongs();
+    function highlightActive(){
+      document.querySelectorAll('.track-item').forEach((li, idx)=>{
+        li.classList.toggle('active-song', idx===current);
+      });
+    }
 
-    // If songs.json missing, user can still edit fallbackSongs variable in this file before serving.
+    // Build playlist
+    tracks.forEach((t,i)=>{
+      const li = document.createElement('li');
+      li.className = "track-item p-3 rounded-xl cursor-pointer hover:bg-white/10";
+      li.innerHTML = `<div class='font-medium'>${t.title}</div><div class='text-gray-400 text-xs'>${t.artist}</div>`;
+      li.addEventListener('click', ()=> loadTrack(i));
+      playlistEl.appendChild(li);
+    });
+
+    loadTrack(0);
+
+    playBtn.addEventListener('click', ()=>{
+      if(audio.paused){ audio.play(); playBtn.textContent='⏸'; }
+      else { audio.pause(); playBtn.textContent='▶'; }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', ()=>{
+      if(current>0) loadTrack(current-1);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', ()=>{
+      if(current < tracks.length-1) loadTrack(current+1);
+    });
+
+    audio.addEventListener('timeupdate', ()=>{
+      const pct = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = pct + '%';
+      curTime.textContent = formatTime(audio.currentTime);
+      durTime.textContent = isFinite(audio.duration) ? formatTime(audio.duration) : '0:00';
+    });
+
+    document.getElementById('loopBtn').addEventListener('click', ()=>{
+      audio.loop = !audio.loop;
+      loopBtn.style.opacity = audio.loop ? '1' : '0.6';
+    });
+
+    document.getElementById('vol').addEventListener('input', e=> audio.volume = e.target.value);
   </script>
+
 </body>
 </html>
