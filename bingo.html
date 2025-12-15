@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emulador de Bingo</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --ball-color: #facc15;
+    --max-balls: 6;
+    --number-size: 2rem;
+
+    --ball-size: 80px;
+    --ball-gap: 10px;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .ball {
+    position: absolute;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: 9999px;
+    background: var(--ball-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--number-size);
+    font-weight: 700;
+    color: #000;
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    animation: roll 2s ease-in-out forwards;
+  }
+
+  @keyframes roll {
+    0% { transform: translate(120px, -120px) rotate(0deg); }
+    100% { transform: rotate(720deg); }
+  }
+
+  .letter {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20vw;
+    font-weight: 800;
+    color: rgba(255,255,255,.9);
+    animation: pulse 1.5s ease-out forwards;
+    pointer-events: none;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+
+<button id="menuBtn" class="fixed top-4 left-4 z-50 p-3 rounded-full bg-black/70 text-white text-xl shadow-lg hover:bg-black transition">
+  ☰
+</button>
+
+<aside id="menu" class="fixed top-0 left-0 h-full w-72 bg-black/90 text-white p-6 transform -translate-x-full transition-transform duration-300 z-40">
+  <h3 class="text-xl font-semibold mb-6">⚙️ Configurações</h3>
+
+  <div class="space-y-5">
+    <div>
+      <label class="block text-sm mb-1">Imagem de fundo</label>
+      <input type="file" id="bgUpload" accept="image/*" class="w-full text-sm file:bg-yellow-400 file:text-black file:border-0 file:px-4 file:py-2 file:rounded-lg file:cursor-pointer" />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">Cor das bolas</label>
+      <input type="color" id="ballColor" value="#facc15" class="w-full h-10 rounded-lg border-none" />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">Máx. bolas visíveis</label>
+      <input type="number" id="maxBalls" value="6" min="1" max="20" class="w-full rounded-lg px-3 py-2 text-black" />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">
+        Tamanho do número
+      </label>
+      <input
+        type="range"
+        id="numberSize"
+        min="1"
+        max="4"
+        step="0.1"
+        value="2"
+        class="w-full"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">
+        Tamanho da bola
+      </label>
+      <input
+        type="range"
+        id="ballSize"
+        min="50"
+        max="140"
+        step="5"
+        value="80"
+        class="w-full"
+      />
+    </div>
+  </div>
+</aside>
+
+<input id="numberInput" type="number" placeholder="Nº" class="fixed bottom-6 right-6 w-24 text-center text-xl font-bold rounded-2xl px-3 py-3 bg-white/90 shadow-xl focus:outline-none focus:ring-4 focus:ring-yellow-400" />
+
+<script>
+  const stage = document.getElementById('stage');
+  const input = document.getElementById('numberInput');
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+
+  let balls = [];
+
+  // MENU HAMBURGUER
+  menuBtn.onclick = () => {
+    menu.classList.toggle('-translate-x-full');
+  };
+
+  // CONFIGURAÇÕES
+  document.getElementById('ballColor').oninput = e => {
+    document.documentElement.style.setProperty('--ball-color', e.target.value);
+  };
+
+  document.getElementById('maxBalls').oninput = e => {
+    document.documentElement.style.setProperty('--max-balls', e.target.value);
+  };
+
+  document.getElementById('numberSize').oninput = e => {
+    document.documentElement.style
+      .setProperty('--number-size', `${e.target.value}rem`);
+  };
+
+  document.getElementById('ballSize').oninput = e => {
+    document.documentElement.style
+      .setProperty('--ball-size', `${e.target.value}px`);
+  };
+
+  document.getElementById('bgUpload').onchange = e => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      document.body.style.backgroundImage = `url(${reader.result})`;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // INPUT NUMÉRICO
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && input.value !== '') {
+      addBall(input.value);
+      input.value = '';
+    }
+  });
+
+  // LETRAS PULSANTES
+  document.addEventListener('keydown', e => {
+    if (/^[a-zA-Z]$/.test(e.key)) {
+      const letter = document.createElement('div');
+      letter.className = 'letter';
+      letter.textContent = e.key.toUpperCase();
+      stage.appendChild(letter);
+      setTimeout(() => letter.remove(), 1500);
+    }
+  });
+
+  function getMaxBalls() {
+    return parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--max-balls')
+    ) || 6;
+  }
+
+  function getSpacing() {
+    const size = parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--ball-size')
+    ) || 80;
+
+    const gap = parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--ball-gap')
+    ) || 10;
+
+    return size + gap;
+  }
+
+  function addBall(number) {
+    const max = getMaxBalls();
+    const spacing = getSpacing();
+
+    // remove a primeira se exceder
+    if (balls.length >= max) {
+      const first = balls.shift();
+
+      first.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+      first.style.transform = 'translateX(-150vw) rotate(720deg)';
+      first.style.opacity = '0';
+
+      setTimeout(() => first.remove(), 800);
+
+      // reposiciona as restantes
+      balls.forEach((b, i) => {
+        b.style.transition = 'left 0.5s ease';
+        b.style.left = `${20 + i * spacing}px`;
+      });
+    }
+
+    // cria nova bola
+    const ball = document.createElement('div');
+    ball.className = 'ball';
+    ball.textContent = number;
+
+    const index = balls.length;
+    const targetLeft = 20 + index * spacing;
+
+    ball.style.left = `${targetLeft}px`;
+    ball.style.bottom = '24px';
+
+    stage.appendChild(ball);
+    balls.push(ball);
+  }
+</script>
+
+</body>
+</html>
