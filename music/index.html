@@ -6,6 +6,7 @@
   <title>Trilhas</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       background: radial-gradient(circle at top, #1e293b, #0f172a 70%);
@@ -26,17 +27,42 @@
     }
 
     .active-song {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .tag-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
       background: rgba(255,255,255,0.12);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .tag-btn:hover {
+      background: rgba(255,255,255,0.28);
     }
   </style>
 </head>
+
 <body class="min-h-screen flex items-center justify-center p-6">
 
-  <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- PLAYER PRINCIPAL -->
+    <!-- TAG CLOUD -->
+    <div class="col-span-full flex flex-wrap gap-2 justify-center">
+      <button class="tag-btn" data-tag="all">Todas</button>
+      <button class="tag-btn" data-tag="classica">Clássica</button>
+      <button class="tag-btn" data-tag="tranquila">Tranquila</button>
+      <button class="tag-btn" data-tag="religiosa">Religiosa</button>
+      <button class="tag-btn" data-tag="forro">Forró</button>
+      <button class="tag-btn" data-tag="instrumental">Instrumental</button>
+      <button class="tag-btn" data-tag="random">Aleatório</button>
+    </div>
+
+    <!-- PLAYER -->
     <div class="player-card md:col-span-2 p-6 rounded-3xl shadow-xl flex flex-col items-center">
-      
+
       <div class="text-center mb-4">
         <h2 id="trackTitle" class="text-xl font-semibold">—</h2>
         <p id="trackArtist" class="text-sm text-gray-300">—</p>
@@ -44,9 +70,9 @@
 
       <audio id="audio"></audio>
 
-      <!-- Progress -->
+      <!-- PROGRESS -->
       <div class="w-full mb-4">
-        <div class="h-2 bg-white/20 rounded-full overflow-hidden cursor-pointer" id="progressBar">
+        <div id="progressBar" class="h-2 bg-white/20 rounded-full overflow-hidden cursor-pointer">
           <div id="progress" class="h-full bg-blue-400" style="width:0%"></div>
         </div>
         <div class="flex justify-between text-xs text-gray-300 mt-1">
@@ -55,15 +81,15 @@
         </div>
       </div>
 
-      <!-- Controls -->
+      <!-- CONTROLS -->
       <div class="flex items-center gap-4 mt-2">
         <button id="prevBtn" class="text-2xl">⏮</button>
         <button id="playBtn" class="text-4xl px-4">▶</button>
         <button id="nextBtn" class="text-2xl">⏭</button>
-        <button id="loopBtn" class="text-xl ml-4 opacity-70 hover:opacity-100">⟲</button>
+        <button id="loopBtn" class="text-xl ml-4 opacity-70">⟲</button>
       </div>
 
-      <!-- Volume -->
+      <!-- VOLUME -->
       <div class="mt-6 w-full flex items-center gap-3">
         <span class="text-xs text-gray-300">🔉</span>
         <input id="vol" type="range" min="0" max="1" step="0.01" value="0.7" class="w-full" />
@@ -79,14 +105,38 @@
   </div>
 
   <script>
+    // ====== MÚSICAS ======
     const tracks = [
-      { file: 'Ave Maria _ Bach_Gounod _ Instrumental Piano.mp3', title: 'Ave Maria', artist: 'Instrumental' },
-      { file: 'ALDO SENA - GUITARRADAS DO PARÁ _ CD COMPLETO.mp3', title: 'GUITARRADAS DO PARÁ', artist: 'Instrumental' }
+      {
+        file: 'https://josuesantos.github.io/music/Ave%20Maria%20_%20Bach_Gounod%20_%20Instrumental%20Piano.mp3',
+        title: 'Ave Maria',
+        artist: 'Bach / Gounod',
+        category: ['classica','religiosa','instrumental']
+      },
+      {
+        file: 'https://josuesantos.github.io/music/ALDO%20SENA%20-%20GUITARRADAS%20DO%20PARÁ%20_%20CD%20COMPLETO.mp3',
+        title: 'Guitarradas do Pará',
+        artist: 'Aldo Sena',
+        category: ['forro', 'animada','instrumental']
+      },
+      {
+        file: 'https://io0.github.io/music/glasshouses.mp4',
+        title: 'Glass Houses',
+        artist: 'Instrumental',
+        category: ['tranquila','instrumental']
+      },
+      {
+        file: 'https://io0.github.io/music/amamizu.mp4',
+        title: 'Amamizu',
+        artist: 'Instrumental',
+        category: ['tranquila','instrumental']
+      }
     ];
 
+    let filteredTracks = [...tracks];
     let current = 0;
-    const audio = document.getElementById('audio');
 
+    const audio = document.getElementById('audio');
     const titleEl = document.getElementById('trackTitle');
     const artistEl = document.getElementById('trackArtist');
     const progress = document.getElementById('progress');
@@ -95,67 +145,100 @@
     const durTime = document.getElementById('durTime');
     const playBtn = document.getElementById('playBtn');
     const playlistEl = document.getElementById('playlist');
+    const loopBtn = document.getElementById('loopBtn');
 
     function formatTime(sec){
-      sec = Math.floor(sec);
+      if(!isFinite(sec)) return '0:00';
       const m = Math.floor(sec/60);
-      const s = String(sec % 60).padStart(2,'0');
+      const s = String(Math.floor(sec % 60)).padStart(2,'0');
       return `${m}:${s}`;
+    }
+
+    function buildPlaylist(list){
+      playlistEl.innerHTML = '';
+      list.forEach((t,i)=>{
+        const li = document.createElement('li');
+        li.className = "track-item p-3 rounded-xl cursor-pointer hover:bg-white/10";
+        li.innerHTML = `
+          <div class="font-medium">${t.title}</div>
+          <div class="text-gray-400 text-xs">${t.artist || ''}</div>
+        `;
+        li.addEventListener('click', ()=> loadTrack(i));
+        playlistEl.appendChild(li);
+      });
+      highlightActive();
     }
 
     function loadTrack(i){
       current = i;
-      audio.src = tracks[i].file;
-      titleEl.textContent = tracks[i].title;
-      artistEl.textContent = tracks[i].artist;
-      highlightActive();
+      audio.src = filteredTracks[i].file;
+      titleEl.textContent = filteredTracks[i].title;
+      artistEl.textContent = filteredTracks[i].artist || '';
       audio.play();
       playBtn.textContent = '⏸';
+      highlightActive();
     }
 
     function highlightActive(){
-      document.querySelectorAll('.track-item').forEach((li, idx)=>{
-        li.classList.toggle('active-song', idx===current);
+      document.querySelectorAll('.track-item').forEach((li,idx)=>{
+        li.classList.toggle('active-song', idx === current);
       });
     }
 
-    // Build playlist
-    tracks.forEach((t,i)=>{
-      const li = document.createElement('li');
-      li.className = "track-item p-3 rounded-xl cursor-pointer hover:bg-white/10";
-      li.innerHTML = `<div class='font-medium'>${t.title}</div><div class='text-gray-400 text-xs'>${t.artist}</div>`;
-      li.addEventListener('click', ()=> loadTrack(i));
-      playlistEl.appendChild(li);
+    // TAGS
+    document.querySelectorAll('.tag-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const tag = btn.dataset.tag;
+
+        if(tag === 'all'){
+          filteredTracks = [...tracks];
+        }
+        else if(tag === 'random'){
+          filteredTracks = [...tracks].sort(()=> Math.random() - 0.5);
+        }
+        else{
+          filteredTracks = tracks.filter(t => t.category?.includes(tag));
+        }
+
+        if(filteredTracks.length){
+          buildPlaylist(filteredTracks);
+          loadTrack(0);
+        }
+      });
     });
 
-    loadTrack(0);
-
-    playBtn.addEventListener('click', ()=>{
+    // CONTROLS
+    playBtn.onclick = ()=>{
       if(audio.paused){ audio.play(); playBtn.textContent='⏸'; }
-      else { audio.pause(); playBtn.textContent='▶'; }
-    });
+      else{ audio.pause(); playBtn.textContent='▶'; }
+    };
 
-    document.getElementById('prevBtn').addEventListener('click', ()=>{
-      if(current>0) loadTrack(current-1);
-    });
+    document.getElementById('prevBtn').onclick = ()=>{
+      if(current > 0) loadTrack(current - 1);
+    };
 
-    document.getElementById('nextBtn').addEventListener('click', ()=>{
-      if(current < tracks.length-1) loadTrack(current+1);
-    });
+    document.getElementById('nextBtn').onclick = ()=>{
+      if(current < filteredTracks.length - 1) loadTrack(current + 1);
+    };
 
-    audio.addEventListener('timeupdate', ()=>{
-      const pct = (audio.currentTime / audio.duration) * 100;
-      progress.style.width = pct + '%';
-      curTime.textContent = formatTime(audio.currentTime);
-      durTime.textContent = isFinite(audio.duration) ? formatTime(audio.duration) : '0:00';
-    });
-
-    document.getElementById('loopBtn').addEventListener('click', ()=>{
+    loopBtn.onclick = ()=>{
       audio.loop = !audio.loop;
       loopBtn.style.opacity = audio.loop ? '1' : '0.6';
-    });
+    };
 
-    document.getElementById('vol').addEventListener('input', e=> audio.volume = e.target.value);
+    audio.ontimeupdate = ()=>{
+      progress.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+      curTime.textContent = formatTime(audio.currentTime);
+      durTime.textContent = formatTime(audio.duration);
+    };
+
+    document.getElementById('vol').oninput = e=>{
+      audio.volume = e.target.value;
+    };
+
+    // INIT
+    buildPlaylist(filteredTracks);
+    loadTrack(0);
   </script>
 
 </body>
