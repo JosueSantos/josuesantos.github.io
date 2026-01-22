@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,31 +17,31 @@
 
     .player-card {
       backdrop-filter: blur(20px);
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .playlist-card {
       backdrop-filter: blur(20px);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
     }
 
     .active-song {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
     }
 
     .tag-btn {
       padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
       font-size: 0.85rem;
       cursor: pointer;
       transition: all .2s;
     }
 
     .tag-btn:hover {
-      background: rgba(255,255,255,0.28);
+      background: rgba(255, 255, 255, 0.28);
     }
   </style>
 </head>
@@ -57,6 +58,7 @@
       <button class="tag-btn" data-tag="religiosa">Religiosa</button>
       <button class="tag-btn" data-tag="forro">Forró</button>
       <button class="tag-btn" data-tag="instrumental">Instrumental</button>
+      <button class="tag-btn" data-tag="verificar">verificar depois</button>
       <button class="tag-btn" data-tag="random">Aleatório</button>
     </div>
 
@@ -111,25 +113,1063 @@
         file: 'https://josuesantos.github.io/music/Ave%20Maria%20_%20Bach_Gounod%20_%20Instrumental%20Piano.mp3',
         title: 'Ave Maria',
         artist: 'Bach / Gounod',
-        category: ['classica','religiosa','instrumental']
+        category: ['classica', 'religiosa', 'instrumental']
       },
       {
         file: 'https://josuesantos.github.io/music/ALDO%20SENA%20-%20GUITARRADAS%20DO%20PARÁ%20_%20CD%20COMPLETO.mp3',
         title: 'Guitarradas do Pará',
         artist: 'Aldo Sena',
-        category: ['forro', 'animada','instrumental']
+        category: ['forro', 'animada', 'instrumental']
       },
       {
         file: 'https://io0.github.io/music/glasshouses.mp4',
         title: 'Glass Houses',
         artist: 'Instrumental',
-        category: ['tranquila','instrumental']
+        category: ['tranquila', 'instrumental']
       },
       {
         file: 'https://io0.github.io/music/amamizu.mp4',
         title: 'Amamizu',
         artist: 'Instrumental',
-        category: ['tranquila','instrumental']
+        category: ['tranquila', 'instrumental']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/01%20-%20Esperanca%20Do%20Amanhecer.mp3',
+        title: '01%20-%20Esperanca%20Do%20Amanhecer.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/01%20Asa%20Branca.mp3',
+        title: '01%20Asa%20Branca.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/02%20Juazeiro.mp3',
+        title: '02%20Juazeiro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/03%20Baião.mp3',
+        title: '03%20Baião.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/03%20Pout%20pourri%20II%20Voltei,%20Senhor%20Coração%20chagado%20Deus%20está%20no%20ar.mp3',
+        title: '03%20Pout%20pourri%20II%20Voltei,%20Senhor%20Coração%20chagado%20Deus%20está%20no%20ar.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/03-%20Carry%20on%20Wayward%20Son.mp3',
+        title: '03-%20Carry%20on%20Wayward%20Son.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/03-Cantando%20Glória.mp3',
+        title: '03-Cantando%20Glória.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/03.Adriana%20part.%20esp.%20Eliana%20Ribeiro%20-%20Tocar%20Em%20Tuas%20Vestes.mp3',
+        title: '03.Adriana%20part.%20esp.%20Eliana%20Ribeiro%20-%20Tocar%20Em%20Tuas%20Vestes.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20-%20Deus%20esta%20no%20ar.mp3',
+        title: '04%20-%20Deus%20esta%20no%20ar.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20Amar%20como%20Jesus%20amou.mp3',
+        title: '04%20Amar%20como%20Jesus%20amou.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20Amor%20que%20não%20se%20cansa.wma',
+        title: '04%20Amor%20que%20não%20se%20cansa.wma',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20O%20Amore%20É%20Mais.mp3',
+        title: '04%20O%20Amore%20É%20Mais.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20Oceano%20de%20misericórdia.mp3',
+        title: '04%20Oceano%20de%20misericórdia.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20Vem,%20Morena.mp3',
+        title: '04%20Vem,%20Morena.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04%20Vá%20com%20Deus.mp3',
+        title: '04%20Vá%20com%20Deus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/04-Minha%20Mãe,%20Minha%20Flôr.mp3',
+        title: '04-Minha%20Mãe,%20Minha%20Flôr.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05%20-%20Voltei,%20Senhor.mp3',
+        title: '05%20-%20Voltei,%20Senhor.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05%20Cantiga%20de%20paz%20na%20Terra.mp3',
+        title: '05%20Cantiga%20de%20paz%20na%20Terra.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05%20Cintura%20Fina.mp3',
+        title: '05%20Cintura%20Fina.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05%20adriana%20-%20Lágrimas%20que%20purificam.mp3',
+        title: '05%20adriana%20-%20Lágrimas%20que%20purificam.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05-A%20cruz%20sagrada.mp3',
+        title: '05-A%20cruz%20sagrada.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/05_eu_tenho_deus.mp3',
+        title: '05_eu_tenho_deus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/06%20A%20Volta%20da%20Asa%20Branca.mp3',
+        title: '06%20A%20Volta%20da%20Asa%20Branca.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/06-Viver%20pra%20mim%20é%20Cristo-%20padre%20fabio%20de%20melo.mp3',
+        title: '06-Viver%20pra%20mim%20é%20Cristo-%20padre%20fabio%20de%20melo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/07%20Pout%20Pourri%20III%20-%20Movidos%20pelo%20amor_%20Mais%20que%20amigos.mp3',
+        title: '07%20Pout%20Pourri%20III%20-%20Movidos%20pelo%20amor_%20Mais%20que%20amigos.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/07%20Qui%20Nem%20Jiló.mp3',
+        title: '07%20Qui%20Nem%20Jiló.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20-%20180%20Graus%20Missionário%20Shalom.mp3',
+        title: '08%20-%20180%20Graus%20Missionário%20Shalom.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20-%20MARIA%20DA%20EUCARISTIA-%20Anjos%20de%20resgate.mp3',
+        title: '08%20-%20MARIA%20DA%20EUCARISTIA-%20Anjos%20de%20resgate.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20Eternos%20amigos.mp3',
+        title: '08%20Eternos%20amigos.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20Eu%20tenho%20alguém%20por%20mim.mp3',
+        title: '08%20Eu%20tenho%20alguém%20por%20mim.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20Mulher%20Pequena.mp3',
+        title: '08%20Mulher%20Pequena.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20No%20Meu%20Coração.wma',
+        title: '08%20No%20Meu%20Coração.wma',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20Paraíba.mp3',
+        title: '08%20Paraíba.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/08%20Que%20amor%20é%20esse.mp3',
+        title: '08%20Que%20amor%20é%20esse.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/0819%20-%20Adriana%20-%20Diario%20de%20Maria.mp3',
+        title: '0819%20-%20Adriana%20-%20Diario%20de%20Maria.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/09%20Acauã.mp3',
+        title: '09%20Acauã.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/09%20Pout-pourri-%20Lágrimas%20que%20purificam-Jovem%20te%20Olho-Chamado.mp3',
+        title: '09%20Pout-pourri-%20Lágrimas%20que%20purificam-Jovem%20te%20Olho-Chamado.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/1%20-%20Faça%20Valer.mp3',
+        title: '1%20-%20Faça%20Valer.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/1%20-%20Preto%20no%20Branco%20-%20Ninguém%20Explica%20Deus%20(Preto%20no%20Branco)%20[Kennto%20Remix].mp3',
+        title: '1%20-%20Preto%20no%20Branco%20-%20Ninguém%20Explica%20Deus%20(Preto%20no%20Branco)%20[Kennto%20Remix].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/10%20-%20Outubro.mp3',
+        title: '10%20-%20Outubro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/10%20Imbalança.mp3',
+        title: '10%20Imbalança.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/11%20-%20O%20Amor%20e%20o%20Autor.mp3',
+        title: '11%20-%20O%20Amor%20e%20o%20Autor.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/11%20O%20Xote%20das%20Meninas.mp3',
+        title: '11%20O%20Xote%20das%20Meninas.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/12%20-%20Antes.mp3',
+        title: '12%20-%20Antes.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/12%20Assum%20Preto.mp3',
+        title: '12%20Assum%20Preto.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/12%20Real%20Ilusão.mp3',
+        title: '12%20Real%20Ilusão.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/13%20-%20Lunação.mp3',
+        title: '13%20-%20Lunação.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/13%20-%20Quando%20os%20anjos%20cantam%20gloria.mp3',
+        title: '13%20-%20Quando%20os%20anjos%20cantam%20gloria.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/13%2013%20de%20Dezembro.mp3',
+        title: '13%2013%20de%20Dezembro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/14%20ABC%20Do%20Sertão.mp3',
+        title: '14%20ABC%20Do%20Sertão.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/15%20Tua%20família.mp3',
+        title: '15%20Tua%20família.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/15%20Óia%20Eu%20Aqui%20de%20Novo.mp3',
+        title: '15%20Óia%20Eu%20Aqui%20de%20Novo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/16%20Ovo%20de%20Codorna.mp3',
+        title: '16%20Ovo%20de%20Codorna.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/17%20Danado%20de%20Bom.mp3',
+        title: '17%20Danado%20de%20Bom.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/18%20Súplica%20Cearense.mp3',
+        title: '18%20Súplica%20Cearense.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/19%20A%20Vida%20Do%20Viajante%20(Ao%20Vivo).mp3',
+        title: '19%20A%20Vida%20Do%20Viajante%20(Ao%20Vivo).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/2%20-%20A%20Fênix.mp3',
+        title: '2%20-%20A%20Fênix.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/3%20-%20Mire%20as%20Estrelas.mp3',
+        title: '3%20-%20Mire%20as%20Estrelas.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/4%20-%20O%20Sol%20Ainda%20Brilha.mp3',
+        title: '4%20-%20O%20Sol%20Ainda%20Brilha.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/5%20-%20Estrangeiro.mp3',
+        title: '5%20-%20Estrangeiro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/6%20-%20Perto.mp3',
+        title: '6%20-%20Perto.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/7%20-%20Sobre%20a%20Dúvida.mp3',
+        title: '7%20-%20Sobre%20a%20Dúvida.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/8%20-%20Um%20Dia.mp3',
+        title: '8%20-%20Um%20Dia.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/9%20-%20Cuida%20de%20Mim.mp3',
+        title: '9%20-%20Cuida%20de%20Mim.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ACDC%20-%20Back%20In%20Black%20(Sobrenatural%20Brazil).mp3',
+        title: 'ACDC%20-%20Back%20In%20Black%20(Sobrenatural%20Brazil).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ACDC%20-%20Highway%20To%20Hell%20(Sobrenatural%20Brazil).mp3',
+        title: 'ACDC%20-%20Highway%20To%20Hell%20(Sobrenatural%20Brazil).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ADRIANA%20-%20REUNIDOS%20AQUI.mp3',
+        title: 'ADRIANA%20-%20REUNIDOS%20AQUI.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ANJOS%20DE%20RESGATE%20-%20Sou%20teu%20anjo.mp3',
+        title: 'ANJOS%20DE%20RESGATE%20-%20Sou%20teu%20anjo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Abba%20Dancing%20Queen.mp3',
+        title: 'Abba%20Dancing%20Queen.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20&%20Pe%20Fabio%20de%20Melo%20-%20Humano%20amor%20de%20Deus.mp3',
+        title: 'Adriana%20&%20Pe%20Fabio%20de%20Melo%20-%20Humano%20amor%20de%20Deus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Colo%20de%20Mãe.mp3',
+        title: 'Adriana%20-%20Colo%20de%20Mãe.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Eternamente%20grata.mp3',
+        title: 'Adriana%20-%20Eternamente%20grata.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Lindo%20Ceu.MP3',
+        title: 'Adriana%20-%20Lindo%20Ceu.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Olhos%20no%20espelho.mp3',
+        title: 'Adriana%20-%20Olhos%20no%20espelho.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Quem%20perde%20a%20sua%20vida%20a%20encontra.mp3',
+        title: 'Adriana%20-%20Quem%20perde%20a%20sua%20vida%20a%20encontra.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20-%20Se%20Compreendesses%20O%20Dom%20De%20Deus.mp3',
+        title: 'Adriana%20-%20Se%20Compreendesses%20O%20Dom%20De%20Deus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana%20Clipe%20NOSSA%20MISSÃO.mp3',
+        title: 'Adriana%20Clipe%20NOSSA%20MISSÃO.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Adriana_%20Glória%20e%20majestade.mp3',
+        title: 'Adriana_%20Glória%20e%20majestade.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Alegria%20da%20Minha%20Juventude%20CLIPE.mp3',
+        title: 'Alegria%20da%20Minha%20Juventude%20CLIPE.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Alegria%20da%20Minha%20Juventude%20-%20CLIPE.mp3',
+        title: 'Alegria%20da%20Minha%20Juventude%20-%20CLIPE.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Aline%20Brasil%20-%20Colisão.mp3',
+        title: 'Aline%20Brasil%20-%20Colisão.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Alma%20Missionária.mp3',
+        title: 'Alma%20Missionária.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Além%20Do%20Meu%20Jardim.mp3',
+        title: 'Além%20Do%20Meu%20Jardim.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Amigos%20do%20pai%20-%20Doa%20A%20Tua%20Vida%20paroquia%20maria%20de%20nazare.mp3',
+        title: 'Amigos%20do%20pai%20-%20Doa%20A%20Tua%20Vida%20paroquia%20maria%20de%20nazare.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Amor%20Sincero.mp3',
+        title: 'Amor%20Sincero.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Ana%20Vilela%20Trem%20Bala%20[Clipe%20Oficial].mp3',
+        title: 'Ana%20Vilela%20Trem%20Bala%20[Clipe%20Oficial].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20De%20Resgate%20-%20Mais%20Que%20Amigos.mp3',
+        title: 'Anjos%20De%20Resgate%20-%20Mais%20Que%20Amigos.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20De%20Resgate%20-%20Um%20Só%20Coração%20-%2008%20Maria%20Da%20Eucaristia.mp3',
+        title: 'Anjos%20De%20Resgate%20-%20Um%20Só%20Coração%20-%2008%20Maria%20Da%20Eucaristia.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Amigos%20pela%20F.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Amigos%20pela%20F.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Amor%20Eterno.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Amor%20Eterno.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20O%20primeiro%20olhar.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20O%20primeiro%20olhar.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2005%20Amigo%20Irmão.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2005%20Amigo%20Irmão.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2009%20Como%20os%20Anjos%20Te%20Adorar.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2009%20Como%20os%20Anjos%20Te%20Adorar.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2010%20O%20Céu%20Está%20Rezando%20por%20Ti.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2010%20O%20Céu%20Está%20Rezando%20por%20Ti.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2011%20Sou%20Teu%20Deus.mp3',
+        title: 'Anjos%20de%20Resgate%20-%20Um%20Só%20Coração%20-%2011%20Sou%20Teu%20Deus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Belo%20e%20Padre%20Marcelo%20Rossi%202011%20-%20ForÃ§a%20e%20VitÃ³ria%20[LanÃ§amento%202011%20MUSICA%20NOVA].mp3',
+        title: 'Belo%20e%20Padre%20Marcelo%20Rossi%202011%20-%20ForÃ§a%20e%20VitÃ³ria%20[LanÃ§amento%202011%20MUSICA%20NOVA].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Bruno%20Camurati%20Canção%20de%20Pedro%20(Clipe%20Oficial).mp3',
+        title: 'Bruno%20Camurati%20Canção%20de%20Pedro%20(Clipe%20Oficial).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Bruno%20Camurati%20Tudo%20Vai%20Ficar%20Bem%20(áudio%20oficial).mp3',
+        title: 'Bruno%20Camurati%20Tudo%20Vai%20Ficar%20Bem%20(áudio%20oficial).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Bruno%20Camurati%20Tudo%20Vai%20Ficar%20Bem%20(áudio%20oficial)[1].mp3',
+        title: 'Bruno%20Camurati%20Tudo%20Vai%20Ficar%20Bem%20(áudio%20oficial)[1].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Bruno%20Camurati%20-%20Canção%20de%20Pedro%20(Clipe%20Oficial).mp3',
+        title: 'Bruno%20Camurati%20-%20Canção%20de%20Pedro%20(Clipe%20Oficial).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Casamento%20kajo.mp3',
+        title: 'Casamento%20kajo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Com%20Pedro%20e%20Com%20Paulo%20Hino%20de%20São%20Pedro%20e%20São%20Paulo.mp3',
+        title: 'Com%20Pedro%20e%20Com%20Paulo%20Hino%20de%20São%20Pedro%20e%20São%20Paulo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Créditos%20Finais%20Com%20Música%20do%20Arnold%20Para%20Memes.mp3',
+        title: 'Créditos%20Finais%20Com%20Música%20do%20Arnold%20Para%20Memes.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Cyberpunk%20The%20City%20is%20Watching.mp3',
+        title: 'Cyberpunk%20The%20City%20is%20Watching.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Cyndi%20Lauper%20Girls%20Just%20Want%20To%20Have%20Fun%20(Official%20Video).mp3',
+        title: 'Cyndi%20Lauper%20Girls%20Just%20Want%20To%20Have%20Fun%20(Official%20Video).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/DE%20VOLTA%20AOS%20ANOS%2060%20JIVE%20BUNNY%20AND%20THE%20MAXTER%20MIXES.mp3',
+        title: 'DE%20VOLTA%20AOS%20ANOS%2060%20JIVE%20BUNNY%20AND%20THE%20MAXTER%20MIXES.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Doce%20Luz.mp3',
+        title: 'Doce%20Luz.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Drift%20-%20Pages%20Turn.mp3',
+        title: 'Drift%20-%20Pages%20Turn.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ESSA%20PRO%20JOGO%20EM%20SI.mp3',
+        title: 'ESSA%20PRO%20JOGO%20EM%20SI.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Exaltasamba%20HD%2014%20Uma%20Carta%20Pra%20Deus%20Padre%20Reginaldo%20Manzotti%20(DVD%2025%20Anos)%20OFICIALLEGENDA.mp3',
+        title: 'Exaltasamba%20HD%2014%20Uma%20Carta%20Pra%20Deus%20Padre%20Reginaldo%20Manzotti%20(DVD%2025%20Anos)%20OFICIALLEGENDA.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Feliz.mp3',
+        title: 'Feliz.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/FrenteaFrente.mp3',
+        title: 'FrenteaFrente.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/HINO%20JMJ.mp3',
+        title: 'HINO%20JMJ.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Hino%20a%20São%20Vicente%20de%20Paulo%20SSVP%200001.mp3',
+        title: 'Hino%20a%20São%20Vicente%20de%20Paulo%20SSVP%200001.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Hino%20oficial%20do%20Jubileu%20300%20Anos%20de%20Aparecida%20Pe%20Zezinho,%20scj.mp3',
+        title: 'Hino%20oficial%20do%20Jubileu%20300%20Anos%20de%20Aparecida%20Pe%20Zezinho,%20scj.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Hoje%20Livre%20Sou%20-%20Ministério%20Adoração%20e%20Vida.mp3',
+        title: 'Hoje%20Livre%20Sou%20-%20Ministério%20Adoração%20e%20Vida.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/KARAOKE_VERBUM%20PANIS%20-%20Minist.%20Amor%20e%20Adoração%20-%20Canção%20Nova.wmv.mp3',
+        title: 'KARAOKE_VERBUM%20PANIS%20-%20Minist.%20Amor%20e%20Adoração%20-%20Canção%20Nova.wmv.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Kelly%20Patricia%20-%20A%20vitoria.mp3',
+        title: 'Kelly%20Patricia%20-%20A%20vitoria.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Kelly%20Patricia%20-%20Exaltação%20da%20Santíssima%20Virgem.MP3',
+        title: 'Kelly%20Patricia%20-%20Exaltação%20da%20Santíssima%20Virgem.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Kelly%20Patricia%20-%20Porque%20te%20amo%20o%20Maria.mp3',
+        title: 'Kelly%20Patricia%20-%20Porque%20te%20amo%20o%20Maria.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Kelly%20Patricia%20-%20Tu%20es%20digno.mp3',
+        title: 'Kelly%20Patricia%20-%20Tu%20es%20digno.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Kelly%20Patricia%20-%20Via%20sacra.mp3',
+        title: 'Kelly%20Patricia%20-%20Via%20sacra.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/LEGIAO%20URBANA%20-%20EDUARDO%20E%20MONICA.mp3',
+        title: 'LEGIAO%20URBANA%20-%20EDUARDO%20E%20MONICA.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Legiao%20Urbana%20-%201965%20(Duas%20Tribos).mp3',
+        title: 'Legiao%20Urbana%20-%201965%20(Duas%20Tribos).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Legiao%20Urbana%20-%20Faroeste%20Caboclo.mp3',
+        title: 'Legiao%20Urbana%20-%20Faroeste%20Caboclo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Lembra.mp3',
+        title: 'Lembra.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Levaumtempo.mp3',
+        title: 'Levaumtempo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Low%20Tree%20-%20Come%20Back%20Home.mp3',
+        title: 'Low%20Tree%20-%20Come%20Back%20Home.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Maria%20passa%20na%20frente%20Juliana%20de%20Paula%20Clipe.mp3',
+        title: 'Maria%20passa%20na%20frente%20Juliana%20de%20Paula%20Clipe.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Minha%20Essência%20Thiago%20Brado%20(Oficial%20Full%20HD).mp3',
+        title: 'Minha%20Essência%20Thiago%20Brado%20(Oficial%20Full%20HD).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Missionário%20Shalom%20-%20O₂%20(Oxigênio)%20[Clipe%20Oficial].mp3',
+        title: 'Missionário%20Shalom%20-%20O₂%20(Oxigênio)%20[Clipe%20Oficial].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Missionário%20Shalom%20-%20Uma%20Revolução%20[Oficial].mp3',
+        title: 'Missionário%20Shalom%20-%20Uma%20Revolução%20[Oficial].mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/NAMORANDO%20Grecco.mp3',
+        title: 'NAMORANDO%20Grecco.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Nenia%20-%20Padre%20Zezinho-com%20intro.mp3',
+        title: 'Nenia%20-%20Padre%20Zezinho-com%20intro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Nenia%20-%20Padre%20Zezinho.mp3',
+        title: 'Nenia%20-%20Padre%20Zezinho.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/O%20ESPÍRITO%20SANTO%20ESTÁ%20SOBRE%20MIM%20(REDENTORISTAS).mp3',
+        title: 'O%20ESPÍRITO%20SANTO%20ESTÁ%20SOBRE%20MIM%20(REDENTORISTAS).mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/O%20Sol%20Da%20Meia%20Noite.mp3',
+        title: 'O%20Sol%20Da%20Meia%20Noite.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/ORAÇÃO%20DE%20SAO%20SÃO%20FRANCISCO.mp3',
+        title: 'ORAÇÃO%20DE%20SAO%20SÃO%20FRANCISCO.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/OraçãoSimples.mp3',
+        title: 'OraçãoSimples.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/PADRE%20REGINALDO%20-%20A%20TEMPESTADE%20-%20VAI%20PASSAR.mp3',
+        title: 'PADRE%20REGINALDO%20-%20A%20TEMPESTADE%20-%20VAI%20PASSAR.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/QUEM%20É%20ESSE%20DEUS%20Missionário%20Shalom%20DVD180Graus.mp3',
+        title: 'QUEM%20É%20ESSE%20DEUS%20Missionário%20Shalom%20DVD180Graus.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/README.md',
+        title: 'README.md',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Rara%20Calma.mp3',
+        title: 'Rara%20Calma.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Sacramento%20da%20Comunhão%20-%20anjos%20de%20resgate.mp3',
+        title: 'Sacramento%20da%20Comunhão%20-%20anjos%20de%20resgate.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Single%20Alegria%20da%20Igreja.mp3',
+        title: 'Single%20Alegria%20da%20Igreja.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/São%20Domingos%20Sávio%20-%20Música%20Pequeno%20Gigante.mp3',
+        title: 'São%20Domingos%20Sávio%20-%20Música%20Pequeno%20Gigante.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/VERBUM%20PANIS%20Minist%20Amor%20e%20Adoração%20Canção%20Novawmv.mp3',
+        title: 'VERBUM%20PANIS%20Minist%20Amor%20e%20Adoração%20Canção%20Novawmv.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/VERBUM%20PANIS%20-%20Minist.%20Amor%20e%20Adoração%20-%20Canção%20Nova.wmv.mp3',
+        title: 'VERBUM%20PANIS%20-%20Minist.%20Amor%20e%20Adoração%20-%20Canção%20Nova.wmv.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Verbum%20Panis.mp3',
+        title: 'Verbum%20Panis.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/Zé%20Vicente%20Baião%20das%20Comunidades.mp3',
+        title: 'Zé%20Vicente%20Baião%20das%20Comunidades.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Contigo%20é%20bem%20melhor.MP3',
+        title: 'adriana%20Contigo%20é%20bem%20melhor.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Eu%20quero%20mais%20de%20ti.MP3',
+        title: 'adriana%20Eu%20quero%20mais%20de%20ti.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Eu%20sou%20um%20jardim.MP3',
+        title: 'adriana%20Eu%20sou%20um%20jardim.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Maior%20é%20Deus.MP3',
+        title: 'adriana%20Maior%20é%20Deus.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20O%20Deus%20do%20amor.MP3',
+        title: 'adriana%20O%20Deus%20do%20amor.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Teu%20amor%20é%20maior.MP3',
+        title: 'adriana%20Teu%20amor%20é%20maior.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Teu%20milagre.MP3',
+        title: 'adriana%20Teu%20milagre.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20Voar%20em%20tuas%20asas.MP3',
+        title: 'adriana%20Voar%20em%20tuas%20asas.MP3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana%20católica%2005%20Motivos%20para%20recomeçar.mp3',
+        title: 'adriana%20católica%2005%20Motivos%20para%20recomeçar.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/adriana-arydes-ft-davidson-silva-ziza-fernandes-fatima-souza-e-adelso-freire-hallelujah.mp3',
+        title: 'adriana-arydes-ft-davidson-silva-ziza-fernandes-fatima-souza-e-adelso-freire-hallelujah.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/anjos-de-resgate-maria-e-o-anjo.mp3',
+        title: 'anjos-de-resgate-maria-e-o-anjo.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/bem-aventurados-os-misericordiosos_jmj_cracovia2016.mp3',
+        title: 'bem-aventurados-os-misericordiosos_jmj_cracovia2016.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/de-janeiro-a-janeiro.mp3',
+        title: 'de-janeiro-a-janeiro.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/eis-me-aqui-missionario-shalom.mp3',
+        title: 'eis-me-aqui-missionario-shalom.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/estou-aqui-anjos-de-resgate-dvd-ao-vivo-em-brasilia.mp3',
+        title: 'estou-aqui-anjos-de-resgate-dvd-ao-vivo-em-brasilia.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/kelly%20patricia%20as%20misericórdias%20do%20senhor.mp3',
+        title: 'kelly%20patricia%20as%20misericórdias%20do%20senhor.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/marcha_nupcial_violino_O-1h--dcAtQ.mp3',
+        title: 'marcha_nupcial_violino_O-1h--dcAtQ.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/minha-essencia-thiago-brado.mp3',
+        title: 'minha-essencia-thiago-brado.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/musica%20pra%20tela%20inicial.mp3',
+        title: 'musica%20pra%20tela%20inicial.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/pra-voce-guardei-o-amor-nando-reis-e-ana-canas.mp3',
+        title: 'pra-voce-guardei-o-amor-nando-reis-e-ana-canas.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/rosa-de-saron-maquina-do-tempo-videoclipe-oficial.mp3',
+        title: 'rosa-de-saron-maquina-do-tempo-videoclipe-oficial.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/rosa-de-saron-sem-voce-oficial.mp3',
+        title: 'rosa-de-saron-sem-voce-oficial.mp3',
+        artist: '',
+        category: ['verificar']
+      },
+      {
+        file: 'https://raw.githubusercontent.com/musicasjo/music/main/sad_song.mp3',
+        title: 'sad_song.mp3',
+        artist: '',
+        category: ['verificar']
       }
     ];
 
@@ -147,29 +1187,29 @@
     const playlistEl = document.getElementById('playlist');
     const loopBtn = document.getElementById('loopBtn');
 
-    function formatTime(sec){
-      if(!isFinite(sec)) return '0:00';
-      const m = Math.floor(sec/60);
-      const s = String(Math.floor(sec % 60)).padStart(2,'0');
+    function formatTime(sec) {
+      if (!isFinite(sec)) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = String(Math.floor(sec % 60)).padStart(2, '0');
       return `${m}:${s}`;
     }
 
-    function buildPlaylist(list){
+    function buildPlaylist(list) {
       playlistEl.innerHTML = '';
-      list.forEach((t,i)=>{
+      list.forEach((t, i) => {
         const li = document.createElement('li');
         li.className = "track-item p-3 rounded-xl cursor-pointer hover:bg-white/10";
         li.innerHTML = `
           <div class="font-medium">${t.title}</div>
           <div class="text-gray-400 text-xs">${t.artist || ''}</div>
         `;
-        li.addEventListener('click', ()=> loadTrack(i));
+        li.addEventListener('click', () => loadTrack(i));
         playlistEl.appendChild(li);
       });
       highlightActive();
     }
 
-    function loadTrack(i){
+    function loadTrack(i) {
       current = i;
       audio.src = filteredTracks[i].file;
       titleEl.textContent = filteredTracks[i].title;
@@ -179,28 +1219,28 @@
       highlightActive();
     }
 
-    function highlightActive(){
-      document.querySelectorAll('.track-item').forEach((li,idx)=>{
+    function highlightActive() {
+      document.querySelectorAll('.track-item').forEach((li, idx) => {
         li.classList.toggle('active-song', idx === current);
       });
     }
 
     // TAGS
-    document.querySelectorAll('.tag-btn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
         const tag = btn.dataset.tag;
 
-        if(tag === 'all'){
+        if (tag === 'all') {
           filteredTracks = [...tracks];
         }
-        else if(tag === 'random'){
-          filteredTracks = [...tracks].sort(()=> Math.random() - 0.5);
+        else if (tag === 'random') {
+          filteredTracks = [...tracks].sort(() => Math.random() - 0.5);
         }
-        else{
+        else {
           filteredTracks = tracks.filter(t => t.category?.includes(tag));
         }
 
-        if(filteredTracks.length){
+        if (filteredTracks.length) {
           buildPlaylist(filteredTracks);
           loadTrack(0);
         }
@@ -208,31 +1248,31 @@
     });
 
     // CONTROLS
-    playBtn.onclick = ()=>{
-      if(audio.paused){ audio.play(); playBtn.textContent='⏸'; }
-      else{ audio.pause(); playBtn.textContent='▶'; }
+    playBtn.onclick = () => {
+      if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; }
+      else { audio.pause(); playBtn.textContent = '▶'; }
     };
 
-    document.getElementById('prevBtn').onclick = ()=>{
-      if(current > 0) loadTrack(current - 1);
+    document.getElementById('prevBtn').onclick = () => {
+      if (current > 0) loadTrack(current - 1);
     };
 
-    document.getElementById('nextBtn').onclick = ()=>{
-      if(current < filteredTracks.length - 1) loadTrack(current + 1);
+    document.getElementById('nextBtn').onclick = () => {
+      if (current < filteredTracks.length - 1) loadTrack(current + 1);
     };
 
-    loopBtn.onclick = ()=>{
+    loopBtn.onclick = () => {
       audio.loop = !audio.loop;
       loopBtn.style.opacity = audio.loop ? '1' : '0.6';
     };
 
-    audio.ontimeupdate = ()=>{
+    audio.ontimeupdate = () => {
       progress.style.width = (audio.currentTime / audio.duration) * 100 + '%';
       curTime.textContent = formatTime(audio.currentTime);
       durTime.textContent = formatTime(audio.duration);
     };
 
-    document.getElementById('vol').oninput = e=>{
+    document.getElementById('vol').oninput = e => {
       audio.volume = e.target.value;
     };
 
@@ -242,4 +1282,5 @@
   </script>
 
 </body>
+
 </html>
