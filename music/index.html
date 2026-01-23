@@ -205,7 +205,6 @@
       <button class="tag-btn" data-tag="missionarioshalom">Missionário Shalom</button>
       <button class="tag-btn" data-tag="rosadesaron">Rosa de Saron</button>
       <button class="tag-btn" data-tag="kellypatricia">Kelly Patricia</button>
-      <button class="tag-btn" data-tag="verificar">verificar depois</button>
       <button class="tag-btn" data-tag="random">Aleatório</button>
     </div>
 
@@ -213,7 +212,7 @@
     <div class="player-card md:col-span-2 p-6 rounded-3xl shadow-xl flex flex-col items-center">
 
       <div class="text-center mb-4">
-        <h2 id="trackTitle" class="text-xl font-semibold">—</h2>
+        <h2 id="trackTitle" class="text-xl font-semibold">— Escolha uma PlayList —</h2>
         <p id="trackArtist" class="text-sm text-gray-300">—</p>
       </div>
 
@@ -1166,7 +1165,9 @@
       audio.play();
       playBtn.textContent = '⏸';
       highlightActive();
+      updateMediaSession(); // 👈 ESSENCIAL
     }
+
 
     function highlightActive() {
       document.querySelectorAll('.track-item').forEach((li, idx) => {
@@ -1271,7 +1272,7 @@
         } else if (tag === 'random') {
           filteredTracks = [...tracks].sort(() => Math.random() - 0.5);
         } else {
-          filteredTracks = tracks.filter(t => t.category?.includes(tag));
+          filteredTracks = tracks.filter(t => t.category?.includes(tag)).sort(() => Math.random() - 0.5);
         }
 
         if (filteredTracks.length) {
@@ -1295,7 +1296,53 @@
 
     // INIT
     buildPlaylist(filteredTracks);
-    loadTrack(0);
+    //loadTrack(0);
+
+
+
+    function updateMediaSession() {
+      if (!('mediaSession' in navigator)) return;
+
+      const track = filteredTracks[current];
+
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: track.title,
+        artist: track.artist || '',
+        album: 'Playlist',
+        artwork: [
+          { src: '/favicon-96.png', sizes: '96x96', type: 'image/png' },
+          { src: '/favicon-192.png', sizes: '192x192', type: 'image/png' }
+        ]
+      });
+    }
+
+    if ('mediaSession' in navigator) {
+
+      navigator.mediaSession.setActionHandler('play', () => {
+        audio.play();
+      });
+
+      navigator.mediaSession.setActionHandler('pause', () => {
+        audio.pause();
+      });
+
+      navigator.mediaSession.setActionHandler('previoustrack', () => {
+        if (current > 0) loadTrack(current - 1);
+      });
+
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        if (current < filteredTracks.length - 1) loadTrack(current + 1);
+      });
+
+      navigator.mediaSession.setActionHandler('seekto', (details) => {
+        if (details.fastSeek && 'fastSeek' in audio) {
+          audio.fastSeek(details.seekTime);
+        } else {
+          audio.currentTime = details.seekTime;
+        }
+      });
+
+    }
   </script>
 
 </body>
