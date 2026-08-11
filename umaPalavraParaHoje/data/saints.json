@@ -1,0 +1,33 @@
+[
+  {
+    "id": 187,
+    "slug": "santa-clara-de-assis",
+    "name": "Santa Clara de Assis",
+    "feast": "08-11",
+    "title": "Virgem e fundadora das Clarissas",
+    "century": "XIII",
+    "country": "Itália",
+    "vocation": "Religiosa",
+
+    "summary": "Santa Clara descobriu na pobreza evangélica, na oração e na contemplação um caminho de liberdade e profunda união com Cristo.",
+
+    "legacy": "Sua vida nos ensina que a verdadeira riqueza nasce quando deixamos Cristo ocupar o centro do coração.",
+
+    "virtues": [
+      "simplicidade",
+      "pobreza evangélica",
+      "oração",
+      "contemplação",
+      "fidelidade"
+    ],
+
+    "themes": [
+      "luz",
+      "confiança",
+      "simplicidade",
+      "contemplação"
+    ],
+
+    "icon": "sun"
+  }
+]

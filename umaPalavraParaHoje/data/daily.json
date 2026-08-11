@@ -1,0 +1,46 @@
+{
+  "date": "08-11",
+  "season": "tempo_comum",
+  "theme": 18,
+  "virtue": 42,
+  "saint": 187,
+  "marian": 58,
+  "reflection": 284,
+  "mission": 133,
+  "prayer": 94,
+
+  "visual": {
+    "primary": "#6B4B7A",
+    "parallax": true,
+    "intensity": 0.35,
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 5,
+    "progress": true
+  },
+
+  "heroTitle": "Uma luz que permanece",
+
+  "saintQuestion": "O que realmente precisa ocupar o centro do meu coração?",
+
+  "closingText": "Permaneça naquilo que começou com amor.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Uma luz que permanece · Santa Clara",
+
+  "metaDescription": "Uma experiência de oração e reflexão inspirada em Santa Clara de Assis.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}
