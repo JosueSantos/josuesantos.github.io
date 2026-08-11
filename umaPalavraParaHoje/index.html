@@ -793,17 +793,6 @@
                 <p class="text-xl sm:text-2xl leading-[1.75] font-light">
                   ${escapeHTML(prayer.text || "")}
                 </p>
-
-                ${
-                  prayer.duration
-                    ? `<p
-                        class="mt-8 text-xs uppercase tracking-[.2em]"
-                        style="color:var(--muted)"
-                      >
-                        ${escapeHTML(String(prayer.duration))} segundos
-                      </p>`
-                    : ""
-                }
               </div>
             </div>
           </div>
