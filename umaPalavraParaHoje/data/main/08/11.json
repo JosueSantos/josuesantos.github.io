@@ -10,9 +10,7 @@
   "prayer": 94,
 
   "visual": {
-    "primary": "#6B4B7A",
-    "parallax": true,
-    "intensity": 0.35,
+    "atmosphere": "amanhecer-suave",
     "iconAnimation": "breathe"
   },
 

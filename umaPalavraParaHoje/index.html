@@ -18,12 +18,23 @@
     :root {
       --primary: #5E3575;
       --primary-light: #A78BB8;
+      --primary-lighter: #D8CCE0;
       --primary-soft: #D8CCE0;
       --primary-dark: #352043;
       --primary-glow: rgba(94, 53, 117, .18);
-      --background: #FAF8FC;
+
+      --background: #FAF9F7;
       --foreground: #29222E;
       --muted: #756B7D;
+
+      --atmo-background: #FAF9F7;
+      --atmo-gradient: linear-gradient(
+        165deg,
+        #F7EBDD 0%,
+        #FAF9F7 42%,
+        #E5EDF3 100%
+      );
+
       --parallax-y: 0px;
       --progress: 0%;
     }
@@ -51,40 +62,51 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: -1;
       overflow: hidden;
+
       background:
-        radial-gradient(circle at 15% 8%, var(--primary-glow), transparent 34%),
-        radial-gradient(circle at 90% 78%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 38%),
-        linear-gradient(135deg, var(--background), color-mix(in srgb, var(--background) 82%, var(--primary-soft)));
+        var(--atmo-gradient);
+
+      transition:
+        background var(--atmo-transition, 1.8s) ease;
     }
 
     .atmosphere-light {
       position: absolute;
-      width: 42vw;
-      height: 42vw;
+
+      left: var(--light-x);
+      top: var(--light-y);
+
+      width: var(--light-size);
+      height: var(--light-size);
+
       min-width: 260px;
       min-height: 260px;
-      max-width: 680px;
-      max-height: 680px;
+
+      max-width: 720px;
+      max-height: 720px;
+
       border-radius: 999px;
-      filter: blur(70px);
-      opacity: .38;
-      transform: translate3d(0, var(--parallax-y), 0);
-      transition: transform .12s linear;
-    }
 
-    .atmosphere-light.one {
-      top: -12%;
-      left: -12%;
-      background: color-mix(in srgb, var(--primary-light) 42%, transparent);
-    }
+      background: var(--light-color);
 
-    .atmosphere-light.two {
-      right: -16%;
-      bottom: 8%;
-      background: color-mix(in srgb, var(--primary) 24%, transparent);
-      transform: translate3d(0, calc(var(--parallax-y) * -0.55), 0);
+      opacity: var(--light-opacity);
+
+      filter: blur(var(--light-blur));
+
+      transform:
+        translate3d(
+          0,
+          calc(
+            var(--parallax-y) *
+            var(--light-parallax)
+          ),
+          0
+        );
+
+      transition:
+        background var(--atmo-transition, 1.8s) ease,
+        opacity var(--atmo-transition, 1.8s) ease;
     }
 
     .glass {
@@ -257,10 +279,11 @@
     <div id="progressBar" class="progress-bar"></div>
   </div>
 
-  <div class="page-atmosphere" aria-hidden="true">
-    <div class="atmosphere-light one"></div>
-    <div class="atmosphere-light two"></div>
-  </div>
+  <div
+    id="pageAtmosphere"
+    class="page-atmosphere"
+    aria-hidden="true"
+  ></div>
 
   <div id="app">
     <div class="loading">
@@ -283,6 +306,7 @@
       Estrutura esperada:
 
       /data/daily.json
+      /data/atmospheres.json
       /data/themes.json
       /data/virtues.json
       /data/saints.json
@@ -302,9 +326,8 @@
           "mission": 133,
           "prayer": 94,
           "visual": {
-            "primary": "#5E3575",
-            "parallax": true,
-            "intensity": 0.35
+            "atmosphere": "amanhecer-suave",
+            "iconAnimation": "breathe"
           },
           "experience": {
             "estimatedTime": 5,
@@ -315,10 +338,25 @@
       Os bancos podem ser arrays ou objetos indexados por id.
     */
 
+    function getDaily() {
+      const now = new Date();
+
+      const month = String(
+        now.getMonth() + 1
+      ).padStart(2, "0");
+
+      const day = String(
+        now.getDate()
+      ).padStart(2, "0");
+
+      return `main/${month}/${day}.json`;
+    }
+
     const DATA_PATH = "./data/";
 
     const SOURCES = {
-      daily: "daily.json",
+      daily: getDaily(),
+      atmospheres: "atmospheres.json",
       themes: "themes.json",
       virtues: "virtues.json",
       saints: "saints.json",
@@ -355,112 +393,114 @@
       return null;
     }
 
-    function normalizeHex(hex) {
-      if (!hex) return "#5E3575";
-
-      let value = String(hex).trim().replace("#", "");
-
-      if (/^[0-9a-fA-F]{3}$/.test(value)) {
-        value = value.split("").map(char => char + char).join("");
-      }
-
-      if (!/^[0-9a-fA-F]{6}$/.test(value)) {
-        return "#5E3575";
-      }
-
-      return "#" + value.toUpperCase();
-    }
-
-    function hexToHsl(hex) {
-      const normalized = normalizeHex(hex);
-      const r = parseInt(normalized.slice(1, 3), 16) / 255;
-      const g = parseInt(normalized.slice(3, 5), 16) / 255;
-      const b = parseInt(normalized.slice(5, 7), 16) / 255;
-
-      const max = Math.max(r, g, b);
-      const min = Math.min(r, g, b);
-      const delta = max - min;
-
-      let h = 0;
-      let s = 0;
-      const l = (max + min) / 2;
-
-      if (delta !== 0) {
-        s = delta / (1 - Math.abs(2 * l - 1));
-
-        switch (max) {
-          case r:
-            h = 60 * (((g - b) / delta) % 6);
-            break;
-          case g:
-            h = 60 * ((b - r) / delta + 2);
-            break;
-          case b:
-            h = 60 * ((r - g) / delta + 4);
-            break;
-        }
-      }
-
-      if (h < 0) h += 360;
-
-      return {
-        h,
-        s: s * 100,
-        l: l * 100
-      };
-    }
-
-    function hsl(h, s, l, alpha = 1) {
-      const hue = ((h % 360) + 360) % 360;
-      const sat = Math.max(0, Math.min(100, s));
-      const light = Math.max(0, Math.min(100, l));
-
-      if (alpha >= 1) {
-        return `hsl(${hue.toFixed(1)} ${sat.toFixed(1)}% ${light.toFixed(1)}%)`;
-      }
-
-      return `hsl(${hue.toFixed(1)} ${sat.toFixed(1)}% ${light.toFixed(1)}% / ${alpha.toFixed(3)})`;
-    }
-
-    function buildColorSystem(primaryHex) {
-      const { h, s, l } = hexToHsl(primaryHex);
-      const safeS = Math.min(82, Math.max(18, s));
-
-      return {
-        primary: normalizeHex(primaryHex),
-        primaryLight: hsl(h, safeS * .62, Math.min(82, l + 22)),
-        primaryLighter: hsl(h, safeS * .34, Math.min(94, l + 34)),
-        primarySoft: hsl(h, safeS * .58, Math.min(88, l + 15)),
-        primaryDark: hsl(h, Math.min(92, safeS * 1.04), Math.max(18, l - 22)),
-        primaryGlow: hsl(h, safeS * .78, Math.min(72, l + 5), .16),
-        background: hsl(h, Math.min(16, safeS * .18), 98),
-        foreground: hsl(h, Math.min(28, safeS * .34), Math.max(16, l - 42)),
-        muted: hsl(h, Math.min(20, safeS * .28), Math.max(42, l - 8))
-      };
-    }
-
-    function applyTheme(visual = {}) {
-      const colors = buildColorSystem(visual.primary || "#5E3575");
+    function applyAtmosphere(atmosphere = {}) {
       const root = document.documentElement;
 
-      root.style.setProperty("--primary", colors.primary);
-      root.style.setProperty("--primary-light", colors.primaryLight);
-      root.style.setProperty("--primary-lighter", colors.primaryLighter);
-      root.style.setProperty("--primary-soft", colors.primarySoft);
-      root.style.setProperty("--primary-dark", colors.primaryDark);
-      root.style.setProperty("--primary-glow", colors.primaryGlow);
-      root.style.setProperty("--background", colors.background);
-      root.style.setProperty("--foreground", colors.foreground);
-      root.style.setProperty("--muted", colors.muted);
+      const theme = atmosphere.theme || {};
+      const background = atmosphere.background || {};
+      const motion = atmosphere.motion || {};
 
-      state.parallaxEnabled = visual.parallax !== false && !state.reducedMotion;
-      state.parallaxIntensity = Number.isFinite(Number(visual.intensity))
-        ? Number(visual.intensity)
-        : .35;
+      root.style.setProperty(
+        "--primary",
+        theme.primary || ""
+      );
+
+      root.style.setProperty(
+        "--primary-light",
+        theme.primaryLight || ""
+      );
+
+      root.style.setProperty(
+        "--primary-lighter",
+        theme.primaryLighter || ""
+      );
+
+      root.style.setProperty(
+        "--primary-soft",
+        theme.primarySoft || ""
+      );
+
+      root.style.setProperty(
+        "--primary-dark",
+        theme.primaryDark || ""
+      );
+
+      root.style.setProperty(
+        "--primary-glow",
+        theme.primaryGlow || ""
+      );
+
+      root.style.setProperty(
+        "--background",
+        theme.background || background.base || ""
+      );
+
+      root.style.setProperty(
+        "--foreground",
+        theme.foreground || ""
+      );
+
+      root.style.setProperty(
+        "--muted",
+        theme.muted || ""
+      );
+
+      root.style.setProperty(
+        "--atmo-background",
+        background.base || ""
+      );
+
+      root.style.setProperty(
+        "--atmo-gradient",
+        background.gradient || ""
+      );
+
+      root.style.setProperty(
+        "--atmo-transition",
+        motion.transition || "1.8s"
+      );
+
+      state.parallaxEnabled =
+        motion.parallax === true &&
+        !state.reducedMotion;
+
+      state.parallaxIntensity =
+        Number(motion.intensity || 0);
 
       document
         .querySelector('meta[name="theme-color"]')
-        ?.setAttribute("content", colors.primary);
+        ?.setAttribute(
+          "content",
+          theme.primary || ""
+        );
+
+      renderAtmosphereLights(
+        atmosphere.lights || []
+      );
+    }
+
+    function renderAtmosphereLights(lights) {
+      const container =
+        document.getElementById("pageAtmosphere");
+
+      if (!container) return;
+
+      container.innerHTML = lights
+        .map(light => `
+          <div
+            class="atmosphere-light"
+            style="
+              --light-x: ${light.x};
+              --light-y: ${light.y};
+              --light-size: ${light.size};
+              --light-color: ${light.color};
+              --light-opacity: ${light.opacity};
+              --light-blur: ${light.blur};
+              --light-parallax: ${light.parallax};
+            "
+          ></div>
+        `)
+        .join("");
     }
 
     function icon(name, className = "", size = 28) {
@@ -888,6 +928,7 @@
     function renderApp(data) {
       const {
         daily,
+        atmospheres,
         themes,
         virtues,
         saints,
@@ -905,7 +946,12 @@
       const mission = getById(missions, daily.mission);
       const prayer = getById(prayers, daily.prayer);
 
-      applyTheme(daily.visual || {});
+      const atmosphere = getById(
+        atmospheres,
+        daily.visual?.atmosphere
+      );
+
+      applyAtmosphere(atmosphere);
 
       const hero = renderHero(daily, saint, theme, virtue);
 
