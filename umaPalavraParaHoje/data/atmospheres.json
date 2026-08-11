@@ -222,5 +222,110 @@
         "intensity": 0.55,
         "transition": "2.5s"
     }
+    },
+  {
+    "id": "encontro-e-reconciliacao",
+    "theme": {
+      "primary": "#8A6475",
+      "primaryLight": "#B99BA9",
+      "primaryLighter": "#E3D5DC",
+      "primarySoft": "#DCCAD3",
+      "primaryDark": "#533B47",
+      "primaryGlow": "rgba(138, 100, 117, 0.15)",
+      "background": "#FBF9F8",
+      "foreground": "#30292D",
+      "muted": "#756C70"
+    },
+    "background": {
+      "base": "#FBF9F8",
+      "gradient": "linear-gradient(160deg, #F3E4DF 0%, #FBF9F8 46%, #E2EBEF 100%)"
+    },
+    "lights": [
+      {
+        "x": "10%",
+        "y": "8%",
+        "size": "55vw",
+        "color": "#F0D8CE",
+        "opacity": 0.35,
+        "blur": "100px",
+        "parallax": 0.8
+      },
+      {
+        "x": "88%",
+        "y": "72%",
+        "size": "52vw",
+        "color": "#DCE8EE",
+        "opacity": 0.30,
+        "blur": "110px",
+        "parallax": -0.5
+      },
+      {
+        "x": "48%",
+        "y": "40%",
+        "size": "34vw",
+        "color": "#E6D9E0",
+        "opacity": 0.20,
+        "blur": "120px",
+        "parallax": 0.2
+      }
+    ],
+    "motion": {
+      "parallax": true,
+      "intensity": 0.28,
+      "transition": "1.8s"
     }
+  },
+
+  {
+    "id": "caridade-luminosa",
+    "theme": {
+      "primary": "#92704C",
+      "primaryLight": "#C1A77E",
+      "primaryLighter": "#E8DCC7",
+      "primarySoft": "#DFD0B6",
+      "primaryDark": "#5B452F",
+      "primaryGlow": "rgba(146, 112, 76, 0.15)",
+      "background": "#FCFAF5",
+      "foreground": "#302C26",
+      "muted": "#766F65"
+    },
+    "background": {
+      "base": "#FCFAF5",
+      "gradient": "linear-gradient(160deg, #F5E5C8 0%, #FCFAF5 45%, #E7EEF0 100%)"
+    },
+    "lights": [
+      {
+        "x": "12%",
+        "y": "0%",
+        "size": "62vw",
+        "color": "#F1D49A",
+        "opacity": 0.40,
+        "blur": "95px",
+        "parallax": 1
+      },
+      {
+        "x": "88%",
+        "y": "76%",
+        "size": "50vw",
+        "color": "#DCE9ED",
+        "opacity": 0.28,
+        "blur": "110px",
+        "parallax": -0.45
+      },
+      {
+        "x": "45%",
+        "y": "48%",
+        "size": "36vw",
+        "color": "#EEE0C8",
+        "opacity": 0.18,
+        "blur": "120px",
+        "parallax": 0.2
+      }
+    ],
+    "motion": {
+      "parallax": true,
+      "intensity": 0.30,
+      "transition": "1.8s"
+    }
+  }
 ]

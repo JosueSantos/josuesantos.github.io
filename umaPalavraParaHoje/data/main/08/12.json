@@ -1,16 +1,16 @@
 {
-  "date": "08-11",
+  "date": "08-12",
   "season": "tempo_comum",
-  "theme": 18,
-  "virtue": 42,
-  "saint": 187,
-  "marian": 58,
-  "reflection": 284,
-  "mission": 133,
-  "prayer": 94,
+  "theme": 19,
+  "virtue": 43,
+  "saint": 188,
+  "marian": 59,
+  "reflection": 285,
+  "mission": 134,
+  "prayer": 95,
 
   "visual": {
-    "atmosphere": "amanhecer-suave",
+    "atmosphere": "encontro-e-reconciliacao",
     "iconAnimation": "breathe"
   },
 
@@ -19,17 +19,17 @@
     "progress": true
   },
 
-  "heroTitle": "Uma luz que permanece",
+  "heroTitle": "Onde o amor reconcilia",
 
-  "saintQuestion": "O que realmente precisa ocupar o centro do meu coração?",
+  "saintQuestion": "Existe alguém de quem preciso me aproximar com verdade e amor?",
 
-  "closingText": "Permaneça naquilo que começou com amor.",
+  "closingText": "Quando o amor procura o outro, a distância pode se transformar em encontro.",
 
   "nextText": "Amanhã, uma nova palavra estará esperando por você.",
 
-  "pageTitle": "Uma luz que permanece · Santa Clara",
+  "pageTitle": "Onde o amor reconcilia · Uma Palavra para Hoje",
 
-  "metaDescription": "Uma experiência de oração e reflexão inspirada em Santa Clara de Assis.",
+  "metaDescription": "Uma experiência de oração e reflexão sobre reconciliação, comunhão e presença de Cristo.",
 
   "labels": {
     "start": "Comece sua jornada",

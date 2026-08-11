@@ -6,5 +6,25 @@
     "title": "Oração da simplicidade",
     "text": "Senhor Jesus, ensina-me a buscar aquilo que realmente permanece. Dá-me um coração simples, atento e livre para reconhecer tua presença nas pequenas coisas. Que, como Santa Clara, eu possa fazer da minha vida uma luz para aqueles que caminham comigo. Livra-me do excesso que me distrai e conduz-me novamente ao essencial. Amém.",
     "icon": "hands"
-  }
+  },
+  {
+  "id": 95,
+  "theme": "reconciliacao",
+  "duration": 60,
+  "title": "Oração pela reconciliação",
+
+  "text": "Senhor Jesus, ensina-me a buscar a verdade sem perder o amor. Dá-me humildade para reconhecer minhas próprias feridas e coragem para procurar quem se afastou de mim. Que eu não queira vencer discussões, mas recuperar vínculos. Coloca tua presença entre nós e faz de mim instrumento de reconciliação. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 96,
+  "theme": "caridade",
+  "duration": 60,
+  "title": "Oração do serviço",
+
+  "text": "Senhor Jesus, abre meus olhos para reconhecer quem precisa de mim. Dá-me um coração semelhante ao de Santa Dulce, capaz de se aproximar, servir e cuidar. Livra-me da indiferença e ensina-me a transformar minha fé em gestos concretos de amor. Que eu saiba oferecer meu tempo, minhas mãos e minha presença a quem sofre. Amém.",
+
+  "icon": "hands"
+}
 ]

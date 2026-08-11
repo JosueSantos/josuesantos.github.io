@@ -1,0 +1,44 @@
+{
+  "date": "08-13",
+  "season": "tempo_comum",
+  "theme": 20,
+  "virtue": 44,
+  "saint": 189,
+  "marian": 60,
+  "reflection": 286,
+  "mission": 135,
+  "prayer": 96,
+
+  "visual": {
+    "atmosphere": "caridade-luminosa",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Amor que se transforma em cuidado",
+
+  "saintQuestion": "Quem precisa hoje de um pouco do meu tempo, cuidado ou presença?",
+
+  "closingText": "O amor se torna verdadeiro quando encontra alguém para cuidar.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Amor que se transforma em cuidado · Santa Dulce dos Pobres",
+
+  "metaDescription": "Uma experiência de oração e reflexão inspirada em Santa Dulce dos Pobres e em seu amor pelos mais necessitados.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

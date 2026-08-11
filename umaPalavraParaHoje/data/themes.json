@@ -13,5 +13,37 @@
       "confiança",
       "esperança"
     ]
-  }
+  },
+  {
+  "id": 19,
+  "slug": "reconciliacao",
+  "title": "Onde o amor reconcilia",
+  "summary": "Jesus nos ensina que a verdade, quando nasce do amor, não afasta: procura recuperar o irmão.",
+  "reflection": "Reconciliar exige coragem para falar com verdade, humildade para escutar e amor suficiente para não desistir do outro.",
+  "icon": "heart-handshake",
+  "color": "rose",
+  "keywords": [
+    "reconciliação",
+    "comunidade",
+    "fraternidade",
+    "perdão",
+    "amor"
+  ]
+},
+{
+  "id": 20,
+  "slug": "caridade",
+  "title": "Amor que se transforma em cuidado",
+  "summary": "O amor cristão deixa de ser apenas sentimento quando se aproxima de quem precisa e se transforma em cuidado.",
+  "reflection": "Santa Dulce nos recorda que servir é uma forma concreta de amar. O olhar cristão não passa indiferente diante da necessidade do outro.",
+  "icon": "heart-handshake",
+  "color": "gold",
+  "keywords": [
+    "caridade",
+    "amor",
+    "serviço",
+    "compaixão",
+    "cuidado"
+  ]
+}
 ]

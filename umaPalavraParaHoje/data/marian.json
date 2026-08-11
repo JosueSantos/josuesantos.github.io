@@ -5,5 +5,23 @@
     "title": "Maria, mulher da escuta",
     "text": "Maria guardava os acontecimentos no coração e aprendia a reconhecer neles a presença de Deus. Como ela, também somos convidados a silenciar, escutar e confiar antes de tentar compreender tudo.",
     "icon": "heart"
-  }
+  },
+  {
+  "id": 59,
+  "theme": "reconciliacao",
+  "title": "Maria, mulher da comunhão",
+
+  "text": "Maria permaneceu junto aos discípulos e, com eles, aguardou a ação de Deus. Ela nos ensina que a fé também se vive permanecendo juntos, sustentando uns aos outros e abrindo espaço para a presença de Cristo no meio da comunidade.",
+
+  "icon": "heart"
+},
+{
+  "id": 60,
+  "theme": "caridade",
+  "title": "Maria, mulher que serve",
+
+  "text": "Maria não guardou para si a notícia que havia recebido: colocou-se a caminho para servir Isabel. Nela vemos uma fé que se movimenta em direção ao outro. Que também nós aprendamos com Maria a transformar o amor recebido de Deus em presença e serviço.",
+
+  "icon": "heart"
+}
 ]

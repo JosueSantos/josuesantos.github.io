@@ -7,5 +7,25 @@
     "practice": "Hoje, escolha conscientemente uma coisa desnecessária para deixar de lado e dedique esse espaço a Deus ou a alguém que precisa de você.",
     "icon": "heart",
     "color": "purple"
-  }
+  },
+  {
+  "id": 43,
+  "slug": "reconciliacao",
+  "title": "Reconciliação",
+  "description": "Ter coragem para buscar o outro e reconstruir vínculos feridos pelo silêncio, pela mágoa ou pelo afastamento.",
+  "practice": "Hoje, dê um primeiro passo em direção a alguém com quem existe alguma distância. Pode ser uma mensagem, uma escuta sincera ou simplesmente uma oração por essa pessoa.",
+  "icon": "heart-handshake",
+  "color": "rose"
+},
+{
+  "id": 44,
+  "slug": "caridade",
+  "title": "Caridade",
+  "description": "Reconhecer no outro alguém que merece cuidado, dignidade, tempo e presença.",
+
+  "practice": "Hoje, procure uma necessidade concreta ao seu redor e responda com um gesto de cuidado que esteja ao seu alcance.",
+
+  "icon": "heart-handshake",
+  "color": "gold"
+}
 ]

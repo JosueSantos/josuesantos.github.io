@@ -5,5 +5,23 @@
     "title": "Uma luz que não se apaga",
     "text": "A vida de Santa Clara nos recorda que seguir Cristo é escolher uma luz que não depende das circunstâncias. Mesmo em tempos difíceis, a fidelidade transforma pequenas escolhas em testemunho. Deus não pede que enxerguemos todo o caminho; pede apenas que não abandonemos a luz que recebemos.",
     "icon": "book-open"
-  }
+  },
+  {
+  "id": 285,
+  "theme": "reconciliacao",
+  "title": "Ganhar o irmão",
+
+  "text": "Jesus não ensina a vencer uma discussão, mas a ganhar novamente o irmão. A correção cristã nasce do desejo de restaurar aquilo que foi ferido. Às vezes, o primeiro passo é falar; outras vezes, é aprender a escutar. E quando duas ou três pessoas se reúnem procurando o bem e a reconciliação, Cristo promete estar ali, no meio delas.",
+
+  "icon": "heart-handshake"
+},
+{
+  "id": 286,
+  "theme": "caridade",
+  "title": "O amor que não passa indiferente",
+
+  "text": "Santa Dulce não esperou que o sofrimento desaparecesse para começar a amar. Ela aproximou-se, acolheu, serviu e fez do cuidado uma resposta concreta à presença de Deus. Também nós encontramos oportunidades de amar todos os dias: numa pessoa que precisa ser ouvida, num gesto de generosidade, numa necessidade que poderíamos simplesmente ignorar. A caridade começa quando deixamos de passar indiferentes.",
+
+  "icon": "book-open"
+}
 ]

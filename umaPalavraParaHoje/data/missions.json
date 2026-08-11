@@ -7,5 +7,27 @@
     "title": "Abra espaço para o essencial",
     "text": "Escolha hoje uma coisa da qual você pode abrir mão para oferecer mais espaço à oração, ao silêncio ou à atenção a alguém que precisa de você.",
     "icon": "footprints"
-  }
+  },
+  {
+  "id": 134,
+  "category": "reconciliacao",
+  "difficulty": 2,
+  "duration": 10,
+  "title": "Dê um passo em direção ao outro",
+
+  "text": "Pense em alguém com quem existe alguma distância. Reze por essa pessoa e, se for possível e oportuno, dê hoje um pequeno passo de aproximação.",
+
+  "icon": "footprints"
+},
+{
+  "id": 135,
+  "category": "caridade",
+  "difficulty": 1,
+  "duration": 15,
+  "title": "Transforme amor em gesto",
+
+  "text": "Hoje, faça deliberadamente um gesto de cuidado por alguém que precisa. Ofereça seu tempo, sua escuta, sua ajuda ou um pouco do que você tem.",
+
+  "icon": "footprints"
+}
 ]

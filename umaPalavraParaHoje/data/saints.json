@@ -29,5 +29,36 @@
     ],
 
     "icon": "sun"
-  }
+  },
+  {
+  "id": 189,
+  "slug": "santa-dulce-dos-pobres",
+  "name": "Santa Dulce dos Pobres",
+  "feast": "08-13",
+  "title": "Virgem e serva dos pobres",
+  "century": "XX",
+  "country": "Brasil",
+  "vocation": "Religiosa",
+
+  "summary": "Santa Dulce dos Pobres dedicou sua vida ao cuidado dos pobres, dos enfermos e dos que mais precisavam, tornando concreta sua fé por meio da caridade e do serviço.",
+
+  "legacy": "Sua vida nos ensina que a fé se transforma em presença quando reconhecemos a dignidade de cada pessoa e nos colocamos a serviço de quem sofre.",
+
+  "virtues": [
+    "caridade",
+    "compaixão",
+    "serviço",
+    "humildade",
+    "perseverança"
+  ],
+
+  "themes": [
+    "caridade",
+    "amor",
+    "serviço",
+    "cuidado"
+  ],
+
+  "icon": "heart-handshake"
+}
 ]
