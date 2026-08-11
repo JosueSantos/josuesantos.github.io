@@ -213,6 +213,14 @@
       box-shadow: 0 24px 80px color-mix(in srgb, var(--primary) 16%, transparent);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+
+      max-height: calc(100dvh - 2rem);
+      overflow-y: auto;
+
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+
+      scrollbar-gutter: stable;
     }
 
     .share-action {
@@ -222,6 +230,11 @@
     .share-action:hover {
       transform: translateY(-2px);
       background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+
+    .share-dialog {
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
 
     .qr-container img {
@@ -1017,7 +1030,7 @@
 
           ${renderClosing(daily, saint)}
           <div id="shareDialog"
-            class="fixed inset-0 z-[200] hidden items-end sm:items-center justify-center p-4"
+            class="share-dialog fixed inset-0 z-[200] hidden items-end sm:items-center justify-center p-4"
             role="dialog" aria-modal="true" aria-labelledby="shareDialogTitle">
             <div id="shareBackdrop" class="absolute inset-0 bg-black/25"></div>
 
