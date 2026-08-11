@@ -590,18 +590,22 @@
       `;
     }
 
-    function renderStepHeader(number, title, iconName) {
+    function renderStepIconHeader(number, iconName) {
+      return `
+        ${
+            iconName
+            ? `<div class="mb-4 mx-auto flex items-center justify-center" style="color:var(--primary)">
+                ${renderIcon(iconName, "w-6 h-6 stroke-[1.5]", 24)}
+                </div>`
+            : ""
+        }
+      `;
+    }
+
+    function renderStepHeader(number, title) {
       return `
         <div class="mb-8 flex items-start gap-5">
           <div>
-            ${
-              iconName
-                ? `<div class="mb-4" style="color:var(--primary)">
-                    ${renderIcon(iconName, "w-6 h-6 stroke-[1.5]", 24)}
-                  </div>`
-                : ""
-            }
-
             <h2 class="text-3xl sm:text-5xl font-light tracking-tight">
               ${escapeHTML(title)}
             </h2>
@@ -625,6 +629,9 @@
           class="relative min-h-[82svh] flex items-center px-6 py-20 sm:py-28 ${extraClass}"
         >
           <div class="reveal w-full max-w-3xl mx-auto">
+            
+            ${renderStepIconHeader(number, iconName)}
+
             <p
               class="mb-5 text-xs uppercase tracking-[.24em] font-medium"
               style="color:var(--muted)"
@@ -632,7 +639,7 @@
               ${escapeHTML(label || "")}
             </p>
 
-            ${renderStepHeader(number, title, iconName)}
+            ${renderStepHeader(number, title)}
 
             <div class="max-w-2xl ml-9 sm:ml-10">
               <p class="text-xl sm:text-2xl leading-[1.65] font-light">
@@ -661,6 +668,9 @@
           class="relative min-h-[90svh] flex items-center px-6 py-20 sm:py-28"
         >
           <div class="reveal w-full max-w-3xl mx-auto">
+            
+            ${renderStepIconHeader(number, saint.icon || "heart")}
+
             <p
               class="mb-5 text-xs uppercase tracking-[.24em] font-medium"
               style="color:var(--muted)"
@@ -668,7 +678,7 @@
               ${escapeHTML(title)}
             </p>
 
-            ${renderStepHeader(number, saint.name, saint.icon || "heart")}
+            ${renderStepHeader(number, saint.name)}
 
             <div class="ml-9 sm:ml-10 max-w-2xl">
               ${
@@ -726,6 +736,9 @@
           class="relative min-h-[82svh] flex items-center px-6 py-20 sm:py-28"
         >
           <div class="reveal w-full max-w-3xl mx-auto">
+            
+            ${renderStepIconHeader(number, mission.icon || "footprints")}
+
             <p
               class="mb-5 text-xs uppercase tracking-[.24em] font-medium"
               style="color:var(--muted)"
@@ -735,8 +748,7 @@
 
             ${renderStepHeader(
               number,
-              mission.title || "Missão do dia",
-              mission.icon || "footprints"
+              mission.title || "Missão do dia"
             )}
 
             <div class="ml-9 sm:ml-10">
@@ -773,6 +785,9 @@
           class="relative min-h-[100svh] flex items-center px-6 py-20 sm:py-28"
         >
           <div class="reveal w-full max-w-3xl mx-auto">
+            
+            ${renderStepIconHeader(number, prayer.icon || "hands")}
+
             <p
               class="mb-5 text-xs uppercase tracking-[.24em] font-medium"
               style="color:var(--muted)"
@@ -782,8 +797,7 @@
 
             ${renderStepHeader(
               number,
-              prayer.title || "Oração",
-              prayer.icon || "hands"
+              prayer.title || "Oração"
             )}
 
             <div class="ml-9 sm:ml-10">
@@ -977,7 +991,7 @@
                 </button>
               </div>
 
-              <div class="mt-7 grid grid-cols-2 gap-3">
+              <div class="mt-1 grid grid-cols-2 gap-3">
                 <button type="button" data-share-action="whatsapp"
                   class="share-action glass rounded-2xl p-4 text-left">
                   <span style="color:var(--primary)">${renderIcon("message-circle", "w-6 h-6", 24)}</span>
@@ -1007,12 +1021,12 @@
                 </button>
               </div>
 
-              <p id="shareFeedback" class="mt-5 min-h-5 text-center text-xs"
+              <p id="shareFeedback" class="min-h-5 text-center text-xs"
                 style="color:var(--muted)"></p>
 
-              <div id="qrPanel" class="qr-container hidden mt-5 rounded-3xl bg-white p-5">
+              <div id="qrPanel" class="qr-container hidden mt-1 rounded-3xl bg-white p-5">
                 <div id="qrCode"></div>
-                <p class="mt-4 text-center text-xs text-slate-500">
+                <p class="mt-1 text-center text-xs text-slate-500">
                   Aponte a câmera para abrir esta experiência.
                 </p>
               </div>
