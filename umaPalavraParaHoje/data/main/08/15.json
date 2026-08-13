@@ -1,0 +1,44 @@
+{
+  "date": "08-15",
+  "season": "tempo_comum",
+  "theme": 23,
+  "virtue": 47,
+  "saint": 192,
+  "marian": 63,
+  "reflection": 289,
+  "mission": 138,
+  "prayer": 99,
+
+  "visual": {
+    "atmosphere": "assuncao-esperanca",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Elevados para a esperança",
+
+  "saintQuestion": "Onde Deus me convida hoje a confiar mais na sua promessa?",
+
+  "closingText": "Em Maria, contemplamos o destino de uma vida inteira entregue a Deus: a esperança que não decepciona.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Elevados para a esperança · Assunção de Nossa Senhora",
+
+  "metaDescription": "Uma experiência de oração e reflexão para a Solenidade da Assunção da Bem-aventurada Virgem Maria.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

@@ -29,5 +29,38 @@
   "text": "Hoje, faça deliberadamente um gesto de cuidado por alguém que precisa. Ofereça seu tempo, sua escuta, sua ajuda ou um pouco do que você tem.",
 
   "icon": "footprints"
+},
+{
+  "id": 136,
+  "category": "generosidade",
+  "difficulty": 1,
+  "duration": 15,
+  "title": "Ofereça seu tempo",
+
+  "text": "Hoje, escolha alguém que precise de atenção e ofereça alguns minutos de presença verdadeira, sem pressa e sem esperar nada em troca.",
+
+  "icon": "footprints"
+},
+{
+  "id": 137,
+  "category": "pureza-de-coracao",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Faça silêncio",
+
+  "text": "Afaste-se por alguns minutos do ruído. Em silêncio, repita lentamente: 'Ó Senhor, criai em mim um coração que seja puro'. Depois permaneça alguns instantes sem pedir nada.",
+
+  "icon": "footprints"
+},
+{
+  "id": 138,
+  "category": "esperanca",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Olhe para o alto",
+
+  "text": "Diante de uma preocupação que você carrega, pare por alguns minutos. Entregue-a a Deus e agradeça antecipadamente pela esperança que Ele coloca em seu coração.",
+
+  "icon": "footprints"
 }
 ]

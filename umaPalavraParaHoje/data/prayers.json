@@ -26,5 +26,35 @@
   "text": "Senhor Jesus, abre meus olhos para reconhecer quem precisa de mim. Dá-me um coração semelhante ao de Santa Dulce, capaz de se aproximar, servir e cuidar. Livra-me da indiferença e ensina-me a transformar minha fé em gestos concretos de amor. Que eu saiba oferecer meu tempo, minhas mãos e minha presença a quem sofre. Amém.",
 
   "icon": "hands"
+},
+{
+  "id": 97,
+  "theme": "entrega",
+  "duration": 60,
+  "title": "Oração de entrega",
+
+  "text": "Senhor Jesus, ensina-me a amar como São Maximiliano. Livra-me do egoísmo e abre meu coração para perceber quem precisa de mim. Dá-me coragem para oferecer meu tempo, minha presença e meus dons. Que minha vida não seja fechada em mim mesmo, mas uma pequena oferta de amor a Ti e aos meus irmãos. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 98,
+  "theme": "coracao-puro",
+  "duration": 60,
+  "title": "Criai em mim um coração puro",
+
+  "text": "Ó Senhor, criai em mim um coração puro e renovai em mim um espírito firme. Purificai meus pensamentos, meus desejos e minhas escolhas. Tirai de mim aquilo que me afasta de Vós e fazei crescer em meu coração aquilo que conduz ao amor. Que eu possa hoje recomeçar na vossa presença. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 99,
+  "theme": "assuncao",
+  "duration": 60,
+  "title": "Com Maria, nossa esperança",
+
+  "text": "Senhor Deus, hoje contemplamos Maria elevada à glória do céu. Fortalecei em nós a esperança de que a vida entregue a Vós encontra sua plenitude. Quando estivermos cansados, fazei-nos olhar para Maria. Quando tivermos medo, ensinai-nos sua confiança. E quando não enxergarmos o caminho, ajudai-nos a continuar dizendo sim. Amém.",
+
+  "icon": "hands"
 }
 ]

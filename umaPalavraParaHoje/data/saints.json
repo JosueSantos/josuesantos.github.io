@@ -60,5 +60,65 @@
   ],
 
   "icon": "heart-handshake"
+},
+{
+  "id": 190,
+  "slug": "sao-maximiliano-maria-kolbe",
+  "name": "São Maximiliano Maria Kolbe",
+  "feast": "08-14",
+  "title": "Sacerdote e mártir",
+  "century": "XX",
+  "country": "Polônia",
+  "vocation": "Sacerdote e religioso",
+
+  "summary": "São Maximiliano Maria Kolbe entregou sua vida a Cristo e testemunhou até o fim um amor capaz de se oferecer pelo outro.",
+
+  "legacy": "Sua vida recorda que a santidade não consiste apenas em grandes palavras, mas na capacidade de amar concretamente, mesmo quando isso exige renúncia e coragem.",
+
+  "virtues": [
+    "caridade",
+    "coragem",
+    "generosidade",
+    "entrega",
+    "perseverança"
+  ],
+
+  "themes": [
+    "amor",
+    "entrega",
+    "serviço",
+    "sacrifício"
+  ],
+
+  "icon": "heart"
+},{
+  "id": 192,
+  "slug": "bem-aventurada-virgem-maria",
+  "name": "Bem-aventurada Virgem Maria",
+  "feast": "08-16",
+  "title": "Assunção da Bem-aventurada Virgem Maria",
+  "century": "I",
+  "country": "Israel",
+
+  "summary": "Na solenidade da Assunção, a Igreja contempla Maria elevada à glória do céu, sinal de esperança e promessa da plenitude da vida em Deus.",
+
+  "legacy": "Maria nos mostra que uma vida inteira entregue à vontade de Deus encontra sua plenitude nele.",
+
+  "virtues": [
+    "esperança",
+    "fé",
+    "humildade",
+    "confiança",
+    "entrega"
+  ],
+
+  "themes": [
+    "Assunção",
+    "Maria",
+    "esperança",
+    "vida eterna"
+  ],
+
+  "icon": "sun"
 }
 ]

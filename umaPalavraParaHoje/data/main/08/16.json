@@ -1,0 +1,44 @@
+{
+  "date": "08-16",
+  "season": "tempo_comum",
+  "theme": 22,
+  "virtue": 46,
+  "saint": 191,
+  "marian": 62,
+  "reflection": 288,
+  "mission": 137,
+  "prayer": 98,
+
+  "visual": {
+    "atmosphere": "coracao-puro",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 5,
+    "progress": true
+  },
+
+  "heroTitle": "Criai em mim um coração puro",
+
+  "saintQuestion": "O que hoje precisa ser purificado dentro de mim?",
+
+  "closingText": "Deus não procura um coração perfeito, mas um coração que permita ser transformado.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Criai em mim um coração puro · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre a pureza do coração e a renovação interior.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

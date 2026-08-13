@@ -1,0 +1,44 @@
+{
+  "date": "08-14",
+  "season": "tempo_comum",
+  "theme": 21,
+  "virtue": 45,
+  "saint": 190,
+  "marian": 61,
+  "reflection": 287,
+  "mission": 136,
+  "prayer": 97,
+
+  "visual": {
+    "atmosphere": "amor-que-se-entrega",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Amor que se entrega",
+
+  "saintQuestion": "Por quem Deus me chama hoje a entregar um pouco mais de mim?",
+
+  "closingText": "O amor verdadeiro não pergunta apenas o que pode receber, mas também o que pode oferecer.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Amor que se entrega · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão inspirada em São Maximiliano Maria Kolbe sobre amor, entrega e coragem.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

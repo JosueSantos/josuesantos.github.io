@@ -327,5 +327,143 @@
       "intensity": 0.30,
       "transition": "1.8s"
     }
+  },
+  {
+  "id": "amor-que-se-entrega",
+  "theme": {
+    "primary": "#8A5960",
+    "primaryLight": "#B98D92",
+    "primaryLighter": "#E4D3D5",
+    "primarySoft": "#DDC5C8",
+    "primaryDark": "#54343A",
+    "primaryGlow": "rgba(138, 89, 96, 0.16)",
+    "background": "#FCF9F8",
+    "foreground": "#30292A",
+    "muted": "#756C6D"
+  },
+  "background": {
+    "base": "#FCF9F8",
+    "gradient": "linear-gradient(160deg, #F1DFD8 0%, #FCF9F8 46%, #E5ECEE 100%)"
+  },
+  "lights": [
+    {
+      "x": "10%",
+      "y": "4%",
+      "size": "58vw",
+      "color": "#EBCFC5",
+      "opacity": 0.34,
+      "blur": "100px",
+      "parallax": 0.8
+    },
+    {
+      "x": "88%",
+      "y": "75%",
+      "size": "52vw",
+      "color": "#DCE8EA",
+      "opacity": 0.28,
+      "blur": "110px",
+      "parallax": -0.5
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.28,
+    "transition": "1.8s"
   }
+},
+{
+  "id": "coracao-puro",
+  "theme": {
+    "primary": "#76688A",
+    "primaryLight": "#ADA2BD",
+    "primaryLighter": "#DDD7E5",
+    "primarySoft": "#D5CCDF",
+    "primaryDark": "#49405A",
+    "primaryGlow": "rgba(118, 104, 138, 0.14)",
+    "background": "#FBFAFC",
+    "foreground": "#302C33",
+    "muted": "#746F78"
+  },
+  "background": {
+    "base": "#FBFAFC",
+    "gradient": "linear-gradient(160deg, #ECE8F2 0%, #FBFAFC 48%, #E7EEF1 100%)"
+  },
+  "lights": [
+    {
+      "x": "15%",
+      "y": "2%",
+      "size": "54vw",
+      "color": "#DDD4E8",
+      "opacity": 0.28,
+      "blur": "110px",
+      "parallax": 0.7
+    },
+    {
+      "x": "85%",
+      "y": "70%",
+      "size": "50vw",
+      "color": "#DDE9ED",
+      "opacity": 0.25,
+      "blur": "115px",
+      "parallax": -0.4
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.20,
+    "transition": "2s"
+  }
+},
+{
+  "id": "assuncao-esperanca",
+  "theme": {
+    "primary": "#657E9A",
+    "primaryLight": "#A8B9CA",
+    "primaryLighter": "#D9E3EC",
+    "primarySoft": "#D0DDE8",
+    "primaryDark": "#3D5268",
+    "primaryGlow": "rgba(101, 126, 154, 0.15)",
+    "background": "#FBFCFC",
+    "foreground": "#293038",
+    "muted": "#6C747A"
+  },
+  "background": {
+    "base": "#FBFCFC",
+    "gradient": "linear-gradient(160deg, #E4EDF5 0%, #FBFCFC 45%, #F1E8D5 100%)"
+  },
+  "lights": [
+    {
+      "x": "8%",
+      "y": "-4%",
+      "size": "64vw",
+      "color": "#D9E9F5",
+      "opacity": 0.42,
+      "blur": "100px",
+      "parallax": 0.8
+    },
+    {
+      "x": "88%",
+      "y": "72%",
+      "size": "52vw",
+      "color": "#EBDDBD",
+      "opacity": 0.25,
+      "blur": "110px",
+      "parallax": -0.45
+    },
+    {
+      "x": "45%",
+      "y": "30%",
+      "size": "40vw",
+      "color": "#F5F2E8",
+      "opacity": 0.30,
+      "blur": "120px",
+      "parallax": 0.2
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.22,
+    "transition": "2.2s"
+  }
+}
 ]

@@ -27,5 +27,32 @@
 
   "icon": "heart-handshake",
   "color": "gold"
+},
+{
+  "id": 45,
+  "slug": "generosidade",
+  "title": "Generosidade",
+  "description": "Aprender a oferecer a si mesmo com amor, colocando os dons, o tempo e a presença a serviço dos outros.",
+  "practice": "Hoje, ofereça gratuitamente algo que você poderia guardar para si: seu tempo, sua atenção, seu perdão ou sua ajuda.",
+  "icon": "heart-handshake",
+  "color": "red"
+},
+{
+  "id": 46,
+  "slug": "pureza-de-coracao",
+  "title": "Pureza de coração",
+  "description": "Buscar uma vida interior sincera, permitindo que pensamentos, desejos e atitudes sejam iluminados por Deus.",
+  "practice": "Reserve alguns minutos de silêncio hoje. Pergunte a Deus com sinceridade: 'Senhor, o que precisa ser transformado em mim?'",
+  "icon": "sparkles",
+  "color": "lavender"
+},
+{
+  "id": 47,
+  "slug": "esperanca",
+  "title": "Esperança",
+  "description": "Confiar na promessa de Deus mesmo quando ainda não podemos enxergar sua realização.",
+  "practice": "Hoje, entregue a Deus uma preocupação que pesa sobre você. Em vez de tentar controlar tudo, repita com confiança: 'Senhor, eu confio em Vós'.",
+  "icon": "sun",
+  "color": "sky"
 }
 ]

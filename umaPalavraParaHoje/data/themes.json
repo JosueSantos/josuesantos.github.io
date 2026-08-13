@@ -45,5 +45,53 @@
     "compaixão",
     "cuidado"
   ]
+},
+{
+  "id": 21,
+  "slug": "entrega",
+  "title": "Amor que se entrega",
+  "summary": "O amor cristão encontra sua força quando deixa de olhar apenas para si e se coloca a serviço do outro.",
+  "reflection": "São Maximiliano Kolbe nos recorda que o amor pode chegar à entrega total. Não precisamos realizar grandes gestos todos os dias: podemos começar oferecendo tempo, atenção, perdão e presença.",
+  "icon": "heart-handshake",
+  "color": "red",
+  "keywords": [
+    "amor",
+    "entrega",
+    "sacrifício",
+    "coragem",
+    "serviço"
+  ]
+},
+{
+  "id": 22,
+  "slug": "coracao-puro",
+  "title": "Um coração renovado",
+  "summary": "A transformação que Deus deseja começa no interior, onde nascem nossas escolhas, pensamentos e atitudes.",
+  "reflection": "Um coração puro não é um coração sem lutas. É um coração que volta continuamente para Deus e permite que Ele purifique aquilo que precisa ser transformado.",
+  "icon": "sparkles",
+  "color": "lavender",
+  "keywords": [
+    "pureza",
+    "renovação",
+    "oração",
+    "conversão",
+    "coração"
+  ]
+},
+{
+  "id": 23,
+  "slug": "assuncao",
+  "title": "Elevados para a esperança",
+  "summary": "Na Assunção de Maria, contemplamos a promessa de Deus: a vida entregue a Ele não termina na morte, mas encontra sua plenitude.",
+  "reflection": "Maria elevada ao céu é sinal de esperança para nós. Sua vida nos mostra que dizer sim a Deus transforma toda a existência e aponta para uma vida que ultrapassa aquilo que nossos olhos conseguem ver.",
+  "icon": "sun",
+  "color": "sky",
+  "keywords": [
+    "Assunção",
+    "Maria",
+    "esperança",
+    "céu",
+    "vida eterna"
+  ]
 }
 ]
