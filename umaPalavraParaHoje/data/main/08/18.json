@@ -1,0 +1,44 @@
+{
+  "date": "08-18",
+  "season": "tempo_comum",
+  "theme": 25,
+  "virtue": 49,
+  "saint": 194,
+  "marian": 65,
+  "reflection": 291,
+  "mission": 140,
+  "prayer": 101,
+
+  "visual": {
+    "atmosphere": "humildade-diante-de-deus",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Você não precisa ser Deus",
+
+  "saintQuestion": "Onde o orgulho tem me feito esquecer que preciso de Deus?",
+
+  "closingText": "A humildade não diminui quem somos. Ela nos coloca novamente no lugar certo diante de Deus.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Humildade diante de Deus · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre humildade, desapego e confiança em Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "date": "08-20",
+  "season": "tempo_comum",
+  "theme": 27,
+  "virtue": 51,
+  "saint": 196,
+  "marian": 67,
+  "reflection": 293,
+  "mission": 142,
+  "prayer": 103,
+
+  "visual": {
+    "atmosphere": "sabedoria-e-luz",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "A sabedoria que conduz a Deus",
+
+  "saintQuestion": "Que lugar tenho dado à sabedoria de Deus nas minhas escolhas?",
+
+  "closingText": "A verdadeira sabedoria não apenas informa a mente: transforma o coração e conduz a vida.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "A sabedoria que conduz a Deus · São Bernardo",
+
+  "metaDescription": "Uma experiência de oração e reflexão inspirada em São Bernardo, abade e doutor da Igreja, sobre sabedoria e busca de Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

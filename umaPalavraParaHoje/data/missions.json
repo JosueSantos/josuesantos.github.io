@@ -62,5 +62,49 @@
   "text": "Diante de uma preocupação que você carrega, pare por alguns minutos. Entregue-a a Deus e agradeça antecipadamente pela esperança que Ele coloca em seu coração.",
 
   "icon": "footprints"
+},
+{
+  "id": 139,
+  "category": "gratidao",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Lembre-se da Rocha",
+
+  "text": "Pare por alguns minutos e recorde três momentos concretos em que Deus sustentou você. Agradeça por cada um deles.",
+
+  "icon": "footprints"
+},
+{
+  "id": 140,
+  "category": "humildade",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Solte o controle",
+
+  "text": "Escolha uma preocupação que você tenta controlar e entregue-a conscientemente a Deus. Diga devagar: 'Senhor, isto está nas vossas mãos'.",
+
+  "icon": "footprints"
+},
+{
+  "id": 141,
+  "category": "cuidado",
+  "difficulty": 1,
+  "duration": 15,
+  "title": "Cuide de alguém",
+
+  "text": "Pense em alguém que esteja passando por uma dificuldade. Entre em contato, pergunte como essa pessoa está e ofereça uma ajuda concreta, ainda que pequena.",
+
+  "icon": "footprints"
+},
+{
+  "id": 142,
+  "category": "sabedoria",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Escolha com sabedoria",
+
+  "text": "Antes de uma escolha importante hoje, pare por um instante. Respire, faça silêncio e peça a Deus discernimento. Só depois decida.",
+
+  "icon": "footprints"
 }
 ]

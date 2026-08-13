@@ -50,5 +50,41 @@
   "text": "A Assunção de Maria nos convida a levantar os olhos. A vida presente, com suas alegrias e dores, não é toda a nossa história. Em Maria, contemplamos aquilo que Deus deseja realizar em todos os que se entregam a Ele: uma vida transformada e plenamente unida ao seu amor. Por isso, a esperança cristã não é fuga do mundo. É a força para caminhar nele sabendo para onde estamos indo.",
 
   "icon": "sun"
+},
+{
+  "id": 290,
+  "theme": "memoria-de-deus",
+  "title": "Lembrar de onde tudo começa",
+
+  "text": "Há esquecimentos que parecem pequenos, mas mudam o rumo da vida. Podemos continuar trabalhando, planejando e conquistando enquanto lentamente deixamos Deus para depois. A Palavra de hoje nos chama a voltar à memória: existe uma Rocha que nos sustenta. Antes de tudo aquilo que fazemos, existe um Deus que nos deu a vida. Lembrar disso é recuperar o essencial.",
+
+  "icon": "mountain"
+},
+{
+  "id": 291,
+  "theme": "humildade",
+  "title": "Você não precisa controlar tudo",
+
+  "text": "O orgulho nos faz acreditar que precisamos controlar tudo: o futuro, as pessoas, os resultados e até aquilo que ainda nem aconteceu. A Palavra de hoje nos devolve à verdade. Somos criaturas, não o Criador. A vida é recebida antes de ser administrada. Quando reconhecemos isso, podemos finalmente descansar em Deus.",
+
+  "icon": "arrow-down"
+},
+{
+  "id": 292,
+  "theme": "cuidado",
+  "title": "O Pastor conhece suas feridas",
+
+  "text": "Deus não olha para suas ovelhas como uma multidão anônima. Ele conhece suas necessidades. A ovelha ferida precisa de cuidado; a perdida precisa ser procurada; a fraca precisa ser fortalecida. Talvez hoje você precise lembrar disso para si mesmo. Talvez outra pessoa perto de você precise experimentar esse cuidado através das suas mãos.",
+
+  "icon": "heart-handshake"
+},
+{
+  "id": 293,
+  "theme": "sabedoria",
+  "title": "Nem todo conhecimento é sabedoria",
+
+  "text": "Podemos acumular informações e ainda não saber para onde estamos indo. São Bernardo buscou uma sabedoria diferente: aquela que nasce do encontro com Deus e transforma a maneira de viver. A Palavra nos convida a perguntar não apenas 'o que eu sei?', mas 'o que estou fazendo com aquilo que sei?'.",
+
+  "icon": "book-open"
 }
 ]

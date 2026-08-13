@@ -465,5 +465,195 @@
     "intensity": 0.22,
     "transition": "2.2s"
   }
+},
+{
+  "id": "memoria-da-rocha",
+  "theme": {
+    "primary": "#6F6A5C",
+    "primaryLight": "#A9A38F",
+    "primaryLighter": "#DCD8C9",
+    "primarySoft": "#D5D0BF",
+    "primaryDark": "#464236",
+    "primaryGlow": "rgba(111, 106, 92, 0.14)",
+    "background": "#FAFAF7",
+    "foreground": "#302F29",
+    "muted": "#716F66"
+  },
+  "background": {
+    "base": "#FAFAF7",
+    "gradient": "linear-gradient(160deg, #E9E5D8 0%, #FAFAF7 48%, #E7ECEC 100%)"
+  },
+  "lights": [
+    {
+      "x": "8%",
+      "y": "4%",
+      "size": "58vw",
+      "color": "#E1D8BF",
+      "opacity": 0.30,
+      "blur": "105px",
+      "parallax": 0.7
+    },
+    {
+      "x": "90%",
+      "y": "72%",
+      "size": "50vw",
+      "color": "#DDE6E7",
+      "opacity": 0.25,
+      "blur": "110px",
+      "parallax": -0.45
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.20,
+    "transition": "2s"
+  }
+},
+{
+  "id": "humildade-diante-de-deus",
+  "theme": {
+    "primary": "#657A70",
+    "primaryLight": "#9FB0A8",
+    "primaryLighter": "#D7E0DB",
+    "primarySoft": "#CDD9D3",
+    "primaryDark": "#3E5048",
+    "primaryGlow": "rgba(101, 122, 112, 0.14)",
+    "background": "#F9FBF9",
+    "foreground": "#29312D",
+    "muted": "#6E7772"
+  },
+  "background": {
+    "base": "#F9FBF9",
+    "gradient": "linear-gradient(160deg, #E1EAE4 0%, #F9FBF9 48%, #E9EEEC 100%)"
+  },
+  "lights": [
+    {
+      "x": "10%",
+      "y": "5%",
+      "size": "54vw",
+      "color": "#D8E4DB",
+      "opacity": 0.30,
+      "blur": "110px",
+      "parallax": 0.7
+    },
+    {
+      "x": "88%",
+      "y": "70%",
+      "size": "50vw",
+      "color": "#DDE8E5",
+      "opacity": 0.27,
+      "blur": "115px",
+      "parallax": -0.4
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.18,
+    "transition": "2s"
+  }
+},
+{
+  "id": "pastor-que-cuida",
+  "theme": {
+    "primary": "#5F806F",
+    "primaryLight": "#9CB5A5",
+    "primaryLighter": "#D4E1D9",
+    "primarySoft": "#CADBD1",
+    "primaryDark": "#3B5548",
+    "primaryGlow": "rgba(95, 128, 111, 0.15)",
+    "background": "#F8FBF8",
+    "foreground": "#29312C",
+    "muted": "#6C7770"
+  },
+  "background": {
+    "base": "#F8FBF8",
+    "gradient": "linear-gradient(160deg, #DDEADF 0%, #F8FBF8 45%, #E7ECE8 100%)"
+  },
+  "lights": [
+    {
+      "x": "5%",
+      "y": "10%",
+      "size": "62vw",
+      "color": "#D2E3D5",
+      "opacity": 0.35,
+      "blur": "105px",
+      "parallax": 0.8
+    },
+    {
+      "x": "90%",
+      "y": "70%",
+      "size": "54vw",
+      "color": "#DDE9E2",
+      "opacity": 0.30,
+      "blur": "110px",
+      "parallax": -0.45
+    },
+    {
+      "x": "45%",
+      "y": "45%",
+      "size": "36vw",
+      "color": "#E8EBDD",
+      "opacity": 0.16,
+      "blur": "125px",
+      "parallax": 0.2
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.25,
+    "transition": "1.8s"
+  }
+},
+{
+  "id": "sabedoria-e-luz",
+  "theme": {
+    "primary": "#806B4C",
+    "primaryLight": "#B9A477",
+    "primaryLighter": "#E3D9C2",
+    "primarySoft": "#DCD0B5",
+    "primaryDark": "#51432E",
+    "primaryGlow": "rgba(128, 107, 76, 0.15)",
+    "background": "#FCFBF7",
+    "foreground": "#302D27",
+    "muted": "#746F65"
+  },
+  "background": {
+    "base": "#FCFBF7",
+    "gradient": "linear-gradient(160deg, #F2E7CD 0%, #FCFBF7 46%, #E8EEF0 100%)"
+  },
+  "lights": [
+    {
+      "x": "12%",
+      "y": "2%",
+      "size": "60vw",
+      "color": "#EEDAA9",
+      "opacity": 0.34,
+      "blur": "100px",
+      "parallax": 0.8
+    },
+    {
+      "x": "88%",
+      "y": "70%",
+      "size": "52vw",
+      "color": "#DCE7EA",
+      "opacity": 0.27,
+      "blur": "110px",
+      "parallax": -0.45
+    },
+    {
+      "x": "46%",
+      "y": "38%",
+      "size": "38vw",
+      "color": "#F0E8D3",
+      "opacity": 0.22,
+      "blur": "120px",
+      "parallax": 0.2
+    }
+  ],
+  "motion": {
+    "parallax": true,
+    "intensity": 0.25,
+    "transition": "2s"
+  }
 }
 ]

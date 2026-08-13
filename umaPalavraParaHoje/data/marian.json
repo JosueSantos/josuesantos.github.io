@@ -50,5 +50,41 @@
   "text": "Maria elevada ao céu é sinal de que a promessa de Deus é maior que aquilo que podemos enxergar. Aquela que caminhou na humildade e na confiança agora nos aponta para a plenitude da vida junto de Deus. Com ela, aprendemos a caminhar com os pés na terra e o coração voltado para o céu.",
 
   "icon": "star"
+},
+{
+  "id": 64,
+  "theme": "memoria-de-deus",
+  "title": "Maria, mulher da memória",
+
+  "text": "Maria guardava os acontecimentos em seu coração e os contemplava diante de Deus. Ela nos ensina a não deixar passar despercebidos os sinais da graça e a transformar a memória em gratidão.",
+
+  "icon": "heart"
+},
+{
+  "id": 65,
+  "theme": "humildade",
+  "title": "Maria, a humilde serva",
+
+  "text": "Maria nunca precisou ocupar o lugar de Deus. Ela simplesmente respondeu: 'Eis aqui a serva do Senhor'. Em sua humildade encontramos uma liberdade profunda: aquela de confiar inteiramente naquele que conduz nossa vida.",
+
+  "icon": "heart"
+},
+{
+  "id": 66,
+  "theme": "cuidado",
+  "title": "Maria, presença que cuida",
+
+  "text": "Maria percebeu a necessidade de Isabel e colocou-se a caminho. Ela nos mostra que cuidar começa muitas vezes com perceber. Um coração atento enxerga aquilo que a pressa costuma esconder.",
+
+  "icon": "heart"
+},
+{
+  "id": 67,
+  "theme": "sabedoria",
+  "title": "Maria, mulher que escuta",
+
+  "text": "Maria escutava, guardava e contemplava a Palavra em seu coração. Ela nos ensina que a sabedoria começa quando aprendemos a silenciar para ouvir Deus antes de responder ao mundo.",
+
+  "icon": "heart"
 }
 ]

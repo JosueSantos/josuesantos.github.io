@@ -93,5 +93,69 @@
     "céu",
     "vida eterna"
   ]
+},
+{
+  "id": 24,
+  "slug": "memoria-de-deus",
+  "title": "Não esqueças a Rocha",
+  "summary": "No meio de tantas coisas que disputam nossa atenção, somos convidados a lembrar daquele que nos deu a vida.",
+  "reflection": "Esquecer Deus nem sempre significa negá-lo. Às vezes, simplesmente deixamos que outras coisas ocupem seu lugar. O coração se dispersa, a vida se enche de preocupações e esquecemos a fonte de onde tudo vem.",
+  "icon": "mountain",
+  "color": "earth",
+  "keywords": [
+    "memória",
+    "Deus",
+    "gratidão",
+    "desapego",
+    "confiança"
+  ]
+},
+{
+  "id": 25,
+  "slug": "humildade",
+  "title": "O lugar certo diante de Deus",
+  "summary": "O orgulho promete autonomia absoluta; a humildade nos devolve à verdade de que somos criaturas dependentes de Deus.",
+  "reflection": "Não somos donos da vida. Recebemos o tempo, os talentos, as oportunidades e até as pessoas que amamos. Reconhecer isso não é fraqueza: é liberdade.",
+  "icon": "arrow-down",
+  "color": "green",
+  "keywords": [
+    "humildade",
+    "orgulho",
+    "desapego",
+    "confiança",
+    "Deus"
+  ]
+},
+{
+  "id": 26,
+  "slug": "cuidado",
+  "title": "O Deus que cuida",
+  "summary": "Deus não observa nossas vidas de longe. Ele procura, reúne, cura e conduz suas ovelhas.",
+  "reflection": "Há momentos em que nos sentimos perdidos, feridos ou cansados. Ezequiel nos apresenta um Deus que não abandona suas ovelhas. Ele próprio vai procurá-las e cuidar delas.",
+  "icon": "heart-handshake",
+  "color": "green",
+  "keywords": [
+    "pastor",
+    "cuidado",
+    "proteção",
+    "condução",
+    "confiança"
+  ]
+},
+{
+  "id": 27,
+  "slug": "sabedoria",
+  "title": "A sabedoria que conduz a Deus",
+  "summary": "A sabedoria verdadeira nasce quando buscamos Deus e permitimos que sua Palavra ilumine nossas escolhas.",
+  "reflection": "Saber muitas coisas não é o mesmo que viver com sabedoria. A sabedoria cristã nasce de uma vida que procura Deus, escuta sua Palavra e aprende a ordenar todas as coisas para aquilo que realmente importa.",
+  "icon": "book-open",
+  "color": "gold",
+  "keywords": [
+    "sabedoria",
+    "Palavra",
+    "oração",
+    "discernimento",
+    "Deus"
+  ]
 }
 ]

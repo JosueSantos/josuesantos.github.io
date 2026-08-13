@@ -120,5 +120,122 @@
   ],
 
   "icon": "sun"
+},
+{
+  "id": 193,
+  "slug": "testemunha-da-confianca",
+  "name": "Testemunha da confiança em Deus",
+  "feast": "08-17",
+  "title": "Aquele que não esquece a sua origem",
+  "century": "",
+  "country": "",
+  "vocation": "",
+
+  "summary": "Um convite a reconhecer Deus como origem e fundamento da própria vida.",
+
+  "legacy": "A fé amadurece quando aprendemos a lembrar diariamente de onde vem nossa vida e para onde ela se dirige.",
+
+  "virtues": [
+    "gratidão",
+    "confiança",
+    "desapego",
+    "humildade"
+  ],
+
+  "themes": [
+    "memória de Deus",
+    "gratidão",
+    "confiança"
+  ],
+
+  "icon": "mountain"
+},
+{
+  "id": 194,
+  "slug": "testemunha-da-humildade",
+  "name": "Testemunha da humildade",
+  "feast": "08-18",
+  "title": "Aquele que reconhece sua dependência de Deus",
+  "century": "",
+  "country": "",
+  "vocation": "",
+
+  "summary": "Um convite a abandonar a ilusão de autossuficiência e reconhecer Deus como Senhor da vida.",
+
+  "legacy": "A verdadeira grandeza nasce quando deixamos Deus ocupar o lugar que lhe pertence.",
+
+  "virtues": [
+    "humildade",
+    "confiança",
+    "desapego"
+  ],
+
+  "themes": [
+    "humildade",
+    "confiança",
+    "desapego"
+  ],
+
+  "icon": "arrow-down"
+},
+{
+  "id": 195,
+  "slug": "o-pastor-que-cuida",
+  "name": "Testemunha do cuidado",
+  "feast": "08-19",
+  "title": "Aquele que cuida das ovelhas",
+  "century": "",
+  "country": "",
+  "vocation": "",
+
+  "summary": "Um convite a reconhecer o cuidado de Deus e tornar-se presença de cuidado para aqueles que estão ao nosso redor.",
+
+  "legacy": "Quem experimenta o cuidado de Deus aprende também a cuidar dos outros.",
+
+  "virtues": [
+    "compaixão",
+    "cuidado",
+    "presença",
+    "serviço"
+  ],
+
+  "themes": [
+    "pastor",
+    "cuidado",
+    "serviço"
+  ],
+
+  "icon": "heart-handshake"
+},
+{
+  "id": 196,
+  "slug": "sao-bernardo",
+  "name": "São Bernardo de Claraval",
+  "feast": "08-20",
+  "title": "Abade e doutor da Igreja",
+  "century": "XII",
+  "country": "França",
+  "vocation": "Abade e monge cisterciense",
+
+  "summary": "São Bernardo de Claraval foi monge cisterciense, abade e uma das grandes figuras espirituais da Igreja medieval, reconhecido como doutor da Igreja.",
+
+  "legacy": "Sua vida uniu contemplação, amor à Palavra, busca da verdade e profunda devoção a Cristo.",
+
+  "virtues": [
+    "sabedoria",
+    "contemplação",
+    "humildade",
+    "oração",
+    "amor a Cristo"
+  ],
+
+  "themes": [
+    "sabedoria",
+    "oração",
+    "contemplação",
+    "Palavra de Deus"
+  ],
+
+  "icon": "book-open"
 }
 ]

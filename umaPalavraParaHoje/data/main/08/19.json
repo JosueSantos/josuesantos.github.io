@@ -1,0 +1,44 @@
+{
+  "date": "08-19",
+  "season": "tempo_comum",
+  "theme": 26,
+  "virtue": 50,
+  "saint": 195,
+  "marian": 66,
+  "reflection": 292,
+  "mission": 141,
+  "prayer": 102,
+
+  "visual": {
+    "atmosphere": "pastor-que-cuida",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Eu mesmo cuidarei de minhas ovelhas",
+
+  "saintQuestion": "Quem precisa hoje experimentar, através de mim, um pouco do cuidado de Deus?",
+
+  "closingText": "Você não está sozinho. O Pastor conhece suas feridas, procura seus passos e permanece ao seu lado.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Eu mesmo cuidarei de minhas ovelhas · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre o cuidado de Deus, o Bom Pastor e o cuidado com os outros.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

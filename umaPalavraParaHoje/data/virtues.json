@@ -54,5 +54,41 @@
   "practice": "Hoje, entregue a Deus uma preocupação que pesa sobre você. Em vez de tentar controlar tudo, repita com confiança: 'Senhor, eu confio em Vós'.",
   "icon": "sun",
   "color": "sky"
+},
+{
+  "id": 48,
+  "slug": "gratidao",
+  "title": "Gratidão",
+  "description": "Reconhecer que a vida é dom e recordar com humildade aquele de quem recebemos tudo.",
+  "practice": "Hoje, antes de pedir qualquer coisa a Deus, agradeça por cinco coisas que você recebeu e normalmente considera garantidas.",
+  "icon": "heart",
+  "color": "earth"
+},
+{
+  "id": 49,
+  "slug": "humildade",
+  "title": "Humildade",
+  "description": "Reconhecer com verdade quem somos diante de Deus, sem precisar ocupar o lugar que pertence somente a Ele.",
+  "practice": "Hoje, reconheça diante de Deus uma coisa que você não consegue controlar e entregue-a conscientemente a Ele.",
+  "icon": "arrow-down",
+  "color": "green"
+},
+{
+  "id": 50,
+  "slug": "cuidado",
+  "title": "Cuidado",
+  "description": "Aprender a reconhecer as necessidades do outro e responder com presença, proteção e compaixão.",
+  "practice": "Hoje, procure uma pessoa que esteja cansada, ferida ou precisando de ajuda. Faça por ela um gesto simples de cuidado.",
+  "icon": "heart-handshake",
+  "color": "green"
+},
+{
+  "id": 51,
+  "slug": "sabedoria",
+  "title": "Sabedoria",
+  "description": "Aprender a discernir o que realmente conduz a Deus e orientar as escolhas de acordo com essa verdade.",
+  "practice": "Antes de tomar hoje uma decisão importante, faça silêncio e pergunte: 'Senhor, o que me aproxima mais de Vós?'",
+  "icon": "book-open",
+  "color": "gold"
 }
 ]

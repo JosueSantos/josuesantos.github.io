@@ -56,5 +56,45 @@
   "text": "Senhor Deus, hoje contemplamos Maria elevada à glória do céu. Fortalecei em nós a esperança de que a vida entregue a Vós encontra sua plenitude. Quando estivermos cansados, fazei-nos olhar para Maria. Quando tivermos medo, ensinai-nos sua confiança. E quando não enxergarmos o caminho, ajudai-nos a continuar dizendo sim. Amém.",
 
   "icon": "hands"
+},
+{
+  "id": 100,
+  "theme": "memoria-de-deus",
+  "duration": 60,
+  "title": "Não quero esquecer de Vós",
+
+  "text": "Senhor, quando tantas coisas ocuparem minha atenção, não permitais que eu Vos esqueça. Vós sois a Rocha que me sustenta, a fonte da minha vida e o destino do meu caminho. Dai-me um coração agradecido e livre, capaz de reconhecer que tudo o que tenho é dom. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 101,
+  "theme": "humildade",
+  "duration": 60,
+  "title": "Senhor da minha vida",
+
+  "text": "Senhor, livrai-me da ilusão de que posso controlar tudo. Quando meu coração se tornar orgulhoso, recordai-me que minha vida é dom. Dai-me a humildade de confiar em Vós, de reconhecer meus limites e de colocar cada coisa em suas mãos. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 102,
+  "theme": "cuidado",
+  "duration": 60,
+  "title": "O Senhor é meu Pastor",
+
+  "text": "Senhor, meu Pastor, quando eu estiver perdido, procurai-me. Quando eu estiver ferido, cuidai de mim. Quando minhas forças acabarem, conduzi-me a águas tranquilas. E ensinai-me também a ser cuidado para aqueles que colocastes ao meu redor. Amém.",
+
+  "icon": "hands"
+},
+{
+  "id": 103,
+  "theme": "sabedoria",
+  "duration": 60,
+  "title": "Senhor, ensinai-me a sabedoria",
+
+  "text": "Senhor, ensinai-me a buscar aquilo que realmente importa. Dai-me uma sabedoria que não seja apenas conhecimento, mas capacidade de escolher o bem, reconhecer a verdade e caminhar em vossa presença. Como São Bernardo, fazei crescer em mim o amor pela oração e pela vossa Palavra. Amém.",
+
+  "icon": "hands"
 }
 ]

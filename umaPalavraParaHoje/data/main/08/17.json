@@ -1,0 +1,44 @@
+{
+  "date": "08-17",
+  "season": "tempo_comum",
+  "theme": 24,
+  "virtue": 48,
+  "saint": 193,
+  "marian": 64,
+  "reflection": 290,
+  "mission": 139,
+  "prayer": 100,
+
+  "visual": {
+    "atmosphere": "memoria-da-rocha",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Não esqueças a Rocha",
+
+  "saintQuestion": "O que tem ocupado em mim o lugar que pertence a Deus?",
+
+  "closingText": "Quem se lembra de onde veio encontra novamente o caminho para Deus.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Não esqueças a Rocha · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre a memória de Deus, o desapego e a verdadeira liberdade.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}
