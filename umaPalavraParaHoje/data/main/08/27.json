@@ -1,0 +1,44 @@
+{
+  "date": "08-27",
+  "season": "tempo_comum",
+  "theme": 34,
+  "virtue": 58,
+  "saint": 200,
+  "marian": 74,
+  "reflection": 300,
+  "mission": 149,
+  "prayer": 110,
+
+  "visual": {
+    "atmosphere": "perseveranca-na-oracao",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Continue rezando",
+
+  "saintQuestion": "Por quem Deus está me convidando a perseverar em oração?",
+
+  "closingText": "Algumas respostas precisam de tempo. A oração perseverante mantém o coração aberto enquanto Deus conduz a história.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Continue rezando · Santa Mônica · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão inspirada em Santa Mônica sobre perseverança, oração e confiança no tempo de Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

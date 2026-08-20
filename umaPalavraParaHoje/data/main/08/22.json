@@ -1,0 +1,44 @@
+{
+  "date": "08-22",
+  "season": "tempo_comum",
+  "theme": 29,
+  "virtue": 53,
+  "saint": 198,
+  "marian": 69,
+  "reflection": 295,
+  "mission": 144,
+  "prayer": 105,
+
+  "visual": {
+    "atmosphere": "maria-rainha",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Rainha porque serviu",
+
+  "saintQuestion": "Onde Deus me chama hoje a servir com mais amor?",
+
+  "closingText": "Maria reina porque pertence inteiramente a Deus e porque seu coração aprendeu a servir.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Maria Rainha · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre Maria, Rainha, sua humildade e seu serviço a Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

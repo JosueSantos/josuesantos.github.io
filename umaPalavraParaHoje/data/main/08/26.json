@@ -1,0 +1,44 @@
+{
+  "date": "08-26",
+  "season": "tempo_comum",
+  "theme": 33,
+  "virtue": 57,
+  "saint": null,
+  "marian": 73,
+  "reflection": 299,
+  "mission": 148,
+  "prayer": 109,
+
+  "visual": {
+    "atmosphere": "trabalho-e-servico",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Faça a sua parte",
+
+  "saintQuestion": "Tenho assumido com responsabilidade aquilo que está sob meus cuidados?",
+
+  "closingText": "O trabalho pode ser também uma forma de servir, cuidar e participar da construção do bem.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Faça a sua parte · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre trabalho, responsabilidade, serviço e o cuidado com aquilo que Deus coloca em nossas mãos.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

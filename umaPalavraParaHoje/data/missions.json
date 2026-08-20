@@ -106,5 +106,106 @@
   "text": "Antes de uma escolha importante hoje, pare por um instante. Respire, faça silêncio e peça a Deus discernimento. Só depois decida.",
 
   "icon": "footprints"
+},
+{
+  "id": 143,
+  "category": "centralidade-de-cristo",
+  "difficulty": 1,
+  "duration": 5,
+  "title": "Recoloque Cristo no centro",
+
+  "text": "Escolha uma atividade importante do seu dia. Antes de realizá-la, pare por alguns segundos e ofereça-a conscientemente a Jesus.",
+
+  "icon": "footprints"
+},{
+  "id": 144,
+  "category": "servico",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Sirva sem ser visto",
+
+  "text": "Faça hoje um gesto concreto de serviço sem contar a ninguém e sem esperar agradecimento.",
+
+  "icon": "footprints"
+},{
+  "id": 145,
+  "category": "fe",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Responda a Jesus",
+
+  "text": "Encontre um lugar silencioso. Feche os olhos e permaneça alguns instantes diante de Jesus. Depois complete lentamente: 'Jesus, para mim, Vós sois...'.",
+
+  "icon": "footprints"
+},{
+  "id": 146,
+  "category": "abertura",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Venha e veja",
+
+  "text": "Escolha hoje algo ou alguém sobre quem você tenha uma opinião formada. Tente olhar novamente, desta vez pedindo a Deus que lhe mostre aquilo que você ainda não percebeu.",
+
+  "icon": "footprints"
+},{
+  "id": 147,
+  "category": "perseveranca",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Volte às raízes",
+
+  "text": "Reserve alguns minutos para recordar uma verdade da fé que é importante para você. Leia-a novamente e agradeça a Deus por tê-la recebido.",
+
+  "icon": "footprints"
+},{
+  "id": 148,
+  "category": "responsabilidade",
+  "difficulty": 1,
+  "duration": 20,
+  "title": "Faça aquilo que está esperando",
+
+  "text": "Escolha uma tarefa que você vem adiando e termine-a hoje. Faça-a com atenção, sem reclamar e oferecendo seu esforço a Deus.",
+
+  "icon": "footprints"
+},{
+  "id": 149,
+  "category": "perseveranca",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Reze novamente",
+
+  "text": "Escolha uma intenção pela qual você já rezou muitas vezes e apresente-a novamente a Deus. Desta vez, termine dizendo: 'Eu confio no vosso tempo'.",
+
+  "icon": "footprints"
+},{
+  "id": 150,
+  "category": "busca-da-verdade",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Escute sua inquietação",
+
+  "text": "Fique alguns minutos em silêncio e identifique uma inquietação que você tem carregado. Em vez de fugir dela, apresente-a a Deus.",
+
+  "icon": "footprints"
+},{
+  "id": 151,
+  "category": "fidelidade",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Seja fiel no pequeno",
+
+  "text": "Escolha hoje uma pequena situação em que você normalmente buscaria facilidade ou aprovação. Faça o que é certo, com verdade e caridade.",
+
+  "icon": "footprints"
+},{
+  "id": 152,
+  "category": "entrega",
+  "difficulty": 2,
+  "duration": 15,
+  "title": "Entregue algo por amor",
+
+  "text": "Hoje, abra mão voluntariamente de alguma coisa pequena — tempo, conforto, preferência ou comodidade — para beneficiar outra pessoa. Faça isso sem reclamar e sem esperar reconhecimento.",
+
+  "icon": "footprints"
 }
 ]

@@ -90,5 +90,87 @@
   "practice": "Antes de tomar hoje uma decisão importante, faça silêncio e pergunte: 'Senhor, o que me aproxima mais de Vós?'",
   "icon": "book-open",
   "color": "gold"
+},
+{
+  "id": 52,
+  "slug": "centralidade-de-cristo",
+  "title": "Centralidade de Cristo",
+  "description": "Reconhecer Jesus como centro da própria vida e permitir que sua presença ilumine todas as escolhas.",
+  "practice": "Antes de começar uma tarefa importante hoje, faça uma pausa e diga: 'Jesus, quero fazer isto convosco e para Vós'.",
+  "icon": "cross",
+  "color": "blue"
+},
+{
+  "id": 53,
+  "slug": "servico",
+  "title": "Serviço",
+  "description": "Colocar os próprios dons e a própria vida a serviço de Deus e das pessoas que Ele coloca em nosso caminho.",
+  "practice": "Hoje, faça algo por alguém sem anunciar que foi você e sem esperar reconhecimento.",
+  "icon": "heart-handshake",
+  "color": "gold"
+},{
+  "id": 54,
+  "slug": "fe",
+  "title": "Fé",
+  "description": "Reconhecer Jesus pessoalmente como o Cristo e confiar nele mesmo quando não compreendemos todos os seus caminhos.",
+  "practice": "Hoje, fique alguns minutos diante de Jesus em silêncio e responda, com suas próprias palavras: 'Jesus, para mim, Vós sois...'",
+  "icon": "cross",
+  "color": "indigo"
+},{
+  "id": 55,
+  "slug": "abertura",
+  "title": "Abertura",
+  "description": "Ter um coração suficientemente aberto para permitir que Deus surpreenda nossas certezas.",
+  "practice": "Hoje, diante de algo que você não compreende, em vez de julgar imediatamente, faça uma pausa e diga: 'Senhor, mostrai-me o que ainda não consigo ver'.",
+  "icon": "eye",
+  "color": "blue"
+},{
+  "id": 56,
+  "slug": "perseveranca",
+  "title": "Perseverança",
+  "description": "Continuar fiel ao bem mesmo quando surgem dúvidas, distrações ou dificuldades.",
+  "practice": "Hoje, retome uma prática de fé que você abandonou e faça-a novamente, mesmo que seja por poucos minutos.",
+  "icon": "anchor",
+  "color": "blue"
+},{
+  "id": 57,
+  "slug": "responsabilidade",
+  "title": "Responsabilidade",
+  "description": "Assumir com seriedade aquilo que está sob nossos cuidados e colocar nossos dons a serviço do bem.",
+  "practice": "Escolha hoje uma tarefa que você costuma adiar e realize-a com atenção, oferecendo seu esforço a Deus.",
+  "icon": "hammer",
+  "color": "earth"
+},{
+  "id": 58,
+  "slug": "perseveranca",
+  "title": "Perseverança na oração",
+  "description": "Continuar confiando em Deus mesmo quando ainda não conseguimos enxergar a resposta.",
+  "practice": "Escolha hoje uma pessoa ou situação pela qual você deseja rezar e apresente-a novamente a Deus, sem exigir uma resposta imediata.",
+  "icon": "heart",
+  "color": "rose"
+},{
+  "id": 59,
+  "slug": "busca-da-verdade",
+  "title": "Busca da verdade",
+  "description": "Não se contentar com respostas superficiais e permitir que a busca pela verdade conduza a Deus.",
+  "practice": "Reserve alguns minutos hoje para perguntar sinceramente: 'O que meu coração está realmente procurando?'.",
+  "icon": "search",
+  "color": "indigo"
+},{
+  "id": 60,
+  "slug": "fidelidade",
+  "title": "Fidelidade",
+  "description": "Permanecer unido à verdade e ao bem mesmo quando isso exige coragem e sacrifício.",
+  "practice": "Hoje, seja fiel a uma pequena verdade: cumpra uma promessa, admita um erro ou diga aquilo que precisa ser dito com caridade.",
+  "icon": "shield",
+  "color": "red"
+},{
+  "id": 61,
+  "slug": "entrega",
+  "title": "Entrega",
+  "description": "Confiar a própria vida a Deus e colocar o amor acima da necessidade de controlar e preservar tudo.",
+  "practice": "Identifique uma coisa que você tenta controlar e entregue-a conscientemente a Deus. Depois pergunte: 'Como posso amar melhor nesta situação?'.",
+  "icon": "flame",
+  "color": "amber"
 }
 ]

@@ -1,0 +1,44 @@
+{
+  "date": "08-28",
+  "season": "tempo_comum",
+  "theme": 35,
+  "virtue": 59,
+  "saint": 201,
+  "marian": 75,
+  "reflection": 301,
+  "mission": 150,
+  "prayer": 111,
+
+  "visual": {
+    "atmosphere": "coracao-inquieto",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Onde seu coração descansa?",
+
+  "saintQuestion": "O que estou procurando para preencher uma inquietação que somente Deus pode alcançar?",
+
+  "closingText": "Seu coração não é errado porque está inquieto. Talvez ele esteja procurando o lugar certo para descansar.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Onde seu coração descansa? · Santo Agostinho · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão inspirada em Santo Agostinho sobre inquietude, busca da verdade, conversão e descanso em Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

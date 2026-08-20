@@ -1,0 +1,44 @@
+{
+  "date": "08-29",
+  "season": "tempo_comum",
+  "theme": 36,
+  "virtue": 60,
+  "saint": 202,
+  "marian": 76,
+  "reflection": 302,
+  "mission": 151,
+  "prayer": 112,
+
+  "visual": {
+    "atmosphere": "fidelidade-ate-o-fim",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Permaneça fiel",
+
+  "saintQuestion": "Existe alguma verdade que estou evitando defender por medo?",
+
+  "closingText": "João diminuiu para que Cristo crescesse. Sua fidelidade não buscou aplausos, apenas permaneceu verdadeira.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Permaneça fiel · Martírio de São João Batista",
+
+  "metaDescription": "Uma reflexão sobre São João Batista, fidelidade à verdade, coragem e entrega.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

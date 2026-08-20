@@ -1,0 +1,44 @@
+{
+  "date": "08-25",
+  "season": "tempo_comum",
+  "theme": 32,
+  "virtue": 56,
+  "saint": null,
+  "marian": 72,
+  "reflection": 298,
+  "mission": 147,
+  "prayer": 108,
+
+  "visual": {
+    "atmosphere": "firmeza-na-fe",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Permaneça firme",
+
+  "saintQuestion": "O que sustenta minha fé quando tantas vozes tentam me confundir?",
+
+  "closingText": "Nem toda novidade merece nossa confiança. Há verdades que precisam ser guardadas com perseverança.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Permaneça firme · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre perseverança, firmeza na fé e discernimento diante das muitas vozes do mundo.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

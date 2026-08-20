@@ -1,0 +1,44 @@
+{
+  "date": "08-24",
+  "season": "tempo_comum",
+  "theme": 31,
+  "virtue": 55,
+  "saint": 199,
+  "marian": 71,
+  "reflection": 297,
+  "mission": 146,
+  "prayer": 107,
+
+  "visual": {
+    "atmosphere": "vem-e-ve",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Vem e vê",
+
+  "saintQuestion": "Estou disposto a deixar Jesus surpreender minhas certezas?",
+
+  "closingText": "Às vezes, a fé começa simplesmente quando aceitamos o convite: venha e veja.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Vem e vê · São Bartolomeu · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre São Bartolomeu, o encontro com Jesus e a coragem de deixar Deus transformar nossas certezas.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

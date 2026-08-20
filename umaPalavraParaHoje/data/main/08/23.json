@@ -1,0 +1,44 @@
+{
+  "date": "08-23",
+  "season": "tempo_comum",
+  "theme": 30,
+  "virtue": 54,
+  "saint": null,
+  "marian": 70,
+  "reflection": 296,
+  "mission": 145,
+  "prayer": 106,
+
+  "visual": {
+    "atmosphere": "quem-e-jesus",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "E para você, quem é Jesus?",
+
+  "saintQuestion": "Quem é Jesus para mim, quando ninguém está olhando?",
+
+  "closingText": "A fé começa a ganhar profundidade quando deixamos de repetir o que os outros dizem sobre Jesus e descobrimos quem Ele é para nós.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "E para você, quem é Jesus? · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre a pergunta de Jesus: quem dizem os homens que é o Filho do Homem?",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

@@ -237,5 +237,185 @@
   ],
 
   "icon": "book-open"
+},
+{
+  "id": 197,
+  "slug": "sao-pio-x",
+  "name": "São Pio X",
+  "feast": "08-21",
+  "title": "Papa",
+  "century": "XX",
+  "country": "Itália",
+  "vocation": "Papa",
+
+  "summary": "São Pio X foi papa de 1903 a 1914 e dedicou seu ministério à renovação da vida cristã, à Eucaristia, à liturgia e à defesa da fé.",
+
+  "legacy": "Seu lema, 'Instaurar todas as coisas em Cristo', resume seu desejo de colocar Jesus novamente no centro da vida da Igreja e dos cristãos.",
+
+  "virtues": [
+    "zelo apostólico",
+    "humildade",
+    "fortaleza",
+    "amor à Eucaristia",
+    "fidelidade"
+  ],
+
+  "themes": [
+    "Cristo",
+    "Eucaristia",
+    "liturgia",
+    "vida cristã"
+  ],
+
+  "icon": "cross"
+},{
+  "id": 198,
+  "slug": "bem-aventurada-virgem-maria-rainha",
+  "name": "Bem-aventurada Virgem Maria Rainha",
+  "feast": "08-22",
+  "title": "Mãe e Rainha",
+  "century": "I",
+  "country": "Israel",
+  "vocation": "Mãe de Jesus",
+
+  "summary": "A Igreja contempla Maria como Rainha, aquela que participa da glória de seu Filho e permanece para nós como Mãe e intercessora.",
+
+  "legacy": "Maria revela uma realeza diferente: a grandeza daquele que pertence inteiramente a Deus e se coloca a serviço do seu plano.",
+
+  "virtues": [
+    "humildade",
+    "serviço",
+    "fé",
+    "confiança",
+    "amor"
+  ],
+
+  "themes": [
+    "Maria",
+    "Rainha",
+    "serviço",
+    "Reino de Deus"
+  ],
+
+  "icon": "crown"
+},{
+  "id": 199,
+  "slug": "sao-bartolomeu",
+  "name": "São Bartolomeu",
+  "feast": "08-24",
+  "title": "Apóstolo",
+  "century": "I",
+  "country": "",
+  "vocation": "Apóstolo",
+
+  "summary": "São Bartolomeu, identificado tradicionalmente com Natanael, foi um dos Doze Apóstolos de Jesus.",
+
+  "legacy": "Seu encontro com Cristo mostra que uma pessoa pode passar da desconfiança à fé quando aceita aproximar-se de Jesus.",
+
+  "virtues": [
+    "sinceridade",
+    "fé",
+    "abertura",
+    "coragem",
+    "fidelidade"
+  ],
+
+  "themes": [
+    "chamado",
+    "encontro com Jesus",
+    "fé"
+  ],
+
+  "icon": "eye"
+},{
+  "id": 200,
+  "slug": "santa-monica",
+  "name": "Santa Mônica",
+  "feast": "08-27",
+  "title": "Mãe de Santo Agostinho",
+  "century": "IV",
+  "country": "África do Norte",
+  "vocation": "Esposa e mãe",
+
+  "summary": "Santa Mônica foi uma mulher de fé e oração perseverante, especialmente conhecida por acompanhar e rezar pela conversão de seu filho Agostinho.",
+
+  "legacy": "Sua vida tornou-se testemunho de que a perseverança na oração pode atravessar anos sem perder a esperança.",
+
+  "virtues": [
+    "oração",
+    "perseverança",
+    "paciência",
+    "esperança",
+    "fé"
+  ],
+
+  "themes": [
+    "oração",
+    "família",
+    "perseverança",
+    "conversão"
+  ],
+
+  "icon": "heart"
+},{
+  "id": 201,
+  "slug": "santo-agostinho",
+  "name": "Santo Agostinho",
+  "feast": "08-28",
+  "title": "Bispo e doutor da Igreja",
+  "century": "IV-V",
+  "country": "África do Norte",
+  "vocation": "Bispo e doutor da Igreja",
+
+  "summary": "Santo Agostinho foi bispo de Hipona, teólogo e doutor da Igreja. Sua vida foi marcada por uma longa busca da verdade e por uma profunda conversão a Cristo.",
+
+  "legacy": "Sua obra e sua experiência de conversão continuam testemunhando que o coração humano encontra seu verdadeiro descanso quando se volta para Deus.",
+
+  "virtues": [
+    "busca da verdade",
+    "conversão",
+    "sabedoria",
+    "oração",
+    "humildade"
+  ],
+
+  "themes": [
+    "verdade",
+    "conversão",
+    "coração",
+    "sabedoria"
+  ],
+
+  "icon": "search"
+},{
+  "id": 202,
+  "slug": "martirio-sao-joao-batista",
+  "name": "São João Batista",
+  "feast": "08-29",
+  "title": "Profeta e mártir",
+  "century": "I",
+  "country": "Judeia",
+  "vocation": "Profeta e precursor de Cristo",
+
+  "summary": "São João Batista preparou o caminho para Cristo e entregou a própria vida em fidelidade à verdade.",
+
+  "legacy": "Sua vida testemunha a coragem de diminuir para que Cristo cresça e de permanecer fiel mesmo diante do poder.",
+
+  "virtues": [
+    "fidelidade",
+    "coragem",
+    "verdade",
+    "humildade",
+    "desapego"
+  ],
+
+  "themes": [
+    "fidelidade",
+    "verdade",
+    "martírio",
+    "Cristo"
+  ],
+
+  "icon": "shield"
 }
 ]

@@ -157,5 +157,157 @@
     "discernimento",
     "Deus"
   ]
+},
+{
+  "id": 28,
+  "slug": "cristo-no-centro",
+  "title": "Cristo no centro",
+  "summary": "Toda a vida encontra seu verdadeiro sentido quando Cristo ocupa novamente o lugar central.",
+  "reflection": "São Pio X dedicou seu ministério a renovar a vida cristã e conduzir a Igreja para Cristo. Seu lema continua sendo um convite atual: colocar Jesus no centro das escolhas, da família, do trabalho, da oração e dos sonhos.",
+  "icon": "cross",
+  "color": "blue",
+  "keywords": [
+    "Cristo",
+    "centro",
+    "Eucaristia",
+    "fé",
+    "vida cristã"
+  ]
+},{
+  "id": 29,
+  "slug": "maria-rainha",
+  "title": "Rainha porque serviu",
+  "summary": "Maria participa da realeza de Cristo porque viveu na humildade, na confiança e no serviço.",
+  "reflection": "O Reino de Deus não funciona segundo a lógica do poder humano. Maria é Rainha porque foi serva. Sua grandeza nasceu de um coração disponível para Deus.",
+  "icon": "crown",
+  "color": "gold",
+  "keywords": [
+    "Maria",
+    "Rainha",
+    "serviço",
+    "humildade",
+    "confiança"
+  ]
+},{
+  "id": 30,
+  "slug": "quem-e-jesus",
+  "title": "E para você, quem é Jesus?",
+  "summary": "A fé não pode viver apenas das respostas dos outros. Jesus nos chama a responder pessoalmente quem Ele é para nós.",
+  "reflection": "Pedro não respondeu apenas repetindo aquilo que as pessoas diziam. Diante da pergunta de Jesus, precisou assumir pessoalmente sua fé. Hoje a pergunta continua dirigida a nós.",
+  "icon": "cross",
+  "color": "indigo",
+  "keywords": [
+    "Jesus",
+    "Messias",
+    "fé",
+    "Pedro",
+    "Igreja",
+    "confissão"
+  ]
+},{
+  "id": 31,
+  "slug": "vem-e-ve",
+  "title": "Vem e vê",
+  "summary": "O encontro pessoal com Jesus pode transformar nossas dúvidas em uma fé viva.",
+  "reflection": "Natanael não começou sua caminhada com todas as respostas. Ele começou com uma dúvida. Filipe não tentou vencer seu argumento; simplesmente fez um convite: venha e veja. O encontro com Jesus fez o restante.",
+  "icon": "eye",
+  "color": "blue",
+  "keywords": [
+    "encontro",
+    "Jesus",
+    "fé",
+    "chamado",
+    "discernimento"
+  ]
+},{
+  "id": 32,
+  "slug": "firmeza-na-fe",
+  "title": "Permaneça firme",
+  "summary": "Em meio às muitas vozes, a fé precisa de raízes profundas.",
+  "reflection": "Nem tudo aquilo que é novo é verdadeiro e nem tudo aquilo que é antigo é automaticamente bom. Paulo convida a comunidade a permanecer firme naquilo que recebeu e a não se deixar arrastar por qualquer mensagem.",
+  "icon": "anchor",
+  "color": "blue",
+  "keywords": [
+    "firmeza",
+    "fé",
+    "discernimento",
+    "perseverança",
+    "verdade"
+  ]
+},{
+  "id": 33,
+  "slug": "responsabilidade",
+  "title": "Faça a sua parte",
+  "summary": "A fé também se manifesta na responsabilidade com aquilo que recebemos para cuidar.",
+  "reflection": "Paulo apresenta sua própria vida como exemplo: trabalhou, esforçou-se e procurou não ser peso para os outros. Existe uma dignidade profunda em assumir nossa responsabilidade e transformar nosso trabalho em serviço.",
+  "icon": "hammer",
+  "color": "earth",
+  "keywords": [
+    "trabalho",
+    "responsabilidade",
+    "serviço",
+    "esforço",
+    "dignidade"
+  ]
+},{
+  "id": 34,
+  "slug": "perseveranca-na-oracao",
+  "title": "Continue rezando",
+  "summary": "A oração perseverante confia em Deus mesmo quando a resposta demora.",
+  "reflection": "Santa Mônica não desistiu. Sua história mostra uma oração que atravessa anos, lágrimas, distância e incerteza sem perder a esperança.",
+  "icon": "heart",
+  "color": "rose",
+  "keywords": [
+    "oração",
+    "perseverança",
+    "esperança",
+    "família",
+    "confiança"
+  ]
+},{
+  "id": 35,
+  "slug": "busca-da-verdade",
+  "title": "Onde seu coração descansa?",
+  "summary": "A inquietação pode ser o começo de uma busca quando nos conduz à verdade.",
+  "reflection": "Agostinho procurou respostas em muitos lugares. Conhecimento, prazer, reconhecimento e filosofia não foram suficientes para aquietar seu coração. Sua busca encontrou direção quando se abriu para Deus.",
+  "icon": "search",
+  "color": "indigo",
+  "keywords": [
+    "Agostinho",
+    "verdade",
+    "conversão",
+    "busca",
+    "coração"
+  ]
+},{
+  "id": 36,
+  "slug": "fidelidade",
+  "title": "Permaneça fiel",
+  "summary": "A fidelidade ao Evangelho exige coragem para permanecer na verdade mesmo quando isso tem um preço.",
+  "reflection": "João Batista não negociou sua missão para preservar sua própria segurança. Ele permaneceu fiel à verdade que havia recebido.",
+  "icon": "shield",
+  "color": "red",
+  "keywords": [
+    "João Batista",
+    "fidelidade",
+    "verdade",
+    "coragem",
+    "martírio"
+  ]
+},{
+  "id": 37,
+  "slug": "entrega",
+  "title": "Entregue sua vida",
+  "summary": "Seguir Jesus significa permitir que o amor transforme nossa maneira de viver, escolher e entregar.",
+  "reflection": "Jeremias sente o fogo da Palavra dentro de si. Paulo fala de oferecer a própria vida. Jesus fala da cruz. Não se trata de procurar sofrimento, mas de permitir que o amor seja maior que o nosso desejo de preservar tudo para nós mesmos.",
+  "icon": "flame",
+  "color": "amber",
+  "keywords": [
+    "entrega",
+    "cruz",
+    "seguimento",
+    "amor",
+    "sede de Deus"
+  ]
 }
 ]

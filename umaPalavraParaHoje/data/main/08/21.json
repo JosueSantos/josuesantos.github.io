@@ -1,0 +1,44 @@
+{
+  "date": "08-21",
+  "season": "tempo_comum",
+  "theme": 28,
+  "virtue": 52,
+  "saint": 197,
+  "marian": 68,
+  "reflection": 294,
+  "mission": 143,
+  "prayer": 104,
+
+  "visual": {
+    "atmosphere": "cristo-no-centro",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 6,
+    "progress": true
+  },
+
+  "heroTitle": "Cristo no centro",
+
+  "saintQuestion": "O que precisa voltar a ocupar o primeiro lugar na minha vida?",
+
+  "closingText": "Quando Cristo volta ao centro, todas as outras coisas encontram seu lugar.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Cristo no centro · São Pio X · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma experiência de oração e reflexão inspirada em São Pio X sobre colocar Cristo novamente no centro da vida.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

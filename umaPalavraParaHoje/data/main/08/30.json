@@ -1,0 +1,44 @@
+{
+  "date": "08-30",
+  "season": "tempo_comum",
+  "theme": 37,
+  "virtue": 61,
+  "saint": null,
+  "marian": 77,
+  "reflection": 303,
+  "mission": 152,
+  "prayer": 113,
+
+  "visual": {
+    "atmosphere": "entrega",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 8,
+    "progress": true
+  },
+
+  "heroTitle": "Entregue sua vida",
+
+  "saintQuestion": "O que Deus está me pedindo para entregar?",
+
+  "closingText": "Quem entrega a vida por amor não a perde. Encontra uma vida maior, mais livre e fecunda.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Entregue sua vida · 22º Domingo do Tempo Comum",
+
+  "metaDescription": "Uma experiência de oração e reflexão sobre entrega, cruz, sede de Deus e seguimento de Jesus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}
