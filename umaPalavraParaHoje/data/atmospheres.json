@@ -1271,5 +1271,97 @@
     "intensity": 0.18,
     "transition": "2.1s"
   }
+},{
+  "id": "servico-humilde",
+
+  "theme": {
+    "primary": "#92784E",
+    "primaryLight": "#BFA97D",
+    "primaryLighter": "#E8DEC9",
+    "primarySoft": "#DDD1B8",
+    "primaryDark": "#625032",
+    "primaryGlow": "rgba(146, 120, 78, 0.16)",
+    "background": "#FCFBF7",
+    "foreground": "#322F29",
+    "muted": "#746F66"
+  },
+
+  "background": {
+    "base": "#FCFBF7",
+    "gradient": "linear-gradient(150deg, #EDE3CE 0%, #FCFBF7 50%, #E3E9E7 100%)"
+  },
+
+  "lights": [
+    {
+      "x": "12%",
+      "y": "8%",
+      "size": "55vw",
+      "color": "#E8D8B8",
+      "opacity": 0.31,
+      "blur": "105px",
+      "parallax": 0.65
+    },
+    {
+      "x": "88%",
+      "y": "72%",
+      "size": "48vw",
+      "color": "#DDE7E3",
+      "opacity": 0.23,
+      "blur": "115px",
+      "parallax": -0.4
+    }
+  ],
+
+  "motion": {
+    "parallax": true,
+    "intensity": 0.17,
+    "transition": "2s"
+  }
+},{
+  "id": "nao-julgue",
+
+  "theme": {
+    "primary": "#69747A",
+    "primaryLight": "#A7B0B4",
+    "primaryLighter": "#DDE2E3",
+    "primarySoft": "#D0D8D9",
+    "primaryDark": "#475156",
+    "primaryGlow": "rgba(105, 116, 122, 0.15)",
+    "background": "#FAFCFC",
+    "foreground": "#2E3335",
+    "muted": "#70777A"
+  },
+
+  "background": {
+    "base": "#FAFCFC",
+    "gradient": "linear-gradient(150deg, #E0E7E8 0%, #FAFCFC 50%, #E8E3DD 100%)"
+  },
+
+  "lights": [
+    {
+      "x": "10%",
+      "y": "10%",
+      "size": "52vw",
+      "color": "#D9E5E7",
+      "opacity": 0.31,
+      "blur": "110px",
+      "parallax": 0.65
+    },
+    {
+      "x": "90%",
+      "y": "70%",
+      "size": "50vw",
+      "color": "#E6DED4",
+      "opacity": 0.23,
+      "blur": "120px",
+      "parallax": -0.4
+    }
+  ],
+
+  "motion": {
+    "parallax": true,
+    "intensity": 0.16,
+    "transition": "2.2s"
+  }
 }
 ]

@@ -417,5 +417,35 @@
   ],
 
   "icon": "shield"
+},{
+  "id": 203,
+  "slug": "sao-gregorio-magno",
+  "name": "São Gregório Magno",
+  "feast": "09-03",
+  "title": "Papa e doutor da Igreja",
+  "century": "VI-VII",
+  "country": "Roma",
+  "vocation": "Papa e doutor da Igreja",
+
+  "summary": "São Gregório Magno foi papa, pastor, escritor e doutor da Igreja, lembrado por sua dedicação ao serviço pastoral e à vida espiritual da Igreja.",
+
+  "legacy": "Seu testemunho apresenta a liderança cristã como responsabilidade e serviço, e não como busca de prestígio.",
+
+  "virtues": [
+    "humildade",
+    "serviço",
+    "sabedoria",
+    "caridade",
+    "responsabilidade"
+  ],
+
+  "themes": [
+    "serviço",
+    "liderança",
+    "humildade",
+    "Igreja"
+  ],
+
+  "icon": "hand-heart"
 }
 ]

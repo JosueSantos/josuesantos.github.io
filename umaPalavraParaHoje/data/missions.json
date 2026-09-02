@@ -227,5 +227,25 @@
   "text": "Leia hoje um trecho do Evangelho lentamente. Não procure imediatamente uma explicação. Pergunte primeiro: 'Senhor, o que esta Palavra quer dizer para mim hoje?'.",
 
   "icon": "footprints"
+},{
+  "id": 156,
+  "category": "servico",
+  "difficulty": 1,
+  "duration": 15,
+  "title": "Sirva sem ser notado",
+
+  "text": "Faça hoje alguma coisa boa por alguém sem contar para ninguém e sem buscar reconhecimento.",
+
+  "icon": "footprints"
+},{
+  "id": 157,
+  "category": "humildade",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Troque julgamento por oração",
+
+  "text": "Quando hoje você perceber que está julgando alguém, pare por alguns segundos e reze: 'Senhor, Vós conheceis o coração desta pessoa. Dai-me misericórdia e sabedoria'.",
+
+  "icon": "footprints"
 }
 ]

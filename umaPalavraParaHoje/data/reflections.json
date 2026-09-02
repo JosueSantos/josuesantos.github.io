@@ -201,5 +201,21 @@
   "text": "Hoje, faça algo concreto para ajudar outra pessoa a avançar: ensine, incentive, escute ou simplesmente esteja presente.",
 
   "icon": "footprints"
+},{
+  "id": 307,
+  "theme": "servico-humilde",
+  "title": "Grandeza que serve",
+
+  "text": "O Evangelho transforma nossa ideia de liderança. Não se trata de estar acima, mas de colocar-se a serviço. São Gregório Magno viveu uma missão de enorme responsabilidade, mas compreendeu que autoridade sem serviço perde sua verdadeira finalidade.",
+
+  "icon": "hand-heart"
+},{
+  "id": 308,
+  "theme": "nao-julgue",
+  "title": "Você não conhece toda a história",
+
+  "text": "É fácil olhar para uma atitude e construir imediatamente uma história inteira sobre alguém. Paulo nos lembra que existe algo que somente Deus conhece: o coração. Isso não significa abandonar o discernimento, mas reconhecer humildemente nossos limites. Antes de condenar, podemos escolher compreender. Antes de julgar, podemos rezar.",
+
+  "icon": "scale"
 }
 ]

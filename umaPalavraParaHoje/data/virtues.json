@@ -196,5 +196,21 @@
   "practice": "Hoje, reconheça o trabalho de alguém que ajuda você ou sua comunidade. Agradeça-lhe pessoalmente.",
   "icon": "users",
   "color": "green"
+},{
+  "id": 65,
+  "slug": "servico",
+  "title": "Serviço",
+  "description": "Usar aquilo que recebemos — posição, conhecimento, dons ou autoridade — para servir.",
+  "practice": "Use hoje uma habilidade que você possui para facilitar a vida de outra pessoa.",
+  "icon": "hand-heart",
+  "color": "gold"
+},{
+  "id": 66,
+  "slug": "humildade",
+  "title": "Humildade",
+  "description": "Reconhecer que não conhecemos completamente o coração do outro e que o julgamento definitivo pertence a Deus.",
+  "practice": "Quando perceber que está julgando alguém hoje, interrompa o pensamento e faça uma oração por essa pessoa.",
+  "icon": "scale",
+  "color": "slate"
 }
 ]

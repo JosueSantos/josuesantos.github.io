@@ -1,0 +1,44 @@
+{
+  "date": "09-04",
+  "season": "tempo_comum",
+  "theme": 42,
+  "virtue": 66,
+  "saint": null,
+  "marian": 82,
+  "reflection": 308,
+  "mission": 157,
+  "prayer": 118,
+
+  "visual": {
+    "atmosphere": "nao-julgue",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Deixe o julgamento para Deus",
+
+  "saintQuestion": "Quantas vezes julgo alguém sem conhecer toda a sua história?",
+
+  "closingText": "Podemos reconhecer o bem e o mal, mas somente Deus conhece profundamente o coração de cada pessoa.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Deixe o julgamento para Deus · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre humildade, julgamento e confiança no olhar de Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

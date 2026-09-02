@@ -214,5 +214,23 @@
   "text": "Senhor, livrai-me da necessidade de controlar tudo. Dai-me generosidade para plantar, paciência para cuidar e humildade para reconhecer que sois Vós quem faz crescer. Que eu saiba trabalhar convosco e com meus irmãos. Amém.",
 
   "icon": "hands"
+},{
+  "id": 117,
+  "theme": "servico-humilde",
+  "duration": 60,
+  "title": "Fazei de mim um servo",
+
+  "text": "Senhor, quando me deres responsabilidade, não permitais que eu procure poder. Dai-me coração de servo, sabedoria para conduzir e humildade para reconhecer que tudo o que tenho recebi de Vós. Amém.",
+
+  "icon": "hands"
+},{
+  "id": 118,
+  "theme": "nao-julgue",
+  "duration": 60,
+  "title": "Senhor, dai-me um coração misericordioso",
+
+  "text": "Senhor, muitas vezes julgo sem conhecer. Vejo apenas uma parte e acredito conhecer toda a história. Dai-me humildade para reconhecer meus limites, misericórdia para olhar os outros e sabedoria para deixar convosco aquilo que somente Vós podeis julgar. Amém.",
+
+  "icon": "hands"
 }
 ]

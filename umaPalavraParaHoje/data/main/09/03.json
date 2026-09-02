@@ -1,0 +1,44 @@
+{
+  "date": "09-03",
+  "season": "tempo_comum",
+  "theme": 41,
+  "virtue": 65,
+  "saint": 203,
+  "marian": 81,
+  "reflection": 307,
+  "mission": 156,
+  "prayer": 117,
+
+  "visual": {
+    "atmosphere": "servico-humilde",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Sirva com humildade",
+
+  "saintQuestion": "Minha posição me coloca acima dos outros ou a serviço deles?",
+
+  "closingText": "Na lógica do Evangelho, quanto maior a responsabilidade, maior deve ser a disposição para servir.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Sirva com humildade · São Gregório Magno",
+
+  "metaDescription": "Uma reflexão sobre São Gregório Magno, humildade, serviço e responsabilidade cristã.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

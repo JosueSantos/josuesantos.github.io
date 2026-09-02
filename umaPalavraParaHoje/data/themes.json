@@ -354,5 +354,35 @@
     "comunidade",
     "graça"
   ]
+},{
+  "id": 41,
+  "slug": "servico-humilde",
+  "title": "Sirva com humildade",
+  "summary": "A verdadeira grandeza cristã transforma autoridade em serviço.",
+  "reflection": "São Gregório Magno exerceu uma grande responsabilidade na Igreja, mas sua espiritualidade foi marcada pela consciência de que liderança cristã não significa domínio. Quem recebe uma missão recebe também uma responsabilidade de servir.",
+  "icon": "hand-heart",
+  "color": "gold",
+  "keywords": [
+    "Gregório",
+    "serviço",
+    "humildade",
+    "liderança",
+    "Igreja"
+  ]
+},{
+  "id": 42,
+  "slug": "nao-julgue",
+  "title": "Deixe o julgamento para Deus",
+  "summary": "Reconhecer nossos limites e confiar a Deus o julgamento definitivo sobre o coração humano.",
+  "reflection": "Paulo sabe que nem mesmo sua própria consciência é suficiente para fazer um julgamento definitivo sobre si. O julgamento pertence ao Senhor. Isso não elimina o discernimento, mas nos livra da arrogância de acreditar que conhecemos completamente o coração do outro.",
+  "icon": "scale",
+  "color": "slate",
+  "keywords": [
+    "humildade",
+    "julgamento",
+    "discernimento",
+    "misericórdia",
+    "Paulo"
+  ]
 }
 ]
