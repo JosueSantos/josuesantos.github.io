@@ -1,0 +1,44 @@
+{
+  "date": "08-31",
+  "season": "tempo_comum",
+  "theme": 38,
+  "virtue": 62,
+  "saint": null,
+  "marian": 78,
+  "reflection": 304,
+  "mission": 153,
+  "prayer": 114,
+
+  "visual": {
+    "atmosphere": "cristo-no-centro",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Cristo no centro",
+
+  "saintQuestion": "O que ocupa o centro das minhas escolhas?",
+
+  "closingText": "Quando Cristo ocupa o centro, muitas outras coisas encontram o seu verdadeiro lugar.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Cristo no centro · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre colocar Jesus Cristo no centro da vida, inspirada em São Paulo.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

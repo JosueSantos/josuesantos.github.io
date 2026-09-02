@@ -207,5 +207,25 @@
   "text": "Hoje, abra mão voluntariamente de alguma coisa pequena — tempo, conforto, preferência ou comodidade — para beneficiar outra pessoa. Faça isso sem reclamar e sem esperar reconhecimento.",
 
   "icon": "footprints"
+},{
+  "id": 153,
+  "category": "centralidade-de-cristo",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Coloque Cristo no centro",
+
+  "text": "Antes de iniciar sua próxima tarefa, faça uma breve oração oferecendo-a a Jesus. Durante a tarefa, procure lembrar que você não está fazendo isso sozinho.",
+
+  "icon": "footprints"
+},{
+  "id": 154,
+  "category": "escuta",
+  "difficulty": 1,
+  "duration": 10,
+  "title": "Pare para escutar",
+
+  "text": "Leia hoje um trecho do Evangelho lentamente. Não procure imediatamente uma explicação. Pergunte primeiro: 'Senhor, o que esta Palavra quer dizer para mim hoje?'.",
+
+  "icon": "footprints"
 }
 ]

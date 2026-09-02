@@ -1,0 +1,44 @@
+{
+  "date": "09-01",
+  "season": "tempo_comum",
+  "theme": 39,
+  "virtue": 63,
+  "saint": null,
+  "marian": 79,
+  "reflection": 305,
+  "mission": 154,
+  "prayer": 115,
+
+  "visual": {
+    "atmosphere": "palavra-que-liberta",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Escute a Palavra",
+
+  "saintQuestion": "Tenho permitido que a Palavra de Jesus transforme realmente minha vida?",
+
+  "closingText": "A Palavra de Cristo não deseja apenas ser ouvida. Ela deseja encontrar espaço para transformar.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Escute a Palavra · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre a autoridade da Palavra de Jesus e seu poder para transformar e libertar.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

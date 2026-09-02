@@ -167,5 +167,39 @@
   "text": "Existe uma diferença entre perder a vida e entregá-la. Jesus não nos chama a desprezar nossa vida, mas a deixar de viver fechados em nós mesmos. Jeremias sentiu o fogo da Palavra. Paulo fala de oferecer o próprio corpo. Jesus nos mostra a cruz. O caminho cristão é uma passagem do 'o que eu ganho?' para 'o que o amor está me pedindo?'.",
 
   "icon": "flame"
+},{
+  "id": 304,
+  "theme": "cristo-no-centro",
+  "title": "Não é sobre nós",
+
+  "text": "Paulo poderia ter confiado em sua capacidade de falar, argumentar e convencer. Mas escolhe colocar Cristo no centro. Também nós podemos transformar a fé em uma tentativa de mostrar nossas próprias capacidades. O Evangelho nos convida a voltar ao essencial: não somos nós que precisamos ocupar o centro. É Cristo.",
+
+  "icon": "cross"
+},{
+  "id": 305,
+  "theme": "palavra-que-liberta",
+  "title": "Uma Palavra que faz acontecer",
+
+  "text": "Há palavras que apenas informam. A Palavra de Jesus faz mais: ela transforma. Quando Cristo fala, aquilo que estava preso pode encontrar liberdade, aquilo que estava confuso pode encontrar direção e aquilo que estava morto pode começar novamente.",
+
+  "icon": "volume-2"
+},{
+  "id": 306,
+  "theme": "cooperadores-de-deus",
+  "title": "Você não precisa fazer tudo",
+
+  "text": "Existe uma tentação de acreditar que tudo depende de nós. Paulo apresenta outro caminho: somos cooperadores. Plantamos, regamos, cuidamos, servimos. Mas o crescimento pertence a Deus. Isso nos liberta tanto do orgulho quanto da ansiedade.",
+
+  "icon": "sprout"
+},{
+  "id": 155,
+  "category": "cooperacao",
+  "difficulty": 1,
+  "duration": 15,
+  "title": "Ajude alguém a crescer",
+
+  "text": "Hoje, faça algo concreto para ajudar outra pessoa a avançar: ensine, incentive, escute ou simplesmente esteja presente.",
+
+  "icon": "footprints"
 }
 ]

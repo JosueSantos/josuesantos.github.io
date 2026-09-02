@@ -1,0 +1,44 @@
+{
+  "date": "09-02",
+  "season": "tempo_comum",
+  "theme": 40,
+  "virtue": 64,
+  "saint": null,
+  "marian": 80,
+  "reflection": 306,
+  "mission": 155,
+  "prayer": 116,
+
+  "visual": {
+    "atmosphere": "cooperadores-de-deus",
+    "iconAnimation": "breathe"
+  },
+
+  "experience": {
+    "estimatedTime": 7,
+    "progress": true
+  },
+
+  "heroTitle": "Somos cooperadores",
+
+  "saintQuestion": "Estou tentando fazer tudo sozinho?",
+
+  "closingText": "Nós plantamos e cuidamos. Deus faz crescer. A missão é nossa, mas o fruto pertence à graça.",
+
+  "nextText": "Amanhã, uma nova palavra estará esperando por você.",
+
+  "pageTitle": "Somos cooperadores · Uma Palavra para Hoje",
+
+  "metaDescription": "Uma reflexão sobre cooperação, serviço e confiança na ação de Deus.",
+
+  "labels": {
+    "start": "Comece sua jornada",
+    "reflection": "Contemple",
+    "marian": "Com Maria",
+    "saint": "Inspire-se",
+    "mission": "Viva",
+    "prayer": "Ore",
+    "closing": "Leve esta palavra com você",
+    "backToTop": "Voltar ao início"
+  }
+}

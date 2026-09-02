@@ -172,5 +172,29 @@
   "practice": "Identifique uma coisa que você tenta controlar e entregue-a conscientemente a Deus. Depois pergunte: 'Como posso amar melhor nesta situação?'.",
   "icon": "flame",
   "color": "amber"
+},{
+  "id": 62,
+  "slug": "centralidade-de-cristo",
+  "title": "Centralidade de Cristo",
+  "description": "Colocar Jesus no centro das decisões, dos desejos e da própria missão.",
+  "practice": "Antes de uma decisão importante hoje, faça uma pausa e pergunte: 'Jesus está no centro desta escolha?'.",
+  "icon": "cross",
+  "color": "indigo"
+},{
+  "id": 63,
+  "slug": "escuta",
+  "title": "Escuta",
+  "description": "Abrir o coração para que a Palavra de Deus não seja apenas ouvida, mas acolhida e vivida.",
+  "practice": "Leia lentamente um pequeno trecho do Evangelho e permaneça alguns instantes em silêncio depois da leitura.",
+  "icon": "ear",
+  "color": "blue"
+},{
+  "id": 64,
+  "slug": "cooperacao",
+  "title": "Cooperação",
+  "description": "Reconhecer que fazemos parte de uma obra maior e que Deus age também através dos outros.",
+  "practice": "Hoje, reconheça o trabalho de alguém que ajuda você ou sua comunidade. Agradeça-lhe pessoalmente.",
+  "icon": "users",
+  "color": "green"
 }
 ]

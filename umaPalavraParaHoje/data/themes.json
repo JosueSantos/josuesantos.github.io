@@ -309,5 +309,50 @@
     "amor",
     "sede de Deus"
   ]
+},{
+  "id": 38,
+  "slug": "cristo-no-centro",
+  "title": "Cristo no centro",
+  "summary": "Quando Jesus ocupa o centro, nossa vida deixa de girar em torno de nós mesmos.",
+  "reflection": "Paulo não deseja que sua missão dependa de sua capacidade de impressionar. Ele quer anunciar Cristo. Sua força não está na própria eloquência, mas no poder de Deus.",
+  "icon": "cross",
+  "color": "indigo",
+  "keywords": [
+    "Jesus",
+    "Cristo",
+    "centro",
+    "evangelização",
+    "humildade"
+  ]
+},{
+  "id": 39,
+  "slug": "palavra-que-liberta",
+  "title": "Escute a Palavra",
+  "summary": "A Palavra de Jesus possui autoridade porque toca aquilo que precisa ser transformado.",
+  "reflection": "As pessoas percebem algo diferente em Jesus: Ele não fala apenas como quem conhece uma doutrina. Sua Palavra possui autoridade. Ela alcança o coração e liberta.",
+  "icon": "volume-2",
+  "color": "blue",
+  "keywords": [
+    "Palavra",
+    "autoridade",
+    "Jesus",
+    "libertação",
+    "transformação"
+  ]
+},{
+  "id": 40,
+  "slug": "cooperadores-de-deus",
+  "title": "Somos cooperadores",
+  "summary": "Deus nos chama para trabalhar com Ele, sem transformar a missão em propriedade pessoal.",
+  "reflection": "Paulo usa a imagem da plantação. Cada pessoa tem seu papel, mas nenhuma pode dizer que é dona do crescimento. A missão cristã é cooperação com Deus e com os outros.",
+  "icon": "sprout",
+  "color": "green",
+  "keywords": [
+    "cooperação",
+    "serviço",
+    "missão",
+    "comunidade",
+    "graça"
+  ]
 }
 ]

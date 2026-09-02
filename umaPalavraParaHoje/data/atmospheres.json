@@ -1133,5 +1133,143 @@
     "intensity": 0.25,
     "transition": "2.5s"
   }
+},{
+  "id": "cristo-no-centro",
+
+  "theme": {
+    "primary": "#626F91",
+    "primaryLight": "#A3AEC7",
+    "primaryLighter": "#DCE1EC",
+    "primarySoft": "#CFD5E3",
+    "primaryDark": "#414A68",
+    "primaryGlow": "rgba(98, 111, 145, 0.17)",
+    "background": "#FAFBFD",
+    "foreground": "#2E3038",
+    "muted": "#70747E"
+  },
+
+  "background": {
+    "base": "#FAFBFD",
+    "gradient": "linear-gradient(150deg, #E1E5F0 0%, #FAFBFD 50%, #E9E4DC 100%)"
+  },
+
+  "lights": [
+    {
+      "x": "50%",
+      "y": "10%",
+      "size": "58vw",
+      "color": "#D8DEEF",
+      "opacity": 0.34,
+      "blur": "110px",
+      "parallax": 0.35
+    },
+    {
+      "x": "10%",
+      "y": "78%",
+      "size": "48vw",
+      "color": "#E7DFD3",
+      "opacity": 0.22,
+      "blur": "120px",
+      "parallax": -0.4
+    }
+  ],
+
+  "motion": {
+    "parallax": true,
+    "intensity": 0.20,
+    "transition": "2.2s"
+  }
+},{
+  "id": "palavra-que-liberta",
+
+  "theme": {
+    "primary": "#537A91",
+    "primaryLight": "#9CB8C7",
+    "primaryLighter": "#D9E6EC",
+    "primarySoft": "#CBDDE5",
+    "primaryDark": "#385568",
+    "primaryGlow": "rgba(83, 122, 145, 0.17)",
+    "background": "#FAFCFD",
+    "foreground": "#293239",
+    "muted": "#6D777E"
+  },
+
+  "background": {
+    "base": "#FAFCFD",
+    "gradient": "linear-gradient(150deg, #D9E9F1 0%, #FAFCFD 48%, #E5E9E6 100%)"
+  },
+
+  "lights": [
+    {
+      "x": "12%",
+      "y": "8%",
+      "size": "55vw",
+      "color": "#CFE5EF",
+      "opacity": 0.35,
+      "blur": "105px",
+      "parallax": 0.65
+    },
+    {
+      "x": "88%",
+      "y": "70%",
+      "size": "50vw",
+      "color": "#DDE7E2",
+      "opacity": 0.23,
+      "blur": "115px",
+      "parallax": -0.4
+    }
+  ],
+
+  "motion": {
+    "parallax": true,
+    "intensity": 0.19,
+    "transition": "2s"
+  }
+},{
+  "id": "cooperadores-de-deus",
+
+  "theme": {
+    "primary": "#6C866A",
+    "primaryLight": "#A8BCA5",
+    "primaryLighter": "#DDE7DA",
+    "primarySoft": "#CFDDCC",
+    "primaryDark": "#4A6048",
+    "primaryGlow": "rgba(108, 134, 106, 0.17)",
+    "background": "#FAFCF9",
+    "foreground": "#2E342E",
+    "muted": "#6F766F"
+  },
+
+  "background": {
+    "base": "#FAFCF9",
+    "gradient": "linear-gradient(150deg, #DFEBDC 0%, #FAFCF9 48%, #E7E6D8 100%)"
+  },
+
+  "lights": [
+    {
+      "x": "15%",
+      "y": "12%",
+      "size": "58vw",
+      "color": "#D6E6D1",
+      "opacity": 0.34,
+      "blur": "110px",
+      "parallax": 0.65
+    },
+    {
+      "x": "90%",
+      "y": "72%",
+      "size": "48vw",
+      "color": "#E5E0CF",
+      "opacity": 0.24,
+      "blur": "115px",
+      "parallax": -0.4
+    }
+  ],
+
+  "motion": {
+    "parallax": true,
+    "intensity": 0.18,
+    "transition": "2.1s"
+  }
 }
 ]
