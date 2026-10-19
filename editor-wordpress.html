@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Editor WordPress</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#182230;background:#f3f5f8}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:820px;margin:auto;padding:18px 14px 40px}
+header{padding:8px 2px 18px}h1{font-size:1.65rem;margin:0 0 5px}header p,.muted{color:#64748b;font-size:.92rem;margin:0}
+.card{background:#fff;border:1px solid #e3e8ef;border-radius:15px;padding:18px;margin:0 0 15px;box-shadow:0 3px 12px #10233b0a}
+label{display:block;font-weight:650;font-size:.92rem;margin:0 0 7px}
+input[type=text],input[type=url],input[type=password]{width:100%;padding:13px 12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;font-size:16px;margin:0 0 15px;background:white;color:inherit}
+input:focus,#body:focus{outline:2px solid #93c5fd;border-color:#2563eb}
+button{font:inherit;font-weight:650;border:0;border-radius:9px;padding:12px 15px;cursor:pointer;min-height:44px}
+button:disabled{opacity:.55;cursor:wait}.primary{background:#1769aa;color:#fff}.secondary{background:#e8edf3;color:#172033}.danger{background:#fff0f0;color:#a11b1b}
+button:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.note{font-size:.84rem;line-height:1.5;color:#64748b;margin:-5px 0 14px}
+.status{display:none;border-radius:10px;padding:13px 14px;margin:0 0 15px;line-height:1.5;overflow-wrap:anywhere}
+.status.info{display:block;background:#eaf4ff;color:#124c7a}.status.success{display:block;background:#eaf8ee;color:#176534}.status.error{display:block;background:#fff0f0;color:#922323}
+.toolbar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px}.toolbar button{min-width:45px;padding:8px 12px;background:#edf1f5}
+#body{min-height:320px;padding:15px;border:1px solid #cbd5e1;border-radius:10px;background:white;font-size:17px;line-height:1.7;overflow-wrap:anywhere}
+#body p{margin:0 0 14px}#body h2{font-size:1.4rem;line-height:1.3;margin:22px 0 10px}#body ol{padding-left:26px}
+.filebox{border:2px dashed #cbd5e1;border-radius:11px;padding:15px}.filebox input{max-width:100%;font:inherit}
+#preview{display:none;width:100%;max-height:280px;object-fit:contain;margin-top:12px;border-radius:9px;background:#f1f5f9}
+.actions{display:flex;gap:10px}.actions button{flex:1}
+#app{display:none}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.pill{font-size:.8rem;background:#eaf8ee;color:#176534;padding:5px 9px;border-radius:999px}
+a{color:#075da8;overflow-wrap:anywhere}
+@media(max-width:540px){.wrap{padding:12px 10px 28px}.card{padding:14px}.actions{flex-direction:column}#body{min-height:280px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+  <h1>Editor WordPress</h1>
+  <p>Escreva e publique artigos sem abrir o painel do WordPress.</p>
+</header>
+
+<section id="loginCard" class="card">
+  <h2 style="font-size:1.12rem;margin:0 0 15px">Conectar ao WordPress</h2>
+  <div id="loginStatus" class="status" role="status" aria-live="polite"></div>
+  <form id="loginForm">
+    <label for="siteUrl">URL do site WordPress</label>
+    <input id="siteUrl" type="url" placeholder="https://www.seusite.com.br" autocomplete="url" required>
+    <label for="username">Usuário WordPress</label>
+    <input id="username" type="text" placeholder="Seu usuário" autocomplete="username" required>
+    <label for="appPassword">Application Password</label>
+    <input id="appPassword" type="password" placeholder="xxxx xxxx xxxx xxxx xxxx xxxx" autocomplete="off" required>
+    <p class="note">Use uma senha de aplicação criada no seu perfil WordPress, não a senha normal da sua conta. A credencial fica apenas na memória desta página e é apagada ao sair ou fechar a página.</p>
+    <button id="loginBtn" class="primary" type="submit" style="width:100%">Conectar</button>
+  </form>
+</section>
+
+<section id="app">
+  <div class="topline">
+    <span class="pill" id="connectedAs">Conectado</span>
+    <button id="logoutBtn" type="button" class="secondary">Sair</button>
+  </div>
+  <div id="appStatus" class="status" role="status" aria-live="polite"></div>
+  <section class="card">
+    <label for="postTitle">Título do artigo</label>
+    <input id="postTitle" type="text" placeholder="Digite o título" maxlength="300">
+  </section>
+  <section class="card">
+    <label for="thumbnail">Thumbnail / imagem destacada (opcional)</label>
+    <div class="filebox">
+      <input id="thumbnail" type="file" accept="image/*">
+      <img id="preview" alt="Prévia da thumbnail">
+    </div>
+    <p class="note" style="margin:10px 0 0">A imagem será enviada à biblioteca de mídia e definida como imagem destacada do artigo.</p>
+  </section>
+  <section class="card">
+    <label>Corpo do artigo</label>
+    <div class="toolbar" aria-label="Formatação">
+      <button type="button" data-command="bold" title="Negrito"><b>B</b></button>
+      <button type="button" data-command="italic" title="Itálico"><i>I</i></button>
+      <button type="button" data-command="formatBlock" data-value="h2" title="Subtítulo">H2</button>
+      <button type="button" data-command="insertOrderedList" title="Lista numerada">1.</button>
+      <button type="button" data-command="formatBlock" data-value="p" title="Parágrafo">P</button>
+    </div>
+    <div id="body" contenteditable="true" role="textbox" aria-label="Corpo do artigo" aria-multiline="true" spellcheck="true"></div>
+    <p class="note" style="margin:10px 0 0">Dica: toque onde deseja formatar e use os botões. O conteúdo será enviado como HTML ao WordPress.</p>
+  </section>
+  <section class="card">
+    <div class="actions">
+      <button id="draftBtn" type="button" class="secondary">Salvar rascunho</button>
+      <button id="publishBtn" type="button" class="primary">Publicar artigo</button>
+    </div>
+  </section>
+</section>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  let site = "";
+  let username = "";
+  let appPassword = "";
+  let displayName = "";
+  let busy = false;
+
+  const $ = id => document.getElementById(id);
+  const loginCard = $("loginCard");
+  const app = $("app");
+  const loginStatus = $("loginStatus");
+  const appStatus = $("appStatus");
+
+  function setStatus(element, message, type = "info", asText = true) {
+    element.className = "status " + type;
+    element.replaceChildren();
+    if (asText) {
+      element.textContent = message;
+    } else {
+      element.append(...message);
+    }
+  }
+
+  function clearStatus(element) {
+    element.className = "status";
+    element.replaceChildren();
+  }
+
+  function normaliseSiteUrl(raw) {
+    let value = raw.trim().replace(/\/+$/, "");
+    if (!/^https?:\/\//i.test(value)) value = "https://" + value;
+    const parsed = new URL(value);
+    if (parsed.protocol !== "https:" && parsed.hostname !== "localhost") {
+      throw new Error("Por segurança, use uma URL HTTPS para o WordPress.");
+    }
+    if (parsed.username || parsed.password) {
+      throw new Error("Não inclua usuário ou senha na URL do site.");
+    }
+    return parsed.origin + parsed.pathname.replace(/\/+$/, "");
+  }
+
+  function apiUrl(path) {
+    return site + "/wp-json/wp/v2/" + path;
+  }
+
+  function authHeader() {
+    const bytes = new TextEncoder().encode(username + ":" + appPassword);
+    let binary = "";
+    bytes.forEach(byte => binary += String.fromCharCode(byte));
+    return "Basic " + btoa(binary);
+  }
+
+  async function readResponse(response) {
+    const text = await response.text();
+    let data;
+    try { data = text ? JSON.parse(text) : {}; }
+    catch { data = { message: text || "O servidor retornou uma resposta inesperada." }; }
+    if (!response.ok) {
+      const message = data && data.message ? data.message : `Erro HTTP ${response.status}`;
+      throw new Error(`${message} (HTTP ${response.status})`);
+    }
+    return data;
+  }
+
+  async function apiFetch(path, options = {}) {
+    const headers = new Headers(options.headers || {});
+    headers.set("Authorization", authHeader());
+    const response = await fetch(apiUrl(path), { ...options, headers });
+    return readResponse(response);
+  }
+
+  $("loginForm").addEventListener("submit", async event => {
+    event.preventDefault();
+    clearStatus(loginStatus);
+    const button = $("loginBtn");
+    button.disabled = true;
+    button.textContent = "Conectando…";
+
+    try {
+      site = normaliseSiteUrl($("siteUrl").value);
+      username = $("username").value.trim();
+      appPassword = $("appPassword").value.replace(/\s+/g, "");
+
+      if (!username || !appPassword) throw new Error("Informe o usuário e a Application Password.");
+
+      const user = await apiFetch("users/me");
+      displayName = user.name || username;
+
+      $("connectedAs").textContent = "Conectado: " + displayName;
+      loginCard.style.display = "none";
+      app.style.display = "block";
+      clearStatus(loginStatus);
+      setStatus(appStatus, "Conectado ao WordPress. Você já pode escrever seu artigo.", "success");
+    } catch (error) {
+      const detail = error instanceof TypeError
+        ? "Não foi possível acessar a API. Verifique a URL, o HTTPS e a configuração CORS do WordPress. O navegador pode ocultar o detalhe do erro."
+        : error.message;
+      setStatus(loginStatus, detail, "error");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Conectar";
+    }
+  });
+
+  // Preserve the text selection when a formatting button is tapped on mobile.
+  document.querySelectorAll(".toolbar button").forEach(button => {
+    button.addEventListener("mousedown", event => event.preventDefault());
+    button.addEventListener("click", () => {
+      $("body").focus();
+      const command = button.dataset.command;
+      const value = button.dataset.value || null;
+      document.execCommand(command, false, value);
+      $("body").focus();
+    });
+  });
+
+  $("thumbnail").addEventListener("change", () => {
+    const file = $("thumbnail").files[0];
+    const preview = $("preview");
+    if (!file) {
+      preview.removeAttribute("src");
+      preview.style.display = "none";
+      return;
+    }
+    if (!file.type.startsWith("image/")) {
+      $("thumbnail").value = "";
+      preview.removeAttribute("src");
+      preview.style.display = "none";
+      setStatus(appStatus, "Selecione um arquivo de imagem válido.", "error");
+      return;
+    }
+    if (preview.dataset.objectUrl) URL.revokeObjectURL(preview.dataset.objectUrl);
+    const objectUrl = URL.createObjectURL(file);
+    preview.dataset.objectUrl = objectUrl;
+    preview.src = objectUrl;
+    preview.style.display = "block";
+    clearStatus(appStatus);
+  });
+
+  function getEditorContent() {
+    // Restrict output to the simple formatting supported by this editor.
+    const source = $("body").cloneNode(true);
+    source.querySelectorAll("script,style,iframe,object,embed,form,input,button").forEach(node => node.remove());
+    source.querySelectorAll("*").forEach(node => {
+      [...node.attributes].forEach(attr => {
+        if (/^on/i.test(attr.name) || attr.name === "style" || attr.name === "class" || attr.name === "id") {
+          node.removeAttribute(attr.name);
+        }
+      });
+    });
+    return source.innerHTML.trim();
+  }
+
+  async function uploadImage(file) {
+    setStatus(appStatus, "Enviando thumbnail…", "info");
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_") || "thumbnail";
+    const response = await fetch(apiUrl("media"), {
+      method: "POST",
+      headers: {
+        "Authorization": authHeader(),
+        "Content-Disposition": `attachment; filename="${safeName}"`,
+        "Content-Type": file.type || "application/octet-stream"
+      },
+      body: file
+    });
+    const media = await readResponse(response);
+    return media.id;
+  }
+
+  async function createPost(status) {
+    if (busy) return;
+    const title = $("postTitle").value.trim();
+    const content = getEditorContent();
+    const file = $("thumbnail").files[0];
+
+    if (!title) throw new Error("Digite o título do artigo.");
+    if (!content || !content.replace(/<[^>]*>/g, "").trim()) throw new Error("Digite o corpo do artigo.");
+
+    busy = true;
+    $("draftBtn").disabled = true;
+    $("publishBtn").disabled = true;
+
+    try {
+      let mediaId = 0;
+      if (file) mediaId = await uploadImage(file);
+
+      setStatus(appStatus, status === "publish" ? "Publicando artigo…" : "Salvando rascunho…", "info");
+      const payload = { title, content, status };
+      if (mediaId) payload.featured_media = mediaId;
+
+      const post = await apiFetch("posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const link = document.createElement("a");
+      link.href = post.link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Abrir artigo no WordPress";
+
+      const message = document.createDocumentFragment();
+      message.append(document.createTextNode(status === "publish"
+        ? "Artigo publicado com sucesso. "
+        : "Rascunho salvo com sucesso. "));
+      message.append(link);
+      setStatus(appStatus, "", "success");
+      appStatus.replaceChildren(message);
+    } catch (error) {
+      const detail = error instanceof TypeError
+        ? "A requisição falhou. Verifique CORS no WordPress, HTTPS e conexão. Se a imagem foi enviada antes da falha, ela pode ter ficado na biblioteca de mídia."
+        : error.message;
+      setStatus(appStatus, detail, "error");
+    } finally {
+      busy = false;
+      $("draftBtn").disabled = false;
+      $("publishBtn").disabled = false;
+    }
+  }
+
+  $("draftBtn").addEventListener("click", () => createPost("draft"));
+  $("publishBtn").addEventListener("click", () => createPost("publish"));
+
+  $("logoutBtn").addEventListener("click", () => {
+    site = username = appPassword = displayName = "";
+    $("loginForm").reset();
+    $("postTitle").value = "";
+    $("body").replaceChildren();
+    $("thumbnail").value = "";
+    const preview = $("preview");
+    if (preview.dataset.objectUrl) URL.revokeObjectURL(preview.dataset.objectUrl);
+    preview.removeAttribute("src");
+    delete preview.dataset.objectUrl;
+    preview.style.display = "none";
+    app.style.display = "none";
+    loginCard.style.display = "block";
+    clearStatus(loginStatus);
+    clearStatus(appStatus);
+  });
+})();
+</script>
+</body>
+</html>
